@@ -1,0 +1,5 @@
+class Characteristique {
+  PA: number
+  PM: number
+  CC: number
+}

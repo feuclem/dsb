@@ -1,0 +1,1277 @@
+[
+  {
+    "_id": 1711,
+    "name": "Chienchien",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18006.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/1711-chienchien",
+    "description": "Avec ce petit toutou, vous goûterez aux joies des petites promenades pipi. Fort de ses racines sauvages, il est déconseillé de lui donner à manger, sous peine de perdre une main. CE FAMILIER N'AIME AUCUNE RESSOURCE",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 1748,
+    "name": "Wabbit",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18007.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/1748-wabbit",
+    "description": "Ce petit Wabbit est domestiqué. Il ne vous mordra donc pas. En revanche pour les autres... La région des wabbits est sa zone de prédilection.",
+    "stats": [
+      {
+        "Sagesse": {
+          "to": "27",
+          "from": "0"
+        }
+      },
+      {
+        "Chance": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Intelligence": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Force": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Agilité": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Wa Wabbit",
+      "30 Sagesse",
+      "90 Chance",
+      "90 Intelligence",
+      "90 Force",
+      "90 Agilité"
+    ]
+  },
+  {
+    "_id": 2074,
+    "name": "Bwak de Feu",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18003.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/2074-bwak-feu",
+    "description": "Ce mignon petit bwak deviendra, plus tard, un affreux kwak. Jusque là n'ayez pas peur de le garder à vos cotés. Les montagnes des craqueleurs et leurs donjons sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Intelligence": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Feu": {
+          "to": "20",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Shin Larve",
+      "90 Intelligence",
+      "90 Vitalité",
+      "22 % Résistance Feu"
+    ]
+  },
+  {
+    "_id": 2075,
+    "name": "Bwak d'Eau",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18002.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/2075-bwak-eau",
+    "description": "Ce mignon petit bwak deviendra, plus tard, un affreux kwak. Jusque là n'ayez pas peur de le garder à vos cotés. Les montagnes des craqueleurs et leurs donjons sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Chance": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Eau": {
+          "to": "20",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Shin Larve",
+      "90 Chance",
+      "90 Vitalité",
+      "22 % Résistance Eau"
+    ]
+  },
+  {
+    "_id": 2076,
+    "name": "Bwak d'Air",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18004.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/2076-bwak-air",
+    "description": "Ce mignon petit bwak deviendra, plus tard, un affreux kwak. Jusque là n'ayez pas peur de le garder à vos cotés. Les montagnes des craqueleurs et leurs donjons sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Agilité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Air": {
+          "to": "20",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Shin Larve",
+      "90 Agilité",
+      "90 Vitalité",
+      "22 % Résistance Air"
+    ]
+  },
+  {
+    "_id": 2077,
+    "name": "Bwak de Terre",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18005.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/2077-bwak-terre",
+    "description": "Ce mignon petit bwak deviendra, plus tard, un affreux kwak. Jusque là n'ayez pas peur de le garder à vos cotés. Les montagnes des craqueleurs et leurs donjons sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Force": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Terre": {
+          "to": "20",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Shin Larve",
+      "90 Force",
+      "90 Vitalité",
+      "22 % Résistance Terre"
+    ]
+  },
+  {
+    "_id": 6604,
+    "name": "Kouin-Kouin",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18008.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/6604-kouin-kouin",
+    "description": "Au delà du Tofu, du Bouftou ou encore du Iop, le Kouin-kouin excelle dans la crétinerie. La foire du troll est sa zone de prédilection.",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 6716,
+    "name": "Nomoon",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18011.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/6716-nomoon",
+    "description": "Ce petit singe chapardeur semble s'être attaché à vous maintenant. Très docile, il est cependant très exigeant sur le plan alimentaire et n'accepte que les végétaux qui poussent sur son île. L'île de Moon est sa zone de prédilection.",
+    "stats": [
+      {
+        "Prospection": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Moon",
+      "90 Prospection"
+    ]
+  },
+  {
+    "_id": 6717,
+    "name": "Chienchien Noir",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18010.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/6717-chienchien-noir",
+    "description": "Avec ce petit toutou, vous goûterez aux joies des petites promenades pipi. Fort de ses racines sauvages, il est déconseillé de lui donner à manger, sous peine de perdre une main. CE FAMILIER LEGENDAIRE N'A PAS BESOIN DE MANGER",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 6718,
+    "name": "Chacha Blanc",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18009.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/6718-chacha-blanc",
+    "description": "Cette petite boule de poil friponne et câline fait craquer la gent féminine toutes classes confondues. Un animal redoutable donc. CE FAMILIER LÉGENDAIRE N'A PAS BESOIN DE MANGER",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 6978,
+    "name": "Péki",
+    "lvl": 60,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18012.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/6978-peki",
+    "description": "Cette créature ressemble de loin à un Chienchien. Sa tête montre clairement qu'elle a subi d'énormes traumatismes qui l'ont poussée à devenir végétarienne. Elle ne se nourrit donc que de végétaux et plantes qui poussent sur l'île de Pandala. L'île de Pandala est sa zone de prédilection.",
+    "stats": [
+      {
+        "Vitalité": {
+          "to": "400",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Péki Péki",
+      "440 Vitalité"
+    ]
+  },
+  {
+    "_id": 7414,
+    "name": "Petit Chacha Blanc",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18009.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7414-petit-chacha-blanc",
+    "description": "Cette petite boule de poils griffe, mord et pince même la main qui la nourrit. C'est donc une créature terrifiante, mais tout de même irrésistiblement attachante et fascinante. Toute ressemblance avec des personnes de la gent féminine ne serait pas fortuite. Attention, cette créature en plus de son caractère irascible est très difficile sur le plan alimentaire, puisqu'elle ne consomme que de la viande issue de créatures chassées. L'île de Pandala est sa zone de prédilection.",
+    "stats": [
+      {
+        "Initiative": {
+          "to": "800",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Maître Pandore",
+      "880 Initiative"
+    ]
+  },
+  {
+    "_id": 7415,
+    "name": "Petit Chienchien Noir",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18010.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7415-petit-chienchien-noir",
+    "description": "Cette étrange petite créature ne se nourrit que de poissons fraîchement pêchés. Mais ne vous inquiétez pas, sa compagnie agréable compense largement son haleine de poisson déshydraté. Les plages du continent d'Amakna sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Meulou",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7518,
+    "name": "Fotome",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18013.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7518-fotome",
+    "description": "Cette surprenante créature vient de l'au-delà et n'est pas prête d'y retourner, sauf si malencontreusement, vous deviez l'y accompagner... Les régions où se trouvent des fantômes sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Vitalité": {
+          "to": "150",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Boostache",
+      "165 Vitalité"
+    ]
+  },
+  {
+    "_id": 7519,
+    "name": "Dragoune Rose",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18014.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7519-dragoune-rose",
+    "description": "Ce petit dragon a la peau aussi rose que les fesses d'une femelle Bwork. Un bon moyen de vous faire fantasmer à moindre frais et sans risques, ou tout simplement de vous rappeler de bons souvenirs. Heureusement pour lui, ce dragon n'est pas uniquement l'objet de vos fantasmes, mais avant tout une créature très puissante et sage. Attention tout de même, sa voracité n'a d'égal que la perversité d'un Chafer les soirs de pleine lune, et il ne se nourrit que de fantôme d'autres familiers. La région des dragoeufs est sa zone de prédilection.",
+    "stats": [
+      {
+        "Sagesse": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Crocabulia",
+      "55 Sagesse"
+    ]
+  },
+  {
+    "_id": 7520,
+    "name": "Croum",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18015.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7520-croum",
+    "description": "Ancien soldat de plomb retraité, cette créature en métal est devenue vivante. Elle vous suivra partout et fera tout pour vous défendre au péril de sa vie, si vous prenez la peine de lui donner à manger régulièrement. Mais n'espérez pas qu'elle prenne pour autant les coups à votre place, elle ne remplacera donc pas les aventuriers débutants d'Astrub. Les régions où se trouvent les forgerons sombres sont sa zone de prédilection.",
+    "stats": [
+      {
+        "% Résistance Air": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Eau": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Terre": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Feu": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Neutre": {
+          "to": "20",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Coffre des Forgerons",
+      "26 % Résistance Air",
+      "26 % Résistance Eau",
+      "26 % Résistance Terre",
+      "26 % Résistance Feu",
+      "26 % Résistance Neutre"
+    ]
+  },
+  {
+    "_id": 7522,
+    "name": "Minimino",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18021.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7522-minimino",
+    "description": "Ce bébé Minotoror apprivoisé et nettoyé peut être approché et caressé, sans risquer de perdre une main. Cependant, restez prudents, la nature reprend parfois ses droits et il se pourrait que l'instinct destructeur de cette créature refasse surface à un moment où vous comptiez sur lui. Pour éviter les mauvaises surprises, élevez-le comme vos propres enfants, avec des coups de bâtons. L'île du Minotoror est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Minotoror",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7523,
+    "name": "Chachatte Rousse",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18040.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7523-chachatte-rousse",
+    "description": "Cette adorable créature rousse est capable de faire craquer tous les matous, même les plus blasés. CE FAMILIER LÉGENDAIRE N'A PAS BESOIN DE MANGER",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 7524,
+    "name": "Chacha Tigré",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18041.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7524-chacha-tigre",
+    "description": "Cette surprenante créature résulte du croisement entre un Chacha blanc et un Chacha noir. Elle ne mange que du poisson. Les plages du continent d'Amakna sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Bouftou Royal",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7703,
+    "name": "Vilain Petit Corbac",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18018.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7703-vilain-petit-corbac",
+    "description": "Ce sombre volatile est avant tout connu pour apprécier les cimetières et les aventuriers à la peau blanche. Il adore casser avec son gros bec, les ossements qu'il trouve dans les tombes. Les régions où se trouvent des corbacs sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Prospection": {
+          "to": "40",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Maître Corbac",
+      "45 Prospection"
+    ]
+  },
+  {
+    "_id": 7704,
+    "name": "Ecureuil Chenapan",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18016.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7704-ecureuil-chenapan",
+    "description": "Cet Ecureuil prendra un malin plaisir à vous casser les noisettes, ce qui est tout de même assez pratique il faut le reconnaître, même si cela pourrait être parfois assez douloureux. Ce familier ne mange que des graines. Les forêts du continent amaknéen sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Bulbig Brozeur",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7705,
+    "name": "Léopardo",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18027.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7705-leopardo",
+    "description": "Cette splendide créature est un lointain cousin des célèbres Lenalds de l'île des Wabbits. Plus téméraire, mais également beaucoup plus indisciplinée, elle saura vous apporter son aide durant vos combats, mais également faire preuve d'une fourberie sans nom si vous ne vous occupez pas assez bien d'elle. Cette créature mange de la viande. L'île de Pandala est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Péki Péki",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7706,
+    "name": "Bilby",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18043.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7706-bilby",
+    "description": "Bilby, ou Bilbiblabalou de son vrai nom, est une petite gelée en quête d'aventure. Particulièrement attachée à Vald, elle possède des pouvoirs remarquables du moins, proportionnellement à sa taille. Ce familier se nourrit exclusivement de créatures de la famille des Gelées. La région des gelées est sa zone de prédilection.",
+    "stats": [
+      {
+        "Prospection": {
+          "to": "79",
+          "from": "0"
+        }
+      },
+      {
+        "Prospection": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Gelée Royale Citron",
+      "89 Prospection",
+      "11 Prospection"
+    ]
+  },
+  {
+    "_id": 7707,
+    "name": "Marcassin de combat",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18020.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7707-marcassin-combat",
+    "description": "Ce petit cochon sauvage dispose d'un groin d'une taille démesurée, adapté à la recherche active des gros glands. Par chance, il semble vous avoir trouvé assez facilement. Ce dévoreur d'âmes se nourrit des restes de Porkass, cochons, et sangliers. Les régions des porcos, porkass et sangliers des plaines sont sa zone de prédilection.",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 7708,
+    "name": "Pioute bleu",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18019.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7708-pioute-bleu",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Chance": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "90 Chance"
+    ]
+  },
+  {
+    "_id": 7709,
+    "name": "Pioute jaune",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18023.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7709-pioute-jaune",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Agilité": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "90 Agilité"
+    ]
+  },
+  {
+    "_id": 7710,
+    "name": "Pioute rose",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18024.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7710-pioute-rose",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Soins": {
+          "to": "10",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "11 Soins"
+    ]
+  },
+  {
+    "_id": 7711,
+    "name": "Pioute rouge",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18025.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7711-pioute-rouge",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Intelligence": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "90 Intelligence"
+    ]
+  },
+  {
+    "_id": 7712,
+    "name": "Pioute vert",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18026.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7712-pioute-vert",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Force": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "90 Force"
+    ]
+  },
+  {
+    "_id": 7713,
+    "name": "Pioute violet",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18022.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7713-pioute-violet",
+    "description": "Ce petit Pioute n'est pas comme les autres Pious, il suffit de regarder sa couleur pour s'en apercevoir. En revanche, il partage avec les autres Pious, un goût prononcé pour picorer les postérieurs. Il paraît que certains aiment... Ce familier ne mange que des graines. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Dommages": {
+          "to": "10",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Batofu",
+      "11 Dommages"
+    ]
+  },
+  {
+    "_id": 7714,
+    "name": "Atouin",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18017.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7714-atouin",
+    "description": "On raconte que cette tortue aurait été élevée par un Maître en Arts Martiaux, à l'apparence d'un Rat d'Egoutant. Si vous la nourrissez avec du poisson, elle deviendra gentille et vous aidera à soigner les aventuriers blessés. Si vous lui donnez de la viande, elle deviendra plus agressive et vous aidera à combattre vos adversaires. Les égouts et les souterrains remplis de rats sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Soins": {
+          "to": "10",
+          "from": "0"
+        }
+      },
+      {
+        "Dommages": {
+          "to": "10",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Sphincter Cell",
+      "11 Soins",
+      "11 Dommages"
+    ]
+  },
+  {
+    "_id": 7891,
+    "name": "Mini Wa",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18028.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7891-mini-wa",
+    "description": "Ce petit Wabbit, est en réalité un fils caché du tristement célèbre Wa Wabbit. Peut-être qu'il montera un jour à son tour sur le trône. La région des wabbits est sa zone de prédilection.",
+    "stats": [
+      {
+        "Intelligence": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Agilité": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Chance": {
+          "to": "80",
+          "from": "0"
+        }
+      },
+      {
+        "Force": {
+          "to": "80",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Wa Wabbit",
+      "90 Intelligence",
+      "90 Agilité",
+      "90 Chance",
+      "90 Force"
+    ]
+  },
+  {
+    "_id": 7892,
+    "name": "Willy le Relou",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18029.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7892-willy-relou",
+    "description": "Willy le Relou est vraiment une méchante créature. Son enfance a semble-t-il été particulièrement difficile. Il vous accompagnera partout et fera fuir vos amis. Les landes de Sidimote sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Meulou",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 7911,
+    "name": "Koalak Sanguin",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18030.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/7911-koalak-sanguin",
+    "description": "Ce petit Koalak a l'air inoffensif, mais il cache bien son jeu. Martyrisé pendant sa tendre enfance, il a reçu de nombreux boomerangs dans les dents ou même dans le derrière. Il cultive depuis ce temps-là une aversion totale pour les boomerangs, et les dévore sans même les mâcher. La montagne des koalaks est sa zone de prédilection.",
+    "stats": [
+      {
+        "Sagesse": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Skeunk",
+      "55 Sagesse"
+    ]
+  },
+  {
+    "_id": 8000,
+    "name": "Bworky",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18031.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8000-bworky",
+    "description": "Cette petite créature est un Bwork, resté enfermé vivant dans un bocal pendant plusieurs décennies. Il a donc pris la forme du bocal, et restera nain toute sa vie. Sa bonne humeur et son humour légendaire en font le compagnon idéal pour les donjons perdus d'avance, ou les soirées mondaines endiablées. Attention, c'est un adepte des apéritifs, et il ne supporte que les noix et noisettes, même s'il ne rechigne pas avaler un gland de temps en temps. Le continent d'Amakna est sa zone de prédilection.",
+    "stats": [
+      {
+        "Pods": {
+          "to": "1000",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Bworkette",
+      "1100 Pods"
+    ]
+  },
+  {
+    "_id": 8071,
+    "name": "Mini Champion",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18032.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8071-mini-champion",
+    "description": "Cette petite créature n'accepte de suivre que les champions, elle risque donc de vous suivre quelques jours, pour ensuite s'apercevoir que vous êtes un imposteur. Dès lors, c'est vous qui la suivrez comme un petit familier.",
+    "stats": [],
+    "condition": [],
+    "maxstats": []
+  },
+  {
+    "_id": 8151,
+    "name": "Bouloute",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18035.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8151-bouloute",
+    "description": "Ce petit monstre vous suivra partout, et se nourrira des restes de ses congénères. Tantôt terrifiant, tantôt amusant, il égayera votre vie, avant de peut-être vous la prendre définitivement. Les régions contenant des bouftous sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Vitalité": {
+          "to": "149",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "164 Vitalité",
+      "61 Vitalité"
+    ]
+  },
+  {
+    "_id": 8153,
+    "name": "Abra Kadabra",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18034.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8153-abra-kadabra",
+    "description": "Comme vous, ce petit Abraknyde ne supportait plus sa famille, et a décidé de se rebeller. Aujourd'hui, il vous accompagne et comptabilise tous les membres de sa famille que vous réussirez à exterminer. La région des Abraknydes est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "49",
+          "from": "0"
+        }
+      },
+      {
+        "Puissance": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Bouftou Royal",
+      "56 Puissance",
+      "8 Puissance"
+    ]
+  },
+  {
+    "_id": 8154,
+    "name": "El Scarador",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18036.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8154-scarador",
+    "description": "Ce charmant petit coléoptère venu du sud est en fait redoutable. Humilié par ses amis lorsqu'il était jeune, il a décidé de se venger, et vous aidera à botter le derrière de tous les Scarafeuilles que vous rencontrerez. La plaine des scarafeuilles est sa zone de prédilection.",
+    "stats": [
+      {
+        "% Résistance Feu": {
+          "to": "18",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Eau": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Terre": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Air": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Neutre": {
+          "to": "20",
+          "from": "0"
+        }
+      },
+      {
+        "% Résistance Neutre": {
+          "from": "1"
+        }
+      },
+      {
+        "% Résistance Air": {
+          "from": "1"
+        }
+      },
+      {
+        "% Résistance Terre": {
+          "from": "1"
+        }
+      },
+      {
+        "% Résistance Eau": {
+          "from": "1"
+        }
+      },
+      {
+        "% Résistance Feu": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Scarabosse Doré",
+      "24 % Résistance Feu",
+      "26 % Résistance Eau",
+      "26 % Résistance Terre",
+      "26 % Résistance Air",
+      "26 % Résistance Neutre",
+      "5 % Résistance Neutre",
+      "5 % Résistance Air",
+      "5 % Résistance Terre",
+      "5 % Résistance Eau",
+      "5 % Résistance Feu"
+    ]
+  },
+  {
+    "_id": 8155,
+    "name": "Tifoux",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18037.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8155-tifoux",
+    "description": "Cette splendide créature est un lointain cousin des célèbres Lenalds de l'île des Wabbits. Plus téméraire, mais également beaucoup plus indisciplinée, elle saura vous apporter son aide durant vos combats, mais également faire preuve d'une fourberie sans nom, en vous aidant à vaincre les membres de sa propre famille. L'île de Pandala est sa zone de prédilection.",
+    "stats": [
+      {
+        "Sagesse": {
+          "to": "49",
+          "from": "0"
+        }
+      },
+      {
+        "Sagesse": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Péki Péki",
+      "54 Sagesse",
+      "6 Sagesse"
+    ]
+  },
+  {
+    "_id": 8211,
+    "name": "Walk",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18038.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8211-walk",
+    "description": "De toute évidence, cette créature s'est échappée d'un zoo ou d'une île lointaine. Elle est connue pour améliorer les dommages de son maître lors des combats. Sa plus grande particularité, qu'elle partage parfois avec son maître est d'avoir une haleine de poisson moisi. Nous vous recommandons de lui clouer le bec, même si le marteau et les clous sont à commander séparément. Attention, cette petite créature est très exigeante, elle ne mange que du poisson. L'île de Frigost est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Mob l'Éponge",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 8561,
+    "name": "Bébé Pandawa",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18042.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8561-bebe-pandawa",
+    "description": "Cet adorable bébé Pandawa adorera vous suivre partout pour découvrir le monde de ses grands yeux ronds. Ce familier apprivoisé mange du riz, mais accepte également les noisettes. L'île de Pandala est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Tanukouï San",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 8677,
+    "name": "Ross",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18044.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8677-ross",
+    "description": "Ce magnifique Lapino est le familier préféré du célèbre Maître Noir Jack. Ne vous fiez pas à son apparence, il peut se montrer redoutable en combat. Ce familier ne mange que des Cawottes et des plantes. La région des wabbits est sa zone de prédilection.",
+    "stats": [
+      {
+        "Soins": {
+          "to": "10",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Wa Wabbit",
+      "11 Soins"
+    ]
+  },
+  {
+    "_id": 8693,
+    "name": "Fëanor",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18045.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/8693-feanor",
+    "description": "Grâce à ce familier, n’importe quelle personne du sexe opposé vous fera les yeux doux. Un conseil : évitez de triompher. Bien vite, vous vous apercevrez qu’en réalité, votre prétendante est hypnotisée par Fëanor. N’espérez pas en profiter : désormais votre soupirante mange du Pichon cru en se frottant contre vos jambes… Côté glamour, on a connu mieux, pas vrai ? Ce familier ne mange que du poisson. Les plages du continent d'Amakna sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Mob l'Éponge",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 9594,
+    "name": "Bouloute du Parrain",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18046.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9594-bouloute-parrain",
+    "description": "Ce bouloute a l'air tout à fait normal... Pourtant on dirait que sa laine vire au noir par endroits... Laissez-lui un peu de temps et vous pourriez bien avoir une surprise ! Les régions contenant des bouftous sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Vitalité": {
+          "to": "149",
+          "from": "0"
+        }
+      },
+      {
+        "Vitalité": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Bouftou Royal",
+      "164 Vitalité",
+      "61 Vitalité"
+    ]
+  },
+  {
+    "_id": 9617,
+    "name": "Chacha Angora",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18050.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9617-chacha-angora",
+    "description": "Cette boule de poils est mieux protégée contre le froid que le Chacha classique, elle est plus douce, mais il paraît que son caractère est encore plus insupportable. Cette créature ne mange que de la viande et du poisson. Les cités hormis les égouts sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Mob l'Éponge",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 9619,
+    "name": "Tiwabbit Kiafin",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18051.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9619-tiwabbit-kiafin",
+    "description": "Cette créature est un peu stupide, la seule façon de la faire avancer est de lui accrocher dans le dos un bâton soutenant une Cawotte. Heureusement, ce familier a été correctement dressé, et ne tentera pas d'envoyer des vents de panique. Ce dévoreur d'âmes se nourrit en mangeant les restes d'autres Wabbits. La région des wabbits est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "49",
+          "from": "0"
+        }
+      },
+      {
+        "Puissance": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Wa Wabbit",
+      "54 Puissance",
+      "6 Puissance"
+    ]
+  },
+  {
+    "_id": 9620,
+    "name": "Miniminotot",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18049.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9620-miniminotot",
+    "description": "Cette créature est un Minimino élevé par le Minotot en personne. Il lui a malheureusement transmis son caractère, ainsi qu'une partie de ses odeurs corporelles à force de le cajoler sous ses aisselles. Ce dévoreur d'âmes mange les dépouilles des créatures de l'île du Minotoror. L'île du Minotoror est sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "49",
+          "from": "0"
+        }
+      },
+      {
+        "Puissance": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Minotot",
+      "54 Puissance",
+      "6 Puissance"
+    ]
+  },
+  {
+    "_id": 9623,
+    "name": "Crocodaille",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18047.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9623-crocodaille",
+    "description": "Ne vous méprenez pas, les dents pointues de cette créature finiront un jour ou l'autre par se planter dans votre postérieur. Ce familier ne mange que de la viande et du poisson. Les marécages sont sa zone de prédilection.",
+    "stats": [
+      {
+        "Puissance": {
+          "to": "50",
+          "from": "0"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Crocabulia",
+      "55 Puissance"
+    ]
+  },
+  {
+    "_id": 9624,
+    "name": "Dragoune Noire",
+    "lvl": 1,
+    "type": "Familier",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus-touch/www/game/items/200/18048.png",
+    "url": "https://www.dofus-touch.com/fr/mmorpg/encyclopedie/familiers/9624-dragoune-noire",
+    "description": "Prenez une Dragoune Rose, teignez-la en noir, saupoudrez-la de poussière d'or, trempez-la dans l'huile, trempez-la dans l'eau, et vous aurez une Dragoune Noire. Ce dévoreur d'âmes ne mange que les dépouilles de dragoeufs. La région des dragoeufs est sa zone de prédilection.",
+    "stats": [
+      {
+        "Sagesse": {
+          "to": "49",
+          "from": "0"
+        }
+      },
+      {
+        "Sagesse": {
+          "from": "1"
+        }
+      }
+    ],
+    "condition": [],
+    "maxstats": [
+      "Drop de l'hormone : Crocabulia",
+      "54 Sagesse",
+      "6 Sagesse"
+    ]
+  }
+]

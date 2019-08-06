@@ -1,0 +1,14 @@
+import { Characteristique } from './Characteristique'
+import { Statistique } from './Statistique'
+
+class Arme {
+  id: number
+  name: string
+  level: number
+  type: string
+  imgUrl: string
+  url: string
+  stats: Statistique[]
+  condition: String[]
+  characteristic: Characteristique[]
+}

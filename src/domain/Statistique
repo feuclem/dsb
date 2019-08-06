@@ -1,0 +1,3 @@
+class Statistique {
+  force: number
+}
