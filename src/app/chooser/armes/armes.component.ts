@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core'
+import {ArmesService} from './armes.service'
 
 @Component({
   selector: 'armes',
   templateUrl: './armes.component.html',
-  styles: []
+  styles: [],
+  providers: [ArmesService]
 })
 export class ArmesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private armesService: ArmesService) { }
 
   ngOnInit() {
+    this.armesService.getAllArmes()
   }
-
 }
