@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core'
 import {Arme} from '../../../domain/Arme'
-import {DommagesNeutre, DommagesTerre, Force, Statistique} from '../../../domain/Statistique'
+import {DommagesNeutre, DommagesTerre, Force} from '../../../domain/Statistique'
 
 @Injectable()
-export class ArmesService {
+export class ArmesServiceHttp {
 
   constructor() {
   }

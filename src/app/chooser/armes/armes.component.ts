@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core'
-import {ArmesService} from './armes.service'
+import {Component, OnInit} from '@angular/core'
+import {ArmesServiceHttp} from './armes.service.http'
+import {Arme} from '../../../domain/Arme'
 
 @Component({
   selector: 'armes',
   templateUrl: './armes.component.html',
   styles: [],
-  providers: [ArmesService]
+  providers: [ArmesServiceHttp]
 })
 export class ArmesComponent implements OnInit {
 
-  constructor(private armesService: ArmesService) { }
+  armes: Arme[]
+
+  constructor(private armesService: ArmesServiceHttp) {
+  }
 
   ngOnInit() {
-    this.armesService.getAllArmes()
+    this.armesService.getAllArmes().then(response => this.armes = response)
   }
 }

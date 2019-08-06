@@ -1,3 +1,25 @@
-<p>
-  armes works!
-</p>
+<div class="columns" *ngFor="let arme of armes">
+  <div class="column is-one-fifth ">
+    Nom : {{arme.name}}
+  </div>
+  <div class="column is-one-fifth">
+    Niveau : {{arme.lvl}}
+  </div>
+  <div class="column is-one-fifth">
+    <img src="{{arme.imgUrl}}">
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="columns" *ngFor="let stat of arme.stats">
+      <div class="column">
+        De : {{stat.from}}
+        A : {{stat.to}}
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <a class="button is-link">Choisir</a>
+  </div>
+
+</div>
