@@ -2,7 +2,7 @@ import {TestBed, inject} from '@angular/core/testing'
 
 import {ArmesServiceHttp} from './armes.service.http'
 import {Arme} from '../../../domain/Arme'
-import {DommagesNeutre, DommagesTerre, Force, Statistique} from '../../../domain/Statistique'
+import {DommagesNeutre, DommagesNeutreArme, DommagesTerre, Force, Statistique} from '../../../domain/Statistique'
 
 describe('ArmesService', () => {
   beforeEach(() => {
@@ -81,7 +81,7 @@ describe('ArmesService', () => {
     ]
   }
 
-  it('should be created', inject([ArmesServiceHttp], (service: ArmesServiceHttp) => {
+  it('test 1', inject([ArmesServiceHttp], (service: ArmesServiceHttp) => {
     // Given
     spyOn(window, 'fetch').and.returnValues(Promise.resolve({json}))
     const expected = [
@@ -93,7 +93,7 @@ describe('ArmesService', () => {
         'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/6007.png',
         'https://www.dofus.com/fr/mmorpg/encyclopedie/armes/44-epee-boisaille',
         [
-          new DommagesNeutre(
+          new DommagesNeutreArme(
             8,
             10
           ),

@@ -45,3 +45,7 @@ input {
   padding: 56px 0 0;
 }
 
+.border-bottom {
+  border-bottom: 3px solid #1da1f2;
+}
+

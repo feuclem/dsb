@@ -1,4 +1,4 @@
-<div class="columns" *ngFor="let arme of armes">
+<div class="border-bottom columns" *ngFor="let arme of armes">
   <div class="column is-one-fifth ">
     Nom : {{arme.name}}
   </div>
@@ -12,6 +12,7 @@
   <div class="column is-one-fifth">
     <div class="columns" *ngFor="let stat of arme.stats">
       <div class="column">
+        {{stat.label}}
         De : {{stat.from}}
         A : {{stat.to}}
       </div>
