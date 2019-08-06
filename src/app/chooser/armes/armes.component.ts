@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'mcb-armes',
+  selector: 'armes',
   templateUrl: './armes.component.html',
   styles: []
 })
