@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { MessagesStoreService } from '../shared/messages-store.service'
 
 @Component({
   selector: 'builder',
@@ -8,19 +7,8 @@ import { MessagesStoreService } from '../shared/messages-store.service'
 })
 export class BuilderComponent implements OnInit {
 
-  textMessage: string
-
-  constructor(private messagesStoreService: MessagesStoreService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-
-  addMessage(): void {
-    this.messagesStoreService.addMessage({
-      author: 'John',
-      content: this.textMessage
-    })
-    this.textMessage = ''
-  }
-
 }
