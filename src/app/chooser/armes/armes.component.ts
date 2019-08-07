@@ -5,6 +5,7 @@ import {StuffService} from '../../shared/stuff.service'
 import {log} from 'util'
 import {CharacteritiqueService} from '../../shared/characteritique.service'
 import {Router} from '@angular/router'
+import {StatistiquesService} from '../../shared/statistiques.service'
 
 @Component({
   selector: 'armes',
@@ -20,7 +21,7 @@ export class ArmesComponent implements OnInit {
     private router: Router,
     private armesService: ArmesHttpService,
     private stuffService: StuffService,
-    private characteritiqueService: CharacteritiqueService) {
+    private statistiquesService: StatistiquesService) {
   }
 
   ngOnInit() {
@@ -31,20 +32,7 @@ export class ArmesComponent implements OnInit {
 
   setBuild(index: number) {
     this.stuffService.arme = this.armes[index].imgUrl
-    this.armes[index].stats.map(stat => {
-      if (stat.label === 'Force') {
-        this.characteritiqueService.force = stat.to
-      }
-      if (stat.label === 'Intelligence') {
-        this.characteritiqueService.intelligence = stat.to
-      }
-      if (stat.label === 'Chance') {
-        this.characteritiqueService.chance = stat.to
-      }
-      if (stat.label === 'Agilite') {
-        this.characteritiqueService.agilite = stat.to
-      }
-    })
+    this.armes[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }
 }

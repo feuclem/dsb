@@ -36,30 +36,25 @@ import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Injectable()
-export class AmuletteHttpService {
+export class AnneauHttpService {
 
-  constructor(private statistiquesService: StatistiquesService) {
-  }
+  constructor(private statistiquesService: StatistiquesService) {}
 
   getAllEquipements(): Promise<Equipements[]> {
     if (environment.mock) {
       return Promise.resolve([
         new Equipements(
           1,
-          'Amulette Du Bouftou Royale',
-          28,
-          'Amulette',
-          '../assets/1050.webp',
+          'Anneau Du Bouftou Royal',
+          31,
+          'Anneau',
+          '../assets/9046.webp',
           [
-            new Intelligence(
-              16,
-              20
+            new Vitalite(
+              41,
+              50
             ),
-            new Force(
-              16,
-              20
-            ),
-            new Critique(
+            new Dommages(
               2,
               3
             ),

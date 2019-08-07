@@ -18,7 +18,7 @@ import {
   Intelligence,
   PA,
   PM,
-  PO,
+  PO, Pods,
   Puissance, ResistanceAir, ResistanceCritiques, ResistanceEau,
   ResistanceFeu, ResistanceFixeAir, ResistanceFixeEau,
   ResistanceFixeFeu,
@@ -36,32 +36,31 @@ import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Injectable()
-export class AmuletteHttpService {
+export class CeintureHttpService {
 
-  constructor(private statistiquesService: StatistiquesService) {
-  }
+  constructor(private statistiquesService: StatistiquesService) {}
 
   getAllEquipements(): Promise<Equipements[]> {
     if (environment.mock) {
       return Promise.resolve([
         new Equipements(
           1,
-          'Amulette Du Bouftou Royale',
-          28,
-          'Amulette',
-          '../assets/1050.webp',
+          'Ceinture Du Bouftou Royal',
+          31,
+          'Bottes',
+          '../assets/10031.webp',
           [
-            new Intelligence(
-              16,
-              20
-            ),
-            new Force(
-              16,
-              20
+            new Vitalite(
+              51,
+              70
             ),
             new Critique(
               2,
-              3
+              2
+            ),
+            new Pods(
+              151,
+              200
             ),
           ]
         )

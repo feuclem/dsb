@@ -8,7 +8,7 @@ export class CharacteritiqueService {
   private _chance = 0
   private _agilite = 0
   private _critique = 0
-
+  private _vitalite = 0
 
   get force(): number {
     return this._force
@@ -48,5 +48,13 @@ export class CharacteritiqueService {
 
   set critique(value: number) {
     this._critique += value
+  }
+
+  get vitalite(): number {
+    return this._vitalite
+  }
+
+  set vitalite(value: number) {
+    this._vitalite = value
   }
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {AmuletteHttpService} from './amulette.http.service'
+import {CoiffeHttpService} from './coiffe.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
 import {CharacteritiqueService} from '../../../shared/characteritique.service'
@@ -8,19 +8,19 @@ import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
   selector: 'mcb-equipements',
-  templateUrl: './amulette.component.html',
+  templateUrl: './coiffe.component.html',
   styles: [],
   providers: [
-    AmuletteHttpService
+    CoiffeHttpService
   ]
 })
-export class AmuletteComponent implements OnInit {
+export class CoiffeComponent implements OnInit {
 
   equipements: Equipements[]
 
   constructor(
     private router: Router,
-    private equipementsHttpService: AmuletteHttpService,
+    private equipementsHttpService: CoiffeHttpService,
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
   ) {
@@ -33,7 +33,7 @@ export class AmuletteComponent implements OnInit {
   }
 
   setBuild(index: number) {
-    this.stuffService.amulette = this.equipements[index].imgUrl
+    this.stuffService.coiffe = this.equipements[index].imgUrl
     this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }

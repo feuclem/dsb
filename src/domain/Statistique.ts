@@ -91,6 +91,15 @@ export class DommagesTerre extends Statistique {
   }
 }
 
+export class DommagesTerreArme extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'DommagesTerreArme')
+  }
+}
+
 export class DommagesFeu extends Statistique {
   from: number
   to: number
@@ -150,7 +159,7 @@ export class Vitalite extends Statistique {
   to: number
 
   constructor(from: number, to: number) {
-    super(from, to, 'Vitalite')
+    super(from, to, 'Vitalité')
   }
 }
 
@@ -340,6 +349,15 @@ export class Critique extends Statistique {
 
   constructor(from: number, to: number) {
     super(from, to, 'Critique')
+  }
+}
+
+export class Pods extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'Pods')
   }
 }
 
