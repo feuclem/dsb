@@ -1,13 +1,13 @@
 import {TestBed, inject} from '@angular/core/testing'
 
-import {ArmesServiceHttp} from './armes.service.http'
+import {ArmesHttpService} from './armes.http.service'
 import {Arme} from '../../../domain/Arme'
 import {DommagesNeutre, DommagesNeutreArme, DommagesTerre, Force, Statistique} from '../../../domain/Statistique'
 
 describe('ArmesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ArmesServiceHttp]
+      providers: [ArmesHttpService]
     })
   })
 
@@ -81,7 +81,7 @@ describe('ArmesService', () => {
     ]
   }
 
-  it('test 1', inject([ArmesServiceHttp], (service: ArmesServiceHttp) => {
+  it('test 1', inject([ArmesHttpService], (service: ArmesHttpService) => {
     // Given
     spyOn(window, 'fetch').and.returnValues(Promise.resolve({json}))
     const expected = [

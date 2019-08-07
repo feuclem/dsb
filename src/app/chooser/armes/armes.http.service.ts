@@ -28,12 +28,12 @@ import {
 } from '../../../domain/Statistique'
 
 @Injectable()
-export class ArmesServiceHttp {
+export class ArmesHttpService {
 
   constructor() {
   }
 
-  getAllArmes(): Promise<any> {
+  getAllArmes(): Promise<Arme[]> {
     const armes: Arme[] = []
     return fetch('https://dofapi2.herokuapp.com/weapons?filter[offset]=0&filter[limit]=2&filter[skip]=0')
       .then(r => r.json())

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {ArmesServiceHttp} from './armes.service.http'
+import {ArmesHttpService} from './armes.http.service'
 import {Arme} from '../../../domain/Arme'
 import {StuffService} from '../../shared/stuff.service'
 import {log} from 'util'
@@ -10,7 +10,7 @@ import {Router} from '@angular/router'
   selector: 'armes',
   templateUrl: './armes.component.html',
   styles: [],
-  providers: [ArmesServiceHttp]
+  providers: [ArmesHttpService]
 })
 export class ArmesComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class ArmesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private armesService: ArmesServiceHttp,
+    private armesService: ArmesHttpService,
     private stuffService: StuffService,
     private characteritiqueService: CharacteritiqueService) {
   }

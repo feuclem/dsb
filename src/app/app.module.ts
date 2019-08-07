@@ -10,13 +10,15 @@ import {ArmesComponent} from './chooser/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {CommonModule} from '@angular/common'
 import {StuffService} from './shared/stuff.service'
-import {CharacteritiqueService} from './shared/characteritique.service'
+import {CharacteritiqueService} from './shared/characteritique.service';
+import { EquipementsComponent } from './chooser/equipements/equipements.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ArmesComponent,
-    BuilderComponent
+    BuilderComponent,
+    EquipementsComponent
   ],
   imports: [
     CommonModule,
