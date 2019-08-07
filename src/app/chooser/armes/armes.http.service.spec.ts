@@ -91,7 +91,6 @@ describe('ArmesService', () => {
         7,
         'Épée',
         'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/6007.png',
-        'https://www.dofus.com/fr/mmorpg/encyclopedie/armes/44-epee-boisaille',
         [
           new DommagesNeutreArme(
             8,

@@ -26,6 +26,7 @@ import {
   Tacle,
   Vitalite
 } from '../../../domain/Statistique'
+import {environment} from '../../../environments/environment'
 
 @Injectable()
 export class ArmesHttpService {
@@ -34,6 +35,30 @@ export class ArmesHttpService {
   }
 
   getAllArmes(): Promise<Arme[]> {
+    if (environment.mock) {
+      return Promise.resolve([
+        new Arme(
+          44,
+          'Epée de Boisaille',
+          7,
+          'Épée',
+          '../assets/6007.png',
+          [
+            new DommagesNeutreArme(
+              8,
+              10
+            ),
+            new Force(
+              7,
+              10
+            ),
+            new DommagesTerre(
+              1,
+              1
+            )]
+        )
+      ])
+    }
     const armes: Arme[] = []
     return fetch('https://dofapi2.herokuapp.com/weapons?filter[offset]=0&filter[limit]=2&filter[skip]=0')
       .then(r => r.json())
@@ -45,7 +70,6 @@ export class ArmesHttpService {
             parseInt(item.lvl),
             item.type,
             item.imgUrl,
-            item.url,
             item.stats.map(stat => {
               if (stat['(dommages Neutre)'] && stat['(dommages Neutre)']['from']) {
                 return new DommagesNeutreArme(

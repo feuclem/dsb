@@ -6,7 +6,6 @@ export class Arme {
   lvl: number
   type: string
   imgUrl: string
-  url: string
   stats: Statistique[]
 
   constructor(
@@ -15,7 +14,6 @@ export class Arme {
     lvl: number,
     type: string,
     imgUrl: string,
-    url: string,
     stats: Statistique[]
   ) {
     this.id = id
@@ -23,7 +21,6 @@ export class Arme {
     this.lvl = lvl
     this.type = type
     this.imgUrl = imgUrl
-    this.url = url
     this.stats = stats
   }
 }
