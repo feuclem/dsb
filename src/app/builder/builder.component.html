@@ -1,98 +1,124 @@
 <div class="builder container">
-  <div class="amulette message">
-    <div class="message-header">
-      Amulette
+  <div class="columns has-text-centered">
+    <div class="amulette column">
+      <div class="message">
+        <div class="message-header">
+          Amulette
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
-    <div class="message-body">
-      <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
-      <a *ngIf="arme === ''" routerLink="armes">Choisir</a>
+
+    <div class="anneau1 column">
+      <div class="message">
+        <div class="message-header">
+          Anneau 1
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
+    </div>
+
+    <div class="anneau2 column">
+      <div class="message">
+        <div class="message-header">
+          Anneau 2
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="anneau1 message">
-    <div class="message-header">
-      Anneau 1
+  <div class="columns has-text-centered">
+    <div class="ceinture column">
+      <div class="message">
+        <div class="message-header">
+          Ceinture
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
-    <div class="message-body">
-      Choisir
+
+    <div class="bottes column">
+      <div class="message">
+        <div class="message-header">
+          Bottes
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
+    </div>
+
+    <div class="coiffe column">
+      <div class="message">
+        <div class="message-header">
+          Coiffe
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
+    </div>
+
+    <div class="cape column">
+      <div class="message">
+        <div class="message-header">
+          Cape
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="anneau2 message">
-    <div class="message-header">
-      Anneau 2
+  <div class="columns has-text-centered">
+    <div class="arme column">
+      <div class="message">
+        <div class="message-header">
+          Arme
+        </div>
+        <div class="message-body">
+          <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
+          <a *ngIf="arme === ''" routerLink="armes">Choisir</a>
+        </div>
+      </div>
     </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
 
-  <div class="ceinture message">
-    <div class="message-header">
-      Ceinture
+    <div class="bouclier column">
+      <div class="message">
+        <div class="message-header">
+          Bouclier
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
 
-  <div class="bottes message">
-    <div class="message-header">
-      Bottes
-    </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
-
-  <div class="coiffe message">
-    <div class="message-header">
-      Coiffe
-    </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
-
-  <div class="cape message">
-    <div class="message-header">
-      Cape
-    </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
-
-  <div class="arme message">
-    <div class="message-header">
-      Arme
-    </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
-
-  <div class="bouclier message">
-    <div class="message-header">
-      Bouclier
-    </div>
-    <div class="message-body">
-      Choisir
-    </div>
-  </div>
-
-  <div class="familier message">
-    <div class="message-header">
-      Familier
-    </div>
-    <div class="message-body">
-      Choisir
+    <div class="familier column">
+      <div class="message">
+        <div class="message-header">
+          Familier
+        </div>
+        <div class="message-body">
+          Choisir
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="slots columns">
-    <div class="message-header">
-      Slots
+    <div class="column">
+      Slots :
     </div>
     <div class="slot1 column">
       Choisir
@@ -115,11 +141,11 @@
   </div>
 
   <div class="stats columns">
-    <div class="message-header">
-      Charactéristiques
+    <div class="column is-2">
+      Charactéristiques :
     </div>
-    <div class="force column">
-      Force: {{force}}
+    <div class="force column is-10">
+      Force : {{force}}
     </div>
   </div>
 </div>

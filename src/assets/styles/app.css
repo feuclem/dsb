@@ -1,48 +1,9 @@
-/* components */
-@import './components/login-form.css';
-@import './components/message-input.css';
-@import './components/message-item.css';
-@import './components/message-list.css';
-@import './components/navigation-bar.css';
-
-/* views */
-@import './login.css';
-@import './messages.css';
-
-body {
-  font-size: 14px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  background-color: #f5f8fa;
-  margin: 0;
-}
-
 a {
-  color: #666;
-  text-decoration: none;
   cursor: pointer;
-}
-
-input {
-  font-size: 14px;
-  height: 40px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  color: #666;
-  padding: 4px 14px;
-  border: 1px solid #99CDE1;
 }
 
 *:focus {
   outline: none;
-}
-
-.app {
-  display: flex;
-  justify-content: center;
-}
-
-.view {
-  padding: 56px 0 0;
 }
 
 .border-bottom {

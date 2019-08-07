@@ -4,6 +4,7 @@ import {Arme} from '../../../domain/Arme'
 import {StuffService} from '../../shared/stuff.service'
 import {log} from 'util'
 import {CharacteritiqueService} from '../../shared/characteritique.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'armes',
@@ -16,6 +17,7 @@ export class ArmesComponent implements OnInit {
   armes: Arme[]
 
   constructor(
+    private router: Router,
     private armesService: ArmesServiceHttp,
     private stuffService: StuffService,
     private characteritiqueService: CharacteritiqueService) {
@@ -34,5 +36,6 @@ export class ArmesComponent implements OnInit {
         this.characteritiqueService.force = stat.to
       }
     })
+    this.router.navigate(['/'])
   }
 }
