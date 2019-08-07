@@ -17,6 +17,8 @@ export class BuilderComponent implements OnInit {
   cape: string
   coiffe: string
   bottes: string
+  familier: string
+  monture: string
 
   force: number
   intelligence: number
@@ -38,6 +40,9 @@ export class BuilderComponent implements OnInit {
     this.cape = this.stuffService.cape
     this.coiffe = this.stuffService.coiffe
     this.bottes = this.stuffService.bottes
+    this.familier = this.stuffService.familier
+    this.monture = this.stuffService.monture
+
     this.force = this.characteritiqueService.force
     this.intelligence = this.characteritiqueService.intelligence
     this.chance = this.characteritiqueService.chance

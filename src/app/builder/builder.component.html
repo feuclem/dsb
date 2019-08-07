@@ -114,10 +114,15 @@
     <div class="familier column">
       <div class="message">
         <div class="message-header">
-          Familier
+          Familier / Monture
         </div>
-        <div class="message-body">
-          Choisir
+        <div *ngIf="monture === ''" class="message-body">
+          <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
+          <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+        </div>
+        <div *ngIf="familier === ''" class="message-body">
+          <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
+          <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
         </div>
       </div>
     </div>

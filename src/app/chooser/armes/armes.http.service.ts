@@ -1,31 +1,6 @@
 import {Injectable} from '@angular/core'
 import {Arme} from '../../../domain/Arme'
-import {
-  Agilite, ArmeDeChasse,
-  Chance, Critique,
-  Dommages,
-  DommagesAir, DommagesAirArme,
-  DommagesEau, DommagesEauArme,
-  DommagesFeu, DommagesFeuArme,
-  DommagesNeutre, DommagesNeutreArme,
-  DommagesTerre, DommagesTerreArme,
-  Force,
-  Fuite,
-  Intelligence,
-  PA,
-  PM,
-  PO,
-  Puissance, ResistanceAir, ResistanceCritiques,
-  ResistanceEau,
-  ResistanceFeu, ResistanceFixeAir, ResistanceFixeEau,
-  ResistanceFixeFeu, ResistanceFixNeutre,
-  ResistanceFixTerre, ResistanceNeutre, ResistancePoussees,
-  ResistanceTerre,
-  RetraitPA,
-  RetraitPM, Soins,
-  Tacle,
-  Vitalite
-} from '../../../domain/Statistique'
+import {DommagesAirArme, DommagesEauArme, DommagesFeuArme, DommagesTerreArme, Puissance, Tacle, Vitalite} from '../../../domain/Statistique'
 import {environment} from '../../../environments/environment'
 import {StatistiquesService} from '../../shared/statistiques.service'
 

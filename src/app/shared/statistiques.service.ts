@@ -4,7 +4,7 @@ import {
   Chance, Critique,
   Dommages,
   DommagesAir,
-  DommagesAirArme,
+  DommagesAirArme, DommagesCritiques,
   DommagesEau,
   DommagesEauArme,
   DommagesFeu,
@@ -276,6 +276,12 @@ export class StatistiquesService {
       return new Pods(
         parseInt(stat['Pods']['from']),
         parseInt(stat['Pods']['to'] ? stat['Pods']['to'] : stat['Pods']['from'])
+      )
+    }
+    if (stat['Dommages Critiques'] && stat['Dommages Critiques']['from']) {
+      return new DommagesCritiques(
+        parseInt(stat['Dommages Critiques']['from']),
+        parseInt(stat['Dommages Critiques']['to'] ? stat['Dommages Critiques']['to'] : stat['Dommages Critiques']['from'])
       )
     }
     if (stat['Arme de chasse']) {
