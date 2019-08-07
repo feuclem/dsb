@@ -30,11 +30,11 @@ import {
   RetraitPM, Soins,
   Tacle,
   Vitalite
-} from '../../../domain/Statistique'
-import {Equipements} from '../../../domain/Equipements'
+} from '../../../../domain/Statistique'
+import {Equipements} from '../../../../domain/Equipements'
 
 @Injectable()
-export class EquipementsHttpService {
+export class AmuletteHttpService {
 
   constructor() {
   }

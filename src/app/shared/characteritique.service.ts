@@ -6,7 +6,7 @@ export class CharacteritiqueService {
   private _force = 0
   private _intelligence = 0
   private _chance = 0
-  private _air = 0
+  private _agilite = 0
   private _critique = 0
 
 
@@ -34,12 +34,12 @@ export class CharacteritiqueService {
     this._chance += value
   }
 
-  get air(): number {
-    return this._air
+  get agilite(): number {
+    return this._agilite
   }
 
-  set air(value: number) {
-    this._air += value
+  set agilite(value: number) {
+    this._agilite += value
   }
 
   get critique(): number {

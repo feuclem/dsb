@@ -2,8 +2,10 @@ import {NgModule} from '@angular/core'
 import {RouterModule, Routes} from '@angular/router'
 import {ArmesComponent} from './chooser/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
+import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
 
 const routes: Routes = [
+  {path: 'amulette', component: AmuletteComponent},
   {path: 'armes', component: ArmesComponent},
   {path: '', component: BuilderComponent}
 ]

@@ -35,6 +35,15 @@ export class ArmesComponent implements OnInit {
       if (stat.label === 'Force') {
         this.characteritiqueService.force = stat.to
       }
+      if (stat.label === 'Intelligence') {
+        this.characteritiqueService.intelligence = stat.to
+      }
+      if (stat.label === 'Chance') {
+        this.characteritiqueService.chance = stat.to
+      }
+      if (stat.label === 'Agilite') {
+        this.characteritiqueService.agilite = stat.to
+      }
     })
     this.router.navigate(['/'])
   }

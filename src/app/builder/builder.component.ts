@@ -10,8 +10,11 @@ import {CharacteritiqueService} from '../shared/characteritique.service'
 export class BuilderComponent implements OnInit {
 
   arme: string
-
+  amulette: string
   force: number
+  intelligence: number
+  chance: number
+  agilite: number
 
   constructor(
     private stuffService: StuffService,
@@ -20,6 +23,10 @@ export class BuilderComponent implements OnInit {
 
   ngOnInit() {
     this.arme = this.stuffService.arme
+    this.amulette = this.stuffService.amulette
     this.force = this.characteritiqueService.force
+    this.intelligence = this.characteritiqueService.intelligence
+    this.chance = this.characteritiqueService.chance
+    this.agilite = this.characteritiqueService.agilite
   }
 }

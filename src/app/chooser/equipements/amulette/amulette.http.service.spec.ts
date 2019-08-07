@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { EquipementsHttpService } from './equipements.http.service';
+import { AmuletteHttpService } from './amulette.http.service';
 
 describe('EquipementsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EquipementsHttpService]
+      providers: [AmuletteHttpService]
     });
   });
 
-  it('should be created', inject([EquipementsHttpService], (service: EquipementsHttpService) => {
+  it('should be created', inject([AmuletteHttpService], (service: AmuletteHttpService) => {
     expect(service).toBeTruthy();
   }));
 });

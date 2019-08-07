@@ -6,7 +6,8 @@
           Amulette
         </div>
         <div class="message-body">
-          Choisir
+          <img *ngIf="amulette !== ''" src="{{amulette}}" alt=""/>
+          <a *ngIf="amulette === ''" routerLink="amulette">Choisir</a>
         </div>
       </div>
     </div>
@@ -146,6 +147,15 @@
     </div>
     <div class="force column is-10">
       Force : {{force}}
+    </div>
+    <div class="intelligence column is-10">
+      Intelligence : {{intelligence}}
+    </div>
+    <div class="chance column is-10">
+      Chance : {{chance}}
+    </div>
+    <div class="agilite column is-10">
+      Agilite : {{agilite}}
     </div>
   </div>
 </div>
