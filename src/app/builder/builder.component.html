@@ -1,10 +1,11 @@
-<div class="builder">
+<div class="builder container">
   <div class="amulette message">
     <div class="message-header">
       Amulette
     </div>
     <div class="message-body">
-      <a routerLink="armes">Choisir</a>
+      <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
+      <a *ngIf="arme === ''" routerLink="armes">Choisir</a>
     </div>
   </div>
 
@@ -110,6 +111,15 @@
     </div>
     <div class="slot6 column">
       Choisir
+    </div>
+  </div>
+
+  <div class="stats columns">
+    <div class="message-header">
+      Charactéristiques
+    </div>
+    <div class="force column">
+      Force: {{force}}
     </div>
   </div>
 </div>

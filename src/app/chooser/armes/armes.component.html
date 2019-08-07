@@ -1,4 +1,4 @@
-<div class="border-bottom columns" *ngFor="let arme of armes">
+<div class="border-bottom columns" *ngFor="let arme of armes; let index = index">
   <div class="column is-one-fifth ">
     Nom : {{arme.name}}
   </div>
@@ -6,7 +6,7 @@
     Niveau : {{arme.lvl}}
   </div>
   <div class="column is-one-fifth">
-    <img src="{{arme.imgUrl}}">
+    <img src="{{arme.imgUrl}}" alt="" width="200" height="200">
   </div>
 
   <div class="column is-one-fifth">
@@ -20,7 +20,7 @@
   </div>
 
   <div class="column is-one-fifth">
-    <a class="button is-link">Choisir</a>
+    <a class="button is-link" (click)="setBuild(index)">Choisir</a>
   </div>
 
 </div>

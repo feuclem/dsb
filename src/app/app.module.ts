@@ -9,6 +9,8 @@ import {AppComponent} from './app.component'
 import {ArmesComponent} from './chooser/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {CommonModule} from '@angular/common'
+import {StuffService} from './shared/stuff.service'
+import {CharacteritiqueService} from './shared/characteritique.service'
 
 @NgModule({
   declarations: [
@@ -22,6 +24,10 @@ import {CommonModule} from '@angular/common'
     FormsModule,
     HttpClientModule,
     AppRoutingModule
+  ],
+  providers: [
+    StuffService,
+    CharacteritiqueService
   ],
   bootstrap: [AppComponent]
 })

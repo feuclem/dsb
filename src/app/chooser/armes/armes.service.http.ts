@@ -35,7 +35,7 @@ export class ArmesServiceHttp {
 
   getAllArmes(): Promise<any> {
     const armes: Arme[] = []
-    return fetch('https://dofapi2.herokuapp.com/weapons?filter[offset]=0&filter[limit]=100&filter[skip]=0')
+    return fetch('https://dofapi2.herokuapp.com/weapons?filter[offset]=0&filter[limit]=2&filter[skip]=0')
       .then(r => r.json())
       .then(json => {
         json.map(item => armes.push(
