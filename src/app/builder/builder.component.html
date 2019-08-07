@@ -106,7 +106,8 @@
           Bouclier
         </div>
         <div class="message-body">
-          Choisir
+          <img *ngIf="bouclier !== ''" src="{{bouclier}}" alt=""/>
+          <a *ngIf="bouclier === ''" routerLink="bouclier">Choisir</a>
         </div>
       </div>
     </div>
@@ -116,13 +117,15 @@
         <div class="message-header">
           Familier / Monture
         </div>
-        <div *ngIf="monture === ''" class="message-body">
-          <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
-          <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
-        </div>
-        <div *ngIf="familier === ''" class="message-body">
-          <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
-          <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+        <div class="message-body">
+          <div *ngIf="monture === ''">
+            <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
+            <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+          </div>
+          <div *ngIf="familier === ''">
+            <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
+            <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+          </div>
         </div>
       </div>
     </div>
