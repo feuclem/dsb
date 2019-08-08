@@ -29,7 +29,7 @@ import {
   RetraitPM, Soins, Statistique,
   Tacle,
   Vitalite
-} from '../../domain/Statistique'
+} from '../domain/Statistique'
 import {CharacteritiqueService} from './characteritique.service'
 
 @Injectable()

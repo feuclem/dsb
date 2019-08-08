@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
-import {Arme} from '../../../domain/Arme'
-import {DommagesAirArme, DommagesEauArme, DommagesFeuArme, DommagesTerreArme, Puissance, Tacle, Vitalite} from '../../../domain/Statistique'
+import {Arme} from '../../domain/Arme'
+import {DommagesAirArme, DommagesEauArme, DommagesFeuArme, DommagesTerreArme, Puissance, Tacle, Vitalite} from '../../domain/Statistique'
 import {environment} from '../../../environments/environment'
 import {StatistiquesService} from '../../shared/statistiques.service'
 

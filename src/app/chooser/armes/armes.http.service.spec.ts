@@ -1,8 +1,8 @@
 import {TestBed, inject} from '@angular/core/testing'
 
 import {ArmesHttpService} from './armes.http.service'
-import {Arme} from '../../../domain/Arme'
-import {DommagesNeutre, DommagesNeutreArme, DommagesTerre, Force, Statistique} from '../../../domain/Statistique'
+import {Arme} from '../../domain/Arme'
+import {DommagesNeutre, DommagesNeutreArme, DommagesTerre, Force, Statistique} from '../../domain/Statistique'
 
 describe('ArmesService', () => {
   beforeEach(() => {

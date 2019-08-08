@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 
-import {Force, ResistanceTerre, Vitalite} from '../../../../domain/Statistique'
-import {Equipements} from '../../../../domain/Equipements'
+import {Force, ResistanceTerre, Vitalite} from '../../../domain/Statistique'
+import {Equipements} from '../../../domain/Equipements'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 

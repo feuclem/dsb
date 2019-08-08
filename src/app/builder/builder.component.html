@@ -175,4 +175,29 @@
       Agilite : {{agilite}}
     </div>
   </div>
+
+  <div class="iop">
+    <div class="card" *ngFor="let sort of iop.listSort()">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{sort.label}} <img src="{{sort.image}}" alt="">
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Degats de base : {{calculDegat(sort.normal[0], sort.type) - calculDegat(sort.normal[1], sort.type)}}
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          Degats de critique : {{calculDegat(sort.critique[0], sort.type) - calculDegat(sort.critique[1], sort.type)}}
+        </div>
+      </div>
+      <footer class="card-footer">
+        <div class="card-footer-item">Save</div>
+        <div class="card-footer-item">Edit</div>
+        <div class="card-footer-item">Delete</div>
+      </footer>
+    </div>
+  </div>
 </div>

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {FamilierHttpService} from './familier.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
-import {Equipements} from '../../../../domain/Equipements'
+import {Equipements} from '../../../domain/Equipements'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({

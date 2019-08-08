@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../shared/stuff.service'
 import {CharacteritiqueService} from '../shared/characteritique.service'
+import {Iop} from '../domain/Iop'
+import {Sorts} from '../domain/Sorts'
 
 @Component({
   selector: 'builder',
@@ -27,6 +29,8 @@ export class BuilderComponent implements OnInit {
   agilite: number
   vitalite: number
 
+  iop = new Iop()
+
   constructor(
     private stuffService: StuffService,
     private characteritiqueService: CharacteritiqueService) {
@@ -50,5 +54,23 @@ export class BuilderComponent implements OnInit {
     this.chance = this.characteritiqueService.chance
     this.agilite = this.characteritiqueService.agilite
     this.vitalite = this.characteritiqueService.vitalite
+  }
+
+  calculDegat(degat: number, type: string): number {
+    if (type === 'terre') {
+      return Sorts.calcul(degat, 0, this.force, 0, 0, 0)
+    }
+    if (type === 'feu') {
+      return Sorts.calcul(degat, 0, this.intelligence, 0, 0, 0)
+    }
+    if (type === 'eau') {
+      return Sorts.calcul(degat, 0, this.chance, 0, 0, 0)
+    }
+    if (type === 'air') {
+      return Sorts.calcul(degat, 0, this.agilite, 0, 0, 0)
+    }
+    if (type === 'air-feu') {
+      return Sorts.calcul(degat, 0, this.agilite + this.intelligence, 0, 0, 0)
+    }
   }
 }
