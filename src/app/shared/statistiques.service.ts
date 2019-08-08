@@ -4,11 +4,11 @@ import {
   Chance, Critique,
   Dommages,
   DommagesAir,
-  DommagesAirArme, DommagesCritiques,
+  DommagesAirArme, DommagesCritiques, DommagesDistance,
   DommagesEau,
   DommagesEauArme,
   DommagesFeu,
-  DommagesFeuArme,
+  DommagesFeuArme, DommagesMelee,
   DommagesNeutre,
   DommagesNeutreArme,
   DommagesTerre,
@@ -284,6 +284,18 @@ export class StatistiquesService {
         parseInt(stat['Dommages Critiques']['to'] ? stat['Dommages Critiques']['to'] : stat['Dommages Critiques']['from'])
       )
     }
+    if (stat['% Dommages Distance'] && stat['% Dommages Distance']['from']) {
+      return new DommagesDistance(
+        parseInt(stat['% Dommages Distance']['from']),
+        parseInt(stat['% Dommages Distance']['to'] ? stat['% Dommages Distance']['to'] : stat['% Dommages Distance']['from'])
+      )
+    }
+    if (stat['% Dommages Melee'] && stat['% Dommages Melee']['from']) {
+      return new DommagesMelee(
+        parseInt(stat['% Dommages Melee']['from']),
+        parseInt(stat['% Dommages Melee']['to'] ? stat['% Dommages Melee']['to'] : stat['% Dommages Melee']['from'])
+      )
+    }
     if (stat['Arme de chasse']) {
       return new ArmeDeChasse()
     }
@@ -304,6 +316,33 @@ export class StatistiquesService {
     }
     if (stat.label === 'Vitalité') {
       this.characteritiqueService.vitalite = stat.to
+    }
+    if (stat.label === 'Puissance') {
+      this.characteritiqueService.puissance = stat.to
+    }
+    if (stat.label === 'Dommages') {
+      this.characteritiqueService.dommages = stat.to
+    }
+    if (stat.label === 'DommagesTerre') {
+      this.characteritiqueService.dommagesTerre = stat.to
+    }
+    if (stat.label === 'DommagesFeu') {
+      this.characteritiqueService.dommagesFeu = stat.to
+    }
+    if (stat.label === 'DommagesEau') {
+      this.characteritiqueService.dommagesEau = stat.to
+    }
+    if (stat.label === 'DommagesAir') {
+      this.characteritiqueService.dommagesAir = stat.to
+    }
+    if (stat.label === 'DommagesCritiques') {
+      this.characteritiqueService.dommagesCritique = stat.to
+    }
+    if (stat.label === 'DommagesMelee') {
+      this.characteritiqueService.dommagesMelee = stat.to
+    }
+    if (stat.label === 'DommagesDistance') {
+      this.characteritiqueService.dommagesDistance = stat.to
     }
   }
 }

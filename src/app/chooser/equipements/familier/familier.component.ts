@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {FamilierHttpService} from './familier.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
-import {Equipements} from '../../../domain/Equipements'
+import {Equipement} from '../../../domain/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
@@ -15,7 +15,7 @@ import {StatistiquesService} from '../../../shared/statistiques.service'
 })
 export class FamilierComponent implements OnInit {
 
-  equipements: Equipements[]
+  equipements: Equipement[]
 
   constructor(
     private router: Router,

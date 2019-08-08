@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 
 import {DommagesCritiques, Force, Vitalite} from '../../../domain/Statistique'
-import {Equipements} from '../../../domain/Equipements'
+import {Equipement} from '../../../domain/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -11,34 +11,34 @@ export class FamilierHttpService {
   constructor(private statistiquesService: StatistiquesService) {
   }
 
-  getAllEquipements(): Promise<Equipements[]> {
+  getAllEquipements(): Promise<Equipement[]> {
     if (environment.mock) {
       return Promise.resolve([
-        new Equipements(
+        new Equipement(
           1,
           'Pioute Verte',
           1,
           'Familier',
-          '../assets/18026.webp',
+          '../assets/piouteverte.webp',
           [
             new Force(
               120,
               120
             ),
             new DommagesCritiques(
-              20,
-              20
+              40,
+              40
             ),
           ]
         )
       ])
     } else {
-      const armes: Equipements[] = []
+      const armes: Equipement[] = []
       return fetch('https://dofapi2.herokuapp.com/pets?filter[offset]=0&filter[limit]=1000&filter[skip]=0')
         .then(r => r.json())
         .then(json => {
           json.map(item => armes.push(
-            new Equipements(
+            new Equipement(
               item._id,
               item.name,
               parseInt(item.lvl),

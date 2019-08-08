@@ -28,6 +28,17 @@ export class BuilderComponent implements OnInit {
   chance: number
   agilite: number
   vitalite: number
+  puissance: number
+
+  dommages: number
+  dommagesTerre: number
+  dommagesFeu: number
+  dommagesEau: number
+  dommagesAir: number
+  dommagesCritique: number
+
+  dommagesMelee: number
+  dommagesDistance: number
 
   iop = new Iop()
 
@@ -54,23 +65,142 @@ export class BuilderComponent implements OnInit {
     this.chance = this.characteritiqueService.chance
     this.agilite = this.characteritiqueService.agilite
     this.vitalite = this.characteritiqueService.vitalite
+    this.puissance = this.characteritiqueService.puissance
+
+    this.dommages = this.characteritiqueService.dommages
+    this.dommagesTerre = this.characteritiqueService.dommagesTerre
+    this.dommagesFeu = this.characteritiqueService.dommagesFeu
+    this.dommagesEau = this.characteritiqueService.dommagesEau
+    this.dommagesAir = this.characteritiqueService.dommagesAir
+    this.dommagesCritique = this.characteritiqueService.dommagesCritique
+
+    this.dommagesMelee = this.characteritiqueService.dommagesMelee
+    this.dommagesDistance = this.characteritiqueService.dommagesDistance
   }
 
-  calculDegat(degat: number, type: string): number {
+  calculDegatBase(degat: number, type: string): number {
     if (type === 'terre') {
-      return Sorts.calcul(degat, 0, this.force, 0, 0, 0)
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.force,
+        this.dommages,
+        this.dommagesTerre,
+        0,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
     }
     if (type === 'feu') {
-      return Sorts.calcul(degat, 0, this.intelligence, 0, 0, 0)
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.intelligence,
+        this.dommages,
+        this.dommagesFeu,
+        0,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
     }
     if (type === 'eau') {
-      return Sorts.calcul(degat, 0, this.chance, 0, 0, 0)
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.chance,
+        this.dommages,
+        this.dommagesEau,
+        0,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
     }
     if (type === 'air') {
-      return Sorts.calcul(degat, 0, this.agilite, 0, 0, 0)
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.agilite,
+        this.dommages,
+        this.dommagesAir,
+        0,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
     }
     if (type === 'air-feu') {
-      return Sorts.calcul(degat, 0, this.agilite + this.intelligence, 0, 0, 0)
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.agilite + this.intelligence,
+        this.dommages,
+        this.dommagesAir + this.dommagesFeu,
+        0,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
+    }
+  }
+
+  calculDegatCritique(degat: number, type: string): number {
+    if (type === 'terre') {
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.force,
+        this.dommages,
+        this.dommagesTerre,
+        this.dommagesCritique,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
+    }
+    if (type === 'feu') {
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.intelligence,
+        this.dommages,
+        this.dommagesFeu,
+        this.dommagesCritique,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
+    }
+    if (type === 'eau') {
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.chance,
+        this.dommages,
+        this.dommagesEau,
+        this.dommagesCritique,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
+    }
+    if (type === 'air') {
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.agilite,
+        this.dommages,
+        this.dommagesAir,
+        this.dommagesCritique,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
+    }
+    if (type === 'air-feu') {
+      return Sorts.calcul(
+        degat,
+        this.puissance,
+        this.agilite + this.intelligence,
+        this.dommages,
+        this.dommagesAir + this.dommagesFeu,
+        this.dommagesCritique,
+        this.dommagesMelee,
+        this.dommagesDistance
+      )
     }
   }
 }

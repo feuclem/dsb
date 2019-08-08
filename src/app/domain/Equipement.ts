@@ -1,6 +1,6 @@
 import {Statistique} from './Statistique'
 
-export class Equipements {
+export class Equipement {
   id: number
   name: string
   lvl: number

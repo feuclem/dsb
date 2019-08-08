@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 
 import {Force, ResistanceTerre, Vitalite} from '../../../domain/Statistique'
-import {Equipements} from '../../../domain/Equipements'
+import {Equipement} from '../../../domain/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -10,15 +10,15 @@ export class CapeHttpService {
 
   constructor(private statistiquesService: StatistiquesService) {}
 
-  getAllEquipements(): Promise<Equipements[]> {
+  getAllEquipements(): Promise<Equipement[]> {
     if (environment.mock) {
       return Promise.resolve([
-        new Equipements(
+        new Equipement(
           1,
           'Cape Du Bouftou Royal',
           32,
           'Cape',
-          '../assets/17046.webp',
+          '../assets/capebouftouroyal.webp',
           [
             new Vitalite(
               16,
@@ -36,12 +36,12 @@ export class CapeHttpService {
         )
       ])
     } else {
-      const armes: Equipements[] = []
+      const armes: Equipement[] = []
       return fetch('https://dofapi2.herokuapp.com/equipments?filter[offset]=0&filter[limit]=2&filter[skip]=0')
         .then(r => r.json())
         .then(json => {
           json.map(item => armes.push(
-            new Equipements(
+            new Equipement(
               item._id,
               item.name,
               parseInt(item.lvl),

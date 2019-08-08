@@ -3,7 +3,7 @@ import {BouclierHttpService} from './bouclier.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
 import {CharacteritiqueService} from '../../../shared/characteritique.service'
-import {Equipements} from '../../../domain/Equipements'
+import {Equipement} from '../../../domain/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
@@ -16,7 +16,7 @@ import {StatistiquesService} from '../../../shared/statistiques.service'
 })
 export class BouclierComponent implements OnInit {
 
-  equipements: Equipements[]
+  equipements: Equipement[]
 
   constructor(
     private router: Router,
