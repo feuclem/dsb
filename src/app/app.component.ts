@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.panoplieHttpService.getAllPanoplie().then(r => this.panoplieService.listPanoplie = r)
   }
+
+  onActivate() {
+    window.scroll(0, 0)
+  }
 }

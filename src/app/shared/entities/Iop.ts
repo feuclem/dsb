@@ -37,7 +37,7 @@ export class Iop {
   epeeceleste = new Sorts('Épée Céleste', '../assets/epeeceleste.webp', 'air', [28, 31], [34, 37])
   zenith = new Sorts('Zénith', '../assets/zenith.webp', 'air', [86, 94], [103, 113])
   ferveur = new Sorts('Ferveur', '../assets/ferveur.webp', 'eau', [24, 27], [29, 32])
-  endurance = new Sorts('Endurance', '../assets/endurance.webp', 'eau', [34, 38], [41, 46])
+  endurance = new Sorts('Endurance', '../assets/endurence.webp', 'eau', [34, 38], [41, 46])
   epeedeiop = new Sorts('Épée de Iop', '../assets/epeedeiop.webp', 'terre', [30, 33], [36, 39])
   pugilat = new SortsBoost(
     'Pugilat',

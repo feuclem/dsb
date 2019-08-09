@@ -6,6 +6,7 @@ import {Sorts} from '../shared/entities/Sorts'
 import {StatistiquesService} from '../shared/statistiques.service'
 import {Panoplie} from '../shared/entities/Panoplie'
 import {PanoplieService} from '../shared/panoplie.service'
+import {Statistique} from '../shared/entities/Statistique'
 
 @Component({
   selector: 'builder',
@@ -53,6 +54,8 @@ export class BuilderComponent implements OnInit {
 
   iop = new Iop()
 
+  getBonusStatsToAdd: Statistique[]
+
   constructor(
     private stuffService: StuffService,
     private characteritiqueService: CharacteritiqueService,
@@ -61,6 +64,12 @@ export class BuilderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getBonusStatsToAdd = Panoplie.getPanoplieBonus(this.panoplieService.listPanoplie, this.stuffService.listIdEquipment)
+    if (this.getBonusStatsToAdd.length !== 0) {
+      this.getBonusStatsToAdd.map(stat => this.statistiquesService.setStatInStuff(stat))
+      this.stuffService.resetListIdEquipment()
+    }
+
     this.arme = this.stuffService.arme
     this.amulette = this.stuffService.amulette
     this.anneau1 = this.stuffService.anneau1
@@ -97,11 +106,6 @@ export class BuilderComponent implements OnInit {
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance
     this.dommagesAuxSorts = this.characteritiqueService.dommagesAuxSorts
-
-    const getBonusStatsToAdd = Panoplie.getPanoplieBonus(this.panoplieService.listPanoplie, this.stuffService.listIdEquipment)
-    if (getBonusStatsToAdd.length !== 0) {
-      getBonusStatsToAdd.map(stat => this.statistiquesService.setStatInStuff(stat))
-    }
   }
 
   calculDegatBase(degat: number, type: string): number {

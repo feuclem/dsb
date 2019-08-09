@@ -30,6 +30,10 @@ export class StuffService {
     this._listIdEquipment.push(...value)
   }
 
+  resetListIdEquipment() {
+    this._listIdEquipment = []
+  }
+
   get arme(): string {
     return this._arme
   }

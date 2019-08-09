@@ -201,22 +201,22 @@
     <div class="column is-2">
       Charactéristiques 2 :
     </div>
-    <div class="vitalite column is-2">
+    <div class="dommages column is-2">
       Dommages : {{dommages}}
     </div>
-    <div class="force column is-2">
+    <div class="dommagesTerre column is-2">
       Dommages Terre : {{dommagesTerre}}
     </div>
-    <div class="intelligence column is-2">
+    <div class="dommagesFeu column is-2">
       Dommages Feu : {{dommagesFeu}}
     </div>
-    <div class="chance column is-2">
+    <div class="dommagesEau column is-2">
       Dommages Eau : {{dommagesEau}}
     </div>
-    <div class="agilite column is-2">
+    <div class="dommagesAir column is-2">
       Dommages Air : {{dommagesAir}}
     </div>
-    <div class="puissance column is-2">
+    <div class="dommagesCritique column is-2">
       Dommages Critique : {{dommagesCritique}}
     </div>
   </div>
@@ -233,6 +233,12 @@
     </div>
     <div class="force column is-2">
       Dommages aux sorts : {{dommagesAuxSorts}}
+    </div>
+  </div>
+
+  <div *ngIf="getBonusStatsToAdd.length !== 0" class="bonus">
+    <div *ngFor="let bonus of getBonusStatsToAdd">
+      {{bonus.label}} : {{bonus.from}}
     </div>
   </div>
 
