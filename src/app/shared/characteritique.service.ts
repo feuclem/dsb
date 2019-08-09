@@ -19,6 +19,7 @@ export class CharacteritiqueService {
 
   private _dommagesMelee = 0
   private _dommagesDistance = 0
+  private _dommagesAuxSorts = 0
 
   get force(): number {
     return this._force
@@ -138,5 +139,13 @@ export class CharacteritiqueService {
 
   set dommagesDistance(value: number) {
     this._dommagesDistance += value
+  }
+
+  get dommagesAuxSorts(): number {
+    return this._dommagesAuxSorts
+  }
+
+  set dommagesAuxSorts(value: number) {
+    this._dommagesAuxSorts += value
   }
 }

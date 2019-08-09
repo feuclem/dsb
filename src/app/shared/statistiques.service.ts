@@ -1,14 +1,19 @@
 import {Injectable} from '@angular/core'
 import {
-  Agilite, ArmeDeChasse,
-  Chance, Critique,
+  Agilite,
+  ArmeDeChasse,
+  Chance,
+  Critique,
   Dommages,
   DommagesAir,
-  DommagesAirArme, DommagesCritiques, DommagesDistance,
+  DommagesAirArme,
+  DommagesCritiques,
+  DommagesDistance,
   DommagesEau,
   DommagesEauArme,
   DommagesFeu,
-  DommagesFeuArme, DommagesMelee,
+  DommagesFeuArme,
+  DommagesMelee,
   DommagesNeutre,
   DommagesNeutreArme,
   DommagesTerre,
@@ -17,16 +22,25 @@ import {
   Intelligence,
   PA,
   PM,
-  PO, Pods,
-  Puissance, ResistanceAir, ResistanceCritiques, ResistanceEau,
-  ResistanceFeu, ResistanceFixeAir, ResistanceFixeEau,
+  PO,
+  Pods,
+  Puissance,
+  ResistanceAir,
+  ResistanceCritiques,
+  ResistanceEau,
+  ResistanceFeu,
+  ResistanceFixeAir,
+  ResistanceFixeEau,
   ResistanceFixeFeu,
   ResistanceFixNeutre,
   ResistanceFixTerre,
-  ResistanceNeutre, ResistancePoussees,
+  ResistanceNeutre,
+  ResistancePoussees,
   ResistanceTerre,
   RetraitPA,
-  RetraitPM, Soins, Statistique,
+  RetraitPM,
+  Soins,
+  Statistique,
   Tacle,
   Vitalite
 } from '../domain/Statistique'
@@ -343,6 +357,9 @@ export class StatistiquesService {
     }
     if (stat.label === 'DommagesDistance') {
       this.characteritiqueService.dommagesDistance = stat.to
+    }
+    if (stat.label === 'DommagesAuxSorts') {
+      this.characteritiqueService.dommagesAuxSorts = stat.to
     }
   }
 }

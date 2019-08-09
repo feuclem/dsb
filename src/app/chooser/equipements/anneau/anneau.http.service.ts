@@ -1,15 +1,22 @@
 import {Injectable} from '@angular/core'
 
 import {
-  Agilite, Chance,
+  Agilite,
+  Chance,
   Critique,
   Dommages,
-  DommagesCritiques, DommagesEau, DommagesFeu,
+  DommagesCritiques,
+  DommagesEau,
+  DommagesFeu,
   DommagesNeutre,
   DommagesTerre,
-  Force, Fuite, Intelligence,
-  PO, RetraitPM,
-  Sagesse, Soins,
+  Force,
+  Fuite,
+  Intelligence,
+  PO,
+  RetraitPM,
+  Sagesse,
+  Soins,
   Tacle,
   Vitalite
 } from '../../../domain/Statistique'
@@ -91,7 +98,7 @@ export class AnneauHttpService {
           'Bague volkorne',
           200,
           'Anneau',
-          '../assets/anneauvolkorne.webp',
+          '../assets/anneauvolkorne.png',
           [
             new Vitalite(201, 250),
             new Chance(81, 100),
@@ -123,7 +130,7 @@ export class AnneauHttpService {
           'Chavalière roi joueur',
           200,
           'Anneau',
-          '../assets/bagueroijoueur.jpeg',
+          '../assets/bagueroijoueur.webp',
           [
             new Vitalite(201, 250),
             new Force(31, 50),

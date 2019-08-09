@@ -39,6 +39,7 @@ export class BuilderComponent implements OnInit {
 
   dommagesMelee: number
   dommagesDistance: number
+  dommagesAuxSorts: number
 
   iop = new Iop()
 
@@ -76,6 +77,7 @@ export class BuilderComponent implements OnInit {
 
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance
+    this.dommagesAuxSorts = this.characteritiqueService.dommagesAuxSorts
   }
 
   calculDegatBase(degat: number, type: string): number {
@@ -88,7 +90,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesTerre,
         0,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'feu') {
@@ -100,7 +103,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesFeu,
         0,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'eau') {
@@ -112,7 +116,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesEau,
         0,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'air') {
@@ -124,7 +129,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesAir,
         0,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'air-feu') {
@@ -136,7 +142,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesAir + this.dommagesFeu,
         0,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
   }
@@ -151,7 +158,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesTerre,
         this.dommagesCritique,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'feu') {
@@ -163,7 +171,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesFeu,
         this.dommagesCritique,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'eau') {
@@ -175,7 +184,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesEau,
         this.dommagesCritique,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'air') {
@@ -187,7 +197,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesAir,
         this.dommagesCritique,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
     if (type === 'air-feu') {
@@ -199,7 +210,8 @@ export class BuilderComponent implements OnInit {
         this.dommagesAir + this.dommagesFeu,
         this.dommagesCritique,
         this.dommagesMelee,
-        this.dommagesDistance
+        this.dommagesDistance,
+        this.dommagesAuxSorts
       )
     }
   }

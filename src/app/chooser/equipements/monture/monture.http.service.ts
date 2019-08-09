@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 
-import {Force, Vitalite} from '../../../domain/Statistique'
+import {Critique, Force, PA, PM, Puissance, Vitalite} from '../../../domain/Statistique'
 import {Equipement} from '../../../domain/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
@@ -21,16 +21,32 @@ export class MontureHttpService {
           'Montures',
           '../assets/dragondindepourpre.webp',
           [
-            new Force(
-              100,
-              100
-            ),
-            new Vitalite(
-              300,
-              300
-            ),
+            new Force(100, 100),
+            new Vitalite(300, 300),
           ]
-        )
+        ),
+        new Equipement(
+          1,
+          'Kwaltess',
+          60,
+          'Montures',
+          '../assets/kwaltess.webp',
+          [
+            new Puissance(20, 20),
+            new PA(1, 1),
+          ]
+        ),
+        new Equipement(
+          1,
+          'Phorror',
+          60,
+          'Montures',
+          '../assets/phorror.webp',
+          [
+            new Critique(10, 10),
+            new PM(1, 1),
+          ]
+        ),
       ])
     } else {
       const armes: Equipement[] = []

@@ -100,6 +100,15 @@ export class DommagesMelee extends Statistique {
   }
 }
 
+export class DommagesAuxSorts extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'DommagesAuxSorts')
+  }
+}
+
 export class DommagesDistance extends Statistique {
   from: number
   to: number

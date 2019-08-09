@@ -1,6 +1,25 @@
 import {Injectable} from '@angular/core'
 
-import {Critique, Pods, Vitalite} from '../../../domain/Statistique'
+import {
+  Critique,
+  Dommages,
+  DommagesAir,
+  DommagesCritiques,
+  DommagesEau,
+  DommagesFeu,
+  DommagesNeutre,
+  DommagesTerre,
+  Force,
+  Fuite,
+  PA,
+  PO,
+  Pods,
+  Puissance,
+  Sagesse,
+  Soins,
+  Tacle,
+  Vitalite
+} from '../../../domain/Statistique'
 import {Equipement} from '../../../domain/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
@@ -8,7 +27,8 @@ import {StatistiquesService} from '../../../shared/statistiques.service'
 @Injectable()
 export class CeintureHttpService {
 
-  constructor(private statistiquesService: StatistiquesService) {}
+  constructor(private statistiquesService: StatistiquesService) {
+  }
 
   getAllEquipements(): Promise<Equipement[]> {
     if (environment.mock) {
@@ -17,7 +37,7 @@ export class CeintureHttpService {
           1,
           'Ceinture Du Bouftou Royal',
           31,
-          'Bottes',
+          'Ceinture',
           '../assets/ceinturebouftouroyal.webp',
           [
             new Vitalite(
@@ -32,6 +52,73 @@ export class CeintureHttpService {
               151,
               200
             ),
+          ]
+        ),
+        new Equipement(
+          1,
+          'Ceintacé',
+          200,
+          'Ceinture',
+          '../assets/ceintace.webp',
+          [
+            new Vitalite(301, 350),
+            new Puissance(31, 50),
+            new Sagesse(31, 40),
+            new Fuite(-10, -10),
+            new DommagesCritiques(16, 20),
+            new Critique(3, 4),
+            new PA(1, 1)
+          ]
+        ),
+        new Equipement(
+          1,
+          'Ceinture du meulon',
+          125,
+          'Ceinture',
+          '../assets/ceinturemeulou.webp',
+          [
+            new Force(31, 50),
+            new Vitalite(151, 200),
+            new Sagesse(26, 40),
+            new Dommages(4, 6),
+            new PO(1, 1)
+          ]
+        ),
+        new Equipement(
+          1,
+          'Ceinture volkorne',
+          200,
+          'Ceinture',
+          '../assets/ceinturevolkorne.webp',
+          [
+            new Vitalite(301, 400),
+            new Force(81, 100),
+            new Sagesse(31, 40),
+            new DommagesTerre(16, 20),
+            new DommagesNeutre(16, 20),
+            new Critique(4, 5),
+            new PO(1, 1)
+          ]
+        ),
+        new Equipement(
+          1,
+          'Ceinture du strigide',
+          200,
+          'Ceinture',
+          '../assets/ceinturestrigide.webp',
+          [
+            new Vitalite(301, 350),
+            new Sagesse(31, 50),
+            new Soins(5, 7),
+            new Critique(5, 7),
+            new Puissance(41, 60),
+            new DommagesNeutre(7, 10),
+            new DommagesTerre(7, 10),
+            new DommagesFeu(7, 10),
+            new DommagesEau(7, 10),
+            new DommagesAir(7, 10),
+            new Tacle(7, 10),
+            new DommagesCritiques(11, 15),
           ]
         )
       ])

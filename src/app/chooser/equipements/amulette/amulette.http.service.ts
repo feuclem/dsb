@@ -2,13 +2,20 @@ import {Injectable} from '@angular/core'
 
 import {
   Chance,
-  Critique, Dommages, DommagesCritiques, DommagesEau, DommagesFeu,
+  Critique,
+  Dommages,
+  DommagesCritiques,
+  DommagesEau,
+  DommagesFeu,
   DommagesNeutre,
   DommagesTerre,
   Force,
   Fuite,
   Intelligence,
-  PA, PO, Puissance, RetraitPM,
+  PA,
+  PO,
+  Puissance,
+  RetraitPM,
   Sagesse,
   Tacle,
   Vitalite
@@ -82,7 +89,7 @@ export class AmuletteHttpService {
           'Amulette De Gein',
           200,
           'Amulette',
-          '../assets/amulettegein.webp',
+          '../assets/amulettegein.png',
           [
             new Vitalite(301, 350),
             new Force(51, 70),

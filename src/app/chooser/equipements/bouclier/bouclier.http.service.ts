@@ -1,6 +1,15 @@
 import {Injectable} from '@angular/core'
 
-import {Critique, DommagesCritiques, DommagesMelee, Puissance} from '../../../domain/Statistique'
+import {
+  Critique,
+  DommagesAuxSorts,
+  DommagesCritiques,
+  DommagesDistance,
+  DommagesMelee,
+  Fuite,
+  Puissance,
+  Vitalite
+} from '../../../domain/Statistique'
 import {Equipement} from '../../../domain/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
@@ -37,6 +46,42 @@ export class BouclierHttpService {
               11,
               15
             ),
+          ]
+        ),
+        new Equipement(
+          1,
+          'Quatre-feuilles',
+          193,
+          'Bouclier',
+          '../assets/quatrefeuilles.png',
+          [
+            new Puissance(21, 30),
+            new Critique(4, 6),
+            new Fuite(9, 12),
+            new DommagesDistance(11, 14),
+          ]
+        ),
+        new Equipement(
+          1,
+          'Bouclier taverne',
+          155,
+          'Bouclier',
+          '../assets/boucliertaverne.png',
+          [
+            new Puissance(16, 25),
+            new Critique(4, 5),
+            new DommagesAuxSorts(8, 11),
+          ]
+        ),
+        new Equipement(
+          1,
+          'Bouclier Ilyzaelle',
+          200,
+          'Bouclier',
+          '../assets/bouclierilyzaelle.webp',
+          [
+            new Vitalite(101, 150),
+            new DommagesMelee(11, 15),
           ]
         )
       ])
