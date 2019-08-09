@@ -136,22 +136,40 @@
       Slots :
     </div>
     <div class="slot1 column">
-      Choisir
+      <img *ngIf="slot1 !== ''" src="{{slot1}}" alt=""/>
+      <a *ngIf="slot1 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot1 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
     <div class="slot2 column">
-      Choisir
+      <img *ngIf="slot2 !== ''" src="{{slot2}}" alt=""/>
+      <a *ngIf="slot2 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot2 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
     <div class="slot3 column">
-      Choisir
+      <img *ngIf="slot3 !== ''" src="{{slot3}}" alt=""/>
+      <a *ngIf="slot3 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot3 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
     <div class="slot4 column">
-      Choisir
+      <img *ngIf="slot4 !== ''" src="{{slot4}}" alt=""/>
+      <a *ngIf="slot4 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot4 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
     <div class="slot5 column">
-      Choisir
+      <img *ngIf="slot5 !== ''" src="{{slot5}}" alt=""/>
+      <a *ngIf="slot5 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot5 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
     <div class="slot6 column">
-      Choisir
+      <img *ngIf="slot6 !== ''" src="{{slot6}}" alt=""/>
+      <a *ngIf="slot6 === ''" routerLink="dofus">Choisir Dofus</a>
+      <br />
+      <a *ngIf="slot6 === ''" routerLink="torphee">Choisir Trophée</a>
     </div>
   </div>
 
@@ -227,12 +245,14 @@
       </header>
       <div class="card-content">
         <div class="content">
-          Degats de base : {{calculDegatBase(sort.normal[0], sort.type)}} - {{calculDegatBase(sort.normal[1], sort.type)}}
+          Degats de base : {{calculDegatBase(sort.normal[0], sort.type)}}
+          - {{calculDegatBase(sort.normal[1], sort.type)}}
         </div>
       </div>
       <div class="card-content">
         <div class="content">
-          Degats de critique : {{calculDegatCritique(sort.critique[0], sort.type)}} - {{calculDegatCritique(sort.critique[1], sort.type)}}
+          Degats de critique : {{calculDegatCritique(sort.critique[0], sort.type)}}
+          - {{calculDegatCritique(sort.critique[1], sort.type)}}
         </div>
       </div>
       <footer class="card-footer">

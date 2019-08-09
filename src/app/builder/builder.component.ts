@@ -23,6 +23,13 @@ export class BuilderComponent implements OnInit {
   monture: string
   bouclier: string
 
+  slot1: string
+  slot2: string
+  slot3: string
+  slot4: string
+  slot5: string
+  slot6: string
+
   force: number
   intelligence: number
   chance: number
@@ -60,6 +67,13 @@ export class BuilderComponent implements OnInit {
     this.familier = this.stuffService.familier
     this.monture = this.stuffService.monture
     this.bouclier = this.stuffService.bouclier
+
+    this.slot1 = this.stuffService.slot1
+    this.slot2 = this.stuffService.slot2
+    this.slot3 = this.stuffService.slot3
+    this.slot4 = this.stuffService.slot4
+    this.slot5 = this.stuffService.slot5
+    this.slot6 = this.stuffService.slot6
 
     this.force = this.characteritiqueService.force
     this.intelligence = this.characteritiqueService.intelligence

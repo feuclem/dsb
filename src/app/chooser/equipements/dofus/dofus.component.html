@@ -1,0 +1,26 @@
+<div class="border-bottom columns" *ngFor="let equipements of equipements; let index = index">
+  <div class="column is-one-fifth ">
+    Nom : {{equipements.name}}
+  </div>
+  <div class="column is-one-fifth">
+    Niveau : {{equipements.lvl}}
+  </div>
+  <div class="column is-one-fifth">
+    <img src="{{equipements.imgUrl}}" alt="" width="200" height="200">
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="columns" *ngFor="let stat of equipements.stats">
+      <div class="column">
+        {{stat.label}}
+        De : {{stat.from}}
+        A : {{stat.to}}
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <a class="button is-link" (click)="setBuild(index)">Choisir</a>
+  </div>
+
+</div>

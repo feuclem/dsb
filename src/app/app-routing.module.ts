@@ -11,8 +11,12 @@ import {CapeComponent} from './chooser/equipements/cape/cape.component'
 import {MontureComponent} from './chooser/equipements/monture/monture.component'
 import {FamilierComponent} from './chooser/equipements/familier/familier.component'
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
+import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
+import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
 
 const routes: Routes = [
+  {path: 'trophee', component: TropheeComponent},
+  {path: 'dofus', component: DofusComponent},
   {path: 'bouclier', component: BouclierComponent},
   {path: 'familier', component: FamilierComponent},
   {path: 'monture', component: MontureComponent},
