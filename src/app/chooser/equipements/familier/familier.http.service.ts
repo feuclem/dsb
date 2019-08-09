@@ -11,8 +11,8 @@ import {
   DommagesTerre,
   Force,
   Intelligence
-} from '../../../domain/Statistique'
-import {Equipement} from '../../../domain/Equipement'
+} from '../../../shared/entities/Statistique'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 

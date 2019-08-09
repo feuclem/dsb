@@ -1,8 +1,8 @@
 import {TestBed} from '@angular/core/testing'
 
 import {ArmesHttpService} from './armes.http.service'
-import {Arme} from '../../domain/Arme'
-import {DommagesNeutreArme, DommagesTerre, Force} from '../../domain/Statistique'
+import {Arme} from '../../shared/entities/Arme'
+import {DommagesNeutreArme, DommagesTerre, Force} from '../../shared/entities/Statistique'
 import {StatistiquesService} from '../../shared/statistiques.service'
 import {environment} from '../../../environments/environment'
 import deepEqual = require('deep-equal')

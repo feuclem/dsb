@@ -23,6 +23,8 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
+import {PanoplieService} from './shared/panoplie.service'
+import {PanoplieHttpService} from './shared/panoplie.http.service'
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
   providers: [
     StuffService,
     CharacteritiqueService,
-    StatistiquesService
+    StatistiquesService,
+    PanoplieHttpService,
+    PanoplieService
   ],
   bootstrap: [AppComponent]
 })

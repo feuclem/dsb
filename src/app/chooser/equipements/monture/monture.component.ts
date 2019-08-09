@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {MontureHttpService} from './monture.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
-import {CharacteritiqueService} from '../../../shared/characteritique.service'
-import {Equipement} from '../../../domain/Equipement'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
@@ -20,14 +19,14 @@ export class MontureComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private equipementsHttpService: MontureHttpService,
+    private montureHttpService: MontureHttpService,
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
   ) {
   }
 
   ngOnInit() {
-    this.equipementsHttpService.getAllEquipements().then(response => {
+    this.montureHttpService.getAllEquipements().then(response => {
       this.equipements = response
     })
   }

@@ -43,7 +43,7 @@ import {
   Statistique,
   Tacle,
   Vitalite
-} from '../domain/Statistique'
+} from './entities/Statistique'
 import {CharacteritiqueService} from './characteritique.service'
 
 @Injectable()

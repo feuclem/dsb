@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {ArmesHttpService} from './armes.http.service'
-import {Arme} from '../../domain/Arme'
+import {Arme} from '../../shared/entities/Arme'
 import {StuffService} from '../../shared/stuff.service'
-import {log} from 'util'
-import {CharacteritiqueService} from '../../shared/characteritique.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../shared/statistiques.service'
 

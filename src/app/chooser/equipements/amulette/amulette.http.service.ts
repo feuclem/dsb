@@ -19,8 +19,8 @@ import {
   Sagesse,
   Tacle,
   Vitalite
-} from '../../../domain/Statistique'
-import {Equipement} from '../../../domain/Equipement'
+} from '../../../shared/entities/Statistique'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -122,7 +122,7 @@ export class AmuletteHttpService {
           ]
         ),
         new Equipement(
-          1,
+          14094,
           'Amulette du strigide',
           200,
           'Amulette',

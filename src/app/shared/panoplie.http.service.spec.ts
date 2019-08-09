@@ -1,8 +1,8 @@
 import {TestBed} from '@angular/core/testing'
 
 import {PanoplieHttpService} from './panoplie.http.service'
-import {DommagesCritiques, PA, Puissance, Vitalite} from '../domain/Statistique'
-import {Bonus, Panoplie} from '../domain/Panoplie'
+import {DommagesCritiques, PA, Puissance, Vitalite} from './entities/Statistique'
+import {Bonus, Panoplie} from './entities/Panoplie'
 import {StatistiquesService} from './statistiques.service'
 import {environment} from '../../environments/environment'
 import deepEqual = require('deep-equal')
@@ -122,6 +122,11 @@ describe('PanoplieHttpService', () => {
             2,
             statsForBonus2
           )
+        ],
+        [
+          14094,
+          14095,
+          14096
         ]
       )
     ]

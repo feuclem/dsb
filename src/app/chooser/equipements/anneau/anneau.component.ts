@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {AnneauHttpService} from './anneau.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
-import {CharacteritiqueService} from '../../../shared/characteritique.service'
-import {Equipement} from '../../../domain/Equipement'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
@@ -20,14 +19,14 @@ export class AnneauComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private equipementsHttpService: AnneauHttpService,
+    private anneauHttpService: AnneauHttpService,
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
   ) {
   }
 
   ngOnInit() {
-    this.equipementsHttpService.getAllEquipements().then(response => {
+    this.anneauHttpService.getAllEquipements().then(response => {
       this.equipements = response
     })
   }
@@ -38,6 +37,7 @@ export class AnneauComponent implements OnInit {
     } else {
       this.stuffService.anneau2 = this.equipements[index].imgUrl
     }
+    this.stuffService.listIdEquipment = [this.equipements[index].id]
     this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }

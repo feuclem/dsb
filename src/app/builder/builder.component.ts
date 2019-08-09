@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../shared/stuff.service'
 import {CharacteritiqueService} from '../shared/characteritique.service'
-import {Iop} from '../domain/Iop'
-import {Sorts} from '../domain/Sorts'
+import {Iop} from '../shared/entities/Iop'
+import {Sorts} from '../shared/entities/Sorts'
+import {StatistiquesService} from '../shared/statistiques.service'
+import {Panoplie} from '../shared/entities/Panoplie'
+import {PanoplieService} from '../shared/panoplie.service'
 
 @Component({
   selector: 'builder',
@@ -52,7 +55,9 @@ export class BuilderComponent implements OnInit {
 
   constructor(
     private stuffService: StuffService,
-    private characteritiqueService: CharacteritiqueService) {
+    private characteritiqueService: CharacteritiqueService,
+    private statistiquesService: StatistiquesService,
+    private panoplieService: PanoplieService) {
   }
 
   ngOnInit() {
@@ -92,6 +97,11 @@ export class BuilderComponent implements OnInit {
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance
     this.dommagesAuxSorts = this.characteritiqueService.dommagesAuxSorts
+
+    const getBonusStatsToAdd = Panoplie.getPanoplieBonus(this.panoplieService.listPanoplie, this.stuffService.listIdEquipment)
+    if (getBonusStatsToAdd.length !== 0) {
+      getBonusStatsToAdd.map(stat => this.statistiquesService.setStatInStuff(stat))
+    }
   }
 
   calculDegatBase(degat: number, type: string): number {

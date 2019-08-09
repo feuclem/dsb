@@ -19,8 +19,8 @@ import {
   Soins,
   Tacle,
   Vitalite
-} from '../../../domain/Statistique'
-import {Equipement} from '../../../domain/Equipement'
+} from '../../../shared/entities/Statistique'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -101,7 +101,7 @@ export class CeintureHttpService {
           ]
         ),
         new Equipement(
-          1,
+          14096,
           'Ceinture du strigide',
           200,
           'Ceinture',

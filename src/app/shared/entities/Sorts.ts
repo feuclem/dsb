@@ -24,9 +24,9 @@ export class Sorts {
   ) {
     let baseDommage = degatDeBase + degatDeBase * ((puissance + caracteristiques) / 100) + (dommages + dommagesElemFixe + dommagesCritique)
     if (dommagesPourcentEnPlus.length !== 0) {
-      let toto = 0
-      dommagesPourcentEnPlus.map(item => toto += item)
-      baseDommage = baseDommage + baseDommage * (toto / 100)
+      let accPourcentDommagesEnPlus = 0
+      dommagesPourcentEnPlus.map(item => accPourcentDommagesEnPlus += item)
+      baseDommage = baseDommage + baseDommage * (accPourcentDommagesEnPlus / 100)
     }
     return Math.round(baseDommage)
   }

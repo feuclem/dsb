@@ -20,8 +20,8 @@ import {
   Sagesse,
   Tacle,
   Vitalite
-} from '../../../domain/Statistique'
-import {Equipement} from '../../../domain/Equipement'
+} from '../../../shared/entities/Statistique'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -70,8 +70,8 @@ export class CoiffeHttpService {
           ]
         ),
         new Equipement(
-          1,
-          'Couronne roi joueur',
+          17574,
+          'Couronne du Roi Joueur',
           200,
           'Coiffe',
           '../assets/coifferoijoueur.webp',

@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {CapeHttpService} from './cape.http.service'
 import {StuffService} from '../../../shared/stuff.service'
 import {Router} from '@angular/router'
-import {CharacteritiqueService} from '../../../shared/characteritique.service'
-import {Equipement} from '../../../domain/Equipement'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
@@ -20,20 +19,21 @@ export class CapeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private equipementsHttpService: CapeHttpService,
+    private capeHttpService: CapeHttpService,
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
   ) {
   }
 
   ngOnInit() {
-    this.equipementsHttpService.getAllEquipements().then(response => {
+    this.capeHttpService.getAllEquipements().then(response => {
       this.equipements = response
     })
   }
 
   setBuild(index: number) {
     this.stuffService.cape = this.equipements[index].imgUrl
+    this.stuffService.listIdEquipment = [this.equipements[index].id]
     this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }

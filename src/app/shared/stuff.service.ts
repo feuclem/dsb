@@ -20,6 +20,16 @@ export class StuffService {
   private _slot5 = ''
   private _slot6 = ''
 
+  private _listIdEquipment = []
+
+  get listIdEquipment(): number[] {
+    return this._listIdEquipment
+  }
+
+  set listIdEquipment(value: number[]) {
+    this._listIdEquipment.push(...value)
+  }
+
   get arme(): string {
     return this._arme
   }

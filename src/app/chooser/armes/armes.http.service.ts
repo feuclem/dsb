@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {Arme} from '../../domain/Arme'
+import {Arme} from '../../shared/entities/Arme'
 import {
   Agilite,
   Chance,
@@ -23,7 +23,7 @@ import {
   Sagesse,
   Tacle,
   Vitalite
-} from '../../domain/Statistique'
+} from '../../shared/entities/Statistique'
 import {environment} from '../../../environments/environment'
 import {StatistiquesService} from '../../shared/statistiques.service'
 

@@ -19,8 +19,8 @@ import {
   Soins,
   Tacle,
   Vitalite
-} from '../../../domain/Statistique'
-import {Equipement} from '../../../domain/Equipement'
+} from '../../../shared/entities/Statistique'
+import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
@@ -126,7 +126,7 @@ export class AnneauHttpService {
           ]
         ),
         new Equipement(
-          1,
+          17572,
           'Chavalière roi joueur',
           200,
           'Anneau',
