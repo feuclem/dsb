@@ -11,6 +11,7 @@ export class Iop {
   epeedivine = new Sorts('Épée Divine', '../assets/epeedivine.webp', 'air', [26, 28], [31, 34])
   fendoir = new Sorts('Fendoir', '../assets/fendoir.webp', 'eau', [40, 45], [48, 54])
   epeedestructrice = new Sorts('Épée Destructrice', '../assets/epeedestructrice.webp', 'feu', [32, 36], [38, 43])
+  anneaudestructeur = new Sorts('Anneau Destructeur', '../assets/anneaudestructeur.webp', 'air', [26, 30], [31, 36])
   concentration = new Sorts('Concentration', '../assets/concentration.webp', 'terre', [20, 24], [24, 29])
   accumulation = new SortsBoost(
     'Accumulation',
@@ -82,6 +83,7 @@ export class Iop {
       this.epeedivine,
       this.fendoir,
       this.epeedestructrice,
+      this.anneaudestructeur,
       this.concentration,
       this.accumulation,
       this.couperet,

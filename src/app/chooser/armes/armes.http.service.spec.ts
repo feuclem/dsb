@@ -1,14 +1,26 @@
-import {TestBed, inject} from '@angular/core/testing'
+import {TestBed} from '@angular/core/testing'
 
 import {ArmesHttpService} from './armes.http.service'
 import {Arme} from '../../domain/Arme'
-import {DommagesNeutre, DommagesNeutreArme, DommagesTerre, Force, Statistique} from '../../domain/Statistique'
+import {DommagesNeutreArme, DommagesTerre, Force} from '../../domain/Statistique'
+import {StatistiquesService} from '../../shared/statistiques.service'
+import {environment} from '../../../environments/environment'
+import deepEqual = require('deep-equal')
+
+let armesHttpService = null
+let statistiquesService = null
+class StatistiquesServiceMock {
+  extractor() {
+  }
+}
 
 describe('ArmesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ArmesHttpService]
+      providers: [ArmesHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
+    armesHttpService = TestBed.get(ArmesHttpService)
+    statistiquesService = TestBed.get(StatistiquesService)
   })
 
   const json = () => {
@@ -81,8 +93,24 @@ describe('ArmesService', () => {
     ]
   }
 
-  it('test 1', inject([ArmesHttpService], (service: ArmesHttpService) => {
+  it('getAllArmes', () => {
     // Given
+    environment.mock = false
+    const stats = [
+      new DommagesNeutreArme(
+        8,
+        10
+      ),
+      new Force(
+        7,
+        10
+      ),
+      new DommagesTerre(
+        1,
+        1
+      )
+    ]
+    spyStatistiqueExtractor(statistiquesService, stats)
     spyOn(window, 'fetch').and.returnValues(Promise.resolve({json}))
     const expected = [
       new Arme(
@@ -91,25 +119,42 @@ describe('ArmesService', () => {
         7,
         'Épée',
         'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/6007.png',
-        [
-          new DommagesNeutreArme(
-            8,
-            10
-          ),
-          new Force(
-            7,
-            10
-          ),
-          new DommagesTerre(
-            1,
-            1
-          )]
+        stats
       )
     ]
 
     // When
-    return service.getAllArmes().then(r => {
+    return armesHttpService.getAllArmes().then(r => {
       expect(r).toEqual(expected)
     })
-  }))
+  })
 })
+
+function spyStatistiqueExtractor(service, stats) {
+  spyOn(service, 'extractor').and.callFake(stat => {
+      if (deepEqual(stat, {
+        '(dommages Neutre)': {
+          'from': '8',
+          'to': '10'
+        }
+      })) {
+        return stats[0]
+      }
+      if (deepEqual(stat, {
+        'Force': {
+          'from': '7',
+          'to': '10'
+        }
+      })) {
+        return stats[1]
+      }
+      if (deepEqual(stat, {
+        'Dommages Terre': {
+          'from': '1'
+        }
+      })) {
+        return stats[2]
+      }
+    }
+  )
+}

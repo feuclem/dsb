@@ -30,8 +30,7 @@ import {StatistiquesService} from '../../shared/statistiques.service'
 @Injectable()
 export class ArmesHttpService {
 
-  constructor(private statistiquesService: StatistiquesService) {
-  }
+  constructor(private statistiquesService: StatistiquesService) {}
 
   getAllArmes(): Promise<Arme[]> {
     if (environment.mock) {
