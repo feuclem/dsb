@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import {browser, by, element} from 'protractor'
 
 export class AppPage {
   navigateTo() {
@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('mcb-root h1')).getText();
+    return element(by.css('dsb-root h1')).getText();
   }
 }

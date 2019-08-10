@@ -3,7 +3,7 @@ import {PanoplieHttpService} from './shared/panoplie.http.service'
 import {PanoplieService} from './shared/panoplie.service'
 
 @Component({
-  selector: 'mcb-root',
+  selector: 'dsb-root',
   templateUrl: './app.component.html',
   styles: []
 })

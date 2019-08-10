@@ -25,6 +25,12 @@ import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
 import {PanoplieService} from './shared/panoplie.service'
 import {PanoplieHttpService} from './shared/panoplie.http.service'
+import {Stuff1Component} from './builder/stuff1/stuff1.component'
+import {Stuff2Component} from './builder/stuff2/stuff2.component'
+import {Characteristique1Component} from './builder/characteristique1/characteristique1.component'
+import {Characteristique2Component} from './builder/characteristique2/characteristique2.component'
+import {IopComponent} from './builder/iop/iop.component'
+import {DamageCalculatorService} from './builder/damage-calculator.service'
 
 @NgModule({
   declarations: [
@@ -41,7 +47,12 @@ import {PanoplieHttpService} from './shared/panoplie.http.service'
     FamilierComponent,
     BouclierComponent,
     DofusComponent,
-    TropheeComponent
+    TropheeComponent,
+    Stuff1Component,
+    Stuff2Component,
+    Characteristique1Component,
+    Characteristique2Component,
+    IopComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +66,8 @@ import {PanoplieHttpService} from './shared/panoplie.http.service'
     CharacteritiqueService,
     StatistiquesService,
     PanoplieHttpService,
-    PanoplieService
+    PanoplieService,
+    DamageCalculatorService
   ],
   bootstrap: [AppComponent]
 })

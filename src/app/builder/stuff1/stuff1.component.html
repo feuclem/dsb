@@ -1,0 +1,131 @@
+<div class="columns has-text-centered">
+  <div class="amulette column">
+    <div class="message">
+      <div class="message-header">
+        Amulette
+      </div>
+      <div class="message-body">
+        <img *ngIf="amulette !== ''" src="{{amulette}}" alt=""/>
+        <a *ngIf="amulette === ''" routerLink="amulette">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="anneau1 column">
+    <div class="message">
+      <div class="message-header">
+        Anneau 1
+      </div>
+      <div class="message-body">
+        <img *ngIf="anneau1 !== ''" src="{{anneau1}}" alt=""/>
+        <a *ngIf="anneau1 === ''" routerLink="anneau">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="anneau2 column">
+    <div class="message">
+      <div class="message-header">
+        Anneau 2
+      </div>
+      <div class="message-body">
+        <img *ngIf="anneau2 !== ''" src="{{anneau2}}" alt=""/>
+        <a *ngIf="anneau2 === ''" routerLink="anneau">Choisir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns has-text-centered">
+  <div class="ceinture column">
+    <div class="message">
+      <div class="message-header">
+        Ceinture
+      </div>
+      <div class="message-body">
+        <img *ngIf="ceinture !== ''" src="{{ceinture}}" alt=""/>
+        <a *ngIf="ceinture === ''" routerLink="ceinture">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottes column">
+    <div class="message">
+      <div class="message-header">
+        Bottes
+      </div>
+      <div class="message-body">
+        <img *ngIf="bottes !== ''" src="{{bottes}}" alt=""/>
+        <a *ngIf="bottes === ''" routerLink="bottes">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="coiffe column">
+    <div class="message">
+      <div class="message-header">
+        Coiffe
+      </div>
+      <div class="message-body">
+        <img *ngIf="coiffe !== ''" src="{{coiffe}}" alt=""/>
+        <a *ngIf="coiffe === ''" routerLink="coiffe">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cape column">
+    <div class="message">
+      <div class="message-header">
+        Cape
+      </div>
+      <div class="message-body">
+        <img *ngIf="cape !== ''" src="{{cape}}" alt=""/>
+        <a *ngIf="cape === ''" routerLink="cape">Choisir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns has-text-centered">
+  <div class="arme column">
+    <div class="message">
+      <div class="message-header">
+        Arme
+      </div>
+      <div class="message-body">
+        <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
+        <a *ngIf="arme === ''" routerLink="armes">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bouclier column">
+    <div class="message">
+      <div class="message-header">
+        Bouclier
+      </div>
+      <div class="message-body">
+        <img *ngIf="bouclier !== ''" src="{{bouclier}}" alt=""/>
+        <a *ngIf="bouclier === ''" routerLink="bouclier">Choisir</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="familier column">
+    <div class="message">
+      <div class="message-header">
+        Familier / Monture
+      </div>
+      <div class="message-body">
+        <div *ngIf="monture === ''">
+          <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
+          <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+        </div>
+        <div *ngIf="familier === ''">
+          <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
+          <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

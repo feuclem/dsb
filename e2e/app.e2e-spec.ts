@@ -1,6 +1,6 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po'
 
-describe('microglog App', () => {
+describe('dofusstuffbuilder App', () => {
   let page: AppPage;
 
   beforeEach(() => {

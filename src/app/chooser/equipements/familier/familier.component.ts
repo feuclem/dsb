@@ -6,7 +6,7 @@ import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/statistiques.service'
 
 @Component({
-  selector: 'mcb-equipements',
+  selector: 'dsb-equipements',
   templateUrl: './familier.component.html',
   styles: [],
   providers: [
