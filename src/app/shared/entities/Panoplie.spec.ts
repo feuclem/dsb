@@ -28,7 +28,7 @@ describe('getPanoplieBonus for one panoplie', () => {
       ]
     }
   ]
-  listIdEquipementToTest.map(item => {
+  listIdEquipementToTest.forEach(item => {
     describe('when listPanoplie has 1 element', () => {
       describe(`when listIdEquipement has ${item.given.toString()}`, () => {
         it(item.shouldReturn, () => {

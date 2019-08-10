@@ -1,25 +1,43 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {Characteristique1Component} from './characteristique1.component'
+import {CharacteritiqueService} from '../../shared/characteritique.service'
 
 describe('Characteristique1Component', () => {
-  let component: Characteristique1Component;
-  let fixture: ComponentFixture<Characteristique1Component>;
+  let component: Characteristique1Component
+  let fixture: ComponentFixture<Characteristique1Component>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Characteristique1Component ]
+      declarations: [Characteristique1Component],
+      providers: [CharacteritiqueService]
     })
-    .compileComponents();
-  }));
+      .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Characteristique1Component);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(Characteristique1Component)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  describe('on init', () => {
+    const attributeToTest = [
+      'force',
+      'intelligence',
+      'chance',
+      'agilite',
+      'vitalite',
+      'puissance',
+    ]
+    attributeToTest.forEach(item => {
+      it(`should should set ${item}with the given service value`, () => {
+        // When
+        component.ngOnInit()
+
+        // Then
+        expect(component[item]).toEqual(0)
+      })
+    })
+  })
+})
