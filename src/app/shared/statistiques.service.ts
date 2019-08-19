@@ -241,12 +241,6 @@ export class StatistiquesService {
         parseInt(stat['Résistance Poussée']['to'] ? stat['Résistance Poussée']['to'] : stat['Résistance Poussée']['from'])
       )
     }
-    if (stat['% Critique'] && stat['% Critique']['from']) {
-      return new Critique(
-        parseInt(stat['% Critique']['from']),
-        parseInt(stat['% Critique']['to'] ? stat['% Critique']['to'] : stat['% Critique']['from'])
-      )
-    }
     if (stat['Soins'] && stat['Soins']['from']) {
       return new Soins(
         parseInt(stat['Soins']['from']),
@@ -279,41 +273,80 @@ export class StatistiquesService {
     }
     // tslint:disable-next-line:forin
     for (const key in stat) {
-      let statElement = null
-      if (/Neutre/.test(key)) {
-        statElement = 'Neutre'
-      } else if (/Terre/.test(key)) {
-        statElement = 'Terre'
-      } else if (/Feu/.test(key)) {
-        statElement = 'Feu'
-      } else if (/Eau/.test(key)) {
-        statElement = 'Eau'
-      } else if (/Air/.test(key)) {
-        statElement = 'Air'
-      }
-      const regexp = new RegExp(`^[0-9]*% Résistance ${statElement}$`)
+      const regexpCritique = new RegExp(`% Critique$`)
+      const regexpCritiquePourcentFixe = new RegExp(`^[0-9]*% Critique$`)
 
-      if (regexp.test(key)) {
-        const pourcentResistanceFixe = key.split('%')
-        return ResistanceFactory(
-          statElement,
-          parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from']),
-          parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] ?
-            stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] :
-            stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from'])
-        )
-      } else {
-        return ResistanceFactory(
-          statElement,
-          parseInt(stat['% Résistance ' + statElement]['from']),
-          parseInt(stat['% Résistance ' + statElement]['to'] ?
-            stat['% Résistance ' + statElement]['to'] :
-            stat['% Résistance ' + statElement]['from'])
-        )
+      if (regexpCritique.test(key)) {
+        if (regexpCritiquePourcentFixe.test(key)) {
+          const pourcentCritiqueFixe = key.split('%')
+          if (stat[pourcentCritiqueFixe[0] + '% Critique'] && stat[pourcentCritiqueFixe[0] + '% Critique']['from']) {
+            return new Critique(
+              parseInt(stat[pourcentCritiqueFixe[0] + '% Critique']['from']),
+              parseInt(stat[pourcentCritiqueFixe[0] + '% Critique']['to'] ?
+                stat[pourcentCritiqueFixe[0] + '% Critique']['to'] :
+                stat[pourcentCritiqueFixe[0] + '% Critique']['from'])
+            )
+          }
+        }
+        if (stat['% Critique'] && stat['% Critique']['from']) {
+          return new Critique(
+            parseInt(stat['% Critique']['from']),
+            parseInt(stat['% Critique']['to'] ? stat['% Critique']['to'] : stat['% Critique']['from'])
+          )
+        }
       }
+
+      const statElement = this.getStatElement(key)
+      const regexpResistance = new RegExp(`% Résistance ${statElement}$`)
+      const regexpResistancePourcentFixe = new RegExp(`^[0-9]*% Résistance ${statElement}$`)
+
+      if (regexpResistance.test(key)) {
+        if (regexpResistancePourcentFixe.test(key)) {
+          const pourcentResistanceFixe = key.split('%')
+          if (
+            stat[pourcentResistanceFixe[0] + '% Résistance '
+            + statElement] && stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from']) {
+            return ResistanceFactory(
+              statElement,
+              parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from']),
+              parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] ?
+                stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] :
+                stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from'])
+            )
+
+          }
+        }
+        if (stat['% Résistance ' + statElement] && stat['% Résistance ' + statElement]['from']) {
+          return ResistanceFactory(
+            statElement,
+            parseInt(stat['% Résistance ' + statElement]['from']),
+            parseInt(stat['% Résistance ' + statElement]['to'] ?
+              stat['% Résistance ' + statElement]['to'] :
+              stat['% Résistance ' + statElement]['from'])
+          )
+
+        }
+      }
+
+
     }
+
     if (stat['Arme de chasse']) {
       return new ArmeDeChasse()
+    }
+  }
+
+  private getStatElement(key) {
+    if (/Neutre/.test(key)) {
+      return 'Neutre'
+    } else if (/Terre/.test(key)) {
+      return 'Terre'
+    } else if (/Feu/.test(key)) {
+      return 'Feu'
+    } else if (/Eau/.test(key)) {
+      return 'Eau'
+    } else if (/Air/.test(key)) {
+      return 'Air'
     }
   }
 

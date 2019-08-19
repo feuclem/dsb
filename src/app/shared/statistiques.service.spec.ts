@@ -2,7 +2,7 @@ import {TestBed} from '@angular/core/testing'
 
 import {StatistiquesService} from './statistiques.service'
 import {CharacteritiqueService} from './characteritique.service'
-import {ResistanceAir, ResistanceEau, ResistanceFeu, ResistanceNeutre, ResistanceTerre} from './entities/Statistique'
+import {Critique, ResistanceAir, ResistanceEau, ResistanceFeu, ResistanceNeutre, ResistanceTerre} from './entities/Statistique'
 
 describe('StatistiquesService', () => {
 
@@ -163,10 +163,10 @@ describe('StatistiquesService', () => {
       })
     })
 
-    describe('when stat has % RésistanceNeutre', () => {
-      it('should return RésistanceNeutre with 1, 2', () => {
+    describe('when stat has % Résistance Neutre', () => {
+      it('should return ResistanceNeutre with 1, 2', () => {
         // When
-        const result = statistiquesService.extractor({'% RésistanceNeutre': {'from': '1', 'to': '2'}})
+        const result = statistiquesService.extractor({'% Résistance Neutre': {'from': '1', 'to': '2'}})
 
         // Then
         expect(result).toEqual(new ResistanceNeutre(1, 2))
@@ -174,28 +174,64 @@ describe('StatistiquesService', () => {
 
       it('should return RésistanceNeutre with 1, 3', () => {
         // When
-        const result = statistiquesService.extractor({'% RésistanceNeutre': {'from': '1', 'to': '3'}})
+        const result = statistiquesService.extractor({'% Résistance Neutre': {'from': '1', 'to': '3'}})
 
         // Then
         expect(result).toEqual(new ResistanceNeutre(1, 3))
       })
     })
-    describe('when stat has 1% RésistanceNeutre', () => {
+    describe('when stat has 1% Résistance Neutre', () => {
       it('should return RésistanceNeutre with 1, 1', () => {
         // When
-        const result = statistiquesService.extractor({'1% RésistanceNeutre': {'from': '1'}})
+        const result = statistiquesService.extractor({'1% Résistance Neutre': {'from': '1'}})
 
         // Then
         expect(result).toEqual(new ResistanceNeutre(1, 1))
       })
     })
-    describe('when stat has 2% RésistanceNeutre', () => {
+    describe('when stat has 2% Résistance Neutre', () => {
       it('should return RésistanceNeutre with 2, 2', () => {
         // When
-        const result = statistiquesService.extractor({'2% RésistanceNeutre': {'from': '2'}})
+        const result = statistiquesService.extractor({'2% Résistance Neutre': {'from': '2'}})
 
         // Then
         expect(result).toEqual(new ResistanceNeutre(2, 2))
+      })
+    })
+
+    describe('when stat has % Critique', () => {
+      it('should return Critique with 1, 2', () => {
+        // When
+        const result = statistiquesService.extractor({'% Critique': {'from': '1', 'to': '2'}})
+
+        // Then
+        expect(result).toEqual(new Critique(1, 2))
+      })
+
+      it('should return Critique with 1, 3', () => {
+        // When
+        const result = statistiquesService.extractor({'% Critique': {'from': '1', 'to': '3'}})
+
+        // Then
+        expect(result).toEqual(new Critique(1, 3))
+      })
+    })
+    describe('when stat has 1% Critique', () => {
+      it('should return Critique with 1, 1', () => {
+        // When
+        const result = statistiquesService.extractor({'1% Critique': {'from': '1'}})
+
+        // Then
+        expect(result).toEqual(new Critique(1, 1))
+      })
+    })
+    describe('when stat has 2% Critique', () => {
+      it('should return Critique with 2, 2', () => {
+        // When
+        const result = statistiquesService.extractor({'2% Critique': {'from': '2'}})
+
+        // Then
+        expect(result).toEqual(new Critique(2, 2))
       })
     })
   })
