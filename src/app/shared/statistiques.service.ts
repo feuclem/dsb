@@ -25,18 +25,14 @@ import {
   PO,
   Pods,
   Puissance,
-  ResistanceAir,
   ResistanceCritiques,
-  ResistanceEau,
-  ResistanceFeu,
+  ResistanceFactory,
   ResistanceFixeAir,
   ResistanceFixeEau,
   ResistanceFixeFeu,
   ResistanceFixNeutre,
   ResistanceFixTerre,
-  ResistanceNeutre,
   ResistancePoussees,
-  ResistanceTerre,
   RetraitPA,
   RetraitPM,
   Soins,
@@ -49,9 +45,10 @@ import {CharacteritiqueService} from './characteritique.service'
 @Injectable()
 export class StatistiquesService {
 
-  constructor(private characteritiqueService: CharacteritiqueService) {}
+  constructor(private characteritiqueService: CharacteritiqueService) {
+  }
 
-  extractor(stat: Statistique) {
+  extractor(stat) {
     if (stat['(dommages Neutre)'] && stat['(dommages Neutre)']['from']) {
       return new DommagesNeutreArme(
         parseInt(stat['(dommages Neutre)']['from']),
@@ -202,22 +199,10 @@ export class StatistiquesService {
         parseInt(stat['Retrait PA']['to'] ? stat['Retrait PA']['to'] : stat['Retrait PA']['from'])
       )
     }
-    if (stat['% Résistance Neutre'] && stat['% Résistance Neutre']['from']) {
-      return new ResistanceNeutre(
-        parseInt(stat['% Résistance Neutre']['from']),
-        parseInt(stat['% Résistance Neutre']['to'] ? stat['% Résistance Neutre']['to'] : stat['% Résistance Neutre']['from'])
-      )
-    }
     if (stat['Résistance Neutre'] && stat['Résistance Neutre']['from']) {
       return new ResistanceFixNeutre(
         parseInt(stat['Résistance Neutre']['from']),
         parseInt(stat['Résistance Neutre']['to'] ? stat['Résistance Neutre']['to'] : stat['Résistance Neutre']['from'])
-      )
-    }
-    if (stat['% Résistance Terre'] && stat['% Résistance Terre']['from']) {
-      return new ResistanceTerre(
-        parseInt(stat['% Résistance Terre']['from']),
-        parseInt(stat['% Résistance Terre']['to'] ? stat['% Résistance Terre']['to'] : stat['% Résistance Terre']['from'])
       )
     }
     if (stat['Résistance Terre'] && stat['Résistance Terre']['from']) {
@@ -226,34 +211,16 @@ export class StatistiquesService {
         parseInt(stat['Résistance Terre']['to'] ? stat['Résistance Terre']['to'] : stat['Résistance Terre']['from'])
       )
     }
-    if (stat['% Résistance Feu'] && stat['% Résistance Feu']['from']) {
-      return new ResistanceFeu(
-        parseInt(stat['% Résistance Feu']['from']),
-        parseInt(stat['% Résistance Feu']['to'] ? stat['% Résistance Feu']['to'] : stat['% Résistance Feu']['from'])
-      )
-    }
     if (stat['Résistance Feu'] && stat['Résistance Feu']['from']) {
       return new ResistanceFixeFeu(
         parseInt(stat['Résistance Feu']['from']),
         parseInt(stat['Résistance Feu']['to'] ? stat['Résistance Feu']['to'] : stat['Résistance Feu']['from'])
       )
     }
-    if (stat['% Résistance Eau'] && stat['% Résistance Eau']['from']) {
-      return new ResistanceEau(
-        parseInt(stat['% Résistance Eau']['from']),
-        parseInt(stat['% Résistance Eau']['to'] ? stat['% Résistance Eau']['to'] : stat['% Résistance Eau']['from'])
-      )
-    }
     if (stat['Résistance Eau'] && stat['Résistance Eau']['from']) {
       return new ResistanceFixeEau(
         parseInt(stat['Résistance Eau']['from']),
         parseInt(stat['Résistance Eau']['to'] ? stat['Résistance Eau']['to'] : stat['Résistance Eau']['from'])
-      )
-    }
-    if (stat['% Résistance Air'] && stat['% Résistance Air']['from']) {
-      return new ResistanceAir(
-        parseInt(stat['% Résistance Air']['from']),
-        parseInt(stat['% Résistance Air']['to'] ? stat['% Résistance Air']['to'] : stat['% Résistance Air']['from'])
       )
     }
     if (stat['Résistance Air'] && stat['Résistance Air']['from']) {
@@ -309,6 +276,41 @@ export class StatistiquesService {
         parseInt(stat['% Dommages Melee']['from']),
         parseInt(stat['% Dommages Melee']['to'] ? stat['% Dommages Melee']['to'] : stat['% Dommages Melee']['from'])
       )
+    }
+    // tslint:disable-next-line:forin
+    for (const key in stat) {
+      let statElement = null
+      if (/Neutre/.test(key)) {
+        statElement = 'Neutre'
+      } else if (/Terre/.test(key)) {
+        statElement = 'Terre'
+      } else if (/Feu/.test(key)) {
+        statElement = 'Feu'
+      } else if (/Eau/.test(key)) {
+        statElement = 'Eau'
+      } else if (/Air/.test(key)) {
+        statElement = 'Air'
+      }
+      const regexp = new RegExp(`^[0-9]*% Résistance ${statElement}$`)
+
+      if (regexp.test(key)) {
+        const pourcentResistanceFixe = key.split('%')
+        return ResistanceFactory(
+          statElement,
+          parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from']),
+          parseInt(stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] ?
+            stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['to'] :
+            stat[pourcentResistanceFixe[0] + '% Résistance ' + statElement]['from'])
+        )
+      } else {
+        return ResistanceFactory(
+          statElement,
+          parseInt(stat['% Résistance ' + statElement]['from']),
+          parseInt(stat['% Résistance ' + statElement]['to'] ?
+            stat['% Résistance ' + statElement]['to'] :
+            stat['% Résistance ' + statElement]['from'])
+        )
+      }
     }
     if (stat['Arme de chasse']) {
       return new ArmeDeChasse()

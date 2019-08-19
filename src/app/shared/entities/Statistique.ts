@@ -411,3 +411,21 @@ export class ArmeDeChasse extends Statistique {
     super(0, 0, 'ArmeDeChasse')
   }
 }
+
+export function ResistanceFactory(element: String, from: number, to: number) {
+    if (element === 'Neutre') {
+      return new ResistanceNeutre(from, to)
+    }
+    if (element === 'Terre') {
+      return new ResistanceTerre(from, to)
+    }
+    if (element === 'Feu') {
+      return new ResistanceFeu(from, to)
+    }
+    if (element === 'Eau') {
+      return new ResistanceEau(from, to)
+    }
+    if (element === 'Air') {
+      return new ResistanceAir(from, to)
+    }
+}
