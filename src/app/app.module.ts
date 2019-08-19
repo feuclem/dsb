@@ -31,7 +31,6 @@ import {Characteristique1Component} from './builder/characteristique1/characteri
 import {Characteristique2Component} from './builder/characteristique2/characteristique2.component'
 import {IopComponent} from './builder/iop/iop.component'
 import {DamageCalculatorService} from './builder/damage-calculator.service'
-import {BonusComponent} from './builder/bonus/bonus.component'
 import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.component'
 
 @NgModule({
@@ -55,7 +54,6 @@ import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.co
     Characteristique1Component,
     Characteristique2Component,
     IopComponent,
-    BonusComponent,
     PanoplieBonusComponent
   ],
   imports: [
