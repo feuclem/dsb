@@ -30,8 +30,8 @@ import {
   ResistanceFixeAir,
   ResistanceFixeEau,
   ResistanceFixeFeu,
+  ResistanceFixeTerre,
   ResistanceFixNeutre,
-  ResistanceFixTerre,
   ResistancePoussees,
   RetraitPA,
   RetraitPM,
@@ -206,7 +206,7 @@ export class StatistiquesService {
       )
     }
     if (stat['Résistance Terre'] && stat['Résistance Terre']['from']) {
-      return new ResistanceFixTerre(
+      return new ResistanceFixeTerre(
         parseInt(stat['Résistance Terre']['from']),
         parseInt(stat['Résistance Terre']['to'] ? stat['Résistance Terre']['to'] : stat['Résistance Terre']['from'])
       )

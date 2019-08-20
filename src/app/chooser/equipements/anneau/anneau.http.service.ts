@@ -14,6 +14,11 @@ import {
   Fuite,
   Intelligence,
   PO,
+  ResistanceAir,
+  ResistanceEau,
+  ResistanceFeu,
+  ResistanceFixNeutre,
+  ResistanceTerre,
   RetraitPM,
   Sagesse,
   Soins,
@@ -63,7 +68,8 @@ export class AnneauHttpService {
             new Tacle(7, 10),
             new DommagesTerre(9, 12),
             new DommagesNeutre(9, 12),
-            new Critique(2, 2)
+            new Critique(2, 2),
+            new ResistanceEau(5, 7)
           ]
         ),
         new Equipement(
@@ -77,7 +83,9 @@ export class AnneauHttpService {
             new Agilite(21, 30),
             new Vitalite(71, 100),
             new Dommages(4, 5),
-            new PO(1, 1)
+            new PO(1, 1),
+            new ResistanceFixNeutre(4, 6),
+            new ResistanceFeu(5, 7)
           ]
         ),
         new Equipement(
@@ -90,7 +98,9 @@ export class AnneauHttpService {
             new Vitalite(301, 400),
             new Sagesse(31, 40),
             new Tacle(7, 10),
-            new DommagesCritiques(16, 20)
+            new DommagesCritiques(16, 20),
+            new ResistanceTerre(5, 7),
+            new ResistanceEau(5, 7)
           ]
         ),
         new Equipement(
@@ -103,7 +113,8 @@ export class AnneauHttpService {
             new Vitalite(201, 250),
             new Chance(81, 100),
             new DommagesEau(16, 20),
-            new Critique(4, 5)
+            new Critique(4, 5),
+            new ResistanceEau(7, 10)
           ]
         ),
         new Equipement(
@@ -123,6 +134,8 @@ export class AnneauHttpService {
             new DommagesTerre(8, 12),
             new DommagesFeu(8, 12),
             new Tacle(4, 5),
+            new ResistanceEau(5, 7),
+            new ResistanceAir(5, 7)
           ]
         ),
         new Equipement(
@@ -142,7 +155,8 @@ export class AnneauHttpService {
             new DommagesNeutre(9, 12),
             new RetraitPM(4, 6),
             new Critique(2, 3),
-            new PO(1, 1)
+            new PO(1, 1),
+            new ResistanceFeu(7, 10)
           ]
         ),
       ])

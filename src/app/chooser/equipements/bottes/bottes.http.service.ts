@@ -16,6 +16,10 @@ import {
   PM,
   PO,
   Puissance,
+  ResistanceAir,
+  ResistanceEau,
+  ResistanceFeu,
+  ResistanceTerre,
   RetraitPM,
   Sagesse,
   Tacle,
@@ -71,6 +75,7 @@ export class BottesHttpService {
             new DommagesFeu(9, 13),
             new DommagesEau(9, 13),
             new DommagesAir(9, 13),
+            new ResistanceFeu(6, 8)
           ]
         ),
         new Equipement(
@@ -92,6 +97,7 @@ export class BottesHttpService {
             new PO(1, 1),
             new PM(1, 1),
             new Sagesse(31, 40),
+            new ResistanceEau(7, 10)
           ]
         ),
         new Equipement(
@@ -113,7 +119,8 @@ export class BottesHttpService {
             new Critique(3, 4),
             new PO(1, 1),
             new PM(1, 1),
-
+            new ResistanceEau(5, 7),
+            new ResistanceAir(5, 7)
           ]
         ),
         new Equipement(
@@ -133,7 +140,8 @@ export class BottesHttpService {
             new RetraitPM(4, 6),
             new DommagesCritiques(11, 15),
             new Critique(3, 4),
-            new PM(1, 1)
+            new PM(1, 1),
+            new ResistanceAir(7, 10)
           ]
         ),
         new Equipement(
@@ -149,6 +157,9 @@ export class BottesHttpService {
             new Vitalite(71, 120),
             new Critique(2, 3),
             new Puissance(4, 5),
+            new ResistanceEau(6, 9),
+            new ResistanceAir(6, 9),
+            new ResistanceTerre(-4, -7),
           ]
         ),
         new Equipement(
@@ -164,7 +175,8 @@ export class BottesHttpService {
             new DommagesCritiques(21, 25),
             new Critique(4, 6),
             new PO(1, 1),
-            new PM(1, 1)
+            new PM(1, 1),
+            new ResistanceEau(7, 10)
           ]
         )
       ])

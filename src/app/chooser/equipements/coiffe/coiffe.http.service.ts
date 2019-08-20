@@ -16,6 +16,10 @@ import {
   PA,
   PO,
   Puissance,
+  ResistanceAir,
+  ResistanceFeu,
+  ResistanceNeutre,
+  ResistanceTerre,
   RetraitPM,
   Sagesse,
   Tacle,
@@ -67,6 +71,8 @@ export class CoiffeHttpService {
             new DommagesNeutre(11, 15),
             new Critique(2, 3),
             new Fuite(7, 10),
+            new ResistanceNeutre(5, 7),
+            new ResistanceTerre(7, 10),
           ]
         ),
         new Equipement(
@@ -86,6 +92,7 @@ export class CoiffeHttpService {
             new PO(1, 1),
             new Sagesse(31, 50),
             new DommagesTerre(9, 12),
+            new ResistanceAir(7, 10)
           ]
         ),
         new Equipement(
@@ -103,6 +110,7 @@ export class CoiffeHttpService {
             new Critique(3, 4),
             new Intelligence(16, 25),
             new Agilite(16, 25),
+            new ResistanceNeutre(5, 7)
           ]
         ),
         new Equipement(
@@ -117,6 +125,7 @@ export class CoiffeHttpService {
             new Tacle(7, 10),
             new DommagesCritiques(21, 25),
             new Critique(3, 4),
+            new ResistanceFeu(7, 10)
           ]
         ),
         new Equipement(
@@ -132,7 +141,9 @@ export class CoiffeHttpService {
             new DommagesTerre(9, 12),
             new DommagesNeutre(9, 12),
             new Critique(2, 2),
-            new PA(1, 1)
+            new PA(1, 1),
+            new ResistanceFeu(7, 10),
+            new ResistanceAir(7, 10),
           ]
         ),
         new Equipement(
@@ -150,6 +161,8 @@ export class CoiffeHttpService {
             new Critique(3, 4),
             new PA(1, 1),
             new Sagesse(31, 40),
+            new ResistanceNeutre(5, 7),
+            new ResistanceFeu(5, 7)
           ]
         ),
         new Equipement(
@@ -167,6 +180,8 @@ export class CoiffeHttpService {
             new Critique(3, 4),
             new PO(1, 1),
             new PA(1, 1),
+            new ResistanceNeutre(5, 7),
+            new ResistanceAir(5, 7)
           ]
         )
       ])

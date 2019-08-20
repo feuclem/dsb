@@ -1,6 +1,15 @@
 import {Injectable} from '@angular/core'
 
-import {Critique, PA, PM, Puissance} from '../../../shared/entities/Statistique'
+import {
+  Critique,
+  PA,
+  PM,
+  Puissance,
+  ResistanceFixeAir,
+  ResistanceFixeEau,
+  ResistanceFixeFeu,
+  ResistanceFixeTerre
+} from '../../../shared/entities/Statistique'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
 import {StatistiquesService} from '../../../shared/statistiques.service'
@@ -46,7 +55,12 @@ export class DofusHttpService {
           180,
           'Dofus',
           '../assets/dofusivoire.webp',
-          []
+          [
+            new ResistanceFixeTerre(40, 40),
+            new ResistanceFixeFeu(40, 40),
+            new ResistanceFixeEau(40, 40),
+            new ResistanceFixeAir(40, 40),
+          ]
         ),
         new Equipement(
           1,

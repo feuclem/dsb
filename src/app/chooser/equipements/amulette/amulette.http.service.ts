@@ -15,6 +15,10 @@ import {
   PA,
   PO,
   Puissance,
+  ResistanceAir,
+  ResistanceEau,
+  ResistanceFeu,
+  ResistanceTerre,
   RetraitPM,
   Sagesse,
   Tacle,
@@ -62,7 +66,8 @@ export class AmuletteHttpService {
             new RetraitPM(5, 7),
             new DommagesCritiques(11, 15),
             new Critique(4, 6),
-            new PA(1, 1)
+            new PA(1, 1),
+            new ResistanceFeu(7, 10)
           ]
         ),
         new Equipement(
@@ -81,7 +86,8 @@ export class AmuletteHttpService {
             new DommagesEau(9, 12),
             new RetraitPM(5, 7),
             new DommagesCritiques(16, 25),
-            new PA(1, 1)
+            new PA(1, 1),
+            new ResistanceAir(7, 10)
           ]
         ),
         new Equipement(
@@ -102,6 +108,7 @@ export class AmuletteHttpService {
             new DommagesCritiques(21, 25),
             new PO(1, 1),
             new PA(1, 1),
+            new ResistanceEau(7, 10)
           ]
         ),
         new Equipement(
@@ -118,6 +125,8 @@ export class AmuletteHttpService {
             new Sagesse(21, 30),
             new Vitalite(151, 200),
             new Dommages(2, 4),
+            new ResistanceAir(6, 10),
+            new ResistanceEau(6, 10)
 
           ]
         ),
@@ -135,6 +144,8 @@ export class AmuletteHttpService {
             new PA(1, 1),
             new Tacle(11, 15),
             new DommagesCritiques(16, 25),
+            new ResistanceTerre(7, 10),
+            new ResistanceAir(7, 10),
           ]
         ),
         new Equipement(
@@ -150,7 +161,8 @@ export class AmuletteHttpService {
             new DommagesFeu(16, 20),
             new DommagesCritiques(11, 15),
             new Critique(4, 5),
-            new PA(1, 1)
+            new PA(1, 1),
+            new ResistanceFeu(7, 10)
           ]
         )
       ])

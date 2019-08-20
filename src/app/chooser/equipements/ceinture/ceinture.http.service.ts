@@ -15,6 +15,10 @@ import {
   PO,
   Pods,
   Puissance,
+  ResistanceAir,
+  ResistanceEau,
+  ResistanceNeutre,
+  ResistanceTerre,
   Sagesse,
   Soins,
   Tacle,
@@ -67,7 +71,9 @@ export class CeintureHttpService {
             new Fuite(-10, -10),
             new DommagesCritiques(16, 20),
             new Critique(3, 4),
-            new PA(1, 1)
+            new PA(1, 1),
+            new ResistanceNeutre(7, 10),
+            new ResistanceEau(7, 10)
           ]
         ),
         new Equipement(
@@ -81,7 +87,10 @@ export class CeintureHttpService {
             new Vitalite(151, 200),
             new Sagesse(26, 40),
             new Dommages(4, 6),
-            new PO(1, 1)
+            new PO(1, 1),
+            new ResistanceNeutre(3, 4),
+            new ResistanceEau(3, 4),
+            new ResistanceAir(-4, -7),
           ]
         ),
         new Equipement(
@@ -97,7 +106,9 @@ export class CeintureHttpService {
             new DommagesTerre(16, 20),
             new DommagesNeutre(16, 20),
             new Critique(4, 5),
-            new PO(1, 1)
+            new PO(1, 1),
+            new ResistanceNeutre(7, 10),
+            new ResistanceTerre(7, 10)
           ]
         ),
         new Equipement(
@@ -119,6 +130,7 @@ export class CeintureHttpService {
             new DommagesAir(7, 10),
             new Tacle(7, 10),
             new DommagesCritiques(11, 15),
+            new ResistanceNeutre(6, 8)
           ]
         )
       ])

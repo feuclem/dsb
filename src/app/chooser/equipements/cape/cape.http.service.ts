@@ -15,6 +15,10 @@ import {
   PM,
   PO,
   Puissance,
+  ResistanceAir,
+  ResistanceEau,
+  ResistanceFeu,
+  ResistanceNeutre,
   ResistanceTerre,
   RetraitPM,
   Sagesse,
@@ -68,6 +72,8 @@ export class CapeHttpService {
             new Sagesse(21, 30),
             new Critique(2, 3),
             new Dommages(5, 7),
+            new ResistanceNeutre(5, 7),
+            new ResistanceFeu(6, 10),
           ]
         ),
         new Equipement(
@@ -84,6 +90,9 @@ export class CapeHttpService {
             new Dommages(6, 10),
             new PO(1, 1),
             new Critique(2, 3),
+            new ResistanceFeu(7, 10),
+            new ResistanceEau(7, 10),
+            new ResistanceAir(7, 10),
           ]
         ),
         new Equipement(
@@ -103,6 +112,8 @@ export class CapeHttpService {
             new RetraitPM(4, 5),
             new DommagesCritiques(7, 10),
             new Critique(2, 3),
+            new ResistanceTerre(7, 10),
+            new ResistanceAir(7, 10)
           ]
         ),
         new Equipement(
@@ -123,6 +134,8 @@ export class CapeHttpService {
             new DommagesCritiques(11, 15),
             new Critique(4, 6),
             new PO(1, 1),
+            new ResistanceTerre(5, 7),
+            new ResistanceEau(5, 7),
           ]
         ),
         new Equipement(
@@ -138,6 +151,9 @@ export class CapeHttpService {
             new PM(1, 1),
             new DommagesNeutre(14, 18),
             new DommagesTerre(14, 18),
+            new ResistanceFeu(7, 10),
+            new ResistanceEau(5, 8),
+            new ResistanceAir(4, 7)
           ]
         )
       ])
