@@ -32,6 +32,7 @@ import {Characteristique2Component} from './builder/characteristique2/characteri
 import {IopComponent} from './builder/iop/iop.component'
 import {DamageCalculatorService} from './builder/damage-calculator.service'
 import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.component'
+import {ResistanceComponent} from './builder/resistance/resistance.component'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.co
     Characteristique1Component,
     Characteristique2Component,
     IopComponent,
-    PanoplieBonusComponent
+    PanoplieBonusComponent,
+    ResistanceComponent
   ],
   imports: [
     CommonModule,

@@ -21,6 +21,16 @@ export class CharacteritiqueService {
   private _dommagesDistance = 0
   private _dommagesAuxSorts = 0
 
+  private _resistanceTerre = 0
+  private _resistanceFeu = 0
+  private _resistanceEau = 0
+  private _resistanceAir = 0
+
+  private _resistanceFixeTerre = 0
+  private _resistanceFixeFeu = 0
+  private _resistanceFixeEau = 0
+  private _resistanceFixeAir = 0
+
   get force(): number {
     return this._force
   }
@@ -147,5 +157,69 @@ export class CharacteritiqueService {
 
   set dommagesAuxSorts(value: number) {
     this._dommagesAuxSorts += value
+  }
+
+  get resistanceTerre(): number {
+    return this._resistanceTerre
+  }
+
+  set resistanceTerre(value: number) {
+    this._resistanceTerre = value
+  }
+
+  get resistanceFeu(): number {
+    return this._resistanceFeu
+  }
+
+  set resistanceFeu(value: number) {
+    this._resistanceFeu = value
+  }
+
+  get resistanceEau(): number {
+    return this._resistanceEau
+  }
+
+  set resistanceEau(value: number) {
+    this._resistanceEau = value
+  }
+
+  get resistanceAir(): number {
+    return this._resistanceAir
+  }
+
+  set resistanceAir(value: number) {
+    this._resistanceAir = value
+  }
+
+  get resistanceFixeTerre(): number {
+    return this._resistanceFixeTerre
+  }
+
+  set resistanceFixeTerre(value: number) {
+    this._resistanceFixeTerre = value
+  }
+
+  get resistanceFixeFeu(): number {
+    return this._resistanceFixeFeu
+  }
+
+  set resistanceFixeFeu(value: number) {
+    this._resistanceFixeFeu = value
+  }
+
+  get resistanceFixeEau(): number {
+    return this._resistanceFixeEau
+  }
+
+  set resistanceFixeEau(value: number) {
+    this._resistanceFixeEau = value
+  }
+
+  get resistanceFixeAir(): number {
+    return this._resistanceFixeAir
+  }
+
+  set resistanceFixeAir(value: number) {
+    this._resistanceFixeAir = value
   }
 }

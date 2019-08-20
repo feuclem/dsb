@@ -396,5 +396,29 @@ export class StatistiquesService {
     if (stat.label === 'DommagesAuxSorts') {
       this.characteritiqueService.dommagesAuxSorts = stat.to
     }
+    if (stat.label === 'ResistanceTerre') {
+      this.characteritiqueService.resistanceTerre = stat.to
+    }
+    if (stat.label === 'ResistanceFeu') {
+      this.characteritiqueService.resistanceFeu = stat.to
+    }
+    if (stat.label === 'ResistanceEau') {
+      this.characteritiqueService.resistanceEau = stat.to
+    }
+    if (stat.label === 'ResistanceAir') {
+      this.characteritiqueService.resistanceAir = stat.to
+    }
+    if (stat.label === 'resistanceFixeTerre') {
+      this.characteritiqueService.resistanceFixeTerre = stat.to
+    }
+    if (stat.label === 'resistanceFixeFeu') {
+      this.characteritiqueService.resistanceFixeFeu = stat.to
+    }
+    if (stat.label === 'resistanceFixeEau') {
+      this.characteritiqueService.resistanceFixeEau = stat.to
+    }
+    if (stat.label === 'resistanceFixeAir') {
+      this.characteritiqueService.resistanceFixeAir = stat.to
+    }
   }
 }
