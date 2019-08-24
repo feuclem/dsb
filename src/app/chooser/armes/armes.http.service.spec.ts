@@ -5,16 +5,13 @@ import {Arme} from '../../shared/entities/Arme'
 import {DommagesNeutreArme, DommagesTerre, Force} from '../../shared/entities/Statistique'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
 import {environment} from '../../../environments/environment'
+import {StatistiquesServiceMock} from '../../shared/service/statistiques.service.mock'
 import deepEqual = require('deep-equal')
 
 let armesHttpService = null
 let statistiquesService = null
-class StatistiquesServiceMock {
-  extractor() {
-  }
-}
 
-describe('ArmesService', () => {
+describe('ArmesHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ArmesHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]

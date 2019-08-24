@@ -5,8 +5,9 @@ import {RouterTestingModule} from '@angular/router/testing'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {CeintureHttpService} from './ceinture.http.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsComponent', () => {
+describe('CeintureComponent', () => {
   let component: CeintureComponent
   let fixture: ComponentFixture<CeintureComponent>
 
@@ -14,7 +15,7 @@ describe('EquipementsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CeintureComponent],
       imports: [RouterTestingModule],
-      providers: [CeintureHttpService, StuffService, StatistiquesService]
+      providers: [CeintureHttpService, StuffService,  {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
       .compileComponents()
   }))

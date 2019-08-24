@@ -1,11 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing'
 
-import { CeintureHttpService } from './ceinture.http.service';
+import {CeintureHttpService} from './ceinture.http.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsService', () => {
+describe('CeintureHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CeintureHttpService]
+      providers: [CeintureHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     });
   });
 

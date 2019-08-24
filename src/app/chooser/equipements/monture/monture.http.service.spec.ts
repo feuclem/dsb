@@ -1,15 +1,17 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing'
 
-import { MontureHttpService } from './monture.http.service';
+import {MontureHttpService} from './monture.http.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsService', () => {
+describe('MontureHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MontureHttpService]
-    });
-  });
+      providers: [MontureHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
+    })
+  })
 
   it('should be created', inject([MontureHttpService], (service: MontureHttpService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+    expect(service).toBeTruthy()
+  }))
+})

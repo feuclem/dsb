@@ -5,8 +5,9 @@ import {RouterTestingModule} from '@angular/router/testing'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {BottesHttpService} from './bottes.http.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsComponent', () => {
+describe('BottesComponent', () => {
   let component: BottesComponent
   let fixture: ComponentFixture<BottesComponent>
 
@@ -14,7 +15,7 @@ describe('EquipementsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [BottesComponent],
       imports: [RouterTestingModule],
-      providers: [BottesHttpService, StuffService, StatistiquesService]
+      providers: [BottesHttpService, StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
       .compileComponents()
   }))

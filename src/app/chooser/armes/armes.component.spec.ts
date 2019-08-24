@@ -5,6 +5,7 @@ import {RouterTestingModule} from '@angular/router/testing'
 import {ArmesHttpService} from './armes.http.service'
 import {StuffService} from '../../shared/service/stuff.service'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {StatistiquesServiceMock} from '../../shared/service/statistiques.service.mock'
 
 describe('ArmesComponent', () => {
   let component: ArmesComponent
@@ -14,7 +15,7 @@ describe('ArmesComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ArmesComponent],
       imports: [RouterTestingModule],
-      providers: [ArmesHttpService, StuffService, StatistiquesService]
+      providers: [ArmesHttpService, StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
       .compileComponents()
   }))

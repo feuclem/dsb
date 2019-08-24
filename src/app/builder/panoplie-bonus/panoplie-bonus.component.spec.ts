@@ -4,8 +4,8 @@ import {PanoplieBonusComponent} from './panoplie-bonus.component'
 import {StuffService} from '../../shared/service/stuff.service'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
 import {PanoplieService} from '../../shared/service/panoplie.service'
-import {CharacteritiqueService} from '../../shared/service/characteritique.service'
-import {Statistique} from '../../shared/entities/Statistique'
+import {DommagesCritiques, Puissance, Vitalite} from '../../shared/entities/Statistique'
+import {StatistiquesServiceMock} from '../../shared/service/statistiques.service.mock'
 
 describe('PanoplieBonusComponent', () => {
   let component: PanoplieBonusComponent
@@ -18,7 +18,7 @@ describe('PanoplieBonusComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PanoplieBonusComponent],
-      providers: [StuffService, StatistiquesService, PanoplieService, CharacteritiqueService]
+      providers: [StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}, PanoplieService]
     })
       .compileComponents()
 
@@ -45,30 +45,39 @@ describe('PanoplieBonusComponent', () => {
     describe('when getBonusStatsToAdd has element', () => {
       it('should call statistiquesService any time', () => {
         // Given
-        const stat = new Statistique(1, 1, 'fakeLabel')
-        component.getBonusStatsToAdd = [stat]
+        spyOn(panoplieService, 'getPanoplieBonus').and.returnValues([
+            new Vitalite(100, 100),
+            new Puissance(50, 50),
+            new DommagesCritiques(20, 20)
+          ]
+        )
         spyOn(statistiquesService, 'setStatInStuff')
 
         // When
         component.ngOnInit()
 
         // Then
-        expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(stat)
+        expect(statistiquesService.setStatInStuff).toHaveBeenCalledTimes(3)
+        expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Vitalite(100, 100))
+        expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Puissance(50, 50))
+        expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Vitalite(100, 100))
       })
-    })
 
-    describe('when getBonusStatsToAdd has element', () => {
-      it('should call statistiquesService any time', () => {
+      it('should call resetListIdEquipment', () => {
         // Given
-        const stat = new Statistique(1, 1, 'fakeLabel')
-        component.getBonusStatsToAdd = [stat]
+        spyOn(panoplieService, 'getPanoplieBonus').and.returnValues([
+            new Vitalite(100, 100),
+            new Puissance(50, 50),
+            new DommagesCritiques(20, 20)
+          ]
+        )
         spyOn(stuffService, 'resetListIdEquipment')
 
         // When
         component.ngOnInit()
 
         // Then
-        expect(stuffService.resetListIdEquipment).toHaveBeenCalledWith(stat)
+        expect(stuffService.resetListIdEquipment).toHaveBeenCalledWith()
       })
     })
   })

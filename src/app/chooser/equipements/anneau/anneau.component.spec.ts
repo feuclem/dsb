@@ -5,8 +5,9 @@ import {RouterTestingModule} from '@angular/router/testing'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {AnneauHttpService} from './anneau.http.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsComponent', () => {
+describe('AnneauComponent', () => {
   let component: AnneauComponent
   let fixture: ComponentFixture<AnneauComponent>
 
@@ -14,7 +15,7 @@ describe('EquipementsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AnneauComponent],
       imports: [RouterTestingModule],
-      providers: [AnneauHttpService, StuffService, StatistiquesService]
+      providers: [AnneauHttpService, StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
       .compileComponents()
   }))

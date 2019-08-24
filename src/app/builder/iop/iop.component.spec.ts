@@ -2,17 +2,11 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {IopComponent} from './iop.component'
 import {DamageCalculatorService} from '../damage-calculator.service'
+import {DamageCalculatorServiceMock} from '../damage-calculator.service.mock'
 
 describe('IopComponent', () => {
   let component: IopComponent
   let fixture: ComponentFixture<IopComponent>
-
-  class DamageCalculatorServiceMock {
-    calculDegatBase(a, b) {}
-
-    calculDegatCritique(a, b) {}
-  }
-
   let damageCalculatorService = null
 
   beforeEach(async(() => {

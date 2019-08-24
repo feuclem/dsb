@@ -1,4 +1,4 @@
-import {Statistique} from './Statistique'
+import {Bonus} from './Bonus'
 
 export class Panoplie {
   id: number
@@ -26,31 +26,5 @@ export class Panoplie {
     this.bonus = bonus
     this.equipementsId = equipementsId
   }
-
-  static getPanoplieBonus(listPanoplie: Panoplie[], listIdEquipement: number[]): Statistique[] {
-    const stats: Statistique[] = []
-    listPanoplie.map(panoplie => {
-      const hasEquipementList = panoplie.equipementsId.map(s => listIdEquipement.includes(s))
-      if (hasEquipementList.filter(it => it).length === 2) {
-        stats.push(...panoplie.bonus[0].stats)
-      }
-      if (hasEquipementList.filter(it => it).length === 3) {
-        stats.push(...panoplie.bonus[1].stats)
-      }
-    })
-    return stats
-  }
 }
 
-export class Bonus {
-  number: number
-  stats: Statistique[]
-
-  constructor(
-    number: number,
-    stats: Statistique[]
-  ) {
-    this.number = number
-    this.stats = stats
-  }
-}

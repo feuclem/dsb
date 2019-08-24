@@ -1,11 +1,13 @@
 import {inject, TestBed} from '@angular/core/testing'
 
 import {TropheeHttpService} from './trophee.http.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsService', () => {
+describe('TropheeHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TropheeHttpService]
+      providers: [TropheeHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     });
   });
 

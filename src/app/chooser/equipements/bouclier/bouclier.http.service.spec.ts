@@ -1,15 +1,17 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing'
 
-import { BouclierHttpService } from './bouclier.http.service';
+import {BouclierHttpService} from './bouclier.http.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 
-describe('EquipementsService', () => {
+describe('BouclierHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BouclierHttpService]
-    });
-  });
+      providers: [BouclierHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
+    })
+  })
 
   it('should be created', inject([BouclierHttpService], (service: BouclierHttpService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+    expect(service).toBeTruthy()
+  }))
+})
