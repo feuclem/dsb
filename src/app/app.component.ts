@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
-import {PanoplieHttpService} from './shared/panoplie.http.service'
-import {PanoplieService} from './shared/panoplie.service'
+import {PanoplieHttpService} from './shared/httpService/panoplie.http.service'
+import {PanoplieService} from './shared/service/panoplie.service'
 
 @Component({
   selector: 'dsb-root',

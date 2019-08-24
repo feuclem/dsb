@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core'
 import {Agilite, Force, Intelligence, PM, Puissance} from '../../../shared/entities/Statistique'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
-import {StatistiquesService} from '../../../shared/statistiques.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
 
 @Injectable()
 export class TropheeHttpService {

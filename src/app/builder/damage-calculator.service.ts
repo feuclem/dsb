@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 import {Sorts} from '../shared/entities/Sorts'
-import {CharacteritiqueService} from '../shared/characteritique.service'
+import {CharacteritiqueService} from '../shared/service/characteritique.service'
 
 @Injectable()
 export class DamageCalculatorService {

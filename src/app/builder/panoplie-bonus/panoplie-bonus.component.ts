@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 import {Statistique} from '../../shared/entities/Statistique'
 import {Panoplie} from '../../shared/entities/Panoplie'
-import {StuffService} from '../../shared/stuff.service'
-import {StatistiquesService} from '../../shared/statistiques.service'
-import {PanoplieService} from '../../shared/panoplie.service'
+import {StuffService} from '../../shared/service/stuff.service'
+import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {PanoplieService} from '../../shared/service/panoplie.service'
 
 @Component({
   selector: 'dsb-panoplie-bonus',

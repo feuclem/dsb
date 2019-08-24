@@ -25,7 +25,7 @@ import {
   Vitalite
 } from '../../shared/entities/Statistique'
 import {environment} from '../../../environments/environment'
-import {StatistiquesService} from '../../shared/statistiques.service'
+import {StatistiquesService} from '../../shared/service/statistiques.service'
 
 @Injectable()
 export class ArmesHttpService {

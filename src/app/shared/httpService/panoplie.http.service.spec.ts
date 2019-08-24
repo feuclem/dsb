@@ -1,10 +1,10 @@
 import {TestBed} from '@angular/core/testing'
 
 import {PanoplieHttpService} from './panoplie.http.service'
-import {DommagesCritiques, PA, Puissance, Vitalite} from './entities/Statistique'
-import {Bonus, Panoplie} from './entities/Panoplie'
-import {StatistiquesService} from './statistiques.service'
-import {environment} from '../../environments/environment'
+import {DommagesCritiques, PA, Puissance, Vitalite} from '../entities/Statistique'
+import {Bonus, Panoplie} from '../entities/Panoplie'
+import {StatistiquesService} from '../service/statistiques.service'
+import {environment} from '../../../environments/environment'
 import deepEqual = require('deep-equal')
 
 let panoplieHttpService = null

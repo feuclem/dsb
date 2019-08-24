@@ -9,11 +9,11 @@ import {AppComponent} from './app.component'
 import {ArmesComponent} from './chooser/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {CommonModule} from '@angular/common'
-import {StuffService} from './shared/stuff.service'
-import {CharacteritiqueService} from './shared/characteritique.service'
+import {StuffService} from './shared/service/stuff.service'
+import {CharacteritiqueService} from './shared/service/characteritique.service'
 import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
 import {AnneauComponent} from './chooser/equipements/anneau/anneau.component'
-import {StatistiquesService} from './shared/statistiques.service'
+import {StatistiquesService} from './shared/service/statistiques.service'
 import {BottesComponent} from './chooser/equipements/bottes/bottes.component'
 import {CeintureComponent} from './chooser/equipements/ceinture/ceinture.component'
 import {CoiffeComponent} from './chooser/equipements/coiffe/coiffe.component'
@@ -23,8 +23,8 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
-import {PanoplieService} from './shared/panoplie.service'
-import {PanoplieHttpService} from './shared/panoplie.http.service'
+import {PanoplieService} from './shared/service/panoplie.service'
+import {PanoplieHttpService} from './shared/httpService/panoplie.http.service'
 import {Stuff1Component} from './builder/stuff1/stuff1.component'
 import {Stuff2Component} from './builder/stuff2/stuff2.component'
 import {Characteristique1Component} from './builder/characteristique1/characteristique1.component'
@@ -33,6 +33,11 @@ import {IopComponent} from './builder/iop/iop.component'
 import {DamageCalculatorService} from './builder/damage-calculator.service'
 import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.component'
 import {ResistanceComponent} from './builder/resistance/resistance.component'
+import {NiveauComponent} from './chooser/niveau/niveau.component'
+import {ClasseComponent} from './chooser/classe/classe.component'
+import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
+import {NiveauService} from './chooser/niveau/niveau.service'
+import {ClasseService} from './chooser/classe/classe.service'
 
 @NgModule({
   declarations: [
@@ -56,7 +61,10 @@ import {ResistanceComponent} from './builder/resistance/resistance.component'
     Characteristique2Component,
     IopComponent,
     PanoplieBonusComponent,
-    ResistanceComponent
+    ResistanceComponent,
+    NiveauComponent,
+    ClasseComponent,
+    SacrieurComponent
   ],
   imports: [
     CommonModule,
@@ -71,7 +79,9 @@ import {ResistanceComponent} from './builder/resistance/resistance.component'
     StatistiquesService,
     PanoplieHttpService,
     PanoplieService,
-    DamageCalculatorService
+    DamageCalculatorService,
+    NiveauService,
+    ClasseService
   ],
   bootstrap: [AppComponent]
 })

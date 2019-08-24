@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {StuffService} from '../../shared/stuff.service'
+import {StuffService} from '../../shared/service/stuff.service'
 
 @Component({
   selector: 'dsb-stuff2',

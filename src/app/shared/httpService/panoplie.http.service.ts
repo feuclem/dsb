@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core'
-import {environment} from '../../environments/environment'
-import {DommagesCritiques, Force, Intelligence, PA, Puissance, RetraitPM, Vitalite} from './entities/Statistique'
-import {StatistiquesService} from './statistiques.service'
-import {Bonus, Panoplie} from './entities/Panoplie'
+import {environment} from '../../../environments/environment'
+import {DommagesCritiques, Force, Intelligence, PA, Puissance, RetraitPM, Vitalite} from '../entities/Statistique'
+import {StatistiquesService} from '../service/statistiques.service'
+import {Bonus, Panoplie} from '../entities/Panoplie'
 
 @Injectable()
 export class PanoplieHttpService {

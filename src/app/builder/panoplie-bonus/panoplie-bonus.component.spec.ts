@@ -1,12 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {PanoplieBonusComponent} from './panoplie-bonus.component'
-import {StuffService} from '../../shared/stuff.service'
-import {StatistiquesService} from '../../shared/statistiques.service'
-import {PanoplieService} from '../../shared/panoplie.service'
-import {Panoplie} from '../../shared/entities/Panoplie'
-import {NO_ERRORS_SCHEMA} from '@angular/core'
-import {CharacteritiqueService} from '../../shared/characteritique.service'
+import {StuffService} from '../../shared/service/stuff.service'
+import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {PanoplieService} from '../../shared/service/panoplie.service'
+import {CharacteritiqueService} from '../../shared/service/characteritique.service'
 import {Statistique} from '../../shared/entities/Statistique'
 
 describe('PanoplieBonusComponent', () => {

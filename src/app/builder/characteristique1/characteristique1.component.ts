@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {CharacteritiqueService} from '../../shared/characteritique.service'
+import {CharacteritiqueService} from '../../shared/service/characteritique.service'
 
 @Component({
   selector: 'dsb-characteristique1',

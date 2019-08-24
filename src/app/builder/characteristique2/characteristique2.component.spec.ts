@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {Characteristique2Component} from './characteristique2.component'
-import {CharacteritiqueService} from '../../shared/characteritique.service'
+import {CharacteritiqueService} from '../../shared/service/characteritique.service'
 
 describe('Characteristique2Component', () => {
   let component: Characteristique2Component

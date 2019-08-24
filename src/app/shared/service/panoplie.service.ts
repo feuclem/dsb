@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {Panoplie} from './entities/Panoplie'
+import {Panoplie} from '../entities/Panoplie'
 
 @Injectable()
 export class PanoplieService {

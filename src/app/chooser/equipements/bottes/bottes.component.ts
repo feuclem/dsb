@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core'
 import {BottesHttpService} from './bottes.http.service'
-import {StuffService} from '../../../shared/stuff.service'
+import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {Equipement} from '../../../shared/entities/Equipement'
-import {StatistiquesService} from '../../../shared/statistiques.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
 
 @Component({
   selector: 'dsb-equipements',

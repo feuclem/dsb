@@ -1,6 +1,6 @@
-import {Sorts} from './Sorts'
-import {SortsBoost} from './SortsBoost'
-import {SortsBoostZone} from './SortsBoostZone'
+import {Sorts} from '../Sorts'
+import {SortsBoost} from '../SortsBoost'
+import {SortsBoostZone} from '../SortsBoostZone'
 
 export class Iop {
   pression = new Sorts('Pression', '../assets/pression.webp', 'terre', [24, 28], [29, 34])

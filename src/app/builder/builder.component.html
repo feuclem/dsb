@@ -1,4 +1,7 @@
 <div class="builder container">
+  <dsb-niveau></dsb-niveau>
+  <dsb-classe></dsb-classe>
+
   <dsb-stuff1></dsb-stuff1>
   <dsb-stuff2></dsb-stuff2>
   <dsb-characteristique1></dsb-characteristique1>
@@ -6,5 +9,7 @@
   <dsb-resistance></dsb-resistance>
 
   <dsb-panoplie-bonus></dsb-panoplie-bonus>
-  <dsb-iop></dsb-iop>
+
+  <dsb-iop *ngIf="classe === 'Iop'"></dsb-iop>
+  <dsb-sacrieur *ngIf="classe === 'Sacrieur'"></dsb-sacrieur>
 </div>

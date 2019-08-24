@@ -2,7 +2,7 @@ import {TestBed} from '@angular/core/testing'
 
 import {DamageCalculatorService} from './damage-calculator.service'
 import {Sorts} from '../shared/entities/Sorts'
-import {CharacteritiqueService} from '../shared/characteritique.service'
+import {CharacteritiqueService} from '../shared/service/characteritique.service'
 
 describe('DamageCalculatorService', () => {
   let damageCalculatorService = null

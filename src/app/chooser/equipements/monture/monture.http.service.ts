@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core'
 import {Critique, Force, PA, PM, Puissance, Vitalite} from '../../../shared/entities/Statistique'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {environment} from '../../../../environments/environment'
-import {StatistiquesService} from '../../../shared/statistiques.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
 
 @Injectable()
 export class MontureHttpService {

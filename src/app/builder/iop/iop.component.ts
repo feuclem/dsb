@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {DamageCalculatorService} from '../damage-calculator.service'
-import {Iop} from '../../shared/entities/Iop'
+import {Iop} from '../../shared/entities/classe/Iop'
 
 @Component({
   selector: 'dsb-iop',

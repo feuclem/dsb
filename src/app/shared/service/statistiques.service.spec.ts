@@ -2,7 +2,7 @@ import {TestBed} from '@angular/core/testing'
 
 import {StatistiquesService} from './statistiques.service'
 import {CharacteritiqueService} from './characteritique.service'
-import {Critique, ResistanceAir, ResistanceEau, ResistanceFeu, ResistanceNeutre, ResistanceTerre} from './entities/Statistique'
+import {Critique, ResistanceAir, ResistanceEau, ResistanceFeu, ResistanceNeutre, ResistanceTerre} from '../entities/Statistique'
 
 describe('StatistiquesService', () => {
 
