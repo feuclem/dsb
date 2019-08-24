@@ -280,7 +280,7 @@ export class ResistanceNeutre extends Statistique {
   }
 }
 
-export class ResistanceFixNeutre extends Statistique {
+export class ResistanceFixeNeutre extends Statistique {
   from: number
   to: number
 

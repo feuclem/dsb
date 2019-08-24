@@ -17,7 +17,7 @@ import {
   ResistanceAir,
   ResistanceEau,
   ResistanceFeu,
-  ResistanceFixNeutre,
+  ResistanceFixeNeutre,
   ResistanceTerre,
   RetraitPM,
   Sagesse,
@@ -84,7 +84,7 @@ export class AnneauHttpService {
             new Vitalite(71, 100),
             new Dommages(4, 5),
             new PO(1, 1),
-            new ResistanceFixNeutre(4, 6),
+            new ResistanceFixeNeutre(4, 6),
             new ResistanceFeu(5, 7)
           ]
         ),
