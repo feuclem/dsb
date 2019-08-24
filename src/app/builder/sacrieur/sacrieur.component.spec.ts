@@ -7,6 +7,7 @@ import {DamageCalculatorServiceMock} from '../damage-calculator.service.mock'
 describe('SacrieurComponent', () => {
   let component: SacrieurComponent
   let fixture: ComponentFixture<SacrieurComponent>
+  let damageCalculatorService = null
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,6 +15,8 @@ describe('SacrieurComponent', () => {
       providers: [{provide: DamageCalculatorService, useClass: DamageCalculatorServiceMock}]
     })
       .compileComponents()
+
+    damageCalculatorService = TestBed.get(DamageCalculatorService)
   }))
 
   beforeEach(() => {
@@ -22,7 +25,29 @@ describe('SacrieurComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  describe('calculDegatBase', () => {
+    it('should call calculDegatBase from damageCalculatorService', () => {
+      // Given
+      spyOn(damageCalculatorService, 'calculDegatBase').and.returnValues(1)
+
+      // When
+      component.calculDegatBase(1, 'fakeType')
+
+      // Then
+      expect(damageCalculatorService.calculDegatBase).toHaveBeenCalledWith(1, 'fakeType')
+    })
+  })
+
+  describe('calculDegatCritique', () => {
+    it('should call calculDegatCritique from damageCalculatorService', () => {
+      // Given
+      spyOn(damageCalculatorService, 'calculDegatCritique').and.returnValues(1)
+
+      // When
+      component.calculDegatCritique(1, 'fakeType')
+
+      // Then
+      expect(damageCalculatorService.calculDegatCritique).toHaveBeenCalledWith(1, 'fakeType')
+    })
   })
 })

@@ -14,8 +14,4 @@ export class ClasseService {
   getClasse(): Observable<string> {
     return this._classe.asObservable()
   }
-
-  constructor() {
-  }
-
 }

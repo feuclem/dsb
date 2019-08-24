@@ -21,7 +21,25 @@ describe('ResistanceComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  describe('on init', () => {
+    const attributeToTest = [
+      'resistanceTerre',
+      'resistanceFeu',
+      'resistanceEau',
+      'resistanceAir',
+      'resistanceFixeTerre',
+      'resistanceFixeFeu',
+      'resistanceFixeEau',
+      'resistanceFixeAir',
+    ]
+    attributeToTest.forEach(item => {
+      it(`should should set ${item}with the given service value`, () => {
+        // When
+        component.ngOnInit()
+
+        // Then
+        expect(component[item]).toEqual(0)
+      })
+    })
   })
 })

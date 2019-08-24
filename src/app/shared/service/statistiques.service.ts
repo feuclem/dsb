@@ -408,16 +408,16 @@ export class StatistiquesService {
     if (stat.label === 'ResistanceAir') {
       this.characteritiqueService.resistanceAir = stat.to
     }
-    if (stat.label === 'resistanceFixeTerre') {
+    if (stat.label === 'ResistanceFixeTerre') {
       this.characteritiqueService.resistanceFixeTerre = stat.to
     }
-    if (stat.label === 'resistanceFixeFeu') {
+    if (stat.label === 'ResistanceFixeFeu') {
       this.characteritiqueService.resistanceFixeFeu = stat.to
     }
-    if (stat.label === 'resistanceFixeEau') {
+    if (stat.label === 'ResistanceFixeEau') {
       this.characteritiqueService.resistanceFixeEau = stat.to
     }
-    if (stat.label === 'resistanceFixeAir') {
+    if (stat.label === 'ResistanceFixeAir') {
       this.characteritiqueService.resistanceFixeAir = stat.to
     }
   }
