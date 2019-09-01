@@ -93,6 +93,7 @@ describe('ArmesHttpService', () => {
   it('getAllArmes', () => {
     // Given
     environment.mock = false
+    environment.staticUrl = 'fakeStaticUrl'
     const stats = [
       new DommagesNeutreArme(
         8,
@@ -115,7 +116,7 @@ describe('ArmesHttpService', () => {
         'Epée de Boisaille',
         7,
         'Épée',
-        'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/6007.png',
+        'fakeStaticUrl/armes/EpéedeBoisaille.png',
         stats
       )
     ]

@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  mock: false
+  mock: false,
+  apiUrl: '',
+  staticUrl: ''
 }

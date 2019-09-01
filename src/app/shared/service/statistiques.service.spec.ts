@@ -38,7 +38,6 @@ import {
   ResistanceFixeFeu,
   ResistanceFixeNeutre,
   ResistanceFixeTerre,
-  ResistanceNeutre,
   ResistancePoussees,
   ResistanceTerre,
   RetraitPA,
@@ -65,43 +64,44 @@ describe('StatistiquesService', () => {
 
   describe('extractor', () => {
     const listToTest = [
-      {label: '(dommages Neutre)', stat: {'(dommages Neutre)': {from: 1, to: 1}}, expected: new DommagesNeutreArme(1, 1)},
-      {label: 'Dommages Neutre', stat: {'Dommages Neutre': {from: 1, to: 1}}, expected: new DommagesNeutre(1, 1)},
-      {label: 'Force', stat: {'Force': {from: 1, to: 1}}, expected: new Force(1, 1)},
-      {label: 'Intelligence', stat: {'Intelligence': {from: 1, to: 1}}, expected: new Intelligence(1, 1)},
-      {label: 'Chance', stat: {'Chance': {from: 1, to: 1}}, expected: new Chance(1, 1)},
-      {label: 'Agilité', stat: {'Agilité': {from: 1, to: 1}}, expected: new Agilite(1, 1)},
-      {label: 'Vitalité', stat: {'Vitalité': {from: 1, to: 1}}, expected: new Vitalite(1, 1)},
-      {label: 'Sagesse', stat: {'Sagesse': {from: 1, to: 1}}, expected: new Sagesse(1, 1)},
-      {label: 'Dommages', stat: {'Dommages': {from: 1, to: 1}}, expected: new Dommages(1, 1)},
-      {label: 'Puissance', stat: {'Puissance': {from: 1, to: 1}}, expected: new Puissance(1, 1)},
-      {label: 'Dommages Terre', stat: {'Dommages Terre': {from: 1, to: 1}}, expected: new DommagesTerre(1, 1)},
-      {label: '(dommages Terre)', stat: {'(dommages Terre)': {from: 1, to: 1}}, expected: new DommagesTerreArme(1, 1)},
-      {label: 'Dommages Feu', stat: {'Dommages Feu': {from: 1, to: 1}}, expected: new DommagesFeu(1, 1)},
-      {label: '(dommages Feu)', stat: {'(dommages Feu)': {from: 1, to: 1}}, expected: new DommagesFeuArme(1, 1)},
-      {label: 'Dommages Eau', stat: {'Dommages Eau': {from: 1, to: 1}}, expected: new DommagesEau(1, 1)},
-      {label: '(dommages Eau)', stat: {'(dommages Eau)': {from: 1, to: 1}}, expected: new DommagesEauArme(1, 1)},
-      {label: 'Dommages Air', stat: {'Dommages Air': {from: 1, to: 1}}, expected: new DommagesAir(1, 1)},
-      {label: '(dommages Air)', stat: {'(dommages Air)': {from: 1, to: 1}}, expected: new DommagesAirArme(1, 1)},
-      {label: 'Fuite', stat: {'Fuite': {from: 1, to: 1}}, expected: new Fuite(1, 1)},
-      {label: 'Tacle', stat: {'Tacle': {from: 1, to: 1}}, expected: new Tacle(1, 1)},
-      {label: 'Portée', stat: {'Portée': {from: 1, to: 1}}, expected: new PO(1, 1)},
-      {label: 'PM', stat: {'PM': {from: 1, to: 1}}, expected: new PM(1, 1)},
-      {label: 'PA', stat: {'PA': {from: 1, to: 1}}, expected: new PA(1, 1)},
-      {label: 'Retrait PM', stat: {'Retrait PM': {from: 1, to: 1}}, expected: new RetraitPM(1, 1)},
-      {label: 'Retrait PA', stat: {'Retrait PA': {from: 1, to: 1}}, expected: new RetraitPA(1, 1)},
-      {label: 'Résistance Neutre', stat: {'Résistance Neutre': {from: 1, to: 1}}, expected: new ResistanceFixeNeutre(1, 1)},
-      {label: 'Résistance Terre', stat: {'Résistance Terre': {from: 1, to: 1}}, expected: new ResistanceFixeTerre(1, 1)},
-      {label: 'Résistance Feu', stat: {'Résistance Feu': {from: 1, to: 1}}, expected: new ResistanceFixeFeu(1, 1)},
-      {label: 'Résistance Eau', stat: {'Résistance Eau': {from: 1, to: 1}}, expected: new ResistanceFixeEau(1, 1)},
-      {label: 'Résistance Air', stat: {'Résistance Air': {from: 1, to: 1}}, expected: new ResistanceFixeAir(1, 1)},
-      {label: 'Résistance Critiques', stat: {'Résistance Critiques': {from: 1, to: 1}}, expected: new ResistanceCritiques(1, 1)},
-      {label: 'Résistance Poussée', stat: {'Résistance Poussée': {from: 1, to: 1}}, expected: new ResistancePoussees(1, 1)},
-      {label: 'Soins', stat: {'Soins': {from: 1, to: 1}}, expected: new Soins(1, 1)},
-      {label: 'Pods', stat: {'Pods': {from: 1, to: 1}}, expected: new Pods(1, 1)},
-      {label: 'Dommages Critiques', stat: {'Dommages Critiques': {from: 1, to: 1}}, expected: new DommagesCritiques(1, 1)},
-      {label: '% Dommages distance', stat: {'% Dommages distance': {from: 1, to: 1}}, expected: new DommagesDistance(1, 1)},
-      {label: '% Dommages mêlée', stat: {'% Dommages mêlée': {from: 1, to: 1}}, expected: new DommagesMelee(1, 1)},
+      {label: 'dommagesArmeNeutre', stat: {'dommagesArmeNeutre': {from: 1, to: 1}}, expected: new DommagesNeutreArme(1, 1)},
+      {label: 'dommagesNeutre', stat: {'dommagesNeutre': {from: 1, to: 1}}, expected: new DommagesNeutre(1, 1)},
+      {label: 'force', stat: {'force': {from: 1, to: 1}}, expected: new Force(1, 1)},
+      {label: 'intelligence', stat: {'intelligence': {from: 1, to: 1}}, expected: new Intelligence(1, 1)},
+      {label: 'chance', stat: {'chance': {from: 1, to: 1}}, expected: new Chance(1, 1)},
+      {label: 'agilite', stat: {'agilite': {from: 1, to: 1}}, expected: new Agilite(1, 1)},
+      {label: 'vitalite', stat: {'vitalite': {from: 1, to: 1}}, expected: new Vitalite(1, 1)},
+      {label: 'sagesse', stat: {'sagesse': {from: 1, to: 1}}, expected: new Sagesse(1, 1)},
+      {label: 'dommages', stat: {'dommages': {from: 1, to: 1}}, expected: new Dommages(1, 1)},
+      {label: 'puissance', stat: {'puissance': {from: 1, to: 1}}, expected: new Puissance(1, 1)},
+      {label: 'dommagesTerre', stat: {'dommagesTerre': {from: 1, to: 1}}, expected: new DommagesTerre(1, 1)},
+      {label: 'dommagesArmeTerre', stat: {'dommagesArmeTerre': {from: 1, to: 1}}, expected: new DommagesTerreArme(1, 1)},
+      {label: 'dommagesFeu', stat: {'dommagesFeu': {from: 1, to: 1}}, expected: new DommagesFeu(1, 1)},
+      {label: 'dommagesArmeFeu', stat: {'dommagesArmeFeu': {from: 1, to: 1}}, expected: new DommagesFeuArme(1, 1)},
+      {label: 'dommagesEau', stat: {'dommagesEau': {from: 1, to: 1}}, expected: new DommagesEau(1, 1)},
+      {label: 'dommagesArmeEau', stat: {'dommagesArmeEau': {from: 1, to: 1}}, expected: new DommagesEauArme(1, 1)},
+      {label: 'dommagesAir', stat: {'dommagesAir': {from: 1, to: 1}}, expected: new DommagesAir(1, 1)},
+      {label: 'dommagesArmeAir', stat: {'dommagesArmeAir': {from: 1, to: 1}}, expected: new DommagesAirArme(1, 1)},
+      {label: 'fuite', stat: {'fuite': {from: 1, to: 1}}, expected: new Fuite(1, 1)},
+      {label: 'tacle', stat: {'tacle': {from: 1, to: 1}}, expected: new Tacle(1, 1)},
+      {label: 'po', stat: {'po': {from: 1, to: 1}}, expected: new PO(1, 1)},
+      {label: 'pm', stat: {'pm': {from: 1, to: 1}}, expected: new PM(1, 1)},
+      {label: 'pa', stat: {'pa': {from: 1, to: 1}}, expected: new PA(1, 1)},
+      {label: 'retraitPM', stat: {'retraitPM': {from: 1, to: 1}}, expected: new RetraitPM(1, 1)},
+      {label: 'retraitPA', stat: {'retraitPA': {from: 1, to: 1}}, expected: new RetraitPA(1, 1)},
+      {label: 'resistanceNeutre', stat: {'resistanceNeutre': {from: 1, to: 1}}, expected: new ResistanceFixeNeutre(1, 1)},
+      {label: 'resistanceTerre', stat: {'resistanceTerre': {from: 1, to: 1}}, expected: new ResistanceFixeTerre(1, 1)},
+      {label: 'resistanceFeu', stat: {'resistanceFeu': {from: 1, to: 1}}, expected: new ResistanceFixeFeu(1, 1)},
+      {label: 'resistanceEau', stat: {'resistanceEau': {from: 1, to: 1}}, expected: new ResistanceFixeEau(1, 1)},
+      {label: 'resistanceAir', stat: {'resistanceAir': {from: 1, to: 1}}, expected: new ResistanceFixeAir(1, 1)},
+      {label: 'resistanceCritiques', stat: {'resistanceCritiques': {from: 1, to: 1}}, expected: new ResistanceCritiques(1, 1)},
+      {label: 'resistancePoussee', stat: {'resistancePoussee': {from: 1, to: 1}}, expected: new ResistancePoussees(1, 1)},
+      {label: 'soins', stat: {'soins': {from: 1, to: 1}}, expected: new Soins(1, 1)},
+      {label: 'pods', stat: {'pods': {from: 1, to: 1}}, expected: new Pods(1, 1)},
+      {label: 'dommagesCritiques', stat: {'dommagesCritiques': {from: 1, to: 1}}, expected: new DommagesCritiques(1, 1)},
+      {label: 'pourcentDommagesDistance', stat: {'pourcentDommagesDistance': {from: 1, to: 1}}, expected: new DommagesDistance(1, 1)},
+      {label: 'pourcentDommagesMelee', stat: {'pourcentDommagesMelee': {from: 1, to: 1}}, expected: new DommagesMelee(1, 1)},
+      {label: 'critique', stat: {'critique': {from: 1, to: 1}}, expected: new Critique(1, 1)},
     ]
 
     describe('basic stat', () => {
@@ -112,224 +112,6 @@ describe('StatistiquesService', () => {
 
           // Then
           expect(result).toEqual(item.expected)
-        })
-      })
-    })
-
-    describe('complexe stat', () => {
-      describe('when stat has % Résistance Terre', () => {
-        it('should return ResistanceTerre with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Terre': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceTerre(1, 2))
-        })
-
-        it('should return ResistanceTerre with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Terre': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceTerre(1, 3))
-        })
-      })
-      describe('when stat has 1% Résistance Terre', () => {
-        it('should return ResistanceTerre with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Résistance Terre': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceTerre(1, 1))
-        })
-      })
-      describe('when stat has 2% Résistance Terre', () => {
-        it('should return ResistanceTerre with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Résistance Terre': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceTerre(2, 2))
-        })
-      })
-
-      describe('when stat has % Résistance Feu', () => {
-        it('should return ResistanceFeu with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Feu': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceFeu(1, 2))
-        })
-
-        it('should return ResistanceFeu with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Feu': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceFeu(1, 3))
-        })
-      })
-      describe('when stat has 1% Résistance Feu', () => {
-        it('should return ResistanceFeu with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Résistance Feu': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceFeu(1, 1))
-        })
-      })
-      describe('when stat has 2% Résistance Feu', () => {
-        it('should return ResistanceFeu with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Résistance Feu': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceFeu(2, 2))
-        })
-      })
-
-      describe('when stat has % Résistance Eau', () => {
-        it('should return ResistanceEau with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Eau': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceEau(1, 2))
-        })
-
-        it('should return ResistanceEau with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Eau': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceEau(1, 3))
-        })
-      })
-      describe('when stat has 1% Résistance Eau', () => {
-        it('should return ResistanceEau with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Résistance Eau': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceEau(1, 1))
-        })
-      })
-      describe('when stat has 2% Résistance Eau', () => {
-        it('should return ResistanceEau with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Résistance Eau': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceEau(2, 2))
-        })
-      })
-
-      describe('when stat has % Résistance Air', () => {
-        it('should return ResistanceAir with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Air': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceAir(1, 2))
-        })
-
-        it('should return ResistanceAir with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Air': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceAir(1, 3))
-        })
-      })
-      describe('when stat has 1% Résistance Air', () => {
-        it('should return ResistanceAir with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Résistance Air': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceAir(1, 1))
-        })
-      })
-      describe('when stat has 2% Résistance Air', () => {
-        it('should return ResistanceAir with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Résistance Air': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceAir(2, 2))
-        })
-      })
-
-      describe('when stat has % Résistance Neutre', () => {
-        it('should return ResistanceNeutre with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Neutre': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceNeutre(1, 2))
-        })
-
-        it('should return RésistanceNeutre with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Résistance Neutre': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceNeutre(1, 3))
-        })
-      })
-      describe('when stat has 1% Résistance Neutre', () => {
-        it('should return RésistanceNeutre with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Résistance Neutre': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceNeutre(1, 1))
-        })
-      })
-      describe('when stat has 2% Résistance Neutre', () => {
-        it('should return RésistanceNeutre with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Résistance Neutre': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new ResistanceNeutre(2, 2))
-        })
-      })
-
-      describe('when stat has % Critique', () => {
-        it('should return Critique with 1, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'% Critique': {'from': '1', 'to': '2'}})
-
-          // Then
-          expect(result).toEqual(new Critique(1, 2))
-        })
-
-        it('should return Critique with 1, 3', () => {
-          // When
-          const result = statistiquesService.extractor({'% Critique': {'from': '1', 'to': '3'}})
-
-          // Then
-          expect(result).toEqual(new Critique(1, 3))
-        })
-      })
-      describe('when stat has 1% Critique', () => {
-        it('should return Critique with 1, 1', () => {
-          // When
-          const result = statistiquesService.extractor({'1% Critique': {'from': '1'}})
-
-          // Then
-          expect(result).toEqual(new Critique(1, 1))
-        })
-      })
-      describe('when stat has 2% Critique', () => {
-        it('should return Critique with 2, 2', () => {
-          // When
-          const result = statistiquesService.extractor({'2% Critique': {'from': '2'}})
-
-          // Then
-          expect(result).toEqual(new Critique(2, 2))
         })
       })
     })

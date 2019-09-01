@@ -40,153 +40,155 @@ import {
 
 export const mapperStat = [
   {
-    label: '(dommages Neutre)',
+    label: 'dommagesArmeNeutre',
     type: DommagesNeutreArme
   },
   {
-    label: 'Dommages Neutre',
+    label: 'dommagesNeutre',
     type: DommagesNeutre
   },
   {
-    label: 'Force',
+    label: 'force',
     type: Force
   },
   {
-    label: 'Intelligence',
+    label: 'intelligence',
     type: Intelligence
   },
   {
-    label: 'Chance',
+    label: 'chance',
     type: Chance
   },
   {
-    label: 'Agilité',
+    label: 'agilite',
     type: Agilite
   },
   {
-    label: 'Vitalité',
+    label: 'vitalite',
     type: Vitalite
   },
   {
-    label: 'Sagesse',
+    label: 'sagesse',
     type: Sagesse
   },
   {
-    label: 'Dommages',
+    label: 'dommages',
     type: Dommages
   },
   {
-    label: 'Puissance',
+    label: 'puissance',
     type: Puissance
   },
   {
-    label: 'Dommages Terre',
+    label: 'dommagesTerre',
     type: DommagesTerre
   },
   {
-    label: '(dommages Terre)',
+    label: 'dommagesArmeTerre',
     type: DommagesTerreArme
   },
   {
-    label: 'Dommages Feu',
+    label: 'dommagesFeu',
     type: DommagesFeu
   },
   {
-    label: '(dommages Feu)',
+    label: 'dommagesArmeFeu',
     type: DommagesFeuArme
   },
   {
-    label: 'Dommages Eau',
+    label: 'dommagesEau',
     type: DommagesEau
   },
   {
-    label: '(dommages Eau)',
+    label: 'dommagesArmeEau',
     type: DommagesEauArme
   },
   {
-    label: 'Dommages Air',
+    label: 'dommagesAir',
     type: DommagesAir
   },
   {
-    label: '(dommages Air)',
+    label: 'dommagesArmeAir',
     type: DommagesAirArme
   },
   {
-    label: 'Fuite',
+    label: 'fuite',
     type: Fuite
   },
   {
-    label: 'Tacle',
+    label: 'tacle',
     type: Tacle
   },
   {
-    label: 'Portée',
+    label: 'po',
     type: PO
   },
   {
-    label: 'PA',
+    label: 'pa',
     type: PA
   },
   {
-    label: 'PM',
+    label: 'pm',
     type: PM
   },
   {
-    label: 'Retrait PA',
+    label: 'retraitPA',
     type: RetraitPA
   },
   {
-    label: 'Retrait PM',
+    label: 'retraitPM',
     type: RetraitPM
   },
   {
-    label: 'Résistance Neutre',
+    label: 'resistanceNeutre',
     type: ResistanceFixeNeutre
   },
   {
-    label: 'Résistance Terre',
+    label: 'resistanceTerre',
     type: ResistanceFixeTerre
   },
   {
-    label: 'Résistance Feu',
+    label: 'resistanceFeu',
     type: ResistanceFixeFeu
   },
   {
-    label: 'Résistance Eau',
+    label: 'resistanceEau',
     type: ResistanceFixeEau
   },
   {
-    label: 'Résistance Air',
+    label: 'resistanceAir',
     type: ResistanceFixeAir
   },
   {
-    label: 'Résistance Critiques',
+    label: 'resistanceCritiques',
     type: ResistanceCritiques
   },
   {
-    label: 'Résistance Poussée',
+    label: 'resistancePoussée',
     type: ResistancePoussees
   },
   {
-    label: 'Soins',
+    label: 'soins',
     type: Soins
   },
   {
-    label: 'Pods',
+    label: 'pods',
     type: Pods
   },
   {
-    label: 'Dommages Critiques',
+    label: 'dommagesCritiques',
     type: DommagesCritiques
   },
   {
-    label: '% Dommages mêlée',
+    label: 'pourcentDommagesMelee',
     type: DommagesMelee
   },
   {
-    label: '% Dommages distance',
+    label: 'pourcentDommagesDistance',
     type: DommagesDistance
   }
+  // pourcentResistanceDistance
+  // pourcentResistanceMelee
 ]
 
 export const mapperForStatInStuff = [
@@ -240,11 +242,11 @@ export const mapperForStatInStuff = [
   },
   {
     label: 'DommagesMelee',
-    type: 'dommagesMelee'
+    type: 'pourcentDommagesMelee'
   },
   {
     label: 'DommagesDistance',
-    type: 'dommagesDistance'
+    type: 'pourcentDommagesDistance'
   },
   {
     label: 'DommagesAuxSorts',
