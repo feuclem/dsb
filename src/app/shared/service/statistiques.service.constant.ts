@@ -1,6 +1,6 @@
 import {
   Agilite,
-  Chance,
+  Chance, Critique,
   Dommages,
   DommagesAir,
   DommagesAirArme,
@@ -164,7 +164,7 @@ export const mapperStat = [
     type: ResistanceCritiques
   },
   {
-    label: 'resistancePoussée',
+    label: 'resistancePoussees',
     type: ResistancePoussees
   },
   {
@@ -186,6 +186,10 @@ export const mapperStat = [
   {
     label: 'pourcentDommagesDistance',
     type: DommagesDistance
+  },
+  {
+    label: 'critique',
+    type: Critique
   }
   // pourcentResistanceDistance
   // pourcentResistanceMelee
@@ -242,11 +246,11 @@ export const mapperForStatInStuff = [
   },
   {
     label: 'DommagesMelee',
-    type: 'pourcentDommagesMelee'
+    type: 'dommagesMelee'
   },
   {
     label: 'DommagesDistance',
-    type: 'pourcentDommagesDistance'
+    type: 'dommagesDistance'
   },
   {
     label: 'DommagesAuxSorts',

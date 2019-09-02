@@ -95,7 +95,7 @@ describe('StatistiquesService', () => {
       {label: 'resistanceEau', stat: {'resistanceEau': {from: 1, to: 1}}, expected: new ResistanceFixeEau(1, 1)},
       {label: 'resistanceAir', stat: {'resistanceAir': {from: 1, to: 1}}, expected: new ResistanceFixeAir(1, 1)},
       {label: 'resistanceCritiques', stat: {'resistanceCritiques': {from: 1, to: 1}}, expected: new ResistanceCritiques(1, 1)},
-      {label: 'resistancePoussee', stat: {'resistancePoussee': {from: 1, to: 1}}, expected: new ResistancePoussees(1, 1)},
+      {label: 'resistancePoussees', stat: {'resistancePoussees': {from: 1, to: 1}}, expected: new ResistancePoussees(1, 1)},
       {label: 'soins', stat: {'soins': {from: 1, to: 1}}, expected: new Soins(1, 1)},
       {label: 'pods', stat: {'pods': {from: 1, to: 1}}, expected: new Pods(1, 1)},
       {label: 'dommagesCritiques', stat: {'dommagesCritiques': {from: 1, to: 1}}, expected: new DommagesCritiques(1, 1)},
