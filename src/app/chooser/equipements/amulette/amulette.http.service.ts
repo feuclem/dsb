@@ -15,7 +15,7 @@ export class AmuletteHttpService {
       return Promise.resolve(mockedAmulettes)
     } else {
       const armes: Equipement[] = []
-      return fetch(environment.apiUrl + 'amulettes/?page=1&level=200')
+      return fetch(environment.apiUrl + 'amulettes/all?page=1')
         .then(r => r.json())
         .then(json => {
           json.map(item => armes.push(
@@ -24,7 +24,7 @@ export class AmuletteHttpService {
               item.name,
               parseInt(item.lvl),
               item.type,
-              environment.staticUrl + '/amulettes/' + item.name.replace(/ /g, '') + '.png',
+              environment.staticUrl + 'amulettes/' + item.name.replace(/ /g, '') + '.png',
               item.stats.map(stat => this.statistiquesService.extractor(stat))
             )
           ))

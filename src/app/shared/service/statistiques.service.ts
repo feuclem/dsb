@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'
-import {Statistique} from '../entities/Statistique'
+import {ArmeDeChasse, Critique, ResistanceFactory, Statistique} from '../entities/Statistique'
 import {CharacteritiqueService} from './characteritique.service'
 import {mapperForStatInStuff, mapperStat} from './statistiques.service.constant'
 
@@ -20,12 +20,30 @@ export class StatistiquesService {
         )
       }
     }
+
+    if (stat['Arme de chasse']) {
+      return new ArmeDeChasse()
+    }
   }
 
   setStatInStuff(stat: Statistique) {
     const occurrence = mapperForStatInStuff.filter(item => item.label === stat.label)
     if (occurrence) {
       return this.characteritiqueService[occurrence[0].type] = stat.to
+    }
+  }
+
+  private getStatElement(key) {
+    if (/Neutre/.test(key)) {
+      return 'Neutre'
+    } else if (/Terre/.test(key)) {
+      return 'Terre'
+    } else if (/Feu/.test(key)) {
+      return 'Feu'
+    } else if (/Eau/.test(key)) {
+      return 'Eau'
+    } else if (/Air/.test(key)) {
+      return 'Air'
     }
   }
 }

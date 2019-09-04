@@ -91,6 +91,15 @@ export class DommagesCritiques extends Statistique {
   }
 }
 
+export class DommagesPoussee extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'DommagesPoussee')
+  }
+}
+
 export class DommagesMelee extends Statistique {
   from: number
   to: number
@@ -349,6 +358,87 @@ export class ResistanceAir extends Statistique {
 
   constructor(from: number, to: number) {
     super(from, to, 'ResistanceAir')
+  }
+}
+
+export class ResistanceDistance extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'ResistanceDistance')
+  }
+}
+
+export class ResistanceMelee extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'ResistanceMelee')
+  }
+}
+
+export class PuissancePiege extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'PuissancePiege')
+  }
+}
+
+export class DommagesPiege extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'DommagesPiege')
+  }
+}
+
+export class Prospection extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'Prospection')
+  }
+}
+
+export class EsquivePA extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'EsquivePA')
+  }
+}
+
+export class EsquivePM extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'EsquivePM')
+  }
+}
+
+export class Invocations extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'Invocations')
+  }
+}
+
+export class Initiative extends Statistique {
+  from: number
+  to: number
+
+  constructor(from: number, to: number) {
+    super(from, to, 'Initiative')
   }
 }
 

@@ -16,6 +16,7 @@ export class CharacteritiqueService {
   private _dommagesEau = 0
   private _dommagesAir = 0
   private _dommagesCritique = 0
+  private _dommagesPousee = 0
 
   private _dommagesMelee = 0
   private _dommagesDistance = 0
@@ -30,6 +31,9 @@ export class CharacteritiqueService {
   private _resistanceFixeFeu = 0
   private _resistanceFixeEau = 0
   private _resistanceFixeAir = 0
+
+  private _resistanceDistance = 0
+  private _resistanceMelee = 0
 
   get force(): number {
     return this._force
@@ -221,5 +225,29 @@ export class CharacteritiqueService {
 
   set resistanceFixeAir(value: number) {
     this._resistanceFixeAir = value
+  }
+
+  get dommagesPousee(): number {
+    return this._dommagesPousee
+  }
+
+  set dommagesPousee(value: number) {
+    this._dommagesPousee = value
+  }
+
+  get resistanceDistance(): number {
+    return this._resistanceDistance
+  }
+
+  set resistanceDistance(value: number) {
+    this._resistanceDistance = value
+  }
+
+  get resistanceMelee(): number {
+    return this._resistanceMelee
+  }
+
+  set resistanceMelee(value: number) {
+    this._resistanceMelee = value
   }
 }

@@ -4,6 +4,7 @@ import {
   Dommages,
   DommagesAir,
   DommagesAirArme,
+  DommagesAuxSorts,
   DommagesCritiques,
   DommagesDistance,
   DommagesEau,
@@ -13,23 +14,33 @@ import {
   DommagesMelee,
   DommagesNeutre,
   DommagesNeutreArme,
+  DommagesPiege,
+  DommagesPoussee,
   DommagesTerre,
-  DommagesTerreArme,
+  DommagesTerreArme, EsquivePA, EsquivePM,
   Force,
-  Fuite,
-  Intelligence,
+  Fuite, Initiative,
+  Intelligence, Invocations,
   PA,
   PM,
   PO,
-  Pods,
+  Pods, Prospection,
   Puissance,
+  PuissancePiege,
+  ResistanceAir,
   ResistanceCritiques,
+  ResistanceDistance,
+  ResistanceEau,
+  ResistanceFeu,
   ResistanceFixeAir,
   ResistanceFixeEau,
   ResistanceFixeFeu,
   ResistanceFixeNeutre,
   ResistanceFixeTerre,
+  ResistanceMelee,
+  ResistanceNeutre,
   ResistancePoussees,
+  ResistanceTerre,
   RetraitPA,
   RetraitPM,
   Sagesse,
@@ -40,144 +51,217 @@ import {
 
 export const mapperStat = [
   {
-    label: 'dommagesArmeNeutre',
+    label: '(dommages Neutre)',
     type: DommagesNeutreArme
   },
   {
-    label: 'dommagesNeutre',
+    label: 'Dommages Neutre',
     type: DommagesNeutre
   },
   {
-    label: 'force',
+    label: 'Force',
     type: Force
   },
   {
-    label: 'intelligence',
+    label: 'Intelligence',
     type: Intelligence
   },
   {
-    label: 'chance',
+    label: 'Chance',
     type: Chance
   },
   {
-    label: 'agilite',
+    label: 'Agilité',
     type: Agilite
   },
   {
-    label: 'vitalite',
+    label: 'Vitalité',
     type: Vitalite
   },
   {
-    label: 'sagesse',
+    label: 'Sagesse',
     type: Sagesse
   },
   {
-    label: 'dommages',
+    label: 'Dommages',
     type: Dommages
   },
   {
-    label: 'puissance',
+    label: 'Puissance',
     type: Puissance
   },
   {
-    label: 'dommagesTerre',
+    label: 'Dommages Terre',
     type: DommagesTerre
   },
   {
-    label: 'dommagesArmeTerre',
+    label: '(dommages Terre)',
     type: DommagesTerreArme
   },
   {
-    label: 'dommagesFeu',
+    label: 'Dommages Feu',
     type: DommagesFeu
   },
   {
-    label: 'dommagesArmeFeu',
+    label: '(dommages Feu)',
     type: DommagesFeuArme
   },
   {
-    label: 'dommagesEau',
+    label: 'Dommages Eau',
     type: DommagesEau
   },
   {
-    label: 'dommagesArmeEau',
+    label: '(dommages Eau)',
     type: DommagesEauArme
   },
   {
-    label: 'dommagesAir',
+    label: 'Dommages Air',
     type: DommagesAir
   },
   {
-    label: 'dommagesArmeAir',
+    label: '(dommages Air)',
     type: DommagesAirArme
   },
   {
-    label: 'fuite',
+    label: 'Fuite',
     type: Fuite
   },
   {
-    label: 'tacle',
+    label: 'Tacle',
     type: Tacle
   },
   {
-    label: 'po',
+    label: 'Portée',
     type: PO
   },
   {
-    label: 'pa',
+    label: 'PA',
     type: PA
   },
   {
-    label: 'pm',
+    label: 'PM',
     type: PM
   },
   {
-    label: 'retraitPA',
+    label: 'Retrait PA',
     type: RetraitPA
   },
   {
-    label: 'retraitPM',
+    label: 'Retrait PM',
     type: RetraitPM
   },
   {
-    label: 'resistanceNeutre',
+    label: 'Esquive PA',
+    type: EsquivePA
+  },
+  {
+    label: 'Esquive PM',
+    type: EsquivePM
+  },
+  {
+    label: 'Résistance Neutre',
     type: ResistanceFixeNeutre
   },
   {
-    label: 'resistanceTerre',
+    label: 'Résistance Terre',
     type: ResistanceFixeTerre
   },
   {
-    label: 'resistanceFeu',
+    label: 'Résistance Feu',
     type: ResistanceFixeFeu
   },
   {
-    label: 'resistanceEau',
+    label: 'Résistance Eau',
     type: ResistanceFixeEau
   },
   {
-    label: 'resistanceAir',
+    label: 'Résistance Air',
     type: ResistanceFixeAir
   },
   {
-    label: 'resistanceCritiques',
+    label: 'Résistance Critiques',
     type: ResistanceCritiques
   },
   {
-    label: 'resistancePoussees',
+    label: 'Résistance Poussée',
     type: ResistancePoussees
   },
   {
-    label: 'soins',
+    label: 'Soins',
     type: Soins
   },
   {
-    label: 'pods',
+    label: 'Pods',
     type: Pods
   },
   {
-    label: 'dommagesCritiques',
+    label: 'Dommages Critiques',
     type: DommagesCritiques
+  },
+  {
+    label: 'Dommages Poussée',
+    type: DommagesPoussee
+  },
+  {
+    label: '% Dommages mêlée',
+    type: DommagesMelee
+  },
+  {
+    label: '% Dommages distance',
+    type: DommagesDistance
+  },
+  {
+    label: 'Puissance (pièges)',
+    type: PuissancePiege
+  },
+  {
+    label: 'Dommages Pièges',
+    type: DommagesPiege
+  },
+  {
+    label: '% Dommages aux sorts',
+    type: DommagesAuxSorts
+  },
+  {
+    label: 'Prospection',
+    type: Prospection
+  },
+  {
+    label: 'Invocations',
+    type: Invocations
+  },
+  {
+    label: 'Initiative',
+    type: Initiative
+  },
+  // New data bind
+  {
+    label: 'pourcentResistanceNeutre',
+    type: ResistanceNeutre
+  },
+  {
+    label: 'pourcentResistanceTerre',
+    type: ResistanceTerre
+  },
+  {
+    label: 'pourcentResistanceFeu',
+    type: ResistanceFeu
+  },
+  {
+    label: 'pourcentResistanceEau',
+    type: ResistanceEau
+  },
+  {
+    label: 'pourcentResistanceAir',
+    type: ResistanceAir
+  },
+  {
+    label: 'pourcentResistanceDistance',
+    type: ResistanceDistance
+  },
+  {
+    label: 'pourcentResistanceMelee',
+    type: ResistanceMelee
   },
   {
     label: 'pourcentDommagesMelee',
@@ -191,8 +275,6 @@ export const mapperStat = [
     label: 'critique',
     type: Critique
   }
-  // pourcentResistanceDistance
-  // pourcentResistanceMelee
 ]
 
 export const mapperForStatInStuff = [
@@ -288,5 +370,16 @@ export const mapperForStatInStuff = [
     label: 'ResistanceFixeAir',
     type: 'resistanceFixeAir'
   },
+  {
+    label: 'DommagesPoussee',
+    type: 'dommagesPoussee'
+  },
+  {
+    label: 'ResistanceDistance',
+    type: 'resistanceDistance'
+  },
+  {
+    label: 'ResistanceMelee',
+    type: 'resistanceMelee'
+  },
 ]
-
