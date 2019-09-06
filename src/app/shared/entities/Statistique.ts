@@ -60,7 +60,7 @@ export class Agilite extends Statistique {
   to: number
 
   constructor(from: number, to: number) {
-    super(from, to, 'Agilite')
+    super(from, to, 'Agilité')
   }
 }
 
@@ -258,7 +258,7 @@ export class PO extends Statistique {
   to: number
 
   constructor(from: number, to: number) {
-    super(from, to, 'PO')
+    super(from, to, 'Portée')
   }
 }
 
@@ -294,7 +294,7 @@ export class ResistanceFixeNeutre extends Statistique {
   to: number
 
   constructor(from: number, to: number) {
-    super(from, to, 'ResistanceNeutre')
+    super(from, to, 'ResistanceFixeNeutre')
   }
 }
 

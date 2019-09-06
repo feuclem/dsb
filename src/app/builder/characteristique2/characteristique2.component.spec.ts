@@ -28,7 +28,7 @@ describe('Characteristique2Component', () => {
       'dommagesFeu',
       'dommagesEau',
       'dommagesAir',
-      'dommagesCritique',
+      'dommagesCritiques',
       'dommagesMelee',
       'dommagesDistance',
       'dommagesAuxSorts',

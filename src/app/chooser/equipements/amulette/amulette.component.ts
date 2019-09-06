@@ -28,7 +28,7 @@ export class AmuletteComponent implements OnInit {
   ngOnInit() {
     this.amuletteHttpService.getAllEquipements().then(response => {
       this.equipements = response
-    }).then(() => console.log(this.equipements))
+    })
   }
 
   setBuild(index: number) {

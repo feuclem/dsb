@@ -19,10 +19,10 @@ export class Sorts {
     caracteristiques,
     dommages: number,
     dommagesElemFixe: number,
-    dommagesCritique: number = 0,
+    dommagesCritiques: number = 0,
     ...dommagesPourcentEnPlus
   ) {
-    let baseDommage = degatDeBase + degatDeBase * ((puissance + caracteristiques) / 100) + (dommages + dommagesElemFixe + dommagesCritique)
+    let baseDommage = degatDeBase + degatDeBase * ((puissance + caracteristiques) / 100) + (dommages + dommagesElemFixe + dommagesCritiques)
     if (dommagesPourcentEnPlus.length !== 0) {
       let accPourcentDommagesEnPlus = 0
       dommagesPourcentEnPlus.map(item => accPourcentDommagesEnPlus += item)

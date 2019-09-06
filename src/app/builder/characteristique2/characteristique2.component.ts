@@ -13,7 +13,7 @@ export class Characteristique2Component implements OnInit {
   dommagesFeu: number
   dommagesEau: number
   dommagesAir: number
-  dommagesCritique: number
+  dommagesCritiques: number
 
   dommagesMelee: number
   dommagesDistance: number
@@ -27,7 +27,7 @@ export class Characteristique2Component implements OnInit {
     this.dommagesFeu = this.characteritiqueService.dommagesFeu
     this.dommagesEau = this.characteritiqueService.dommagesEau
     this.dommagesAir = this.characteritiqueService.dommagesAir
-    this.dommagesCritique = this.characteritiqueService.dommagesCritique
+    this.dommagesCritiques = this.characteritiqueService.dommagesCritiques
 
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance

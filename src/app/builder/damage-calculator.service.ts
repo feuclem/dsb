@@ -73,7 +73,7 @@ export class DamageCalculatorService {
       degatElementaire,
       this.characteritiqueService.dommages,
       dommagesElementaire,
-      this.characteritiqueService.dommagesCritique,
+      this.characteritiqueService.dommagesCritiques,
       this.characteritiqueService.dommagesMelee,
       this.characteritiqueService.dommagesDistance,
       this.characteritiqueService.dommagesAuxSorts
