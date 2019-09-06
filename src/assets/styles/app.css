@@ -6,7 +6,23 @@ a {
   outline: none;
 }
 
-.border-bottom {
-  border-bottom: 3px solid #1da1f2;
+nav {
+  background-color: #696565 !important;
+  font-family: Anton, sans-serif;
 }
 
+main {
+  background-color: #6c7f69;
+}
+
+.statistique {
+  border-radius: 5px;
+  background-color: #577f4a;
+  margin: 20px;
+  padding: 5px;
+}
+
+@font-face {
+  font-family: Anton;
+  src: url("../styles/Anton-Regular.ttf");
+}

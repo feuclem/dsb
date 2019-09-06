@@ -4,7 +4,7 @@ import {StuffService} from '../../shared/service/stuff.service'
 @Component({
   selector: 'dsb-stuff1',
   templateUrl: './stuff1.component.html',
-  styles: []
+  styles: ['a { color: white }']
 })
 export class Stuff1Component implements OnInit {
 
@@ -26,7 +26,6 @@ export class Stuff1Component implements OnInit {
   }
 
   ngOnInit() {
-
     this.arme = this.stuffService.arme
     this.amulette = this.stuffService.amulette
     this.anneau1 = this.stuffService.anneau1

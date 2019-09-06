@@ -4,7 +4,7 @@ import {CharacteritiqueService} from '../../shared/service/characteritique.servi
 @Component({
   selector: 'dsb-characteristique2',
   templateUrl: './characteristique2.component.html',
-  styles: []
+  styles: ['span {color: white}']
 })
 export class Characteristique2Component implements OnInit {
 
@@ -13,11 +13,12 @@ export class Characteristique2Component implements OnInit {
   dommagesFeu: number
   dommagesEau: number
   dommagesAir: number
-  dommagesCritiques: number
 
   dommagesMelee: number
   dommagesDistance: number
   dommagesAuxSorts: number
+  dommagesCritiques: number
+  dommagesPoussee: number
 
   constructor(private characteritiqueService: CharacteritiqueService) { }
 
@@ -27,8 +28,8 @@ export class Characteristique2Component implements OnInit {
     this.dommagesFeu = this.characteritiqueService.dommagesFeu
     this.dommagesEau = this.characteritiqueService.dommagesEau
     this.dommagesAir = this.characteritiqueService.dommagesAir
-    this.dommagesCritiques = this.characteritiqueService.dommagesCritiques
 
+    this.dommagesCritiques = this.characteritiqueService.dommagesCritiques
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance
     this.dommagesAuxSorts = this.characteritiqueService.dommagesAuxSorts

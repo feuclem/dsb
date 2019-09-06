@@ -1,8 +1,6 @@
-<div class="control">
-  <div class="select">
-    <select (change)="selectNiveau($event.target.value)">
-      <option></option>
-      <option *ngFor="let item of niveaus" [selected]="currentNiveau === item">{{item}}</option>
-    </select>
-  </div>
+<div class="select">
+  <select (change)="selectNiveau($event.target.value)">
+    <option></option>
+    <option *ngFor="let item of niveaus" [selected]="currentNiveau === item">{{item}}</option>
+  </select>
 </div>

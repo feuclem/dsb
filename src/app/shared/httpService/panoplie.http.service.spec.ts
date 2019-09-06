@@ -88,7 +88,6 @@ describe('PanoplieHttpService', () => {
 
   it('getAllPanoplie', () => {
     // Given
-    environment.mock = false
     const statsForBonus1 = [
       new Vitalite(100, 100),
       new Puissance(50, 50),

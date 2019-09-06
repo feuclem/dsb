@@ -32,12 +32,12 @@ import {Characteristique2Component} from './builder/characteristique2/characteri
 import {IopComponent} from './builder/iop/iop.component'
 import {DamageCalculatorService} from './builder/damage-calculator.service'
 import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.component'
-import {ResistanceComponent} from './builder/resistance/resistance.component'
 import {NiveauComponent} from './chooser/niveau/niveau.component'
 import {ClasseComponent} from './chooser/classe/classe.component'
 import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
 import {NiveauService} from './chooser/niveau/niveau.service'
-import {ClasseService} from './chooser/classe/classe.service'
+import {ClasseService} from './chooser/classe/classe.service';
+import { Characteristique3Component } from './builder/characteristique3/characteristique3.component'
 
 @NgModule({
   declarations: [
@@ -61,10 +61,10 @@ import {ClasseService} from './chooser/classe/classe.service'
     Characteristique2Component,
     IopComponent,
     PanoplieBonusComponent,
-    ResistanceComponent,
     NiveauComponent,
     ClasseComponent,
-    SacrieurComponent
+    SacrieurComponent,
+    Characteristique3Component
   ],
   imports: [
     CommonModule,

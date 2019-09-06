@@ -8,10 +8,10 @@ describe('TropheeHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [TropheeHttpService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
-    });
-  });
+    })
+  })
 
   it('should be created', inject([TropheeHttpService], (service: TropheeHttpService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+    expect(service).toBeTruthy()
+  }))
+})

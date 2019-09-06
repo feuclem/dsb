@@ -4,7 +4,7 @@ import {StuffService} from '../../shared/service/stuff.service'
 @Component({
   selector: 'dsb-stuff2',
   templateUrl: './stuff2.component.html',
-  styles: []
+  styles: ['a {color: white}']
 })
 export class Stuff2Component implements OnInit {
 

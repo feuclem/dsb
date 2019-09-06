@@ -10,9 +10,6 @@ export class ArmesHttpService {
   constructor(private statistiquesService: StatistiquesService) {}
 
   getAllArmes(): Promise<Arme[]> {
-    if (environment.mock) {
-      return Promise.resolve(mockedArmes)
-    }
     const armes: Arme[] = []
     return fetch(environment.apiUrl + 'armes/all?page=1')
       .then(r => r.json())

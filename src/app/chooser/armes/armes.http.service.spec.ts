@@ -92,7 +92,6 @@ describe('ArmesHttpService', () => {
 
   it('getAllArmes', () => {
     // Given
-    environment.mock = false
     environment.staticUrl = 'fakeStaticUrl'
     const stats = [
       new DommagesNeutreArme(

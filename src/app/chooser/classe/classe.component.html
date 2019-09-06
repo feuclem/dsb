@@ -1,8 +1,6 @@
-<div class="control">
-  <div class="select">
-    <select (change)="selectClasse($event.target.value)">
-      <option></option>
-      <option *ngFor="let classe of classes" [selected]="currentClasse === classe">{{classe}}</option>
-    </select>
-  </div>
+<div class="select">
+  <select (change)="selectClasse($event.target.value)">
+    <option></option>
+    <option *ngFor="let classe of classes" [selected]="currentClasse === classe">{{classe}}</option>
+  </select>
 </div>
