@@ -77,7 +77,7 @@ export class PanoplieHttpService {
       ])
     } else {
       const panoplies: Panoplie[] = []
-      return fetch('https://dofapi2.herokuapp.com/sets?filter[offset]=0&filter[limit]=2&filter[skip]=0')
+      return fetch(environment.apiUrl + 'panoplies/all?page=1')
         .then(r => r.json())
         .then(json => {
           json.map(item => panoplies.push(
@@ -86,7 +86,7 @@ export class PanoplieHttpService {
               item.name,
               parseInt(item.lvl),
               item.type,
-              item.imgUrl,
+              environment.staticUrl + 'panoplies/' + item.name.replace(/ /g, '') + '.png',
               item.bonus.map(bonus => {
                   return new Bonus(
                     bonus.number,

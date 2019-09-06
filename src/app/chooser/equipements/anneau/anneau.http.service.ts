@@ -162,7 +162,7 @@ export class AnneauHttpService {
       ])
     } else {
       const armes: Equipement[] = []
-      return fetch('https://dofapi2.herokuapp.com/equipments?filter[offset]=0&filter[limit]=2&filter[skip]=0')
+      return fetch(environment.apiUrl + 'anneaux/all?page=1')
         .then(r => r.json())
         .then(json => {
           json.map(item => armes.push(
@@ -171,7 +171,7 @@ export class AnneauHttpService {
               item.name,
               parseInt(item.lvl),
               item.type,
-              item.imgUrl,
+              environment.staticUrl + 'anneaux/' + item.name.replace(/ /g, '') + '.png',
               item.stats.map(stat => this.statistiquesService.extractor(stat))
             )
           ))

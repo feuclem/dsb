@@ -19,6 +19,8 @@ export class PanoplieService {
     const stats: Statistique[] = []
     this.listPanoplie.map(panoplie => {
       const hasEquipementList = panoplie.equipementsId.map(s => listIdEquipement.includes(s))
+      console.log(hasEquipementList)
+      console.log(panoplie.equipementsId)
       if (hasEquipementList.filter(it => it).length === 2) {
         stats.push(...panoplie.bonus[0].stats)
       }

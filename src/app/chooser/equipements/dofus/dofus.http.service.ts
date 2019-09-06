@@ -103,7 +103,7 @@ export class DofusHttpService {
       ])
     } else {
       const armes: Equipement[] = []
-      return fetch('https://dofapi2.herokuapp.com/mounts?filter[offset]=0&filter[limit]=1000&filter[skip]=0')
+      return fetch(environment.apiUrl + 'dofus/all?page=1')
         .then(r => r.json())
         .then(json => {
           json.map(item => armes.push(
@@ -112,7 +112,7 @@ export class DofusHttpService {
               item.name,
               parseInt(item.lvl),
               item.type,
-              item.imgUrl,
+              environment.staticUrl + 'dofus/' + item.name.replace(/ /g, '') + '.png',
               item.stats.map(stat => this.statistiquesService.extractor(stat))
             )
           ))
