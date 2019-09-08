@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core'
-import {CharacteritiqueService} from '../../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../../shared/service/characteristique.service'
+import {PointsdecaracService} from '../../shared/service/pointsdecarac.service'
 
 @Component({
   selector: 'dsb-characteristique1',
   templateUrl: './characteristique1.component.html',
-  styles: ['span {color: white}']
+  styles: ['span {color: white} .is-force{border-color: #582900} .is-vita{border-color: #ff43a2}']
 })
 export class Characteristique1Component implements OnInit {
 
@@ -17,15 +18,19 @@ export class Characteristique1Component implements OnInit {
   soin: number
   prospection: number
 
-  vitalite: number
   force: number
   intelligence: number
   chance: number
   agilite: number
   puissance: number
 
+  vitalite: number
+
+  remainingPointsToUsed: number
+
   constructor(
-    private characteritiqueService: CharacteritiqueService,
+    private characteritiqueService: CharacteristiqueService,
+    private pointsdecaracService: PointsdecaracService,
   ) {
   }
 
@@ -42,8 +47,22 @@ export class Characteristique1Component implements OnInit {
     this.intelligence = this.characteritiqueService.intelligence
     this.chance = this.characteritiqueService.chance
     this.agilite = this.characteritiqueService.agilite
-    this.vitalite = this.characteritiqueService.vitalite
     this.puissance = this.characteritiqueService.puissance
+
+    this.getVitalite()
+    this.getRemainingPointsToUsed()
+  }
+
+  modifyStat(points: number, charac: String) {
+    this.pointsdecaracService.addPointToCharacteristique(points, charac)
+  }
+
+  getVitalite() {
+    this.characteritiqueService._vitalite.subscribe(value => this.vitalite = value)
+  }
+
+  getRemainingPointsToUsed() {
+    this.pointsdecaracService._remainingPointsToUsed.subscribe(value => this.remainingPointsToUsed = value)
   }
 
 }

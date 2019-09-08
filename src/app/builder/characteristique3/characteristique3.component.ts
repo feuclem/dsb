@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CharacteritiqueService} from '../../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../../shared/service/characteristique.service'
 
 @Component({
   selector: 'dsb-characteristique3',
@@ -16,7 +16,7 @@ export class Characteristique3Component implements OnInit {
   retraitPm: number
 
   constructor(
-    private characteritiqueService: CharacteritiqueService
+    private characteritiqueService: CharacteristiqueService
   ) { }
 
   ngOnInit() {

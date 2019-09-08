@@ -9,13 +9,12 @@ import {Stuff1Component} from './stuff1/stuff1.component'
 import {Stuff2Component} from './stuff2/stuff2.component'
 import {Characteristique1Component} from './characteristique1/characteristique1.component'
 import {Characteristique2Component} from './characteristique2/characteristique2.component'
-import {ResistanceComponent} from './resistance/resistance.component'
 import {PanoplieBonusComponent} from './panoplie-bonus/panoplie-bonus.component'
 import {IopComponent} from './iop/iop.component'
 import {SacrieurComponent} from './sacrieur/sacrieur.component'
 import {NiveauService} from '../chooser/niveau/niveau.service'
 import {StuffService} from '../shared/service/stuff.service'
-import {CharacteritiqueService} from '../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../shared/service/characteristique.service'
 import {StatistiquesServiceMock} from '../shared/service/statistiques.service.mock'
 import {StatistiquesService} from '../shared/service/statistiques.service'
 import {PanoplieService} from '../shared/service/panoplie.service'
@@ -37,7 +36,6 @@ describe('BuilderComponent', () => {
         Stuff2Component,
         Characteristique1Component,
         Characteristique2Component,
-        ResistanceComponent,
         PanoplieBonusComponent,
         IopComponent,
         SacrieurComponent
@@ -46,7 +44,7 @@ describe('BuilderComponent', () => {
         ClasseService,
         NiveauService,
         StuffService,
-        CharacteritiqueService,
+        CharacteristiqueService,
         {provide: StatistiquesService, useClass: StatistiquesServiceMock},
         PanoplieService
       ]

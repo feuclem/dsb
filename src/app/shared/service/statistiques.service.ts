@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core'
 import {ArmeDeChasse, Critique, ResistanceFactory, Statistique} from '../entities/Statistique'
-import {CharacteritiqueService} from './characteritique.service'
+import {CharacteristiqueService} from './characteristique.service'
 import {mapperForStatInStuff, mapperStat} from './statistiques.service.constant'
 
 @Injectable()
 export class StatistiquesService {
 
-  constructor(private characteritiqueService: CharacteritiqueService) {
+  constructor(private characteritiqueService: CharacteristiqueService) {
   }
 
   extractor(stat) {

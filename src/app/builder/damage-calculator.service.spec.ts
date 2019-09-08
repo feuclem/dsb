@@ -2,13 +2,13 @@ import {TestBed} from '@angular/core/testing'
 
 import {DamageCalculatorService} from './damage-calculator.service'
 import {Sorts} from '../shared/entities/Sorts'
-import {CharacteritiqueService} from '../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../shared/service/characteristique.service'
 
 describe('DamageCalculatorService', () => {
   let damageCalculatorService = null
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DamageCalculatorService, CharacteritiqueService]
+      providers: [DamageCalculatorService, CharacteristiqueService]
     })
 
     damageCalculatorService = TestBed.get(DamageCalculatorService)

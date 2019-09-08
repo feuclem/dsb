@@ -1,15 +1,15 @@
 import {inject, TestBed} from '@angular/core/testing'
 
-import {CharacteritiqueService} from './characteritique.service'
+import {CharacteristiqueService} from './characteristique.service'
 
 describe('CharacteritiqueService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CharacteritiqueService]
+      providers: [CharacteristiqueService]
     })
   })
 
-  it('should be created', inject([CharacteritiqueService], (service: CharacteritiqueService) => {
+  it('should be created', inject([CharacteristiqueService], (service: CharacteristiqueService) => {
     expect(service).toBeTruthy()
   }))
 })

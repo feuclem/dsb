@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing'
 
 import {StatistiquesService} from './statistiques.service'
-import {CharacteritiqueService} from './characteritique.service'
+import {CharacteristiqueService} from './characteristique.service'
 import {
   Agilite,
   Chance, Critique,
@@ -63,11 +63,11 @@ describe('StatistiquesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [StatistiquesService, CharacteritiqueService]
+      providers: [StatistiquesService, CharacteristiqueService]
     })
 
     statistiquesService = TestBed.get(StatistiquesService)
-    characteritiqueService = TestBed.get(CharacteritiqueService)
+    characteritiqueService = TestBed.get(CharacteristiqueService)
   })
 
   describe('extractor', () => {

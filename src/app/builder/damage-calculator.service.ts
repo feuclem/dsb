@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core'
 import {Sorts} from '../shared/entities/Sorts'
-import {CharacteritiqueService} from '../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../shared/service/characteristique.service'
 
 @Injectable()
 export class DamageCalculatorService {
 
-  constructor(private characteritiqueService: CharacteritiqueService) {
+  constructor(private characteritiqueService: CharacteristiqueService) {
   }
 
   calculDegatBase(degat: number, type: string): number {

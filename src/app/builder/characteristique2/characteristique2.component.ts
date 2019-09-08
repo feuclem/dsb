@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {CharacteritiqueService} from '../../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../../shared/service/characteristique.service'
 
 @Component({
   selector: 'dsb-characteristique2',
@@ -20,7 +20,7 @@ export class Characteristique2Component implements OnInit {
   dommagesCritiques: number
   dommagesPoussee: number
 
-  constructor(private characteritiqueService: CharacteritiqueService) { }
+  constructor(private characteritiqueService: CharacteristiqueService) { }
 
   ngOnInit() {
     this.dommages = this.characteritiqueService.dommages
@@ -33,6 +33,7 @@ export class Characteristique2Component implements OnInit {
     this.dommagesMelee = this.characteritiqueService.dommagesMelee
     this.dommagesDistance = this.characteritiqueService.dommagesDistance
     this.dommagesAuxSorts = this.characteritiqueService.dommagesAuxSorts
+    this.dommagesPoussee = this.characteritiqueService.dommagesPoussee
   }
 
 }

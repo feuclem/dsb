@@ -11,8 +11,8 @@ nav {
   font-family: Anton, sans-serif;
 }
 
-main {
-  background-color: #6c7f69;
+.navbar {
+  color: white !important;
 }
 
 .statistique {

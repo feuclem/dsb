@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {Characteristique1Component} from './characteristique1.component'
-import {CharacteritiqueService} from '../../shared/service/characteritique.service'
+import {CharacteristiqueService} from '../../shared/service/characteristique.service'
 
 describe('Characteristique1Component', () => {
   let component: Characteristique1Component
@@ -10,7 +10,7 @@ describe('Characteristique1Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Characteristique1Component],
-      providers: [CharacteritiqueService]
+      providers: [CharacteristiqueService]
     })
       .compileComponents()
   }))

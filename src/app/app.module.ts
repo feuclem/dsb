@@ -10,7 +10,7 @@ import {ArmesComponent} from './chooser/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {CommonModule} from '@angular/common'
 import {StuffService} from './shared/service/stuff.service'
-import {CharacteritiqueService} from './shared/service/characteritique.service'
+import {CharacteristiqueService} from './shared/service/characteristique.service'
 import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
 import {AnneauComponent} from './chooser/equipements/anneau/anneau.component'
 import {StatistiquesService} from './shared/service/statistiques.service'
@@ -38,6 +38,7 @@ import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
 import {NiveauService} from './chooser/niveau/niveau.service'
 import {ClasseService} from './chooser/classe/classe.service';
 import { Characteristique3Component } from './builder/characteristique3/characteristique3.component'
+import {PointsdecaracService} from './shared/service/pointsdecarac.service'
 
 @NgModule({
   declarations: [
@@ -75,13 +76,14 @@ import { Characteristique3Component } from './builder/characteristique3/characte
   ],
   providers: [
     StuffService,
-    CharacteritiqueService,
+    CharacteristiqueService,
     StatistiquesService,
     PanoplieHttpService,
     PanoplieService,
     DamageCalculatorService,
     NiveauService,
-    ClasseService
+    ClasseService,
+    PointsdecaracService
   ],
   bootstrap: [AppComponent]
 })
