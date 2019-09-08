@@ -153,7 +153,7 @@ export class CharacteristiqueService {
     this._tacle = value
   }
 
-  private _po = 0
+  private _po = 1
 
   get po(): number {
     return this._po
@@ -163,7 +163,7 @@ export class CharacteristiqueService {
     this._po = value
   }
 
-  private _pa = 0
+  private _pa = 7
 
   get pa(): number {
     return this._pa
@@ -173,7 +173,7 @@ export class CharacteristiqueService {
     this._pa = value
   }
 
-  private _pm = 0
+  private _pm = 6
 
   get pm(): number {
     return this._pm

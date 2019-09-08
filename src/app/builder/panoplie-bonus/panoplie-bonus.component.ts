@@ -23,7 +23,6 @@ export class PanoplieBonusComponent implements OnInit {
     this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(this.stuffService.listIdEquipment)
     if (this.getBonusStatsToAdd.length !== 0) {
       this.getBonusStatsToAdd.map(stat => this.statistiquesService.setStatInStuff(stat))
-      this.stuffService.resetListIdEquipment()
     }
   }
 
