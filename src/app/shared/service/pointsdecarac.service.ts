@@ -41,27 +41,27 @@ export class PointsdecaracService {
       this.updateRemainingPointsToUsed(this.remainingPoints)
 
       if (charac === 'Force') {
-        this.characteristiqueService.updateForce(100 + points)
+        this.characteristiqueService.updateForce(points)
       } else if (charac === 'Intelligence') {
-        this.characteristiqueService.updateIntelligence(100 + points)
+        this.characteristiqueService.updateIntelligence(points)
       } else if (charac === 'Chance') {
-        this.characteristiqueService.updateChance(100 + points)
+        this.characteristiqueService.updateChance(points)
       } else if (charac === 'Agilite') {
-        this.characteristiqueService.updateAgilite(100 + points)
+        this.characteristiqueService.updateAgilite(points)
       } else if (charac === 'Sagesse') {
         this.characteristiqueService.sagesse = points
       } else if (charac === 'Vitalite') {
-        this.characteristiqueService.updateVitalite(100 + points)
+        this.characteristiqueService.updateVitalite(points)
       }
     }
   }
 
   resetRemainingPoints() {
-      this.characteristiqueService.updateForce(100)
-      this.characteristiqueService.updateIntelligence(100)
-      this.characteristiqueService.updateChance(100)
-      this.characteristiqueService.updateAgilite(100)
-      this.characteristiqueService.updateVitalite(100)
+      this.characteristiqueService.resetVitalite()
+      this.characteristiqueService.resetForce()
+      this.characteristiqueService.resetIntelligence()
+      this.characteristiqueService.resetChance()
+      this.characteristiqueService.resetAgilite()
     this.updateRemainingPointsToUsed(995)
   }
 

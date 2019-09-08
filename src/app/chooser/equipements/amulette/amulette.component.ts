@@ -8,7 +8,7 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 @Component({
   selector: 'dsb-equipements',
   templateUrl: './amulette.component.html',
-  styles: [],
+  styleUrls: ['./amulette.component.css'],
   providers: [
     AmuletteHttpService
   ]
@@ -37,5 +37,4 @@ export class AmuletteComponent implements OnInit {
     this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }
-
 }

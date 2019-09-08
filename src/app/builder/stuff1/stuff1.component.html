@@ -1,72 +1,81 @@
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <div>
-      <img *ngIf="amulette !== ''" src="{{amulette}}" alt=""/>
-      <a *ngIf="amulette === ''" routerLink="amulette">Amulette</a>
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <div>
+        <img *ngIf="amulette !== ''" src="{{amulette}}" alt=""/>
+        <a *ngIf="amulette === ''" routerLink="amulette">Amulette</a>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <img *ngIf="anneau1 !== ''" src="{{anneau1}}" alt=""/>
-    <a *ngIf="anneau1 === ''" routerLink="anneau">Anneau</a>
-  </div>
-
-  <div class="column statistique margin-top-32">
-    <img *ngIf="anneau2 !== ''" src="{{anneau2}}" alt=""/>
-    <a *ngIf="anneau2 === ''" routerLink="anneau">Anneau</a>
-  </div>
-</div>
-
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <img *ngIf="ceinture !== ''" src="{{ceinture}}" alt=""/>
-    <a *ngIf="ceinture === ''" routerLink="ceinture">Ceinture</a>
-  </div>
-
-  <div class="column statistique margin-top-32">
-    <img *ngIf="bottes !== ''" src="{{bottes}}" alt=""/>
-    <a *ngIf="bottes === ''" routerLink="bottes">Bottes</a>
-  </div>
-</div>
-
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <img *ngIf="coiffe !== ''" src="{{coiffe}}" alt=""/>
-    <a *ngIf="coiffe === ''" routerLink="coiffe">Coiffe</a>
-  </div>
-
-  <div class="column statistique margin-top-32">
-    <img *ngIf="cape !== ''" src="{{cape}}" alt=""/>
-    <a *ngIf="cape === ''" routerLink="cape">Cape</a>
-  </div>
-</div>
-
-<div class="columns has-text-centered">
-</div>
-
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
-    <a *ngIf="arme === ''" routerLink="armes">Arme</a>
-  </div>
-
-  <div class="column statistique margin-top-32">
-    <img *ngIf="bouclier !== ''" src="{{bouclier}}" alt=""/>
-    <a *ngIf="bouclier === ''" routerLink="bouclier">Bouclier</a>
-  </div>
-</div>
-
-<div class="columns has-text-centered">
-  <div class="column statistique margin-top-32">
-    <div *ngIf="monture === ''">
-      <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
-      <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="anneau1 !== ''" src="{{anneau1}}" alt=""/>
+      <a *ngIf="anneau1 === ''" routerLink="anneau">Anneau</a>
     </div>
-    <div *ngIf="familier === ''">
-      <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
-      <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+
+    <div class="column margin-top-32">
+      <img *ngIf="anneau2 !== ''" src="{{anneau2}}" alt=""/>
+      <a *ngIf="anneau2 === ''" routerLink="anneau">Anneau</a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="ceinture !== ''" src="{{ceinture}}" alt=""/>
+      <a *ngIf="ceinture === ''" routerLink="ceinture">Ceinture</a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="bottes !== ''" src="{{bottes}}" alt=""/>
+      <a *ngIf="bottes === ''" routerLink="bottes">Bottes</a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="coiffe !== ''" src="{{coiffe}}" alt=""/>
+      <a *ngIf="coiffe === ''" routerLink="coiffe">Coiffe</a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="cape !== ''" src="{{cape}}" alt=""/>
+      <a *ngIf="cape === ''" routerLink="cape">Cape</a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+    <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
+      <a *ngIf="arme === ''" routerLink="armes">Arme</a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="bouclier !== ''" src="{{bouclier}}" alt=""/>
+      <a *ngIf="bouclier === ''" routerLink="bouclier">Bouclier</a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <div *ngIf="monture === ''">
+        <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
+        <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+      </div>
+      <div *ngIf="familier === ''">
+        <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
+        <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+      </div>
     </div>
   </div>
 </div>

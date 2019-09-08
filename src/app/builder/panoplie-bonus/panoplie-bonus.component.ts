@@ -7,7 +7,7 @@ import {PanoplieService} from '../../shared/service/panoplie.service'
 @Component({
   selector: 'dsb-panoplie-bonus',
   templateUrl: './panoplie-bonus.component.html',
-  styles: []
+  styles: ['span {color: white}']
 })
 export class PanoplieBonusComponent implements OnInit {
 

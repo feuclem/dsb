@@ -1,3 +1,7 @@
+html {
+  background-color: #b0af9a !important;
+}
+
 a {
   cursor: pointer;
 }
@@ -7,7 +11,7 @@ a {
 }
 
 nav {
-  background-color: #696565 !important;
+  background-color: #6a695d !important;
   font-family: Anton, sans-serif;
 }
 
@@ -16,10 +20,19 @@ nav {
 }
 
 .statistique {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #577f4a;
   margin: 20px;
   padding: 5px;
+  font-family: Anton, sans-serif;
+}
+
+.green-left {
+  background-color: #757404;
+}
+
+.green-right {
+  background-color: #393802;
 }
 
 @font-face {

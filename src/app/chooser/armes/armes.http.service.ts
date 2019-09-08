@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core'
 import {Arme} from '../../shared/entities/Arme'
 import {environment} from '../../../environments/environment'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
-import {mockedArmes} from './armes.http.service.constants'
 
 @Injectable()
 export class ArmesHttpService {

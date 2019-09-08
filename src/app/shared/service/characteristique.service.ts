@@ -507,19 +507,39 @@ export class CharacteristiqueService {
     this._vitalite.next(value += this._vitalite.getValue())
   }
 
+  resetVitalite(): void {
+    this._vitalite.next(100)
+  }
+
   updateForce(value: number): void {
     this._force.next(value += this._force.getValue())
+  }
+
+  resetForce(): void {
+    this._force.next(100)
   }
 
   updateIntelligence(value: number): void {
     this._intelligence.next(value += this._intelligence.getValue())
   }
 
+  resetIntelligence(): void {
+    this._intelligence.next(100)
+  }
+
   updateChance(value: number): void {
     this._chance.next(value += this._chance.getValue())
   }
 
+  resetChance(): void {
+    this._chance.next(100)
+  }
+
   updateAgilite(value: number): void {
     this._agilite.next(value += this._agilite.getValue())
+  }
+
+  resetAgilite(): void {
+    this._agilite.next(100)
   }
 }

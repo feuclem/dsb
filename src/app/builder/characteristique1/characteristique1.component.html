@@ -1,5 +1,5 @@
-<div class="statistique">
-  <div class="columns">
+<div class="statistique green-left">
+  <div class="columns has-text-centered">
     <div class="column is-2">
       <span>PA :</span> {{pa}}
     </div>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="columns">
+  <div class="columns has-text-centered">
     <div class="column is-2">
       <span>Ini :</span> {{initiative}}
     </div>
@@ -28,8 +28,8 @@
       <span>Crit :</span> {{critique}}
     </div>
   </div>
-  Statistiques :
-  <div class="columns">
+
+  <div class="columns has-text-centered">
     <div class="column is-2">
       <span>Vit :</span> {{vitalite}}
       <input [(ngModel)]="inputVitalite" (change)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number" min="0" [max]="remainingPointsToUsed">
@@ -52,13 +52,15 @@
     </div>
     <div class="column is-2">
       <span>Pui :</span> {{puissance}}
-      Total : {{remainingPointsToUsed}}
     </div>
   </div>
 
-  <div class="columns">
-    <div class="column">
+  <div class="columns has-text-centered">
+    <div class="column is-7">
       <button class="button is-primary" (click)="resetStats()">Comme dirait Otomai : "Change ta constitution"</button>
+    </div>
+    <div class="column">
+      Total : {{remainingPointsToUsed}}
     </div>
   </div>
 </div>
