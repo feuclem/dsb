@@ -9,6 +9,7 @@ import {CharacteristiqueService} from '../../shared/service/characteristique.ser
 export class Characteristique2Component implements OnInit {
 
   dommages: number
+  dommagesNeutre: number
   dommagesTerre: number
   dommagesFeu: number
   dommagesEau: number
@@ -24,6 +25,7 @@ export class Characteristique2Component implements OnInit {
 
   ngOnInit() {
     this.dommages = this.characteritiqueService.dommages
+    this.dommagesNeutre = this.characteritiqueService.dommagesNeutre
     this.dommagesTerre = this.characteritiqueService.dommagesTerre
     this.dommagesFeu = this.characteritiqueService.dommagesFeu
     this.dommagesEau = this.characteritiqueService.dommagesEau

@@ -10,21 +10,21 @@ export class BouclierHttpService {
   }
 
   getAllEquipements(): Promise<Equipement[]> {
-    const armes: Equipement[] = []
+    const boucliers: Equipement[] = []
     return fetch(environment.apiUrl + 'boucliers/all?page=1')
       .then(r => r.json())
       .then(json => {
-        json.map(item => armes.push(
+        json.map(item => boucliers.push(
           new Equipement(
             item._id,
             item.name,
             parseInt(item.lvl),
             item.type,
             environment.staticUrl + 'boucliers/' + item.name.replace(/ /g, '') + '.png',
-            item.stats.map(stat => this.statistiquesService.extractor(stat))
+            item.stats.filter(value => Object.keys(value).length !== 0).map(stat => this.statistiquesService.extractor(stat))
           )
         ))
-        return armes
+        return boucliers
       })
   }
 }

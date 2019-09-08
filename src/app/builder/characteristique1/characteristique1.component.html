@@ -28,14 +28,14 @@
       <span>Crit :</span> {{critique}}
     </div>
   </div>
-
+  Statistiques :
   <div class="columns">
     <div class="column is-2">
-      <span>Vita :</span> {{vitalite}}
+      <span>Vit :</span> {{vitalite}}
       <input [(ngModel)]="inputVitalite" (change)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
-      <span>Fo :</span> {{force}}
+      <span>For :</span> {{force}}
       <input [(ngModel)]="inputForce" (change)="modifyStat(+$event.target.value, 'Force')" class="input is-force" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">

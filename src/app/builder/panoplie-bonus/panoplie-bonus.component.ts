@@ -20,7 +20,6 @@ export class PanoplieBonusComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.stuffService.listIdEquipment)
     this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(this.stuffService.listIdEquipment)
     if (this.getBonusStatsToAdd.length !== 0) {
       this.getBonusStatsToAdd.map(stat => this.statistiquesService.setStatInStuff(stat))

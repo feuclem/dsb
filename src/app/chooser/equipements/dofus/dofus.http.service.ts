@@ -10,21 +10,21 @@ export class DofusHttpService {
   }
 
   getAllEquipements(): Promise<Equipement[]> {
-    const armes: Equipement[] = []
+    const dofus: Equipement[] = []
     return fetch(environment.apiUrl + 'dofus/all?page=1')
       .then(r => r.json())
       .then(json => {
-        json.map(item => armes.push(
+        json.map(item => dofus.push(
           new Equipement(
             item._id,
             item.name,
             parseInt(item.lvl),
             item.type,
             environment.staticUrl + 'dofus/' + item.name.replace(/ /g, '') + '.png',
-            item.stats.map(stat => this.statistiquesService.extractor(stat))
+            item.stats.filter(value => Object.keys(value).length !== 0).map(stat => this.statistiquesService.extractor(stat))
           )
         ))
-        return armes
+        return dofus
       })
   }
 }

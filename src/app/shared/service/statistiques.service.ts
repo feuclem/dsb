@@ -29,21 +29,19 @@ export class StatistiquesService {
   setStatInStuff(stat: Statistique) {
     const occurrence = mapperForStatInStuff.filter(item => item.label === stat.label)
     if (occurrence.length > 0) {
-      return this.characteritiqueService[occurrence[0].type] = stat.to
-    }
-  }
-
-  private getStatElement(key) {
-    if (/Neutre/.test(key)) {
-      return 'Neutre'
-    } else if (/Terre/.test(key)) {
-      return 'Terre'
-    } else if (/Feu/.test(key)) {
-      return 'Feu'
-    } else if (/Eau/.test(key)) {
-      return 'Eau'
-    } else if (/Air/.test(key)) {
-      return 'Air'
+      if(stat.label === 'Force') {
+        this.characteritiqueService.updateForce(stat.to)
+      } else if(stat.label === 'Intelligence') {
+        this.characteritiqueService.updateIntelligence(stat.to)
+      } else if(stat.label === 'Chance') {
+        this.characteritiqueService.updateChance(stat.to)
+      } else if(stat.label === 'Agilité') {
+        this.characteritiqueService.updateAgilite(stat.to)
+      } else if(stat.label === 'Vitalité') {
+        this.characteritiqueService.updateVitalite(stat.to)
+      } else {
+        this.characteritiqueService[occurrence[0].type] = stat.to
+      }
     }
   }
 }

@@ -38,7 +38,8 @@ import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
 import {NiveauService} from './chooser/niveau/niveau.service'
 import {ClasseService} from './chooser/classe/classe.service';
 import { Characteristique3Component } from './builder/characteristique3/characteristique3.component'
-import {PointsdecaracService} from './shared/service/pointsdecarac.service'
+import {PointsdecaracService} from './shared/service/pointsdecarac.service';
+import { Characteristique4Component } from './builder/characteristique4/characteristique4.component'
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {PointsdecaracService} from './shared/service/pointsdecarac.service'
     NiveauComponent,
     ClasseComponent,
     SacrieurComponent,
-    Characteristique3Component
+    Characteristique3Component,
+    Characteristique4Component
   ],
   imports: [
     CommonModule,

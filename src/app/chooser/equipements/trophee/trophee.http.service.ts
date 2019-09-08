@@ -21,7 +21,7 @@ export class TropheeHttpService {
             parseInt(item.lvl),
             item.type,
             environment.staticUrl + 'trophees/' + item.name.replace(/ /g, '') + '.png',
-            item.stats.map(stat => this.statistiquesService.extractor(stat))
+            item.stats.filter(value => Object.keys(value).length !== 0).map(stat => this.statistiquesService.extractor(stat))
           )
         ))
         return armes

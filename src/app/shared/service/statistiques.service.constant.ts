@@ -266,6 +266,30 @@ export const mapperStat = [
   {
     label: 'critique',
     type: Critique
+  },
+  {
+    label: 'dommagesSorts',
+    type: DommagesAuxSorts
+  },
+  {
+    label: 'resistanceFixeNeutre',
+    type: ResistanceFixeNeutre
+  },
+  {
+    label: 'resistanceFixeTerre',
+    type: ResistanceFixeTerre
+  },
+  {
+    label: 'resistanceFixeFeu',
+    type: ResistanceFixeFeu
+  },
+  {
+    label: 'resistanceFixeEau',
+    type: ResistanceFixeEau
+  },
+  {
+    label: 'resistanceFixeAir',
+    type: ResistanceFixeAir
   }
 ]
 
@@ -280,23 +304,23 @@ export const mapperForStatInStuff = [
   },
   {
     label: 'Force',
-    type: 'force'
+    type: ''
   },
   {
     label: 'Intelligence',
-    type: 'intelligence'
+    type: ''
   },
   {
     label: 'Chance',
-    type: 'chance'
+    type: ''
   },
   {
     label: 'Agilité',
-    type: 'agilite'
+    type: ''
   },
   {
     label: 'Vitalité',
-    type: 'vitalite'
+    type: ''
   },
   {
     label: 'Sagesse',

@@ -504,22 +504,22 @@ export class CharacteristiqueService {
   _agilite = new BehaviorSubject<number>(100)
 
   updateVitalite(value: number): void {
-    this._vitalite.next(value)
+    this._vitalite.next(value += this._vitalite.getValue())
   }
 
   updateForce(value: number): void {
-    this._force.next(value)
+    this._force.next(value += this._force.getValue())
   }
 
   updateIntelligence(value: number): void {
-    this._intelligence.next(value)
+    this._intelligence.next(value += this._intelligence.getValue())
   }
 
   updateChance(value: number): void {
-    this._chance.next(value)
+    this._chance.next(value += this._chance.getValue())
   }
 
   updateAgilite(value: number): void {
-    this._agilite.next(value)
+    this._agilite.next(value += this._agilite.getValue())
   }
 }

@@ -1,11 +1,13 @@
-<div class="columns">
-  <div class="column is-2 is-uppercase">
-    Bonus de panoplie :
-  </div>
-  <div class="column is-10">
-    <div *ngIf="getBonusStatsToAdd.length !== 0" class="bonus">
-      <div *ngFor="let bonus of getBonusStatsToAdd">
-        {{bonus.label}} : {{bonus.from}}
+<div class="statistique">
+  <div class="columns">
+    <div class="column is-3 is-uppercase">
+      Bonus de panoplie :
+    </div>
+    <div class="column is-9">
+      <div *ngIf="getBonusStatsToAdd.length !== 0" class="bonus">
+        <div *ngFor="let bonus of getBonusStatsToAdd">
+          {{bonus.label}} : {{bonus.from}}
+        </div>
       </div>
     </div>
   </div>
