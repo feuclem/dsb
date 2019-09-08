@@ -10,21 +10,21 @@ export class DamageCalculatorService {
 
   calculDegatBase(degat: number, type: string): number {
     if (type === 'terre') {
-      return this.getDegatBase(degat, this.characteritiqueService.force, this.characteritiqueService.dommagesTerre)
+      return this.getDegatBase(degat, this.characteritiqueService._force.getValue(), this.characteritiqueService.dommagesTerre)
     }
     if (type === 'feu') {
-      return this.getDegatBase(degat, this.characteritiqueService.intelligence, this.characteritiqueService.dommagesFeu)
+      return this.getDegatBase(degat, this.characteritiqueService._intelligence.getValue(), this.characteritiqueService.dommagesFeu)
     }
     if (type === 'eau') {
-      return this.getDegatBase(degat, this.characteritiqueService.chance, this.characteritiqueService.dommagesEau)
+      return this.getDegatBase(degat, this.characteritiqueService._chance.getValue(), this.characteritiqueService.dommagesEau)
     }
     if (type === 'air') {
-      return this.getDegatBase(degat, this.characteritiqueService.agilite, this.characteritiqueService.dommagesAir)
+      return this.getDegatBase(degat, this.characteritiqueService._agilite.getValue(), this.characteritiqueService.dommagesAir)
     }
     if (type === 'air-feu') {
       return this.getDegatBase(
         degat,
-        this.characteritiqueService.agilite + this.characteritiqueService.intelligence,
+        this.characteritiqueService._agilite.getValue() + this.characteritiqueService._intelligence.getValue(),
         this.characteritiqueService.dommagesAir + this.characteritiqueService.dommagesFeu
       )
     }
@@ -46,21 +46,21 @@ export class DamageCalculatorService {
 
   calculDegatCritique(degat: number, type: string): number {
     if (type === 'terre') {
-      return this.getDegatCritque(degat, this.characteritiqueService.force, this.characteritiqueService.dommagesTerre)
+      return this.getDegatCritque(degat, this.characteritiqueService._force.getValue(), this.characteritiqueService.dommagesTerre)
     }
     if (type === 'feu') {
-      return this.getDegatCritque(degat, this.characteritiqueService.intelligence, this.characteritiqueService.dommagesFeu)
+      return this.getDegatCritque(degat, this.characteritiqueService._intelligence.getValue(), this.characteritiqueService.dommagesFeu)
     }
     if (type === 'eau') {
-      return this.getDegatCritque(degat, this.characteritiqueService.chance, this.characteritiqueService.dommagesEau)
+      return this.getDegatCritque(degat, this.characteritiqueService._chance.getValue(), this.characteritiqueService.dommagesEau)
     }
     if (type === 'air') {
-      return this.getDegatCritque(degat, this.characteritiqueService.agilite, this.characteritiqueService.dommagesAir)
+      return this.getDegatCritque(degat, this.characteritiqueService._agilite.getValue(), this.characteritiqueService.dommagesAir)
     }
     if (type === 'air-feu') {
       return this.getDegatCritque(
         degat,
-        this.characteritiqueService.agilite + this.characteritiqueService.intelligence,
+        this.characteritiqueService._agilite.getValue() + this.characteritiqueService._intelligence.getValue(),
         this.characteritiqueService.dommagesAir + this.characteritiqueService.dommagesFeu
       )
     }

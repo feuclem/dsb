@@ -23,46 +23,6 @@ export class CharacteristiqueService {
     this._dommagesNeutre = value
   }
 
-  private _force = 0
-
-  get force(): number {
-    return this._force
-  }
-
-  set force(value: number) {
-    this._force = value
-  }
-
-  private _intelligence = 0
-
-  get intelligence(): number {
-    return this._intelligence
-  }
-
-  set intelligence(value: number) {
-    this._intelligence = value
-  }
-
-  private _chance = 0
-
-  get chance(): number {
-    return this._chance
-  }
-
-  set chance(value: number) {
-    this._chance = value
-  }
-
-  private _agilite = 0
-
-  get agilite(): number {
-    return this._agilite
-  }
-
-  set agilite(value: number) {
-    this._agilite = value
-  }
-
   private _sagesse = 0
 
   get sagesse(): number {
@@ -535,7 +495,31 @@ export class CharacteristiqueService {
 
   _vitalite = new BehaviorSubject<number>(100)
 
+  _force = new BehaviorSubject<number>(100)
+
+  _intelligence = new BehaviorSubject<number>(100)
+
+  _chance = new BehaviorSubject<number>(100)
+
+  _agilite = new BehaviorSubject<number>(100)
+
   updateVitalite(value: number): void {
     this._vitalite.next(value)
+  }
+
+  updateForce(value: number): void {
+    this._force.next(value)
+  }
+
+  updateIntelligence(value: number): void {
+    this._intelligence.next(value)
+  }
+
+  updateChance(value: number): void {
+    this._chance.next(value)
+  }
+
+  updateAgilite(value: number): void {
+    this._agilite.next(value)
   }
 }

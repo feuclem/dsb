@@ -32,27 +32,33 @@
   <div class="columns">
     <div class="column is-2">
       <span>Vita :</span> {{vitalite}}
-      <input (keyup)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number">
+      <input [(ngModel)]="inputVitalite" (change)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
       <span>Fo :</span> {{force}}
-      <input (keyup)="modifyStat(+$event.target.value, 'Force')" class="input is-force" type="number">
+      <input [(ngModel)]="inputForce" (change)="modifyStat(+$event.target.value, 'Force')" class="input is-force" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
       <span>Int :</span> {{intelligence}}
-      <input (keyup)="modifyStat(+$event.target.value, 'Intelligence')" class="input is-danger" type="number">
+      <input [(ngModel)]="inputIntelligence" (change)="modifyStat(+$event.target.value, 'Intelligence')" class="input is-danger" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
       <span>Cha :</span> {{chance}}
-      <input (keyup)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary" type="number">
+      <input [(ngModel)]="inputChance" (change)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
       <span>Agi :</span> {{agilite}}
-      <input (keyup)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success" type="number">
+      <input [(ngModel)]="inputAgilite" (change)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
       <span>Pui :</span> {{puissance}}
-      {{remainingPointsToUsed}}
+      Total : {{remainingPointsToUsed}}
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <button class="button is-primary" (click)="resetStats()">Comme dirait Otomai : "Change ta constitution"</button>
     </div>
   </div>
 </div>
