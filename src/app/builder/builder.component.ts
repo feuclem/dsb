@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core'
 import {ClasseService} from '../chooser/classe/classe.service'
-import {Subscription} from 'rxjs/Subscription'
 
 @Component({
   selector: 'builder',
@@ -8,16 +7,13 @@ import {Subscription} from 'rxjs/Subscription'
   styles: []
 })
 export class BuilderComponent implements OnInit {
-  private classeSubscription: Subscription
   classe: string
 
   constructor(private classeService: ClasseService) {
   }
 
   ngOnInit() {
-    this.classeSubscription = this.classeService.getClasse()
-      .subscribe((val: string) => {
-        this.classe = val
-      })
+    console.log('passe')
+    this.classe = this.classeService._classe.getValue()
   }
 }

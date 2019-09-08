@@ -18,6 +18,7 @@ export class ClasseComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentClasse = this.classeService._classe.getValue()
   }
 
   selectClasse(classe: string) {

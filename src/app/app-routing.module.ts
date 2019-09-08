@@ -13,6 +13,7 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
+import {SpellComponent} from './spell/spell.component'
 
 const routes: Routes = [
   {path: 'trophee', component: TropheeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'anneau', component: AnneauComponent},
   {path: 'amulette', component: AmuletteComponent},
   {path: 'armes', component: ArmesComponent},
+  {path: 'sorts', component: SpellComponent},
   {path: '', component: BuilderComponent}
 ]
 

@@ -1,17 +1,12 @@
 import {Injectable} from '@angular/core'
-import {Subject} from 'rxjs/Subject'
-import {Observable} from 'rxjs/Observable'
+import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 
 @Injectable()
 export class ClasseService {
 
-  private _classe = new Subject<string>()
+  _classe = new BehaviorSubject<string>('')
 
   updateClasse(value: string): void {
     this._classe.next(value)
-  }
-
-  getClasse(): Observable<string> {
-    return this._classe.asObservable()
   }
 }
