@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: '',
-  staticUrl: ''
+  apiUrl: 'https://test-dsb-rest.herokuapp.com/',
+  staticUrl: 'https://testdsb-static.herokuapp.com/'
 }
