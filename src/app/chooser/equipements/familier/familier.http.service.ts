@@ -21,7 +21,8 @@ export class FamilierHttpService {
             parseInt(item.lvl),
             item.type,
             environment.staticUrl + 'familiers/' + item.name.replace(/ /g, '') + '.png',
-            item.stats.filter(value => Object.keys(value).length !== 0).map(stat => this.statistiquesService.extractor(stat))
+            item.stats.filter(value => Object.keys(value).length !== 0).map(stat => this.statistiquesService.extractor(stat)),
+            item.setId
           )
         ))
         return armes

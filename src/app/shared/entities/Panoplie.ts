@@ -1,4 +1,5 @@
 import {Bonus} from './Bonus'
+import {Equipement} from './Equipement'
 
 export class Panoplie {
   id: number
@@ -8,6 +9,7 @@ export class Panoplie {
   imgUrl: string
   bonus: Bonus[]
   equipementsId: number[]
+  equipements: Equipement[]
 
   constructor(
     id: number,
@@ -16,7 +18,8 @@ export class Panoplie {
     type: string,
     imgUrl: string,
     bonus: Bonus[],
-    equipementsId: number[]
+    equipementsId: number[],
+    equipements: Equipement[]
   ) {
     this.id = id
     this.name = name
@@ -25,6 +28,7 @@ export class Panoplie {
     this.imgUrl = imgUrl
     this.bonus = bonus
     this.equipementsId = equipementsId
+    this.equipements = equipements
   }
 }
 
