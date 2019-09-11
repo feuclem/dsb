@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing'
+import {ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {AmuletteComponent} from './amulette.component'
 import {RouterTestingModule} from '@angular/router/testing'
@@ -11,14 +11,21 @@ describe('AmuletteComponent', () => {
   let component: AmuletteComponent
   let fixture: ComponentFixture<AmuletteComponent>
 
-  beforeEach(async(() => {
+  let amuletteHttpService = null
+  let stuffService = null
+  let statistiquesService = null
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AmuletteComponent],
       imports: [RouterTestingModule],
       providers: [AmuletteHttpService, StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
-      .compileComponents()
-  }))
+
+    amuletteHttpService = TestBed.get(AmuletteHttpService)
+    stuffService = TestBed.get(StuffService)
+    statistiquesService = TestBed.get(StatistiquesService)
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AmuletteComponent)
@@ -26,7 +33,9 @@ describe('AmuletteComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  describe('setBuild', () => {
+  })
+
+  describe('setPanoplie', () => {
   })
 })

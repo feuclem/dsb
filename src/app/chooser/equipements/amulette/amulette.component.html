@@ -22,12 +22,16 @@
       </div>
       <div class="tile is-parent">
         <article class="tile is-child notification is-danger">
-          <p class="title"><a class="button is-link" (click)="setBuild(index)">Equiper l'item</a></p>
+          <p class="title">
+            <a class="button is-link" (click)="setBuild(index)">Equiper l'item</a>
+          </p>
           <p class="subtitle">Equiper la panoplie entière :</p>
           <div class="content">
-            <div *ngFor="let full of getFullPanoplie(equipement.setId)">
+            <div *ngFor="let full of getFullPanoplie(equipement.setId); let index = index; let last = last">
               <img src="{{full.imgUrl}}" alt="">
+              <a *ngIf="index + 1 === last" class="button is-link" (click)="setPanoplie(equipement.setId)">Equiper la panoplie</a>
             </div>
+
           </div>
         </article>
       </div>

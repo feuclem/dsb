@@ -40,6 +40,11 @@ export class AmuletteComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
+  setPanoplie(setId: number) {
+    this.panoplieService.setPanoplieToStuff(setId)
+    this.router.navigate(['/'])
+  }
+
   getFullPanoplie(setId: number): Equipement[] {
     return this.panoplieService.getFullPanoplie(setId)
   }

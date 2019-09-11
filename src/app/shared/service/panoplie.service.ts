@@ -2,12 +2,14 @@ import {Injectable} from '@angular/core'
 import {Panoplie} from '../entities/Panoplie'
 import {Statistique} from '../entities/Statistique'
 import {Equipement} from '../entities/Equipement'
+import {StuffService} from './stuff.service'
 
 @Injectable()
 export class PanoplieService {
 
-  constructor() {
-  }
+  constructor(
+    private stuffService: StuffService
+  ) {}
 
   private _listPanoplie = []
 
@@ -44,5 +46,28 @@ export class PanoplieService {
       }
     })
     return equipements
+  }
+
+  setPanoplieToStuff(setId: number) {
+    const equipements = this.getFullPanoplie(setId)
+    equipements.forEach(equipement => {
+      if (equipement.type === 'Amulette') {
+        this.stuffService.amulette = equipement.imgUrl
+      } else if (equipement.type === 'Chapeau') {
+        this.stuffService.coiffe = equipement.imgUrl
+      } else if (equipement.type === 'Cape') {
+        this.stuffService.cape = equipement.imgUrl
+      } else if (equipement.type === 'Ceinture') {
+        this.stuffService.ceinture = equipement.imgUrl
+      } else if (equipement.type === 'Bottes') {
+        this.stuffService.bottes = equipement.imgUrl
+      } else if (equipement.type === 'Anneau') {
+        if (this.stuffService.anneau1 === '') {
+          this.stuffService.anneau1 = equipement.imgUrl
+        } else {
+          this.stuffService.anneau2 = equipement.imgUrl
+        }
+      }
+    })
   }
 }
