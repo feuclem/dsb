@@ -24,6 +24,12 @@ export class Characteristique1Component implements OnInit {
   agilite: number
   puissance: number
 
+  parchoVitalite: number
+  parchoForce: number
+  parchoIntelligence: number
+  parchoChance: number
+  parchoAgilite: number
+
   vitalite: number
 
   remainingPointsToUsed: number
@@ -57,6 +63,12 @@ export class Characteristique1Component implements OnInit {
     this.getChance()
     this.getAgilite()
     this.getRemainingPointsToUsed()
+
+    this.getParchoVitalite()
+    this.getParchoForce()
+    this.getParchoIntelligence()
+    this.getParchoChance()
+    this.getParchoAgilite()
   }
 
   modifyStat(points: number, charac: String) {
@@ -90,6 +102,26 @@ export class Characteristique1Component implements OnInit {
 
   getAgilite() {
     this.characteritiqueService._agilite.subscribe(value => this.agilite = value)
+  }
+
+  getParchoVitalite() {
+    this.characteritiqueService._parchoVitalite.subscribe(value => this.parchoVitalite = value)
+  }
+
+  getParchoForce() {
+    this.characteritiqueService._parchoForce.subscribe(value => this.parchoForce = value)
+  }
+
+  getParchoIntelligence() {
+    this.characteritiqueService._parchoIntelligence.subscribe(value => this.parchoIntelligence = value)
+  }
+
+  getParchoChance() {
+    this.characteritiqueService._parchoChance.subscribe(value => this.parchoChance = value)
+  }
+
+  getParchoAgilite() {
+    this.characteritiqueService._parchoAgilite.subscribe(value => this.parchoAgilite = value)
   }
 
   getRemainingPointsToUsed() {

@@ -4,7 +4,8 @@ import {StatistiquesService} from './statistiques.service'
 import {CharacteristiqueService} from './characteristique.service'
 import {
   Agilite,
-  Chance, Critique,
+  Chance,
+  Critique,
   Dommages,
   DommagesAir,
   DommagesAirArme,
@@ -21,7 +22,9 @@ import {
   DommagesPiege,
   DommagesPoussee,
   DommagesTerre,
-  DommagesTerreArme, EsquivePA, EsquivePM,
+  DommagesTerreArme,
+  EsquivePA,
+  EsquivePM,
   Force,
   Fuite,
   Initiative,
@@ -116,6 +119,7 @@ describe('StatistiquesService', () => {
       {label: '% Dommages aux sorts', stat: {'% Dommages aux sorts': {from: 1, to: 1}}, expected: new DommagesAuxSorts(1, 1)},
       {label: 'Puissance (pièges)', stat: {'Puissance (pièges)': {from: 1, to: 1}}, expected: new PuissancePiege(1, 1)},
       {label: 'Dommages Pièges', stat: {'Dommages Pièges': {from: 1, to: 1}}, expected: new DommagesPiege(1, 1)},
+      {label: 'critique', stat: {'critique': {from: 1, to: 1}}, expected: new Critique(1, 1)},
     ]
 
     describe('basic stat', () => {
@@ -140,26 +144,6 @@ describe('StatistiquesService', () => {
       {
         stat: new DommagesNeutre(1, 1),
         label: 'dommagesNeutre'
-      },
-      {
-        stat: new Force(1, 1),
-        label: 'force'
-      },
-      {
-        stat: new Intelligence(1, 1),
-        label: 'intelligence'
-      },
-      {
-        stat: new Chance(1, 1),
-        label: 'chance'
-      },
-      {
-        stat: new Agilite(1, 1),
-        label: 'agilite'
-      },
-      {
-        stat: new Vitalite(1, 1),
-        label: 'vitalite'
       },
       {
         stat: new Sagesse(1, 1),
@@ -345,14 +329,53 @@ describe('StatistiquesService', () => {
       {
         stat: new DommagesDistance(1, 1),
         label: 'dommagesDistance'
+      },
+      {
+        stat: new Critique(1, 1),
+        label: 'critique'
       }
     ]
-
 
     listToTest.map(item => {
       it(`should set characteritique for ${item.stat.label}`, () => {
         // Given
         const spy = spyOnProperty(characteritiqueService, item.label, 'set')
+
+        // When
+        statistiquesService.setStatInStuff(item.stat)
+
+        // Then
+        expect(spy).toHaveBeenCalledWith(1)
+      })
+    })
+
+    const observableListToTest = [
+      {
+        stat: new Force(1, 1),
+        property: 'updateForce'
+      },
+      {
+        stat: new Intelligence(1, 1),
+        property: 'updateIntelligence'
+      },
+      {
+        stat: new Chance(1, 1),
+        property: 'updateChance'
+      },
+      {
+        stat: new Agilite(1, 1),
+        property: 'updateAgilite'
+      },
+      {
+        stat: new Vitalite(1, 1),
+        property: 'updateVitalite'
+      }
+    ]
+
+    observableListToTest.map(item => {
+      it(`should set characteritique for ${item.stat.label}`, () => {
+        // Given
+        const spy = spyOn(characteritiqueService, item.property)
 
         // When
         statistiquesService.setStatInStuff(item.stat)

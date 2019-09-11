@@ -455,6 +455,16 @@ export class CharacteristiqueService {
 
   _agilite = new BehaviorSubject<number>(100)
 
+  _parchoVitalite = new BehaviorSubject<number>(100)
+
+  _parchoForce = new BehaviorSubject<number>(100)
+
+  _parchoIntelligence = new BehaviorSubject<number>(100)
+
+  _parchoChance = new BehaviorSubject<number>(100)
+
+  _parchoAgilite = new BehaviorSubject<number>(100)
+
   updateVitalite(value: number): void {
     this._vitalite.next(value += this._vitalite.getValue())
   }

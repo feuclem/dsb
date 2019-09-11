@@ -15,7 +15,7 @@ describe('PointsdecaracService', () => {
     characteristiqueService = TestBed.get(CharacteristiqueService)
   })
 
-  describe('addPointToCharacteristique', (() => {
+  describe('addPointToCharacteristique', () => {
     describe('when 100 force', () => {
       it('should call force of CharacteritiqueService and should set remainingPoints to 895', () => {
         // Given
@@ -26,7 +26,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(100, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(200)
+        expect(spyForce).toHaveBeenCalledWith(100)
         expect(spyUpdate).toHaveBeenCalledWith(895)
       })
     })
@@ -41,7 +41,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(101, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(201)
+        expect(spyForce).toHaveBeenCalledWith(101)
         expect(spyUpdate).toHaveBeenCalledWith(893)
       })
     })
@@ -56,7 +56,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(111, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(211)
+        expect(spyForce).toHaveBeenCalledWith(111)
         expect(spyUpdate).toHaveBeenCalledWith(873)
       })
     })
@@ -71,7 +71,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(199, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(299)
+        expect(spyForce).toHaveBeenCalledWith(199)
         expect(spyUpdate).toHaveBeenCalledWith(697)
       })
     })
@@ -86,7 +86,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(200, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(300)
+        expect(spyForce).toHaveBeenCalledWith(200)
         expect(spyUpdate).toHaveBeenCalledWith(695)
       })
     })
@@ -101,7 +101,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(201, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(301)
+        expect(spyForce).toHaveBeenCalledWith(201)
         expect(spyUpdate).toHaveBeenCalledWith(692)
       })
     })
@@ -116,7 +116,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(300, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(400)
+        expect(spyForce).toHaveBeenCalledWith(300)
         expect(spyUpdate).toHaveBeenCalledWith(395)
       })
     })
@@ -131,7 +131,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(301, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(401)
+        expect(spyForce).toHaveBeenCalledWith(301)
         expect(spyUpdate).toHaveBeenCalledWith(391)
       })
     })
@@ -146,7 +146,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(350, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(450)
+        expect(spyForce).toHaveBeenCalledWith(350)
         expect(spyUpdate).toHaveBeenCalledWith(195)
       })
     })
@@ -161,7 +161,7 @@ describe('PointsdecaracService', () => {
         pointsdecaracService.addPointToCharacteristique(398, 'Force')
 
         // Then
-        expect(spyForce).toHaveBeenCalledWith(498)
+        expect(spyForce).toHaveBeenCalledWith(398)
         expect(spyUpdate).toHaveBeenCalledWith(3)
       })
     })
@@ -178,7 +178,7 @@ describe('PointsdecaracService', () => {
           pointsdecaracService.addPointToCharacteristique(95, 'Vitalite')
 
           // Then
-          expect(spyVitalite).toHaveBeenCalledWith(195)
+          expect(spyVitalite).toHaveBeenCalledWith(95)
           expect(spyUpdate).toHaveBeenCalledWith(0)
         })
       })
@@ -194,7 +194,7 @@ describe('PointsdecaracService', () => {
           pointsdecaracService.addPointToCharacteristique(300, 'Vitalite')
 
           // Then
-          expect(spyVitalite).toHaveBeenCalledWith(195)
+          expect(spyVitalite).toHaveBeenCalledWith(95)
           expect(spyUpdate).toHaveBeenCalledWith(0)
         })
       })
@@ -225,7 +225,7 @@ describe('PointsdecaracService', () => {
           pointsdecaracService.addPointToCharacteristique(1111, 'Force')
 
           // Then
-          expect(spyForce).toHaveBeenCalledWith(498)
+          expect(spyForce).toHaveBeenCalledWith(398)
           expect(spyUpdate).toHaveBeenCalledWith(3)
         })
       })
@@ -237,47 +237,51 @@ describe('PointsdecaracService', () => {
         const spyForce = spyOn(characteristiqueService, 'updateForce')
         const spyIntel = spyOn(characteristiqueService, 'updateIntelligence')
         const spyVita = spyOn(characteristiqueService, 'updateVitalite')
+        const spyUpdate = spyOn(pointsdecaracService, 'updateRemainingPointsToUsed')
 
         // When user add 300 force
         pointsdecaracService.addPointToCharacteristique(300, 'Force')
 
         // Then the points to used is 395
-        expect(spyForce).toHaveBeenCalledWith(400)
+        expect(spyForce).toHaveBeenCalledWith(300)
+        expect(spyUpdate).toHaveBeenCalledWith(395)
 
         // When user add 200 intel
         pointsdecaracService.addPointToCharacteristique(200, 'Intelligence')
 
         // Then
-        expect(spyIntel).toHaveBeenCalledWith(300)
+        expect(spyIntel).toHaveBeenCalledWith(200)
+        expect(spyUpdate).toHaveBeenCalledWith(95)
 
         // When user add 95 vita
         pointsdecaracService.addPointToCharacteristique(95, 'Vitalite')
 
         // Then
-        expect(spyVita).toHaveBeenCalledWith(195)
+        expect(spyVita).toHaveBeenCalledWith(95)
+        expect(spyUpdate).toHaveBeenCalledWith(0)
       })
     })
-  }))
+  })
 
   describe('resetRemainingPoints', () => {
     it('should set remainingPoints to 995 and call all charac with 100', () => {
       // Given
-      const spyForce = spyOn(characteristiqueService, 'updateForce')
-      const spyIntelligence = spyOn(characteristiqueService, 'updateIntelligence')
-      const spyChance = spyOn(characteristiqueService, 'updateChance')
-      const spyAgilite = spyOn(characteristiqueService, 'updateAgilite')
-      const spyVitalite = spyOn(characteristiqueService, 'updateVitalite')
+      const spyForce = spyOn(characteristiqueService, 'resetForce')
+      const spyIntelligence = spyOn(characteristiqueService, 'resetIntelligence')
+      const spyChance = spyOn(characteristiqueService, 'resetChance')
+      const spyAgilite = spyOn(characteristiqueService, 'resetAgilite')
+      const spyVitalite = spyOn(characteristiqueService, 'resetVitalite')
       const spyUpdate = spyOn(pointsdecaracService, 'updateRemainingPointsToUsed')
 
       // When
       pointsdecaracService.resetRemainingPoints()
 
       // Then
-      expect(spyForce).toHaveBeenCalledWith(100)
-      expect(spyIntelligence).toHaveBeenCalledWith(100)
-      expect(spyChance).toHaveBeenCalledWith(100)
-      expect(spyAgilite).toHaveBeenCalledWith(100)
-      expect(spyVitalite).toHaveBeenCalledWith(100)
+      expect(spyForce).toHaveBeenCalledWith()
+      expect(spyIntelligence).toHaveBeenCalledWith()
+      expect(spyChance).toHaveBeenCalledWith()
+      expect(spyAgilite).toHaveBeenCalledWith()
+      expect(spyVitalite).toHaveBeenCalledWith()
       expect(spyUpdate).toHaveBeenCalledWith(995)
     })
   })

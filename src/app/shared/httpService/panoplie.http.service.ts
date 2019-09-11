@@ -13,7 +13,6 @@ export class PanoplieHttpService {
 
   getAllPanoplie(): Promise<Panoplie[]> {
     const panoplies: Panoplie[] = []
-    const equipements: Equipement[] = []
     return fetch(environment.apiUrl + 'panoplies/all?page=1')
       .then(r => r.json())
       .then(json => {

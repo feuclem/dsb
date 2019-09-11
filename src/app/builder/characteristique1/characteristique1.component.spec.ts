@@ -39,8 +39,13 @@ describe('Characteristique1Component', () => {
       {stat: 'intelligence', expected: 100},
       {stat: 'chance', expected: 100},
       {stat: 'agilite', expected: 100},
-      {stat: 'puissance', expected: 0},
       {stat: 'vitalite', expected: 100},
+      {stat: 'parchoForce', expected: 100},
+      {stat: 'parchoIntelligence', expected: 100},
+      {stat: 'parchoChance', expected: 100},
+      {stat: 'parchoAgilite', expected: 100},
+      {stat: 'parchoVitalite', expected: 100},
+      {stat: 'puissance', expected: 0},
     ]
     attributeToTest.forEach(item => {
       it(`should should set ${item.stat} with the given service value`, () => {
