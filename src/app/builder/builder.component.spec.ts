@@ -25,7 +25,7 @@ describe('BuilderComponent', () => {
   let fixture: ComponentFixture<BuilderComponent>
   let classeService = null
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, HttpClientTestingModule],
       declarations: [
@@ -51,7 +51,7 @@ describe('BuilderComponent', () => {
     })
 
     classeService = TestBed.get(ClasseService)
-  }))
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BuilderComponent)

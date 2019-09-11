@@ -7,13 +7,13 @@ describe('Stuff2Component', () => {
   let component: Stuff2Component
   let fixture: ComponentFixture<Stuff2Component>
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [Stuff2Component],
       providers: [StuffService]
     })
       .compileComponents()
-  }))
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Stuff2Component)

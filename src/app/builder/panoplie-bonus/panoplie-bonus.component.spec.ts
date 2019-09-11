@@ -15,7 +15,7 @@ describe('PanoplieBonusComponent', () => {
   let statistiquesService = null
   let panoplieService = null
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PanoplieBonusComponent],
       providers: [StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}, PanoplieService]
@@ -25,7 +25,7 @@ describe('PanoplieBonusComponent', () => {
     stuffService = TestBed.get(StuffService)
     statistiquesService = TestBed.get(StatistiquesService)
     panoplieService = TestBed.get(PanoplieService)
-  }))
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PanoplieBonusComponent)
@@ -61,23 +61,6 @@ describe('PanoplieBonusComponent', () => {
         expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Vitalite(100, 100))
         expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Puissance(50, 50))
         expect(statistiquesService.setStatInStuff).toHaveBeenCalledWith(new Vitalite(100, 100))
-      })
-
-      it('should call resetListIdEquipment', () => {
-        // Given
-        spyOn(panoplieService, 'getPanoplieBonus').and.returnValues([
-            new Vitalite(100, 100),
-            new Puissance(50, 50),
-            new DommagesCritiques(20, 20)
-          ]
-        )
-        spyOn(stuffService, 'resetListIdEquipment')
-
-        // When
-        component.ngOnInit()
-
-        // Then
-        expect(stuffService.resetListIdEquipment).toHaveBeenCalledWith()
       })
     })
   })

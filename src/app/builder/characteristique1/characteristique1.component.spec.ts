@@ -1,19 +1,23 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing'
+import {ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {Characteristique1Component} from './characteristique1.component'
 import {CharacteristiqueService} from '../../shared/service/characteristique.service'
+import {PointsdecaracService} from '../../shared/service/pointsdecarac.service'
+import {FormsModule} from '@angular/forms'
 
 describe('Characteristique1Component', () => {
   let component: Characteristique1Component
   let fixture: ComponentFixture<Characteristique1Component>
+  let pointsdecaracService = null
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [Characteristique1Component],
-      providers: [CharacteristiqueService]
+      providers: [CharacteristiqueService, PointsdecaracService]
     })
-      .compileComponents()
-  }))
+    pointsdecaracService = TestBed.get(PointsdecaracService)
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Characteristique1Component)
@@ -23,21 +27,59 @@ describe('Characteristique1Component', () => {
 
   describe('on init', () => {
     const attributeToTest = [
-      'force',
-      'intelligence',
-      'chance',
-      'agilite',
-      'vitalite',
-      'puissance',
+      {stat: 'pa', expected: 7},
+      {stat: 'pm', expected: 3},
+      {stat: 'po', expected: 1},
+      {stat: 'initiative', expected: 0},
+      {stat: 'invocation', expected: 1},
+      {stat: 'critique', expected: 0},
+      {stat: 'soin', expected: 0},
+      {stat: 'prospection', expected: 0},
+      {stat: 'force', expected: 100},
+      {stat: 'intelligence', expected: 100},
+      {stat: 'chance', expected: 100},
+      {stat: 'agilite', expected: 100},
+      {stat: 'puissance', expected: 0},
+      {stat: 'vitalite', expected: 100},
     ]
     attributeToTest.forEach(item => {
-      it(`should should set ${item}with the given service value`, () => {
+      it(`should should set ${item.stat} with the given service value`, () => {
         // When
         component.ngOnInit()
 
         // Then
-        expect(component[item]).toEqual(0)
+        expect(component[item.stat]).toEqual(item.expected)
       })
+    })
+  })
+
+  describe('modifyStat', () => {
+    it('should call addPointToCharacteristique with the given value', () => {
+      // Given
+      const spy = spyOn(pointsdecaracService, 'addPointToCharacteristique')
+
+      // When
+      component.modifyStat(1, 'fake')
+
+      // Then
+      expect(spy).toHaveBeenCalledWith(1, 'fake')
+    })
+  })
+
+  describe('resetStats', () => {
+    it('should set input to 0 and call resetRemainingPoints', () => {
+      // Given
+      const spy = spyOn(pointsdecaracService, 'resetRemainingPoints')
+
+      // When
+      component.resetStats()
+
+      // Then
+      component.inputForce = 0
+      component.inputIntelligence = 0
+      component.inputChance = 0
+      component.inputAgilite = 0
+      expect(spy).toHaveBeenCalledWith()
     })
   })
 })

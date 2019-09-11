@@ -9,15 +9,14 @@ describe('IopComponent', () => {
   let fixture: ComponentFixture<IopComponent>
   let damageCalculatorService = null
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [IopComponent],
       providers: [{provide: DamageCalculatorService, useClass: DamageCalculatorServiceMock}]
     })
-      .compileComponents()
 
     damageCalculatorService = TestBed.get(DamageCalculatorService)
-  }))
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IopComponent)

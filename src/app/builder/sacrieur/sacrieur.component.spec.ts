@@ -9,15 +9,14 @@ describe('SacrieurComponent', () => {
   let fixture: ComponentFixture<SacrieurComponent>
   let damageCalculatorService = null
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SacrieurComponent],
       providers: [{provide: DamageCalculatorService, useClass: DamageCalculatorServiceMock}]
     })
-      .compileComponents()
 
     damageCalculatorService = TestBed.get(DamageCalculatorService)
-  }))
+  })
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SacrieurComponent)
