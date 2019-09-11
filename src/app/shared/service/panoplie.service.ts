@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core'
 import {Panoplie} from '../entities/Panoplie'
 import {Statistique} from '../entities/Statistique'
-import {StuffService} from './stuff.service'
+import {Equipement} from '../entities/Equipement'
 
 @Injectable()
 export class PanoplieService {
 
-  constructor(private stuffService: StuffService) {
+  constructor() {
   }
-
 
   private _listPanoplie = []
 
@@ -35,5 +34,15 @@ export class PanoplieService {
       }
     })
     return stats
+  }
+
+  getFullPanoplie(setId: number): Equipement[] {
+    let equipements: Equipement[] = []
+    this.listPanoplie.forEach(panoplie => {
+      if (panoplie.id === setId) {
+        equipements = panoplie.equipements
+      }
+    })
+    return equipements
   }
 }

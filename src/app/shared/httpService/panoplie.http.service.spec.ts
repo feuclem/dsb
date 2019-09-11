@@ -4,9 +4,9 @@ import {PanoplieHttpService} from './panoplie.http.service'
 import {DommagesCritiques, PA, Puissance, Vitalite} from '../entities/Statistique'
 import {Panoplie} from '../entities/Panoplie'
 import {StatistiquesService} from '../service/statistiques.service'
-import {environment} from '../../../environments/environment'
 import {StatistiquesServiceMock} from '../service/statistiques.service.mock'
 import {Bonus} from '../entities/Bonus'
+import {Equipement} from '../entities/Equipement'
 import deepEqual = require('deep-equal')
 
 let panoplieHttpService = null
@@ -27,10 +27,6 @@ describe('PanoplieHttpService', () => {
         '_id': 274,
         'name': 'Panoplie du Strigide',
         'lvl': '200',
-        'type': 'Panoplie',
-        'imgUrl': 'https://s.ankama.com/www/static.ankama.com/dofus/renderer/look/7b317c38302c323132347c313d31363736353536342' +
-          'c323d31363335353838332c333d31363737373138352c343d323931303036342c353d31343536313739397c3134307d/full/1/200_200-10.png',
-        'url': 'https://www.dofus.com/fr/mmorpg/encyclopedie/panoplies/274-panoplie-strigide',
         'bonus': [
           {
             'number': 1,
@@ -79,9 +75,267 @@ describe('PanoplieHttpService', () => {
           }
         ],
         'equipment_id': [
-          '14094',
-          '14095',
-          '14096'
+          14094,
+          14095,
+          14096
+        ],
+        'equipments': [
+          {
+            '_id': 14094,
+            'name': 'Amulette du Strigide',
+            'lvl': '200',
+            'imgUrl': 'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/1235.png',
+            'stats': [
+              {
+                'Vitalité': {
+                  'from': '351',
+                  'to': '400'
+                }
+              },
+              {
+                'Sagesse': {
+                  'from': '31',
+                  'to': '40'
+                }
+              },
+              {
+                '% Critique': {
+                  'from': '4',
+                  'to': '6'
+                }
+              },
+              {
+                'Puissance': {
+                  'from': '51',
+                  'to': '70'
+                }
+              },
+              {
+                'PA': {
+                  'from': '1'
+                }
+              },
+              {
+                '% Résistance Terre': {
+                  'from': '6',
+                  'to': '8'
+                }
+              },
+              {
+                '% Résistance Air': {
+                  'from': '6',
+                  'to': '8'
+                }
+              },
+              {
+                'Esquive PA': {
+                  'from': '4',
+                  'to': '6'
+                }
+              },
+              {
+                'Tacle': {
+                  'from': '11',
+                  'to': '15'
+                }
+              },
+              {
+                'Dommages Critiques': {
+                  'from': '16',
+                  'to': '25'
+                }
+              },
+              {
+                'Résistance Critiques': {
+                  'from': '-16',
+                  'to': '-20'
+                }
+              }
+            ],
+            'type': 'Amulette',
+            'setId': 274
+          },
+          {
+            '_id': 14095,
+            'name': 'Ceinture du Strigide',
+            'lvl': '200',
+            'imgUrl': 'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/10244.png',
+            'stats': [
+              {
+                'Vitalité': {
+                  'from': '301',
+                  'to': '350'
+                }
+              },
+              {
+                'Sagesse': {
+                  'from': '31',
+                  'to': '50'
+                }
+              },
+              {
+                'Soins': {
+                  'from': '5',
+                  'to': '7'
+                }
+              },
+              {
+                '% Critique': {
+                  'from': '5',
+                  'to': '7'
+                }
+              },
+              {
+                'Puissance': {
+                  'from': '41',
+                  'to': '60'
+                }
+              },
+              {
+                'Initiative': {
+                  'from': '301',
+                  'to': '400'
+                }
+              },
+              {
+                'Dommages Neutre': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                'Dommages Terre': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                'Dommages Feu': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                'Dommages Eau': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                'Dommages Air': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                '% Résistance Neutre': {
+                  'from': '6',
+                  'to': '8'
+                }
+              },
+              {
+                'Tacle': {
+                  'from': '7',
+                  'to': '10'
+                }
+              },
+              {
+                'Dommages Critiques': {
+                  'from': '11',
+                  'to': '15'
+                }
+              },
+              {
+                'Résistance Critiques': {
+                  'from': '-16',
+                  'to': '-25'
+                }
+              }
+            ],
+            'type': 'Ceinture',
+            'setId': 274
+          },
+          {
+            '_id': 14096,
+            'name': 'Bottes du Strigide',
+            'lvl': '200',
+            'imgUrl': 'https://s.ankama.com/www/static.ankama.com/dofus/www/game/items/200/11241.png',
+            'stats': [
+              {
+                'Vitalité': {
+                  'from': '351',
+                  'to': '400'
+                }
+              },
+              {
+                'Sagesse': {
+                  'from': '31',
+                  'to': '50'
+                }
+              },
+              {
+                'Puissance': {
+                  'from': '51',
+                  'to': '75'
+                }
+              },
+              {
+                'PM': {
+                  'from': '1'
+                }
+              },
+              {
+                'Dommages Neutre': {
+                  'from': '9',
+                  'to': '13'
+                }
+              },
+              {
+                'Dommages Terre': {
+                  'from': '9',
+                  'to': '13'
+                }
+              },
+              {
+                'Dommages Feu': {
+                  'from': '9',
+                  'to': '13'
+                }
+              },
+              {
+                'Dommages Eau': {
+                  'from': '9',
+                  'to': '13'
+                }
+              },
+              {
+                'Dommages Air': {
+                  'from': '9',
+                  'to': '13'
+                }
+              },
+              {
+                '% Résistance Feu': {
+                  'from': '6',
+                  'to': '8'
+                }
+              },
+              {
+                'Esquive PA': {
+                  'from': '6',
+                  'to': '8'
+                }
+              },
+              {
+                'Résistance Critiques': {
+                  'from': '-16',
+                  'to': '-20'
+                }
+              }
+            ],
+            'type': 'Bottes',
+            'setId': 274
+          }
         ]
       }]
   }
@@ -106,9 +360,8 @@ describe('PanoplieHttpService', () => {
         274,
         'Panoplie du Strigide',
         200,
-        'Panoplie',
-        'https://s.ankama.com/www/static.ankama.com/dofus/renderer/look/7b317c38302c323132347c313d31363736353536342c323d31363' +
-        '335353838332c333d31363737373138352c343d323931303036342c353d31343536313739397c3134307d/full/1/200_200-10.png',
+        undefined,
+        'http://localhost:3000/images/panoplies/PanoplieduStrigide.png',
         [
           new Bonus(
             1,
@@ -123,6 +376,35 @@ describe('PanoplieHttpService', () => {
           14094,
           14095,
           14096
+        ],
+        [
+          new Equipement(
+            14094,
+            'Amulette du Strigide',
+            200,
+            'Amulette',
+            'http://localhost:3000/images/amulettes/AmuletteduStrigide.png',
+            [],
+            274
+          ),
+          new Equipement(
+            14095,
+            'Bottes du Strigide',
+            200,
+            'Bottes',
+            'http://localhost:3000/images/bottes/BottesduStrigide.png',
+            [],
+            274
+          ),
+          new Equipement(
+            14096,
+            'Ceinture du Strigide',
+            200,
+            'Ceinture',
+            'http://localhost:3000/images/ceintures/CeintureduStrigide.png',
+            [],
+            274
+          )
         ]
       )
     ]

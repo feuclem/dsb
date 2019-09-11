@@ -7,6 +7,7 @@ export class Equipement {
   type: string
   imgUrl: string
   stats: Statistique[]
+  setId: number
 
   constructor(
     id: number,
@@ -14,7 +15,8 @@ export class Equipement {
     lvl: number,
     type: string,
     imgUrl: string,
-    stats: Statistique[]
+    stats: Statistique[],
+    setId: number
   ) {
     this.id = id
     this.name = name
@@ -22,5 +24,6 @@ export class Equipement {
     this.type = type
     this.imgUrl = imgUrl
     this.stats = stats
+    this.setId = setId
   }
 }

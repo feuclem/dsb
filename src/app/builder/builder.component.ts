@@ -13,7 +13,6 @@ export class BuilderComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('passe')
     this.classe = this.classeService._classe.getValue()
   }
 }

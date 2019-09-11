@@ -1,37 +1,55 @@
 <div class="container">
-  <div class="columns" *ngFor="let equipements of equipements; let index = index">
-    <div class="columns">
-      <div class="column is-11 equipements-content">
-
-        <div class="columns">
-          <div class="column is-2">
-            <img src="{{equipements.imgUrl}}" alt="" width="200" height="200">
-          </div>
-          <div class="column is-2">
-            Nom : {{equipements.name}}<br/>
-            Niveau : {{equipements.lvl}}
-          </div>
-
-          <div class="column is-2">
-            <a class="button is-link" (click)="setBuild(index)">Choisir</a>
-          </div>
+  <div class="tile is-ancestor" *ngFor="let equipement of equipements; let index = index">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">Nom :</p>
+            <p class="subtitle">{{equipement.name}}</p>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title">Niveau :</p>
+            <p class="subtitle">{{equipement.lvl}}</p>
+          </article>
         </div>
-
-        <div *ngFor="let stat of equipements.stats">
-          <div class="columns">
-            <div class="column">
-              <u>{{stat.label}}</u>
-              : {{stat.from}}
-              à {{stat.to}}
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <figure class="image is-128x128">
+              <img src="{{equipement.imgUrl}}" alt="Placeholder image">
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-danger">
+          <p class="title"><a class="button is-link" (click)="setBuild(index)">Equiper l'item</a></p>
+          <p class="subtitle">Equiper la panoplie entière :</p>
+          <div class="content">
+            <div *ngFor="let full of getFullPanoplie(equipement.setId)">
+              <img src="{{full.imgUrl}}" alt="">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Tall tile</p>
+          <p class="subtitle">With even more content</p>
+          <div class="content">
+            <div *ngFor="let stat of equipement.stats">
+              <div class="columns">
+                <div class="column">
+                  <u>{{stat.label}}</u>
+                  : {{stat.from}}
+                  à {{stat.to}}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-      </div>
-      <div class="column is-5 all-content">
-
-      </div>
+      </article>
     </div>
   </div>
-
 </div>

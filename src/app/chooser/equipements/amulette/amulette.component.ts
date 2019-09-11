@@ -4,6 +4,7 @@ import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
 
 @Component({
   selector: 'dsb-equipements',
@@ -21,7 +22,8 @@ export class AmuletteComponent implements OnInit {
     private router: Router,
     private amuletteHttpService: AmuletteHttpService,
     private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
+    private statistiquesService: StatistiquesService,
+    private panoplieService: PanoplieService
   ) {
   }
 
@@ -36,5 +38,9 @@ export class AmuletteComponent implements OnInit {
     this.stuffService.listIdEquipment = [this.equipements[index].id]
     this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
+  }
+
+  getFullPanoplie(setId: number): Equipement[] {
+    return this.panoplieService.getFullPanoplie(setId)
   }
 }
