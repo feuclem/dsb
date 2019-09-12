@@ -1,28 +1,28 @@
 import {Component, OnInit} from '@angular/core'
-import {AnneauHttpService} from './anneau.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsComponent} from '../equipements/equipements.component'
+import {AnneauHttpService} from './anneau.http.service'
 
 @Component({
-  selector: 'dsb-equipements',
-  templateUrl: './anneau.component.html',
-  styles: [],
+  selector: 'dsb-anneaux',
+  templateUrl: '../equipements/equipements.component.html',
   providers: [
     AnneauHttpService
   ]
 })
-export class AnneauComponent implements OnInit {
-
-  equipements: Equipement[]
+export class AnneauComponent extends EquipementsComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
     private anneauHttpService: AnneauHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
   ) {
+    super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
@@ -37,9 +37,6 @@ export class AnneauComponent implements OnInit {
     } else {
       this.stuffService.anneau2 = this.equipements[index].imgUrl
     }
-    this.stuffService.listIdEquipment = [this.equipements[index].id]
-    this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setBuild(index)
   }
-
 }

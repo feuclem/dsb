@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core'
 import {RouterModule, Routes} from '@angular/router'
-import {ArmesComponent} from './chooser/armes/armes.component'
+import {ArmesComponent} from './chooser/equipements/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
 import {AnneauComponent} from './chooser/equipements/anneau/anneau.component'

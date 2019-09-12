@@ -1,11 +1,11 @@
 import {TestBed} from '@angular/core/testing'
 
 import {ArmesHttpService} from './armes.http.service'
-import {Arme} from '../../shared/entities/Arme'
-import {DommagesNeutreArme, DommagesTerre, Force} from '../../shared/entities/Statistique'
-import {StatistiquesService} from '../../shared/service/statistiques.service'
-import {environment} from '../../../environments/environment'
-import {StatistiquesServiceMock} from '../../shared/service/statistiques.service.mock'
+import {Arme} from '../../../shared/entities/Arme'
+import {DommagesNeutreArme, DommagesTerre, Force} from '../../../shared/entities/Statistique'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {environment} from '../../../../environments/environment'
+import {StatistiquesServiceMock} from '../../../shared/service/statistiques.service.mock'
 import deepEqual = require('deep-equal')
 
 let armesHttpService = null

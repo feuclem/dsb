@@ -2,27 +2,27 @@ import {Component, OnInit} from '@angular/core'
 import {DofusHttpService} from './dofus.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsComponent} from '../equipements/equipements.component'
 
 @Component({
-  selector: 'dsb-equipements',
-  templateUrl: './dofus.component.html',
-  styles: [],
+  selector: 'dsb-dofus',
+  templateUrl: '../equipements/equipements.component.html',
   providers: [
     DofusHttpService
   ]
 })
-export class DofusComponent implements OnInit {
-
-  equipements: Equipement[]
+export class DofusComponent extends EquipementsComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
     private dofusHttpService: DofusHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
   ) {
+    super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
@@ -45,8 +45,6 @@ export class DofusComponent implements OnInit {
     } else if (this.stuffService.slot6 === '') {
       this.stuffService.slot6 = this.equipements[index].imgUrl
     }
-    this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setBuild(index)
   }
-
 }

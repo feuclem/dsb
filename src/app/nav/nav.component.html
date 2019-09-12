@@ -1,0 +1,39 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <img src="../../assets/logo.png" width="" height="" alt="">
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a routerLink="" class="navbar-item">
+        Equipements
+      </a>
+
+      <a routerLink="" (click)="goToSpellPage()" class="navbar-item">
+        Sorts
+      </a>
+    </div>
+
+    <div class="navbar-start">
+      <div class="navbar-item">
+        Sélection du niveau :&nbsp;<dsb-niveau></dsb-niveau>
+      </div>
+      <div class="navbar-item">
+        Sélection de la classe :&nbsp;<dsb-classe></dsb-classe>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

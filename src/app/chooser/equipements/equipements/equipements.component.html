@@ -1,0 +1,56 @@
+<dsb-nav></dsb-nav>
+<div class="container">
+  <div class="tile is-ancestor" *ngFor="let equipement of equipements; let index = index">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">Nom :</p>
+            <p class="subtitle">{{equipement.name}}</p>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title">Niveau :</p>
+            <p class="subtitle">{{equipement.lvl}}</p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <figure class="image is-128x128">
+              <img src="{{equipement.imgUrl}}" alt="Placeholder image">
+              <a class="button is-link" (click)="setBuild(index)">Equiper</a>
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div *ngIf="getFullPanoplie(equipement.setId).length > 0" class="tile is-parent">
+        <article class="tile is-child notification is-danger">
+          <p class="title">Panoplie :</p>
+          <div class="content">
+            <span *ngFor="let full of getFullPanoplie(equipement.setId); let last = last">
+              <img src="{{full.imgUrl}}" alt="">
+              <a *ngIf="last" class="button is-link" (click)="setPanoplie(equipement.setId)">Equiper la panoplie</a>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Charactéristiques : </p>
+          <div class="content">
+            <div *ngFor="let stat of equipement.stats">
+              <div class="columns">
+                <div class="column">
+                  <u>{{stat.label}}</u>
+                  : {{stat.from}}
+                  à {{stat.to}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

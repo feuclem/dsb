@@ -2,27 +2,27 @@ import {Component, OnInit} from '@angular/core'
 import {CapeHttpService} from './cape.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsComponent} from '../equipements/equipements.component'
 
 @Component({
-  selector: 'dsb-equipements',
-  templateUrl: './cape.component.html',
-  styles: [],
+  selector: 'dsb-capes',
+  templateUrl: '../equipements/equipements.component.html',
   providers: [
     CapeHttpService
   ]
 })
-export class CapeComponent implements OnInit {
-
-  equipements: Equipement[]
+export class CapeComponent extends EquipementsComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
     private capeHttpService: CapeHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
   ) {
+    super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
@@ -33,9 +33,6 @@ export class CapeComponent implements OnInit {
 
   setBuild(index: number) {
     this.stuffService.cape = this.equipements[index].imgUrl
-    this.stuffService.listIdEquipment = [this.equipements[index].id]
-    this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setBuild(index)
   }
-
 }

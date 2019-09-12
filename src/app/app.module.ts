@@ -6,7 +6,7 @@ import {HttpClientModule} from '@angular/common/http'
 import {AppRoutingModule} from './app-routing.module'
 
 import {AppComponent} from './app.component'
-import {ArmesComponent} from './chooser/armes/armes.component'
+import {ArmesComponent} from './chooser/equipements/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {CommonModule} from '@angular/common'
 import {StuffService} from './shared/service/stuff.service'
@@ -41,6 +41,7 @@ import {Characteristique3Component} from './builder/characteristique3/characteri
 import {PointsdecaracService} from './shared/service/pointsdecarac.service'
 import {Characteristique4Component} from './builder/characteristique4/characteristique4.component'
 import {NavComponent} from './nav/nav.component'
+import {EquipementsComponent} from './chooser/equipements/equipements/equipements.component'
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {NavComponent} from './nav/nav.component'
     SacrieurComponent,
     Characteristique3Component,
     Characteristique4Component,
-    NavComponent
+    NavComponent,
+    EquipementsComponent
   ],
   imports: [
     CommonModule,

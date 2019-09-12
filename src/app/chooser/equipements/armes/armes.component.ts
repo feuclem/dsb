@@ -1,14 +1,13 @@
 import {Component, OnInit} from '@angular/core'
 import {ArmesHttpService} from './armes.http.service'
-import {Arme} from '../../shared/entities/Arme'
-import {StuffService} from '../../shared/service/stuff.service'
+import {Arme} from '../../../shared/entities/Arme'
+import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {StatistiquesService} from '../../../shared/service/statistiques.service'
 
 @Component({
   selector: 'armes',
   templateUrl: './armes.component.html',
-  styles: [],
   providers: [ArmesHttpService]
 })
 export class ArmesComponent implements OnInit {

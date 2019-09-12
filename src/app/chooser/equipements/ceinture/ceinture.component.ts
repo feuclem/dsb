@@ -2,27 +2,27 @@ import {Component, OnInit} from '@angular/core'
 import {CeintureHttpService} from './ceinture.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsComponent} from '../equipements/equipements.component'
 
 @Component({
-  selector: 'dsb-equipements',
-  templateUrl: './ceinture.component.html',
-  styles: [],
+  selector: 'dsb-ceinture',
+  templateUrl: '../equipements/equipements.component.html',
   providers: [
     CeintureHttpService
   ]
 })
-export class CeintureComponent implements OnInit {
-
-  equipements: Equipement[]
+export class CeintureComponent extends EquipementsComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
     private ceintureHttpService: CeintureHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
   ) {
+    super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
@@ -33,9 +33,6 @@ export class CeintureComponent implements OnInit {
 
   setBuild(index: number) {
     this.stuffService.ceinture = this.equipements[index].imgUrl
-    this.stuffService.listIdEquipment = [this.equipements[index].id]
-    this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setBuild(index)
   }
-
 }

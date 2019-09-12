@@ -2,27 +2,27 @@ import {Component, OnInit} from '@angular/core'
 import {BouclierHttpService} from './bouclier.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
-import {Equipement} from '../../../shared/entities/Equipement'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsComponent} from '../equipements/equipements.component'
 
 @Component({
-  selector: 'dsb-equipements',
-  templateUrl: './bouclier.component.html',
-  styles: [],
+  selector: 'dsb-bouclier',
+  templateUrl: '../equipements/equipements.component.html',
   providers: [
     BouclierHttpService
   ]
 })
-export class BouclierComponent implements OnInit {
-
-  equipements: Equipement[]
+export class BouclierComponent extends EquipementsComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
     private bouclierHttpService: BouclierHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
   ) {
+    super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
@@ -33,9 +33,6 @@ export class BouclierComponent implements OnInit {
 
   setBuild(index: number) {
     this.stuffService.bouclier = this.equipements[index].imgUrl
-    this.stuffService.listIdEquipment = [this.equipements[index].id]
-    this.equipements[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setBuild(index)
   }
-
 }

@@ -1,4 +1,4 @@
-import {Arme} from '../../shared/entities/Arme'
+import {Arme} from '../../../shared/entities/Arme'
 import {
   Agilite,
   Chance,
@@ -22,7 +22,7 @@ import {
   Sagesse,
   Tacle,
   Vitalite
-} from '../../shared/entities/Statistique'
+} from '../../../shared/entities/Statistique'
 
 export const mockedArmes = [
   new Arme(
