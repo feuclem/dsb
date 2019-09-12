@@ -1,4 +1,5 @@
-<div class="container">
+<dsb-nav></dsb-nav>
+<div class="container margin-top-30">
   <div class="tile is-ancestor" *ngFor="let equipement of equipements; let index = index">
     <div class="tile is-vertical is-8">
       <div class="tile">
@@ -25,13 +26,12 @@
           <p class="title">
             <a class="button is-link" (click)="setBuild(index)">Equiper l'item</a>
           </p>
-          <p class="subtitle">Equiper la panoplie entière :</p>
+          <p class="title">Panoplie :</p>
           <div class="content">
-            <div *ngFor="let full of getFullPanoplie(equipement.setId); let index = index; let last = last">
+            <span *ngFor="let full of getFullPanoplie(equipement.setId); let last = last">
               <img src="{{full.imgUrl}}" alt="">
-              <a *ngIf="index + 1 === last" class="button is-link" (click)="setPanoplie(equipement.setId)">Equiper la panoplie</a>
-            </div>
-
+              <a *ngIf="last" class="button is-link" (click)="setPanoplie(equipement.setId)">Equiper la panoplie</a>
+            </span>
           </div>
         </article>
       </div>
@@ -39,8 +39,7 @@
     <div class="tile is-parent">
       <article class="tile is-child notification is-success">
         <div class="content">
-          <p class="title">Tall tile</p>
-          <p class="subtitle">With even more content</p>
+          <p class="title">Charactéristiques : </p>
           <div class="content">
             <div *ngFor="let stat of equipement.stats">
               <div class="columns">

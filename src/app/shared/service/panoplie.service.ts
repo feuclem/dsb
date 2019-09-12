@@ -3,12 +3,14 @@ import {Panoplie} from '../entities/Panoplie'
 import {Statistique} from '../entities/Statistique'
 import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
+import {StatistiquesService} from './statistiques.service'
 
 @Injectable()
 export class PanoplieService {
 
   constructor(
-    private stuffService: StuffService
+    private stuffService: StuffService,
+    private statistiquesService: StatistiquesService
   ) {}
 
   private _listPanoplie = []
@@ -68,6 +70,10 @@ export class PanoplieService {
           this.stuffService.anneau2 = equipement.imgUrl
         }
       }
+      this.stuffService.listIdEquipment = [equipement.id]
+      equipement.stats.forEach(stat => {
+        this.statistiquesService.setStatInStuff(stat)
+      })
     })
   }
 }

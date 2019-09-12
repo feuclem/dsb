@@ -9,10 +9,11 @@ import {ClasseService} from '../chooser/classe/classe.service'
 export class BuilderComponent implements OnInit {
   classe: string
 
-  constructor(private classeService: ClasseService) {
+  constructor(
+    private classeService: ClasseService) {
   }
 
   ngOnInit() {
-    this.classe = this.classeService._classe.getValue()
+    this.classeService._classe.subscribe(value => this.classe = value)
   }
 }

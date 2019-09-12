@@ -40,6 +40,7 @@ import {ClasseService} from './chooser/classe/classe.service'
 import {Characteristique3Component} from './builder/characteristique3/characteristique3.component'
 import {PointsdecaracService} from './shared/service/pointsdecarac.service'
 import {Characteristique4Component} from './builder/characteristique4/characteristique4.component'
+import {NavComponent} from './nav/nav.component'
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {Characteristique4Component} from './builder/characteristique4/characteri
     ClasseComponent,
     SacrieurComponent,
     Characteristique3Component,
-    Characteristique4Component
+    Characteristique4Component,
+    NavComponent
   ],
   imports: [
     CommonModule,

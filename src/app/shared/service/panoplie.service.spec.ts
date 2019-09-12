@@ -5,12 +5,15 @@ import {DommagesCritiques, Force, Intelligence, PA, Puissance, RetraitPM, Vitali
 import {Panoplie} from '../entities/Panoplie'
 import {Bonus} from '../entities/Bonus'
 import {Equipement} from '../entities/Equipement'
+import {StuffService} from './stuff.service'
+import {StatistiquesService} from './statistiques.service'
+import {StatistiquesServiceMock} from './statistiques.service.mock'
 
 describe('PanoplieService', () => {
   let panoplieService = null
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PanoplieService]
+      providers: [PanoplieService, StuffService, {provide: StatistiquesService, useClass: StatistiquesServiceMock}]
     })
 
     panoplieService = TestBed.get(PanoplieService)
@@ -298,6 +301,28 @@ describe('PanoplieService', () => {
                   new Force(1, 1)
                 ],
                 1
+              ),
+              new Equipement(
+                1,
+                'Bottes du Strigide',
+                1,
+                'Bottes',
+                'BottesduStrigide.png',
+                [
+                  new Force(1, 1)
+                ],
+                1
+              ),
+              new Equipement(
+                1,
+                'Ceinture du Strigide',
+                1,
+                'Ceinture',
+                'CeintureduStrigide.png',
+                [
+                  new Force(1, 1)
+                ],
+                1
               )
             ])
         ]
@@ -307,7 +332,7 @@ describe('PanoplieService', () => {
         const result = panoplieService.getFullPanoplie(274)
 
         // Then
-        expect(result).toEqual([
+        expect(result).toEqual(            [
           new Equipement(
             1,
             'Amulette du Strigide',
@@ -318,9 +343,35 @@ describe('PanoplieService', () => {
               new Force(1, 1)
             ],
             1
+          ),
+          new Equipement(
+            1,
+            'Bottes du Strigide',
+            1,
+            'Bottes',
+            'BottesduStrigide.png',
+            [
+              new Force(1, 1)
+            ],
+            1
+          ),
+          new Equipement(
+            1,
+            'Ceinture du Strigide',
+            1,
+            'Ceinture',
+            'CeintureduStrigide.png',
+            [
+              new Force(1, 1)
+            ],
+            1
           )
         ])
       })
     })
+  })
+
+  describe('setPanoplieToStuff', () => {
+
   })
 })

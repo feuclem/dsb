@@ -58,7 +58,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesNeutreArme(value: number) {
-    this._dommagesNeutreArme = value
+    this._dommagesNeutreArme += value
   }
 
   get dommagesNeutre(): number {
@@ -66,7 +66,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesNeutre(value: number) {
-    this._dommagesNeutre = value
+    this._dommagesNeutre += value
   }
 
   get sagesse(): number {
@@ -74,7 +74,7 @@ export class CharacteristiqueService {
   }
 
   set sagesse(value: number) {
-    this._sagesse = value
+    this._sagesse += value
   }
 
   get dommages(): number {
@@ -82,7 +82,7 @@ export class CharacteristiqueService {
   }
 
   set dommages(value: number) {
-    this._dommages = value
+    this._dommages += value
   }
 
   get puissance(): number {
@@ -90,7 +90,7 @@ export class CharacteristiqueService {
   }
 
   set puissance(value: number) {
-    this._puissance = value
+    this._puissance += value
   }
 
   get dommagesTerre(): number {
@@ -98,7 +98,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesTerre(value: number) {
-    this._dommagesTerre = value
+    this._dommagesTerre += value
   }
 
   get dommagesTerreArme(): number {
@@ -106,7 +106,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesTerreArme(value: number) {
-    this._dommagesTerreArme = value
+    this._dommagesTerreArme += value
   }
 
   get dommagesFeu(): number {
@@ -114,7 +114,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesFeu(value: number) {
-    this._dommagesFeu = value
+    this._dommagesFeu += value
   }
 
   get dommagesFeuArme(): number {
@@ -122,7 +122,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesFeuArme(value: number) {
-    this._dommagesFeuArme = value
+    this._dommagesFeuArme += value
   }
 
   get dommagesEau(): number {
@@ -130,7 +130,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesEau(value: number) {
-    this._dommagesEau = value
+    this._dommagesEau += value
   }
 
   get dommagesEauArme(): number {
@@ -138,7 +138,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesEauArme(value: number) {
-    this._dommagesEauArme = value
+    this._dommagesEauArme += value
   }
 
   get dommagesAir(): number {
@@ -146,7 +146,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesAir(value: number) {
-    this._dommagesAir = value
+    this._dommagesAir += value
   }
 
   get dommagesAirArme(): number {
@@ -154,7 +154,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesAirArme(value: number) {
-    this._dommagesAirArme = value
+    this._dommagesAirArme += value
   }
 
   get fuite(): number {
@@ -162,7 +162,7 @@ export class CharacteristiqueService {
   }
 
   set fuite(value: number) {
-    this._fuite = value
+    this._fuite += value
   }
 
   get tacle(): number {
@@ -170,7 +170,7 @@ export class CharacteristiqueService {
   }
 
   set tacle(value: number) {
-    this._tacle = value
+    this._tacle += value
   }
 
   get po(): number {
@@ -178,7 +178,7 @@ export class CharacteristiqueService {
   }
 
   set po(value: number) {
-    this._po = value
+    this._po += value
   }
 
   get pa(): number {
@@ -186,7 +186,7 @@ export class CharacteristiqueService {
   }
 
   set pa(value: number) {
-    this._pa = value
+    this._pa += value
   }
 
   get pm(): number {
@@ -194,7 +194,7 @@ export class CharacteristiqueService {
   }
 
   set pm(value: number) {
-    this._pm = value
+    this._pm += value
   }
 
   get retraitPA(): number {
@@ -202,7 +202,7 @@ export class CharacteristiqueService {
   }
 
   set retraitPA(value: number) {
-    this._retraitPA = value
+    this._retraitPA += value
   }
 
   get retraitPM(): number {
@@ -210,7 +210,7 @@ export class CharacteristiqueService {
   }
 
   set retraitPM(value: number) {
-    this._retraitPM = value
+    this._retraitPM += value
   }
 
   get esquivePA(): number {
@@ -218,7 +218,7 @@ export class CharacteristiqueService {
   }
 
   set esquivePA(value: number) {
-    this._esquivePA = value
+    this._esquivePA += value
   }
 
   get esquivePM(): number {
@@ -226,7 +226,7 @@ export class CharacteristiqueService {
   }
 
   set esquivePM(value: number) {
-    this._esquivePM = value
+    this._esquivePM += value
   }
 
   get resistanceFixeNeutre(): number {
@@ -234,7 +234,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFixeNeutre(value: number) {
-    this._resistanceFixeNeutre = value
+    this._resistanceFixeNeutre += value
   }
 
   get resistanceFixeTerre(): number {
@@ -242,7 +242,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFixeTerre(value: number) {
-    this._resistanceFixeTerre = value
+    this._resistanceFixeTerre += value
   }
 
   get resistanceFixeFeu(): number {
@@ -250,7 +250,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFixeFeu(value: number) {
-    this._resistanceFixeFeu = value
+    this._resistanceFixeFeu += value
   }
 
   get resistanceFixeEau(): number {
@@ -258,7 +258,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFixeEau(value: number) {
-    this._resistanceFixeEau = value
+    this._resistanceFixeEau += value
   }
 
   get resistanceFixeAir(): number {
@@ -266,7 +266,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFixeAir(value: number) {
-    this._resistanceFixeAir = value
+    this._resistanceFixeAir += value
   }
 
   get resistanceCritiques(): number {
@@ -274,7 +274,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceCritiques(value: number) {
-    this._resistanceCritiques = value
+    this._resistanceCritiques += value
   }
 
   get resistancePoussees(): number {
@@ -282,7 +282,7 @@ export class CharacteristiqueService {
   }
 
   set resistancePoussees(value: number) {
-    this._resistancePoussees = value
+    this._resistancePoussees += value
   }
 
   get soins(): number {
@@ -290,7 +290,7 @@ export class CharacteristiqueService {
   }
 
   set soins(value: number) {
-    this._soins = value
+    this._soins += value
   }
 
   get pods(): number {
@@ -298,7 +298,7 @@ export class CharacteristiqueService {
   }
 
   set pods(value: number) {
-    this._pods = value
+    this._pods += value
   }
 
   get dommagesCritiques(): number {
@@ -306,7 +306,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesCritiques(value: number) {
-    this._dommagesCritiques = value
+    this._dommagesCritiques += value
   }
 
   get dommagesPoussee(): number {
@@ -314,7 +314,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesPoussee(value: number) {
-    this._dommagesPoussee = value
+    this._dommagesPoussee += value
   }
 
   get dommagesMelee(): number {
@@ -322,7 +322,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesMelee(value: number) {
-    this._dommagesMelee = value
+    this._dommagesMelee += value
   }
 
   get dommagesDistance(): number {
@@ -330,7 +330,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesDistance(value: number) {
-    this._dommagesDistance = value
+    this._dommagesDistance += value
   }
 
   get puissancePiege(): number {
@@ -338,7 +338,7 @@ export class CharacteristiqueService {
   }
 
   set puissancePiege(value: number) {
-    this._puissancePiege = value
+    this._puissancePiege += value
   }
 
   get dommagesPiege(): number {
@@ -346,7 +346,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesPiege(value: number) {
-    this._dommagesPiege = value
+    this._dommagesPiege += value
   }
 
   get dommagesAuxSorts(): number {
@@ -354,7 +354,7 @@ export class CharacteristiqueService {
   }
 
   set dommagesAuxSorts(value: number) {
-    this._dommagesAuxSorts = value
+    this._dommagesAuxSorts += value
   }
 
   get prospection(): number {
@@ -362,7 +362,7 @@ export class CharacteristiqueService {
   }
 
   set prospection(value: number) {
-    this._prospection = value
+    this._prospection += value
   }
 
   get invocations(): number {
@@ -370,7 +370,7 @@ export class CharacteristiqueService {
   }
 
   set invocations(value: number) {
-    this._invocations = value
+    this._invocations += value
   }
 
   get initiative(): number {
@@ -378,7 +378,7 @@ export class CharacteristiqueService {
   }
 
   set initiative(value: number) {
-    this._initiative = value
+    this._initiative += value
   }
 
   get resistanceNeutre(): number {
@@ -386,7 +386,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceNeutre(value: number) {
-    this._resistanceNeutre = value
+    this._resistanceNeutre += value
   }
 
   get resistanceTerre(): number {
@@ -394,7 +394,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceTerre(value: number) {
-    this._resistanceTerre = value
+    this._resistanceTerre += value
   }
 
   get resistanceFeu(): number {
@@ -402,7 +402,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceFeu(value: number) {
-    this._resistanceFeu = value
+    this._resistanceFeu += value
   }
 
   get resistanceEau(): number {
@@ -410,7 +410,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceEau(value: number) {
-    this._resistanceEau = value
+    this._resistanceEau += value
   }
 
   get resistanceAir(): number {
@@ -418,7 +418,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceAir(value: number) {
-    this._resistanceAir = value
+    this._resistanceAir += value
   }
 
   get resistanceDistance(): number {
@@ -426,7 +426,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceDistance(value: number) {
-    this._resistanceDistance = value
+    this._resistanceDistance += value
   }
 
   get resistanceMelee(): number {
@@ -434,7 +434,7 @@ export class CharacteristiqueService {
   }
 
   set resistanceMelee(value: number) {
-    this._resistanceMelee = value
+    this._resistanceMelee += value
   }
 
   get critique(): number {
@@ -442,7 +442,7 @@ export class CharacteristiqueService {
   }
 
   set critique(value: number) {
-    this._critique = value
+    this._critique += value
   }
 
   _vitalite = new BehaviorSubject<number>(100)

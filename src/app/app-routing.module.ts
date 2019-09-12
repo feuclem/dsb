@@ -13,7 +13,8 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
-import {ClasseComponent} from './chooser/classe/classe.component'
+import {IopComponent} from './builder/iop/iop.component'
+import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
 
 const routes: Routes = [
   {path: 'trophee', component: TropheeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'anneau', component: AnneauComponent},
   {path: 'amulette', component: AmuletteComponent},
   {path: 'armes', component: ArmesComponent},
-  {path: 'sorts', component: ClasseComponent},
+  {path: 'iop', component: IopComponent},
+  {path: 'sacrieur', component: SacrieurComponent},
   {path: '', component: BuilderComponent}
 ]
 
