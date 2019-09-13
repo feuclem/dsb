@@ -1,174 +1,160 @@
 import {Injectable} from '@angular/core'
+import {StuffViewModel} from '../../builder/StuffViewModel'
 
 @Injectable()
 export class StuffService {
-  private _arme = ''
+  private _arme: StuffViewModel
+  private _amulette: StuffViewModel
+  private _anneau1: StuffViewModel
+  private _anneau2: StuffViewModel
+  private _bottes: StuffViewModel
+  private _ceinture: StuffViewModel
+  private _coiffe: StuffViewModel
+  private _cape: StuffViewModel
+  private _monture: StuffViewModel
+  private _familier: StuffViewModel
+  private _bouclier: StuffViewModel
+  private _slot1: StuffViewModel
+  private _slot2: StuffViewModel
+  private _slot3: StuffViewModel
+  private _slot4: StuffViewModel
+  private _slot5: StuffViewModel
+  private _slot6: StuffViewModel
 
-  get arme(): string {
+
+  get arme(): StuffViewModel {
     return this._arme
   }
 
-  set arme(value: string) {
+  set arme(value: StuffViewModel) {
     this._arme = value
   }
 
-  private _amulette = ''
-
-  get amulette(): string {
+  get amulette(): StuffViewModel {
     return this._amulette
   }
 
-  set amulette(value: string) {
+  set amulette(value: StuffViewModel) {
     this._amulette = value
   }
 
-  private _anneau1 = ''
-
-  get anneau1(): string {
+  get anneau1(): StuffViewModel {
     return this._anneau1
   }
 
-  set anneau1(value: string) {
+  set anneau1(value: StuffViewModel) {
     this._anneau1 = value
   }
 
-  private _anneau2 = ''
-
-  get anneau2(): string {
+  get anneau2(): StuffViewModel {
     return this._anneau2
   }
 
-  set anneau2(value: string) {
+  set anneau2(value: StuffViewModel) {
     this._anneau2 = value
   }
 
-  private _bottes = ''
-
-  get bottes(): string {
+  get bottes(): StuffViewModel {
     return this._bottes
   }
 
-  set bottes(value: string) {
+  set bottes(value: StuffViewModel) {
     this._bottes = value
   }
 
-  private _ceinture = ''
-
-  get ceinture(): string {
+  get ceinture(): StuffViewModel {
     return this._ceinture
   }
 
-  set ceinture(value: string) {
+  set ceinture(value: StuffViewModel) {
     this._ceinture = value
   }
 
-  private _coiffe = ''
-
-  get coiffe(): string {
+  get coiffe(): StuffViewModel {
     return this._coiffe
   }
 
-  set coiffe(value: string) {
+  set coiffe(value: StuffViewModel) {
     this._coiffe = value
   }
 
-  private _cape = ''
-
-  get cape(): string {
+  get cape(): StuffViewModel {
     return this._cape
   }
 
-  set cape(value: string) {
+  set cape(value: StuffViewModel) {
     this._cape = value
   }
 
-  private _monture = ''
-
-  get monture(): string {
+  get monture(): StuffViewModel {
     return this._monture
   }
 
-  set monture(value: string) {
+  set monture(value: StuffViewModel) {
     this._monture = value
   }
 
-  private _familier = ''
-
-  get familier(): string {
+  get familier(): StuffViewModel {
     return this._familier
   }
 
-  set familier(value: string) {
+  set familier(value: StuffViewModel) {
     this._familier = value
   }
 
-  private _bouclier = ''
-
-  get bouclier(): string {
+  get bouclier(): StuffViewModel {
     return this._bouclier
   }
 
-  set bouclier(value: string) {
+  set bouclier(value: StuffViewModel) {
     this._bouclier = value
   }
 
-  private _slot1 = ''
-
-  get slot1(): string {
+  get slot1(): StuffViewModel {
     return this._slot1
   }
 
-  set slot1(value: string) {
+  set slot1(value: StuffViewModel) {
     this._slot1 = value
   }
 
-  private _slot2 = ''
-
-  get slot2(): string {
+  get slot2(): StuffViewModel {
     return this._slot2
   }
 
-  set slot2(value: string) {
+  set slot2(value: StuffViewModel) {
     this._slot2 = value
   }
 
-  private _slot3 = ''
-
-  get slot3(): string {
+  get slot3(): StuffViewModel {
     return this._slot3
   }
 
-  set slot3(value: string) {
+  set slot3(value: StuffViewModel) {
     this._slot3 = value
   }
 
-  private _slot4 = ''
-
-  get slot4(): string {
+  get slot4(): StuffViewModel {
     return this._slot4
   }
 
-  set slot4(value: string) {
+  set slot4(value: StuffViewModel) {
     this._slot4 = value
   }
 
-  private _slot5 = ''
-
-  get slot5(): string {
+  get slot5(): StuffViewModel {
     return this._slot5
   }
 
-  set slot5(value: string) {
+  set slot5(value: StuffViewModel) {
     this._slot5 = value
   }
 
-  private _slot6 = ''
-
-  get slot6(): string {
+  get slot6(): StuffViewModel {
     return this._slot6
   }
 
-  set slot6(value: string) {
+  set slot6(value: StuffViewModel) {
     this._slot6 = value
   }
 
@@ -192,6 +178,10 @@ export class StuffService {
       }
       this._listStuffEquipmentId.push(...value)
     }
+  }
 
+  set removeStuffFromListEquipmentId(idEquipement: number) {
+    const toto = this.listStuffEquipmentId.findIndex(value1 => value1.id === idEquipement)
+    this._listStuffEquipmentId.splice(toto, 1)
   }
 }

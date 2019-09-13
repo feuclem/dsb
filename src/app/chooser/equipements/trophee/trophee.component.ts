@@ -6,6 +6,7 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
+import {StuffViewModel} from '../../../builder/StuffViewModel'
 
 @Component({
   selector: 'dsb-trophee',
@@ -32,20 +33,44 @@ export class TropheeComponent extends EquipementsComponent implements OnInit {
     })
   }
 
-  setBuild(equipement: Equipement) {
-    if (this.stuffService.slot1 === '') {
-      this.stuffService.slot1 = equipement.imgUrl
-    } else if (this.stuffService.slot2 === '') {
-      this.stuffService.slot2 = equipement.imgUrl
-    } else if (this.stuffService.slot3 === '') {
-      this.stuffService.slot3 = equipement.imgUrl
-    } else if (this.stuffService.slot4 === '') {
-      this.stuffService.slot4 = equipement.imgUrl
-    } else if (this.stuffService.slot5 === '') {
-      this.stuffService.slot5 = equipement.imgUrl
-    } else if (this.stuffService.slot6 === '') {
-      this.stuffService.slot6 = equipement.imgUrl
+  setItem(equipement: Equipement) {
+    if (this.stuffService.slot1 === undefined) {
+      this.stuffService.slot1 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
+    } else if (this.stuffService.slot2 === undefined) {
+      this.stuffService.slot2 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
+    } else if (this.stuffService.slot3 === undefined) {
+      this.stuffService.slot3 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
+    } else if (this.stuffService.slot4 === undefined) {
+      this.stuffService.slot4 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
+    } else if (this.stuffService.slot5 === undefined) {
+      this.stuffService.slot5 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
+    } else if (this.stuffService.slot6 === undefined) {
+      this.stuffService.slot6 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
     }
-    super.setBuild(equipement)
+    super.setItem(equipement)
   }
 }

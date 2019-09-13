@@ -26,7 +26,7 @@ describe('StuffService', () => {
 
     describe('when amulette is selected', () => {
       it('should set listStuffEquipmentId with the coiffe', () => {
-        // Then
+        // Given
         stuffService.listStuffEquipmentId = [new StuffEquipementId(1, 'Amulette')]
 
         // When
@@ -39,7 +39,7 @@ describe('StuffService', () => {
 
     describe('when amulette is selected', () => {
       it('should set listStuffEquipmentId with the new amulette', () => {
-        // Then
+        // Given
         stuffService.listStuffEquipmentId = [new StuffEquipementId(1, 'Amulette')]
 
         // When
@@ -52,7 +52,7 @@ describe('StuffService', () => {
 
     describe('when anneau is selected', () => {
       it('should set listStuffEquipmentId with the new anneau', () => {
-        // Then
+        // Given
         stuffService.listStuffEquipmentId = [new StuffEquipementId(1, 'Anneau')]
 
         // When
@@ -65,7 +65,7 @@ describe('StuffService', () => {
 
     describe('when two anneaux is selected', () => {
       it('should set listStuffEquipmentId with the new anneau', () => {
-        // Then
+        // Given
         stuffService.listStuffEquipmentId = [new StuffEquipementId(1, 'Anneau'), new StuffEquipementId(2, 'Anneau')]
 
         // When
@@ -74,6 +74,19 @@ describe('StuffService', () => {
         // Then
         expect(stuffService.listStuffEquipmentId).toEqual([new StuffEquipementId(2, 'Anneau'), new StuffEquipementId(3, 'Anneau')])
       })
+    })
+  })
+
+  describe('removeStuffFromListEquipmentId', () => {
+    it('should remove the given equipement', () => {
+      // Given
+      stuffService.listStuffEquipmentId = [new StuffEquipementId(1, 'Anneau'), new StuffEquipementId(2, 'Anneau')]
+
+      // When
+      stuffService.removeStuffFromListEquipmentId = 1
+
+      // Then
+      expect(stuffService.listStuffEquipmentId).toEqual([new StuffEquipementId(2, 'Anneau')])
     })
   })
 })

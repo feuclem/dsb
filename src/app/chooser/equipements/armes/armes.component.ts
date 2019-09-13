@@ -4,6 +4,7 @@ import {Arme} from '../../../shared/entities/Arme'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
+import {StuffViewModel} from '../../../builder/StuffViewModel'
 
 @Component({
   selector: 'armes',
@@ -28,7 +29,11 @@ export class ArmesComponent implements OnInit {
   }
 
   setBuild(arme: Arme) {
-    this.stuffService.arme = arme.imgUrl
+    this.stuffService.arme = new StuffViewModel(
+      arme.imgUrl,
+      arme.stats,
+      arme.id
+    )
     arme.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }

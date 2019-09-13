@@ -6,6 +6,7 @@ import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {AnneauHttpService} from './anneau.http.service'
 import {Equipement} from '../../../shared/entities/Equipement'
+import {StuffViewModel} from '../../../builder/StuffViewModel'
 
 @Component({
   selector: 'dsb-anneaux',
@@ -32,12 +33,20 @@ export class AnneauComponent extends EquipementsComponent implements OnInit {
     })
   }
 
-  setBuild(equipement: Equipement) {
-    if (this.stuffService.anneau1 === '') {
-      this.stuffService.anneau1 = equipement.imgUrl
+  setItem(equipement: Equipement) {
+    if (this.stuffService.anneau1 === undefined) {
+      this.stuffService.anneau1 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
     } else {
-      this.stuffService.anneau2 = equipement.imgUrl
+      this.stuffService.anneau2 = new StuffViewModel(
+        equipement.imgUrl,
+        equipement.stats,
+        equipement.id
+      )
     }
-    super.setBuild(equipement)
+    super.setItem(equipement)
   }
 }

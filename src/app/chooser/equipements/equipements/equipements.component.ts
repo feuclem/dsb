@@ -34,7 +34,7 @@ export class EquipementsComponent implements OnInit {
   ngOnInit() {
   }
 
-  setBuild(equipement: Equipement) {
+  setItem(equipement: Equipement) {
     this.stuffService.listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
     equipement.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])

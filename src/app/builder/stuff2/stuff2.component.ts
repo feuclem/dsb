@@ -8,24 +8,23 @@ import {StuffService} from '../../shared/service/stuff.service'
 })
 export class Stuff2Component implements OnInit {
 
-  slot1: string
-  slot2: string
-  slot3: string
-  slot4: string
-  slot5: string
-  slot6: string
+  slot1: String
+  slot2: String
+  slot3: String
+  slot4: String
+  slot5: String
+  slot6: String
 
   constructor(private stuffService: StuffService) {
   }
 
   ngOnInit() {
-
-    this.slot1 = this.stuffService.slot1
-    this.slot2 = this.stuffService.slot2
-    this.slot3 = this.stuffService.slot3
-    this.slot4 = this.stuffService.slot4
-    this.slot5 = this.stuffService.slot5
-    this.slot6 = this.stuffService.slot6
+    this.slot1 = this.stuffService.slot1 ? this.stuffService.slot1.imgUrl : ''
+    this.slot2 = this.stuffService.slot2 ? this.stuffService.slot2.imgUrl : ''
+    this.slot3 = this.stuffService.slot3 ? this.stuffService.slot3.imgUrl : ''
+    this.slot4 = this.stuffService.slot4 ? this.stuffService.slot4.imgUrl : ''
+    this.slot5 = this.stuffService.slot5 ? this.stuffService.slot5.imgUrl : ''
+    this.slot6 = this.stuffService.slot6 ? this.stuffService.slot6.imgUrl : ''
   }
 
 }

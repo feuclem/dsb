@@ -6,6 +6,7 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
+import {StuffViewModel} from '../../../builder/StuffViewModel'
 
 @Component({
   selector: 'dsb-ceinture',
@@ -32,8 +33,12 @@ export class CeintureComponent extends EquipementsComponent implements OnInit {
     })
   }
 
-  setBuild(equipement: Equipement) {
-    this.stuffService.ceinture = equipement.imgUrl
-    super.setBuild(equipement)
+  setItem(equipement: Equipement) {
+    this.stuffService.ceinture = new StuffViewModel(
+      equipement.imgUrl,
+      equipement.stats,
+      equipement.id
+    )
+    super.setItem(equipement)
   }
 }
