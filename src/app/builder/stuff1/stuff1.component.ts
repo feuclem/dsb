@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../../shared/service/stuff.service'
+import {StuffViewModel} from '../StuffViewModel'
 
 @Component({
   selector: 'dsb-stuff1',
@@ -8,17 +9,17 @@ import {StuffService} from '../../shared/service/stuff.service'
 })
 export class Stuff1Component implements OnInit {
 
-  arme: String
-  amulette: String
-  anneau1: String
-  anneau2: String
-  ceinture: String
-  cape: String
-  coiffe: String
-  bottes: String
-  familier: String
-  monture: String
-  bouclier: String
+  arme: StuffViewModel
+  amulette: StuffViewModel
+  anneau1: StuffViewModel
+  anneau2: StuffViewModel
+  ceinture: StuffViewModel
+  cape: StuffViewModel
+  coiffe: StuffViewModel
+  bottes: StuffViewModel
+  familier: StuffViewModel
+  monture: StuffViewModel
+  bouclier: StuffViewModel
 
   constructor(
     private stuffService: StuffService
@@ -26,17 +27,21 @@ export class Stuff1Component implements OnInit {
   }
 
   ngOnInit() {
-    this.arme = this.stuffService.arme ? this.stuffService.arme.imgUrl : ''
-    this.amulette = this.stuffService.amulette ? this.stuffService.amulette.imgUrl : ''
-    this.anneau1 = this.stuffService.anneau1 ? this.stuffService.anneau1.imgUrl : ''
-    this.anneau2 = this.stuffService.anneau2 ? this.stuffService.anneau2.imgUrl : ''
-    this.ceinture = this.stuffService.ceinture ? this.stuffService.ceinture.imgUrl : ''
-    this.cape = this.stuffService.cape ? this.stuffService.cape.imgUrl : ''
-    this.coiffe = this.stuffService.coiffe ? this.stuffService.coiffe.imgUrl : ''
-    this.bottes = this.stuffService.bottes ? this.stuffService.bottes.imgUrl : ''
-    this.familier = this.stuffService.familier ? this.stuffService.familier.imgUrl : ''
-    this.monture = this.stuffService.monture ? this.stuffService.monture.imgUrl : ''
-    this.bouclier = this.stuffService.bouclier ? this.stuffService.bouclier.imgUrl : ''
+    this.arme = this.stuffService.arme
+    this.amulette = this.stuffService.amulette
+    this.anneau1 = this.stuffService.anneau1
+    this.anneau2 = this.stuffService.anneau2
+    this.ceinture = this.stuffService.ceinture
+    this.cape = this.stuffService.cape
+    this.coiffe = this.stuffService.coiffe
+    this.bottes = this.stuffService.bottes
+    this.familier = this.stuffService.familier
+    this.monture = this.stuffService.monture
+    this.bouclier = this.stuffService.bouclier
+  }
+
+  removeItem(idEquipement: number) {
+
   }
 
 }

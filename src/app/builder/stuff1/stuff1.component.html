@@ -2,23 +2,16 @@
   <div class="columns has-text-centered">
     <div class="column margin-top-32">
       <div>
-        <img *ngIf="amulette !== ''" src="{{amulette}}" alt=""/>
-        <a *ngIf="amulette === ''" routerLink="amulette">Amulette</a>
+        <img *ngIf="amulette !== undefined" src="{{amulette.imgUrl}}" alt=""/>
+        <a *ngIf="amulette === undefined" routerLink="amulette">Amulette</a>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="anneau1 !== ''" src="{{anneau1}}" alt=""/>
-      <a *ngIf="anneau1 === ''" routerLink="anneau">Anneau</a>
-    </div>
-
-    <div class="column margin-top-32">
-      <img *ngIf="anneau2 !== ''" src="{{anneau2}}" alt=""/>
-      <a *ngIf="anneau2 === ''" routerLink="anneau">Anneau</a>
+    <div *ngIf="amulette !== undefined" class="column">
+      <a (click)="removeItem(amulette.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
     </div>
   </div>
 </div>
@@ -26,41 +19,27 @@
 <div class="statistique green-right">
   <div class="columns has-text-centered">
     <div class="column margin-top-32">
-      <img *ngIf="ceinture !== ''" src="{{ceinture}}" alt=""/>
-      <a *ngIf="ceinture === ''" routerLink="ceinture">Ceinture</a>
+      <img *ngIf="anneau1 !== undefined" src="{{anneau1.imgUrl}}" alt=""/>
+      <a *ngIf="anneau1 === undefined" routerLink="anneau">Anneau</a>
+    </div>
+    <div *ngIf="anneau1 !== undefined" class="column">
+      <a (click)="removeItem(anneau1.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
     </div>
 
     <div class="column margin-top-32">
-      <img *ngIf="bottes !== ''" src="{{bottes}}" alt=""/>
-      <a *ngIf="bottes === ''" routerLink="bottes">Bottes</a>
+      <img *ngIf="anneau2 !== undefined" src="{{anneau2.imgUrl}}" alt=""/>
+      <a *ngIf="anneau2 === undefined" routerLink="anneau">Anneau</a>
     </div>
-  </div>
-</div>
-
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="coiffe !== ''" src="{{coiffe}}" alt=""/>
-      <a *ngIf="coiffe === ''" routerLink="coiffe">Coiffe</a>
-    </div>
-
-    <div class="column margin-top-32">
-      <img *ngIf="cape !== ''" src="{{cape}}" alt=""/>
-      <a *ngIf="cape === ''" routerLink="cape">Cape</a>
-    </div>
-  </div>
-</div>
-
-<div class="statistique green-right">
-    <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="arme !== ''" src="{{arme}}" alt=""/>
-      <a *ngIf="arme === ''" routerLink="armes">Arme</a>
-    </div>
-
-    <div class="column margin-top-32">
-      <img *ngIf="bouclier !== ''" src="{{bouclier}}" alt=""/>
-      <a *ngIf="bouclier === ''" routerLink="bouclier">Bouclier</a>
+    <div *ngIf="anneau2 !== undefined" class="column">
+      <a (click)="removeItem(anneau2.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
     </div>
   </div>
 </div>
@@ -68,14 +47,105 @@
 <div class="statistique green-right">
   <div class="columns has-text-centered">
     <div class="column margin-top-32">
-      <div *ngIf="monture === ''">
-        <img *ngIf="familier !== ''" src="{{familier}}" alt=""/>
-        <a *ngIf="familier === ''" routerLink="familier">Choisir Familier</a>
+      <img *ngIf="ceinture !== undefined" src="{{ceinture.imgUrl}}" alt=""/>
+      <a *ngIf="ceinture === undefined" routerLink="ceinture">Ceinture</a>
+    </div>
+    <div *ngIf="ceinture !== undefined" class="column">
+      <a (click)="removeItem(ceinture.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="bottes !== undefined" src="{{bottes.imgUrl}}" alt=""/>
+      <a *ngIf="bottes === undefined" routerLink="bottes">Bottes</a>
+    </div>
+    <div *ngIf="bottes !== undefined" class="column">
+      <a (click)="removeItem(bottes.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="coiffe !== undefined" src="{{coiffe.imgUrl}}" alt=""/>
+      <a *ngIf="coiffe === undefined" routerLink="coiffe">Coiffe</a>
+    </div>
+    <div *ngIf="coiffe !== undefined" class="column">
+      <a (click)="removeItem(coiffe.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="cape !== undefined" src="{{cape.imgUrl}}" alt=""/>
+      <a *ngIf="cape === undefined" routerLink="cape">Cape</a>
+    </div>
+    <div *ngIf="cape !== undefined" class="column">
+      <a (click)="removeItem(cape.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <img *ngIf="arme !== undefined" src="{{arme.imgUrl}}" alt=""/>
+      <a *ngIf="arme === undefined" routerLink="armes">Arme</a>
+    </div>
+    <div *ngIf="arme !== undefined" class="column">
+      <a (click)="removeItem(arme.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="column margin-top-32">
+      <img *ngIf="bouclier !== undefined" src="{{bouclier.imgUrl}}" alt=""/>
+      <a *ngIf="bouclier === undefined" routerLink="bouclier">Bouclier</a>
+    </div>
+    <div *ngIf="bouclier !== undefined" class="column">
+      <a (click)="removeItem(bouclier.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="statistique green-right">
+  <div class="columns has-text-centered">
+    <div class="column margin-top-32">
+      <div *ngIf="monture === undefined">
+        <img *ngIf="familier !== undefined" src="{{familier.imgUrl}}" alt=""/>
+        <a *ngIf="familier === undefined" routerLink="familier">Choisir Familier</a>
       </div>
-      <div *ngIf="familier === ''">
-        <img *ngIf="monture !== ''" src="{{monture}}" alt=""/>
-        <a *ngIf="monture === ''" routerLink="monture">Choisir Monture</a>
+      <div *ngIf="familier === undefined">
+        <img *ngIf="monture !== undefined" src="{{monture.imgUrl}}" alt=""/>
+        <a *ngIf="monture === undefined" routerLink="monture">Choisir Monture</a>
       </div>
+    </div>
+    <div *ngIf="familier !== undefined || monture !== undefined" class="column">
+      <a (click)="removeItem(monture ? monture.idEquipement : familier.idEquipement)" class="button is-danger is-outlined">
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </a>
     </div>
   </div>
 </div>
