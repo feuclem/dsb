@@ -4,6 +4,7 @@ import {Statistique} from '../entities/Statistique'
 import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
 import {StatistiquesService} from './statistiques.service'
+import {StuffEquipementId} from '../entities/StuffEquipementId'
 
 @Injectable()
 export class PanoplieService {
@@ -11,7 +12,8 @@ export class PanoplieService {
   constructor(
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
-  ) {}
+  ) {
+  }
 
   private _listPanoplie = []
 
@@ -24,17 +26,21 @@ export class PanoplieService {
   }
 
   getPanoplieBonus(listIdEquipement: number[]): Statistique[] {
+    let hasAlreadyPanoplie = false
     const stats: Statistique[] = []
     this.listPanoplie.map(panoplie => {
       const hasEquipementList = panoplie.equipementsId.map(s => listIdEquipement.includes(s))
       if (hasEquipementList.filter(it => it).length === 2) {
         stats.push(...panoplie.bonus[0].stats)
+        hasAlreadyPanoplie = true
       }
       if (hasEquipementList.filter(it => it).length === 3) {
         stats.push(...panoplie.bonus[1].stats)
+        hasAlreadyPanoplie = true
       }
       if (hasEquipementList.filter(it => it).length === 4) {
         stats.push(...panoplie.bonus[2].stats)
+        hasAlreadyPanoplie = true
       }
     })
     return stats
@@ -70,7 +76,7 @@ export class PanoplieService {
           this.stuffService.anneau2 = equipement.imgUrl
         }
       }
-      this.stuffService.listIdEquipment = [equipement.id]
+      this.stuffService.listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
       equipement.stats.forEach(stat => {
         this.statistiquesService.setStatInStuff(stat)
       })

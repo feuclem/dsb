@@ -5,6 +5,7 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {AnneauHttpService} from './anneau.http.service'
+import {Equipement} from '../../../shared/entities/Equipement'
 
 @Component({
   selector: 'dsb-anneaux',
@@ -31,12 +32,12 @@ export class AnneauComponent extends EquipementsComponent implements OnInit {
     })
   }
 
-  setBuild(index: number) {
+  setBuild(equipement: Equipement) {
     if (this.stuffService.anneau1 === '') {
-      this.stuffService.anneau1 = this.equipements[index].imgUrl
+      this.stuffService.anneau1 = equipement.imgUrl
     } else {
-      this.stuffService.anneau2 = this.equipements[index].imgUrl
+      this.stuffService.anneau2 = equipement.imgUrl
     }
-    super.setBuild(index)
+    super.setBuild(equipement)
   }
 }

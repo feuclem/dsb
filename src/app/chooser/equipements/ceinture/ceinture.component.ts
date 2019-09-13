@@ -5,6 +5,7 @@ import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
+import {Equipement} from '../../../shared/entities/Equipement'
 
 @Component({
   selector: 'dsb-ceinture',
@@ -31,8 +32,8 @@ export class CeintureComponent extends EquipementsComponent implements OnInit {
     })
   }
 
-  setBuild(index: number) {
-    this.stuffService.ceinture = this.equipements[index].imgUrl
-    super.setBuild(index)
+  setBuild(equipement: Equipement) {
+    this.stuffService.ceinture = equipement.imgUrl
+    super.setBuild(equipement)
   }
 }

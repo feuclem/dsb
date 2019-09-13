@@ -21,14 +21,14 @@ export class PanoplieBonusComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.stuffService.listIdEquipment.length > 0) {
-      this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(this.stuffService.listIdEquipment)
+    this.getBonusStatsToAdd = []
+    const listIdEquipement = this.stuffService.listStuffEquipmentId.map(value => value.id)
+    if (listIdEquipement.length > 0) {
+      this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(listIdEquipement)
       if (this.getBonusStatsToAdd.length !== 0) {
         this.getBonusStatsToAdd.map(stat => {
           this.statistiquesService.setStatInStuff(stat)
         })
-        this.stuffService.fillListIdEquipmentAlreadyCalculated()
-        this.stuffService.resetListIdEquipment()
       }
     }
   }

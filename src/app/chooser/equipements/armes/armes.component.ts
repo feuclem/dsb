@@ -27,9 +27,9 @@ export class ArmesComponent implements OnInit {
     })
   }
 
-  setBuild(index: number) {
-    this.stuffService.arme = this.armes[index].imgUrl
-    this.armes[index].stats.map(stat => this.statistiquesService.setStatInStuff(stat))
+  setBuild(arme: Arme) {
+    this.stuffService.arme = arme.imgUrl
+    arme.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }
 }

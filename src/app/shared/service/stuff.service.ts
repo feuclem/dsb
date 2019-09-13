@@ -172,31 +172,26 @@ export class StuffService {
     this._slot6 = value
   }
 
-  private _listIdEquipment = []
+  private _listStuffEquipmentId = []
 
-  get listIdEquipment(): number[] {
-    return this._listIdEquipment
+  get listStuffEquipmentId(): any[] {
+    return this._listStuffEquipmentId
   }
 
-  set listIdEquipment(value: number[]) {
-    this._listIdEquipment.push(...value)
-  }
+  set listStuffEquipmentId(value: any[]) {
+    if (value[0].type === 'Anneau' && this.listStuffEquipmentId.filter(value1 => value1.type === 'Anneau').length === 1) {
+      this._listStuffEquipmentId.push(...value)
+    } else if (value[0].type === 'Anneau' && this.listStuffEquipmentId.filter(value1 => value1.type === 'Anneau').length === 2) {
+      const toto = this.listStuffEquipmentId.findIndex(value1 => value1.type === value[0].type)
+      this._listStuffEquipmentId.splice(toto, 1)
+      this._listStuffEquipmentId.push(...value)
+    } else {
+      const toto = this.listStuffEquipmentId.findIndex(value1 => value1.type === value[0].type)
+      if (toto !== -1) {
+        this._listStuffEquipmentId.splice(toto, 1)
+      }
+      this._listStuffEquipmentId.push(...value)
+    }
 
-  private _listIdEquipmentAlreadyCalculated = []
-
-  set listIdEquipmentAlreadyCalculated(value: number[]) {
-    this._listIdEquipmentAlreadyCalculated.push(...value)
-  }
-
-  get listIdEquipmentlistIdEquipmentAlreadyCalculated(): number[] {
-    return this._listIdEquipmentAlreadyCalculated
-  }
-
-  resetListIdEquipment() {
-    this._listIdEquipment = []
-  }
-
-  fillListIdEquipmentAlreadyCalculated() {
-    this._listIdEquipmentAlreadyCalculated.push(...this.listIdEquipment)
   }
 }

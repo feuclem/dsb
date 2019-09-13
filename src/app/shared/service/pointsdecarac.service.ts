@@ -49,7 +49,7 @@ export class PointsdecaracService {
       } else if (charac === 'Agilite') {
         this.characteristiqueService.updateAgilite(points)
       } else if (charac === 'Sagesse') {
-        this.characteristiqueService.sagesse = points
+        this.characteristiqueService.updateSagesse(points)
       } else if (charac === 'Vitalite') {
         this.characteristiqueService.updateVitalite(points)
       }
