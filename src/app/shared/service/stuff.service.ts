@@ -2,16 +2,6 @@ import {Injectable} from '@angular/core'
 
 @Injectable()
 export class StuffService {
-  private _isAlreadyCalculated = false
-
-  get isAlreadyCalculated(): boolean {
-    return this._isAlreadyCalculated
-  }
-
-  set isAlreadyCalculated(value: boolean) {
-    this._isAlreadyCalculated = value
-  }
-
   private _arme = ''
 
   get arme(): string {
@@ -192,7 +182,21 @@ export class StuffService {
     this._listIdEquipment.push(...value)
   }
 
+  private _listIdEquipmentAlreadyCalculated = []
+
+  set listIdEquipmentAlreadyCalculated(value: number[]) {
+    this._listIdEquipmentAlreadyCalculated.push(...value)
+  }
+
+  get listIdEquipmentlistIdEquipmentAlreadyCalculated(): number[] {
+    return this._listIdEquipmentAlreadyCalculated
+  }
+
   resetListIdEquipment() {
     this._listIdEquipment = []
+  }
+
+  fillListIdEquipmentAlreadyCalculated() {
+    this._listIdEquipmentAlreadyCalculated.push(...this.listIdEquipment)
   }
 }
