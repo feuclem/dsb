@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core'
 import {CharacteristiqueService} from '../../shared/service/characteristique.service'
 
 @Component({
@@ -20,12 +20,30 @@ export class Characteristique3Component implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fuite = this.characteritiqueService.fuite
-    this.tacle = this.characteritiqueService.tacle
-    this.esquivePa = this.characteritiqueService.esquivePA
-    this.esquivePm = this.characteritiqueService.esquivePM
-    this.retraitPa = this.characteritiqueService.retraitPA
-    this.retraitPm = this.characteritiqueService.retraitPM
+    this.getFuite()
+    this.getTacle()
+    this.getEsquivePa()
+    this.getEsquivePm()
+    this.getRetraitPa()
+    this.getRetraitPm()
   }
 
+  getFuite() {
+    this.characteritiqueService._fuite.subscribe(value => this.fuite = value)
+  }
+  getTacle() {
+    this.characteritiqueService._tacle.subscribe(value => this.tacle = value)
+  }
+  getEsquivePa() {
+    this.characteritiqueService._esquivePa.subscribe(value => this.esquivePa = value)
+  }
+  getEsquivePm() {
+    this.characteritiqueService._esquivePm.subscribe(value => this.esquivePm = value)
+  }
+  getRetraitPa() {
+    this.characteritiqueService._retraitPa.subscribe(value => this.retraitPa = value)
+  }
+  getRetraitPm() {
+    this.characteritiqueService._retraitPm.subscribe(value => this.retraitPm = value)
+  }
 }

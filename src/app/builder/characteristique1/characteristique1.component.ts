@@ -47,28 +47,26 @@ export class Characteristique1Component implements OnInit {
   }
 
   ngOnInit() {
-    this.pa = this.characteritiqueService.pa
-    this.pm = this.characteritiqueService.pm
-    this.po = this.characteritiqueService.po
-    this.initiative = this.characteritiqueService.initiative
-    this.invocation = this.characteritiqueService.invocations
-    this.critique = this.characteritiqueService.critique
-    this.soin = this.characteritiqueService.soins
-    this.prospection = this.characteritiqueService.prospection
-    this.puissance = this.characteritiqueService.puissance
-
-    this.getVitalite()
+    this.getPa()
+    this.getPm()
+    this.getPo()
+    this.getInitiative()
+    this.getInvocation()
+    this.getCritique()
+    this.getSoin()
+    this.getProspection()
     this.getForce()
     this.getIntelligence()
     this.getChance()
     this.getAgilite()
-    this.getRemainingPointsToUsed()
-
+    this.getPuissance()
     this.getParchoVitalite()
     this.getParchoForce()
     this.getParchoIntelligence()
     this.getParchoChance()
     this.getParchoAgilite()
+    this.getVitalite()
+    this.getRemainingPointsToUsed()
   }
 
   modifyStat(points: number, charac: String) {
@@ -84,8 +82,36 @@ export class Characteristique1Component implements OnInit {
     this.pointsdecaracService.resetRemainingPoints()
   }
 
-  getVitalite() {
-    this.characteritiqueService._vitalite.subscribe(value => this.vitalite = value)
+  getPa() {
+    this.characteritiqueService._pa.subscribe(value => this.pa = value)
+  }
+
+  getPm() {
+    this.characteritiqueService._pm.subscribe(value => this.pm = value)
+  }
+
+  getPo() {
+    this.characteritiqueService._po.subscribe(value => this.po = value)
+  }
+
+  getInitiative() {
+    this.characteritiqueService._initiative.subscribe(value => this.initiative = value)
+  }
+
+  getInvocation() {
+    this.characteritiqueService._invocation.subscribe(value => this.invocation = value)
+  }
+
+  getCritique() {
+    this.characteritiqueService._critique.subscribe(value => this.critique = value)
+  }
+
+  getSoin() {
+    this.characteritiqueService._soin.subscribe(value => this.soin = value)
+  }
+
+  getProspection() {
+    this.characteritiqueService._prospection.subscribe(value => this.prospection = value)
   }
 
   getForce() {
@@ -102,6 +128,10 @@ export class Characteristique1Component implements OnInit {
 
   getAgilite() {
     this.characteritiqueService._agilite.subscribe(value => this.agilite = value)
+  }
+
+  getPuissance() {
+    this.characteritiqueService._puissance.subscribe(value => this.puissance = value)
   }
 
   getParchoVitalite() {
@@ -122,6 +152,10 @@ export class Characteristique1Component implements OnInit {
 
   getParchoAgilite() {
     this.characteritiqueService._parchoAgilite.subscribe(value => this.parchoAgilite = value)
+  }
+
+  getVitalite() {
+    this.characteritiqueService._vitalite.subscribe(value => this.vitalite = value)
   }
 
   getRemainingPointsToUsed() {

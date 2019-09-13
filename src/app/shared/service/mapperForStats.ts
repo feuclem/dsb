@@ -1,6 +1,7 @@
 import {
   Agilite,
-  Chance, Critique,
+  Chance,
+  Critique,
   Dommages,
   DommagesAir,
   DommagesAirArme,
@@ -17,14 +18,19 @@ import {
   DommagesPiege,
   DommagesPoussee,
   DommagesTerre,
-  DommagesTerreArme, EsquivePA, EsquivePM,
+  DommagesTerreArme,
+  EsquivePA,
+  EsquivePM,
   Force,
-  Fuite, Initiative,
-  Intelligence, Invocations,
+  Fuite,
+  Initiative,
+  Intelligence,
+  Invocations,
   PA,
   PM,
   PO,
-  Pods, Prospection,
+  Pods,
+  Prospection,
   Puissance,
   PuissancePiege,
   ResistanceAir,
@@ -49,7 +55,7 @@ import {
   Vitalite
 } from '../entities/Statistique'
 
-export const mapperStat = [
+export const mapperForStat = [
   {
     label: '(dommages Neutre)',
     type: DommagesNeutreArme
@@ -290,225 +296,5 @@ export const mapperStat = [
   {
     label: 'resistanceFixeAir',
     type: ResistanceFixeAir
-  }
-]
-
-export const mapperForStatInStuff = [
-  {
-    label: 'DommagesNeutreArme',
-    type: 'dommagesNeutreArme'
-  },
-  {
-    label: 'DommagesNeutre',
-    type: 'dommagesNeutre'
-  },
-  {
-    label: 'Force',
-    type: ''
-  },
-  {
-    label: 'Intelligence',
-    type: ''
-  },
-  {
-    label: 'Chance',
-    type: ''
-  },
-  {
-    label: 'Agilité',
-    type: ''
-  },
-  {
-    label: 'Vitalité',
-    type: ''
-  },
-  {
-    label: 'Sagesse',
-    type: 'sagesse'
-  },
-  {
-    label: 'Dommages',
-    type: 'dommages'
-  },
-  {
-    label: 'Puissance',
-    type: 'puissance'
-  },
-  {
-    label: 'DommagesTerre',
-    type: 'dommagesTerre'
-  },
-  {
-    label: 'DommagesTerreArme',
-    type: 'dommagesTerreArme'
-  },
-  {
-    label: 'DommagesFeu',
-    type: 'dommagesFeu'
-  },
-  {
-    label: 'DommagesFeuArme',
-    type: 'dommagesFeuArme'
-  },
-  {
-    label: 'DommagesEau',
-    type: 'dommagesEau'
-  },
-  {
-    label: 'DommagesEauArme',
-    type: 'dommagesEauArme'
-  },
-  {
-    label: 'DommagesAir',
-    type: 'dommagesAir'
-  },
-  {
-    label: 'DommagesAirArme',
-    type: 'dommagesAirArme'
-  },
-  {
-    label: 'Fuite',
-    type: 'fuite'
-  },
-  {
-    label: 'Tacle',
-    type: 'tacle'
-  },
-  {
-    label: 'Portée',
-    type: 'po'
-  },
-  {
-    label: 'PA',
-    type: 'pa'
-  },
-  {
-    label: 'PM',
-    type: 'pm'
-  },
-  {
-    label: 'RetraitPA',
-    type: 'retraitPA'
-  },
-  {
-    label: 'RetraitPM',
-    type: 'retraitPM'
-  },
-  {
-    label: 'EsquivePA',
-    type: 'esquivePA'
-  },
-  {
-    label: 'EsquivePM',
-    type: 'esquivePM'
-  },
-  {
-    label: 'ResistanceFixeNeutre',
-    type: 'resistanceFixeNeutre'
-  },
-  {
-    label: 'ResistanceFixeTerre',
-    type: 'resistanceFixeTerre'
-  },
-  {
-    label: 'ResistanceFixeFeu',
-    type: 'resistanceFixeFeu'
-  },
-  {
-    label: 'ResistanceFixeEau',
-    type: 'resistanceFixeEau'
-  },
-  {
-    label: 'ResistanceFixeAir',
-    type: 'resistanceFixeAir'
-  },
-  {
-    label: 'ResistanceCritiques',
-    type: 'resistanceCritiques'
-  },
-  {
-    label: 'ResistancePoussees',
-    type: 'resistancePoussees'
-  },
-  {
-    label: 'Soins',
-    type: 'soins'
-  },
-  {
-    label: 'Pods',
-    type: 'pods'
-  },
-  {
-    label: 'DommagesCritiques',
-    type: 'dommagesCritiques'
-  },
-  {
-    label: 'DommagesPoussee',
-    type: 'dommagesPoussee'
-  },
-  {
-    label: 'PuissancePiege',
-    type: 'puissancePiege'
-  },
-  {
-    label: 'DommagesPiege',
-    type: 'dommagesPiege'
-  },
-  {
-    label: 'DommagesAuxSorts',
-    type: 'dommagesAuxSorts'
-  },
-  {
-    label: 'Prospection',
-    type: 'prospection'
-  },
-  {
-    label: 'Invocations',
-    type: 'invocations'
-  },
-  {
-    label: 'Initiative',
-    type: 'initiative'
-  },
-  // New data bind
-  {
-    label: 'ResistanceNeutre',
-    type: 'resistanceNeutre'
-  },
-  {
-    label: 'ResistanceTerre',
-    type: 'resistanceTerre'
-  },
-  {
-    label: 'ResistanceFeu',
-    type: 'resistanceFeu'
-  },
-  {
-    label: 'ResistanceEau',
-    type: 'resistanceEau'
-  },
-  {
-    label: 'ResistanceAir',
-    type: 'resistanceAir'
-  },
-  {
-    label: 'ResistanceDistance',
-    type: 'resistanceDistance'
-  },
-  {
-    label: 'ResistanceMelee',
-    type: 'resistanceMelee'
-  },
-  {
-    label: 'DommagesMelee',
-    type: 'dommagesMelee'
-  },
-  {
-    label: 'DommagesDistance',
-    type: 'dommagesDistance'
-  },
-  {
-    label: 'Critique',
-    type: 'critique'
   }
 ]
