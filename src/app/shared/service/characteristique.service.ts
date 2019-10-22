@@ -78,7 +78,7 @@ export class CharacteristiqueService {
   }
 
   resetVitalite(): void {
-    this._vitalite.next(100)
+    this._vitalite.next(0)
   }
 
   updateForce(value: number): void {
@@ -86,7 +86,7 @@ export class CharacteristiqueService {
   }
 
   resetForce(): void {
-    this._force.next(100)
+    this._force.next(0)
   }
 
   updateIntelligence(value: number): void {
@@ -94,7 +94,7 @@ export class CharacteristiqueService {
   }
 
   resetIntelligence(): void {
-    this._intelligence.next(100)
+    this._intelligence.next(0)
   }
 
   updateChance(value: number): void {
@@ -102,7 +102,7 @@ export class CharacteristiqueService {
   }
 
   resetChance(): void {
-    this._chance.next(100)
+    this._chance.next(0)
   }
 
   updateAgilite(value: number): void {
@@ -110,7 +110,7 @@ export class CharacteristiqueService {
   }
 
   resetAgilite(): void {
-    this._agilite.next(100)
+    this._agilite.next(0)
   }
 
   updateDommagesNeutreArme(value: number) {
