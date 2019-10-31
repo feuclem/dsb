@@ -34,10 +34,11 @@ export class MontureComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.monture = new StuffViewModel(
+    this.stuffService.updateMonture(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
+      )
     )
     super.setItem(equipement)
   }

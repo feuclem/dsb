@@ -34,11 +34,11 @@ export class CoiffeComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.coiffe = new StuffViewModel(
+    this.stuffService.updateCoiffe(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
-    )
+    ))
     super.setItem(equipement)
   }
 }

@@ -61,49 +61,56 @@ export class PanoplieService {
     const equipements = this.getFullPanoplie(setId)
     equipements.forEach(equipement => {
       if (equipement.type === 'Amulette') {
-        this.stuffService.amulette = new StuffViewModel(
+        this.stuffService.updateAmulette(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
-        )
+        ))
       } else if (equipement.type === 'Chapeau') {
-        this.stuffService.coiffe = new StuffViewModel(
+        this.stuffService.updateCoiffe(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
-        )
+        ))
       } else if (equipement.type === 'Cape') {
-        this.stuffService.cape = new StuffViewModel(
+        this.stuffService.updateCape(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
+          )
         )
       } else if (equipement.type === 'Ceinture') {
-        this.stuffService.ceinture = new StuffViewModel(
+        this.stuffService.updateCeinture(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
+          )
         )
       } else if (equipement.type === 'Bottes') {
-        this.stuffService.bottes = new StuffViewModel(
+        this.stuffService.updateBottes(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
+          )
         )
       } else if (equipement.type === 'Anneau') {
-        if (this.stuffService.anneau1 === undefined) {
-          this.stuffService.anneau1 = new StuffViewModel(
-            equipement.imgUrl,
-            equipement.stats,
-            equipement.id
-          )
-        } else {
-          this.stuffService.anneau2 = new StuffViewModel(
-            equipement.imgUrl,
-            equipement.stats,
-            equipement.id
-          )
-        }
+        this.stuffService.getAnneau1().subscribe(value1 => {
+          if (value1 === undefined) {
+            this.stuffService.updateAnneau1(new StuffViewModel(
+              equipement.imgUrl,
+              equipement.stats,
+              equipement.id
+              )
+            )
+          } else {
+            this.stuffService.updateAnneau2(new StuffViewModel(
+              equipement.imgUrl,
+              equipement.stats,
+              equipement.id
+              )
+            )
+          }
+        })
       }
       this.stuffService.listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
       equipement.stats.forEach(stat => {

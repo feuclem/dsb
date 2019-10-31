@@ -34,10 +34,11 @@ export class CapeComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.cape = new StuffViewModel(
+    this.stuffService.updateCape(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
+      )
     )
     super.setItem(equipement)
   }

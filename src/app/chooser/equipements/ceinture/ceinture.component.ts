@@ -34,11 +34,11 @@ export class CeintureComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.ceinture = new StuffViewModel(
+    this.stuffService.updateCeinture(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
-    )
+    ))
     super.setItem(equipement)
   }
 }

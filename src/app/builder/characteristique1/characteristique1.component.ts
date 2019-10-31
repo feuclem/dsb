@@ -70,7 +70,11 @@ export class Characteristique1Component implements OnInit {
   }
 
   modifyStat(points: number, charac: String) {
-    this.pointsdecaracService.addPointToCharacteristique(points, charac)
+    if(this.pointsdecaracService.hasRemainingPointsAvailable(points)) {
+      this.pointsdecaracService.addPointToCharacteristique(points, charac)
+    } else {
+      alert('Vous ne pouvez plus ajouter de points de caractéristiques.')
+    }
   }
 
   resetStats() {

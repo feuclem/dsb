@@ -1,17 +1,19 @@
 import {Injectable} from '@angular/core'
 import {StuffViewModel} from '../../builder/StuffViewModel'
+import {BehaviorSubject} from 'rxjs/BehaviorSubject'
+import {Observable} from 'rxjs/Observable'
 
 @Injectable()
 export class StuffService {
-  private _arme: StuffViewModel
-  private _amulette: StuffViewModel
-  private _anneau1: StuffViewModel
-  private _anneau2: StuffViewModel
-  private _bottes: StuffViewModel
-  private _ceinture: StuffViewModel
-  private _coiffe: StuffViewModel
-  private _cape: StuffViewModel
-  private _monture: StuffViewModel
+  private _arme = new BehaviorSubject<StuffViewModel>(undefined)
+  private _amulette = new BehaviorSubject<StuffViewModel>(undefined)
+  private _anneau1 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _anneau2 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _bottes = new BehaviorSubject<StuffViewModel>(undefined)
+  private _ceinture = new BehaviorSubject<StuffViewModel>(undefined)
+  private _coiffe = new BehaviorSubject<StuffViewModel>(undefined)
+  private _cape = new BehaviorSubject<StuffViewModel>(undefined)
+  private _monture = new BehaviorSubject<StuffViewModel>(undefined)
   private _familier: StuffViewModel
   private _bouclier: StuffViewModel
   private _slot1: StuffViewModel
@@ -21,77 +23,76 @@ export class StuffService {
   private _slot5: StuffViewModel
   private _slot6: StuffViewModel
 
-
-  get arme(): StuffViewModel {
-    return this._arme
+  updateArme(value: StuffViewModel): void {
+    this._arme.next(value)
   }
 
-  set arme(value: StuffViewModel) {
-    this._arme = value
+  getArme(): Observable<StuffViewModel> {
+    return this._arme.asObservable()
   }
 
-  get amulette(): StuffViewModel {
-    return this._amulette
+  updateAmulette(value: StuffViewModel): void {
+    this._amulette.next(value)
   }
 
-  set amulette(value: StuffViewModel) {
-    this._amulette = value
+  getAmulette(): Observable<StuffViewModel> {
+    return this._amulette.asObservable()
   }
 
-  get anneau1(): StuffViewModel {
-    return this._anneau1
+  updateAnneau1(value: StuffViewModel): void {
+    this._anneau1.next(value)
   }
 
-  set anneau1(value: StuffViewModel) {
-    this._anneau1 = value
+  getAnneau1(): Observable<StuffViewModel> {
+    return this._anneau1.asObservable()
   }
 
-  get anneau2(): StuffViewModel {
-    return this._anneau2
+  updateAnneau2(value: StuffViewModel): void {
+    this._anneau2.next(value)
   }
 
-  set anneau2(value: StuffViewModel) {
-    this._anneau2 = value
+  getAnneau2(): Observable<StuffViewModel> {
+    return this._anneau2.asObservable()
   }
 
-  get bottes(): StuffViewModel {
-    return this._bottes
+  updateBottes(value: StuffViewModel): void {
+    this._bottes.next(value)
   }
 
-  set bottes(value: StuffViewModel) {
-    this._bottes = value
+  getBottes(): Observable<StuffViewModel> {
+    return this._bottes.asObservable()
   }
 
-  get ceinture(): StuffViewModel {
-    return this._ceinture
+  updateCeinture(value: StuffViewModel): void {
+    this._ceinture.next(value)
   }
 
-  set ceinture(value: StuffViewModel) {
-    this._ceinture = value
+  getCeinture(): Observable<StuffViewModel> {
+    return this._ceinture.asObservable()
   }
 
-  get coiffe(): StuffViewModel {
-    return this._coiffe
+  updateCoiffe(value: StuffViewModel): void {
+    this._coiffe.next(value)
   }
 
-  set coiffe(value: StuffViewModel) {
-    this._coiffe = value
+  getCoiffe(): Observable<StuffViewModel> {
+    return this._coiffe.asObservable()
   }
 
-  get cape(): StuffViewModel {
-    return this._cape
+  updateCape(value: StuffViewModel): void {
+    this._cape.next(value)
   }
 
-  set cape(value: StuffViewModel) {
-    this._cape = value
+  getCape(): Observable<StuffViewModel> {
+    return this._cape.asObservable()
   }
 
-  get monture(): StuffViewModel {
-    return this._monture
+  updateMonture(value: StuffViewModel): void {
+    this._monture.next(value)
   }
 
-  set monture(value: StuffViewModel) {
-    this._monture = value
+  getMonture(): Observable<StuffViewModel> {
+    return this._monture.asObservable()
   }
 
   get familier(): StuffViewModel {

@@ -34,10 +34,11 @@ export class BottesComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.bottes = new StuffViewModel(
+    this.stuffService.updateBottes(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
+      )
     )
     super.setItem(equipement)
   }

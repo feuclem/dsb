@@ -59,15 +59,32 @@ describe('Characteristique1Component', () => {
   })
 
   describe('modifyStat', () => {
-    it('should call addPointToCharacteristique with the given value', () => {
-      // Given
-      const spy = spyOn(pointsdecaracService, 'addPointToCharacteristique')
+    describe('when hasRemainingPointsAvailable is true', () => {
+      it('should call addPointToCharacteristique with the given value', () => {
+        spyOn(pointsdecaracService, 'hasRemainingPointsAvailable').and.returnValue(true)
+        // Given
+        const spy = spyOn(pointsdecaracService, 'addPointToCharacteristique')
 
-      // When
-      component.modifyStat(1, 'fake')
+        // When
+        component.modifyStat(1, 'fake')
 
-      // Then
-      expect(spy).toHaveBeenCalledWith(1, 'fake')
+        // Then
+        expect(spy).toHaveBeenCalledWith(1, 'fake')
+      })
+    })
+
+    describe('when hasRemainingPointsAvailable is false', () => {
+      it('should an alert', () => {
+        spyOn(pointsdecaracService, 'hasRemainingPointsAvailable').and.returnValue(true)
+        // Given
+        const spy = spyOn(window, 'alert')
+
+        // When
+        component.modifyStat(1, 'fake')
+
+        // Then
+        expect(spy).toHaveBeenCalledWith('Vous ne pouvez plus ajouter de points de caractéristiques.')
+      })
     })
   })
 

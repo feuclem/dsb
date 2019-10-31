@@ -34,11 +34,11 @@ export class AmuletteComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.amulette = new StuffViewModel(
+    this.stuffService.updateAmulette(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
-    )
+    ))
     super.setItem(equipement)
   }
 }

@@ -68,4 +68,8 @@ export class PointsdecaracService {
   updateRemainingPointsToUsed(value: number): void {
     this._remainingPointsToUsed.next(value)
   }
+
+  hasRemainingPointsAvailable(pointsToAdd: number): Boolean {
+    return this.remainingPoints > 0 && pointsToAdd - this.remainingPoints <= 0;
+  }
 }

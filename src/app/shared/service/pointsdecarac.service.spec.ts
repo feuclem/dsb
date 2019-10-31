@@ -285,4 +285,55 @@ describe('PointsdecaracService', () => {
       expect(spyUpdate).toHaveBeenCalledWith(995)
     })
   })
+
+  describe('hasRemainingPointsAvailable', () => {
+    describe('when pointsToAdd is 0 and remainingPoints is 0', () => {
+      it('should return false', () => {
+        // Given
+        pointsdecaracService.remainingPoints = 0
+
+        // When
+        const result = pointsdecaracService.hasRemainingPointsAvailable(0)
+
+        // Then
+        expect(result).toEqual(false)
+      })
+    })
+    describe('when pointsToAdd is 1 and remainingPoints is 1', () => {
+      it('should return false', () => {
+        // Given
+        pointsdecaracService.remainingPoints = 1
+
+        // When
+        const result = pointsdecaracService.hasRemainingPointsAvailable(1)
+
+        // Then
+        expect(result).toEqual(true)
+      })
+    })
+    describe('when pointsToAdd is 0 and remainingPoints is 1', () => {
+      it('should return false', () => {
+        // Given
+        pointsdecaracService.remainingPoints = 1
+
+        // When
+        const result = pointsdecaracService.hasRemainingPointsAvailable(0)
+
+        // Then
+        expect(result).toEqual(true)
+      })
+    })
+    describe('when pointsToAdd is 1 and remainingPoints is 0', () => {
+      it('should return false', () => {
+        // Given
+        pointsdecaracService.remainingPoints = 0
+
+        // When
+        const result = pointsdecaracService.hasRemainingPointsAvailable(1)
+
+        // Then
+        expect(result).toEqual(false)
+      })
+    })
+  })
 })

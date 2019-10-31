@@ -29,11 +29,11 @@ export class ArmesComponent implements OnInit {
   }
 
   setBuild(arme: Arme) {
-    this.stuffService.arme = new StuffViewModel(
+    this.stuffService.updateArme(new StuffViewModel(
       arme.imgUrl,
       arme.stats,
       arme.id
-    )
+    ))
     arme.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }
