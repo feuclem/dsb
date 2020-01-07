@@ -89,7 +89,7 @@ export class Stuff1Component implements OnInit {
 
   removePets(equipementId: number, type: String) {
     if(type === 'Monture') {
-      this.stuffService.monture = undefined
+      this.stuffService.updateMonture(undefined)
     } else {
       this.stuffService.familier = undefined
     }
