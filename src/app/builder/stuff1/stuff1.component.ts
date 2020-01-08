@@ -25,8 +25,7 @@ export class Stuff1Component implements OnInit {
   constructor(
     private stuffService: StuffService,
     private statistiquesService: StatistiquesService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.stuffService.getArme().subscribe(value => this.arme = value)
@@ -37,9 +36,9 @@ export class Stuff1Component implements OnInit {
     this.stuffService.getCape().subscribe(value => this.cape = value)
     this.stuffService.getCoiffe().subscribe(value => this.coiffe = value)
     this.stuffService.getBottes().subscribe(value => this.bottes = value)
-    this.familier = this.stuffService.familier
+    this.stuffService.getFamilier().subscribe(value => this.familier = value)
     this.stuffService.getMonture().subscribe(value => this.monture = value)
-    this.bouclier = this.stuffService.bouclier
+    this.stuffService.getBouclier().subscribe(value => this.bouclier = value)
   }
 
   removeAmulette(stuffViewModel: StuffViewModel) {
@@ -91,7 +90,7 @@ export class Stuff1Component implements OnInit {
   }
 
   removeBouclier(stuffViewModel: StuffViewModel) {
-    this.stuffService.bouclier = undefined
+    this.stuffService.updateBouclier(undefined)
     this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
@@ -100,7 +99,7 @@ export class Stuff1Component implements OnInit {
       this.stuffService.updateMonture(undefined)
       stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
     } else {
-      this.stuffService.familier = undefined
+      this.stuffService.updateFamilier(undefined)
     }
     this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }

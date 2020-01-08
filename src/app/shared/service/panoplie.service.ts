@@ -5,6 +5,7 @@ import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
 import {StatistiquesService} from './statistiques.service'
 import {StuffViewModel} from '../../builder/StuffViewModel'
+import {StuffEquipementId} from '../entities/StuffEquipementId'
 
 @Injectable()
 export class PanoplieService {
@@ -108,7 +109,7 @@ export class PanoplieService {
         if(hasAnneau1Empty) {
           this.stuffService.getAnneau2().subscribe(value => {
             if (value === undefined) {
-              this.stuffService.updateAnneau1(new StuffViewModel(
+              this.stuffService.updateAnneau2(new StuffViewModel(
                 equipement.imgUrl,
                 equipement.stats,
                 equipement.id
@@ -118,7 +119,7 @@ export class PanoplieService {
           })
         }
       }
-      this.stuffService.addStuffFromListEquipmentId(equipement)
+      this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))
       equipement.stats.forEach(stat => {
         this.statistiquesService.setStatInStuff(stat)
       })

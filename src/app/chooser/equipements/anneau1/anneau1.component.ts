@@ -1,40 +1,40 @@
 import {Component, OnInit} from '@angular/core'
-import {FamilierHttpService} from './familier.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
+import {AnneauHttpService} from './anneau.http.service'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
 
 @Component({
-  selector: 'dsb-familier',
+  selector: 'dsb-anneau1',
   templateUrl: '../equipements/equipements.component.html',
   providers: [
-    FamilierHttpService
+    AnneauHttpService
   ]
 })
-export class FamilierComponent extends EquipementsComponent implements OnInit {
+export class Anneau1Component extends EquipementsComponent implements OnInit {
 
   constructor(
     router: Router,
     stuffService: StuffService,
     statistiquesService: StatistiquesService,
     panoplieService: PanoplieService,
-    private familierHttpService: FamilierHttpService,
+    private anneauHttpService: AnneauHttpService,
   ) {
     super(router, stuffService, statistiquesService, panoplieService)
   }
 
   ngOnInit() {
-    this.familierHttpService.getAllEquipements().then(response => {
+    this.anneauHttpService.getAllEquipements().then(response => {
       this.equipements = response
     })
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateFamilier(new StuffViewModel(
+    this.stuffService.updateAnneau1(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id

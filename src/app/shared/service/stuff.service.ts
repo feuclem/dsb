@@ -3,7 +3,6 @@ import {StuffViewModel} from '../../builder/StuffViewModel'
 import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 import {Observable} from 'rxjs/Observable'
 import {StuffEquipementId} from '../entities/StuffEquipementId'
-import {Equipement} from '../entities/Equipement'
 
 @Injectable()
 export class StuffService {
@@ -16,14 +15,14 @@ export class StuffService {
   private _coiffe = new BehaviorSubject<StuffViewModel>(undefined)
   private _cape = new BehaviorSubject<StuffViewModel>(undefined)
   private _monture = new BehaviorSubject<StuffViewModel>(undefined)
-  private _familier: StuffViewModel
-  private _bouclier: StuffViewModel
-  private _slot1: StuffViewModel
-  private _slot2: StuffViewModel
-  private _slot3: StuffViewModel
-  private _slot4: StuffViewModel
-  private _slot5: StuffViewModel
-  private _slot6: StuffViewModel
+  private _familier = new BehaviorSubject<StuffViewModel>(undefined)
+  private _bouclier = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot1 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot2 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot3 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot4 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot5 = new BehaviorSubject<StuffViewModel>(undefined)
+  private _slot6 = new BehaviorSubject<StuffViewModel>(undefined)
 
   updateArme(value: StuffViewModel): void {
     this._arme.next(value)
@@ -97,98 +96,84 @@ export class StuffService {
     return this._monture.asObservable()
   }
 
-  get familier(): StuffViewModel {
-    return this._familier
+  updateFamilier(value: StuffViewModel): void {
+    this._familier.next(value)
   }
 
-  set familier(value: StuffViewModel) {
-    this._familier = value
+  getFamilier(): Observable<StuffViewModel> {
+    return this._familier.asObservable()
   }
 
-  get bouclier(): StuffViewModel {
-    return this._bouclier
+  updateBouclier(value: StuffViewModel): void {
+    this._bouclier.next(value)
   }
 
-  set bouclier(value: StuffViewModel) {
-    this._bouclier = value
+  getBouclier(): Observable<StuffViewModel> {
+    return this._bouclier.asObservable()
   }
 
-  get slot1(): StuffViewModel {
-    return this._slot1
+  updateSlot1(value: StuffViewModel): void {
+    this._slot1.next(value)
   }
 
-  set slot1(value: StuffViewModel) {
-    this._slot1 = value
+  getSlot1(): Observable<StuffViewModel> {
+    return this._slot1.asObservable()
   }
 
-  get slot2(): StuffViewModel {
-    return this._slot2
+  updateSlot2(value: StuffViewModel): void {
+    this._slot2.next(value)
   }
 
-  set slot2(value: StuffViewModel) {
-    this._slot2 = value
+  getSlot2(): Observable<StuffViewModel> {
+    return this._slot2.asObservable()
   }
 
-  get slot3(): StuffViewModel {
-    return this._slot3
+  updateSlot3(value: StuffViewModel): void {
+    this._slot3.next(value)
   }
 
-  set slot3(value: StuffViewModel) {
-    this._slot3 = value
+  getSlot3(): Observable<StuffViewModel> {
+    return this._slot3.asObservable()
   }
 
-  get slot4(): StuffViewModel {
-    return this._slot4
+  updateSlot4(value: StuffViewModel): void {
+    this._slot4.next(value)
   }
 
-  set slot4(value: StuffViewModel) {
-    this._slot4 = value
+  getSlot4(): Observable<StuffViewModel> {
+    return this._slot4.asObservable()
   }
 
-  get slot5(): StuffViewModel {
-    return this._slot5
+  updateSlot5(value: StuffViewModel): void {
+    this._slot5.next(value)
   }
 
-  set slot5(value: StuffViewModel) {
-    this._slot5 = value
+  getSlot5(): Observable<StuffViewModel> {
+    return this._slot5.asObservable()
   }
 
-  get slot6(): StuffViewModel {
-    return this._slot6
+  updateSlot6(value: StuffViewModel): void {
+    this._slot6.next(value)
   }
 
-  set slot6(value: StuffViewModel) {
-    this._slot6 = value
+  getSlot6(): Observable<StuffViewModel> {
+    return this._slot6.asObservable()
   }
 
-  private _listStuffEquipmentId = []
+  private _listStuffEquipmentId = new BehaviorSubject<StuffEquipementId[]>([])
 
-  get listStuffEquipmentId(): any[] {
-    return this._listStuffEquipmentId
+  getListStuffEquipmentId(): Observable<StuffEquipementId[]> {
+    return this._listStuffEquipmentId.asObservable()
   }
 
-  set listStuffEquipmentId(value: any[]) {
-    if (value[0].type === 'Anneau' && this.listStuffEquipmentId.filter(value1 => value1.type === 'Anneau').length === 1) {
-      this._listStuffEquipmentId.push(...value)
-    } else if (value[0].type === 'Anneau' && this.listStuffEquipmentId.filter(value1 => value1.type === 'Anneau').length === 2) {
-      const toto = this.listStuffEquipmentId.findIndex(value1 => value1.type === value[0].type)
-      this._listStuffEquipmentId.splice(toto, 1)
-      this._listStuffEquipmentId.push(...value)
-    } else {
-      const toto = this.listStuffEquipmentId.findIndex(value1 => value1.type === value[0].type)
-      if (toto !== -1) {
-        this._listStuffEquipmentId.splice(toto, 1)
-      }
-      this._listStuffEquipmentId.push(...value)
-    }
-  }
-
-  addStuffFromListEquipmentId(equipement: Equipement) {
-    this._listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
+  updateListStuffEquipmentId(value: StuffEquipementId): void {
+    this._listStuffEquipmentId.getValue().push(value)
+    this._listStuffEquipmentId.next(this._listStuffEquipmentId.getValue())
   }
 
   removeStuffFromListEquipmentId(idEquipement: number) {
-    const toto = this.listStuffEquipmentId.findIndex(value1 => value1.id === idEquipement)
-    this._listStuffEquipmentId.splice(toto, 1)
+    const equipementId = this._listStuffEquipmentId.getValue().findIndex(stuffEquipementId => stuffEquipementId.id === idEquipement)
+    this._listStuffEquipmentId.getValue().splice(equipementId, 1)
+    this._listStuffEquipmentId.next(this._listStuffEquipmentId.getValue())
   }
 }

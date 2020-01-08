@@ -4,6 +4,7 @@ import {StuffService} from '../../../shared/service/stuff.service'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {Equipement} from '../../../shared/entities/Equipement'
+import {StuffEquipementId} from '../../../shared/entities/StuffEquipementId'
 
 @Component({
   selector: 'dsb-equipements',
@@ -34,7 +35,7 @@ export class EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.addStuffFromListEquipmentId(equipement)
+    this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))
     equipement.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
     this.router.navigate(['/'])
   }

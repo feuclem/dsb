@@ -7,16 +7,15 @@ import {EquipementsComponent} from '../equipements/equipements.component'
 import {AnneauHttpService} from './anneau.http.service'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
-import {validate} from 'codelyzer/walkerFactory/walkerFn'
 
 @Component({
-  selector: 'dsb-anneaux',
+  selector: 'dsb-anneau2',
   templateUrl: '../equipements/equipements.component.html',
   providers: [
     AnneauHttpService
   ]
 })
-export class AnneauComponent extends EquipementsComponent implements OnInit {
+export class Anneau2Component extends EquipementsComponent implements OnInit {
 
   constructor(
     router: Router,
@@ -35,22 +34,11 @@ export class AnneauComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.getAnneau1().subscribe(value => {
-      if (value === undefined) {
-        this.stuffService.updateAnneau1(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-        ))
-      } else {
-        this.stuffService.updateAnneau2(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-          )
-        )
-      }
-    })
+    this.stuffService.updateAnneau2(new StuffViewModel(
+      equipement.imgUrl,
+      equipement.stats,
+      equipement.id
+    ))
     super.setItem(equipement)
   }
 }

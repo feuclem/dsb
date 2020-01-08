@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../../shared/service/stuff.service'
+import {StuffViewModel} from '../StuffViewModel'
 
 @Component({
   selector: 'dsb-stuff2',
@@ -8,23 +9,22 @@ import {StuffService} from '../../shared/service/stuff.service'
 })
 export class Stuff2Component implements OnInit {
 
-  slot1: String
-  slot2: String
-  slot3: String
-  slot4: String
-  slot5: String
-  slot6: String
+  slot1: StuffViewModel
+  slot2: StuffViewModel
+  slot3: StuffViewModel
+  slot4: StuffViewModel
+  slot5: StuffViewModel
+  slot6: StuffViewModel
 
-  constructor(private stuffService: StuffService) {
-  }
+  constructor(private stuffService: StuffService) {}
 
   ngOnInit() {
-    this.slot1 = this.stuffService.slot1 ? this.stuffService.slot1.imgUrl : ''
-    this.slot2 = this.stuffService.slot2 ? this.stuffService.slot2.imgUrl : ''
-    this.slot3 = this.stuffService.slot3 ? this.stuffService.slot3.imgUrl : ''
-    this.slot4 = this.stuffService.slot4 ? this.stuffService.slot4.imgUrl : ''
-    this.slot5 = this.stuffService.slot5 ? this.stuffService.slot5.imgUrl : ''
-    this.slot6 = this.stuffService.slot6 ? this.stuffService.slot6.imgUrl : ''
+    this.stuffService.getSlot1().subscribe(value => this.slot1 = value)
+    this.stuffService.getSlot2().subscribe(value => this.slot2 = value)
+    this.stuffService.getSlot3().subscribe(value => this.slot3 = value)
+    this.stuffService.getSlot4().subscribe(value => this.slot4 = value)
+    this.stuffService.getSlot5().subscribe(value => this.slot5 = value)
+    this.stuffService.getSlot6().subscribe(value => this.slot6 = value)
   }
 
 }

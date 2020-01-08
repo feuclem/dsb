@@ -431,7 +431,7 @@ describe('PanoplieService', () => {
       })
     })
 
-    describe('when one anneau is added', () => {
+    describe('when one anneau1 is added', () => {
       it('should call updateAnneau1', () => {
         // Given
         const listPanoplie = [
@@ -488,7 +488,7 @@ describe('PanoplieService', () => {
       })
     })
 
-    describe('when one amulette, one anneau, one ceinture, one coiffe is added', () => {
+    describe('when one amulette, one anneau1, one ceinture, one coiffe is added', () => {
       it('should call every stuff updater', () => {
         // Given
         const listPanoplie = [

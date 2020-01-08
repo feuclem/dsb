@@ -12,7 +12,8 @@ import {CommonModule} from '@angular/common'
 import {StuffService} from './shared/service/stuff.service'
 import {CharacteristiqueService} from './shared/service/characteristique.service'
 import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
-import {AnneauComponent} from './chooser/equipements/anneau/anneau.component'
+import {Anneau1Component} from './chooser/equipements/anneau1/anneau1.component'
+import {Anneau2Component} from './chooser/equipements/anneau2/anneau2.component'
 import {StatistiquesService} from './shared/service/statistiques.service'
 import {BottesComponent} from './chooser/equipements/bottes/bottes.component'
 import {CeintureComponent} from './chooser/equipements/ceinture/ceinture.component'
@@ -49,7 +50,8 @@ import {EquipementsComponent} from './chooser/equipements/equipements/equipement
     ArmesComponent,
     BuilderComponent,
     AmuletteComponent,
-    AnneauComponent,
+    Anneau1Component,
+    Anneau2Component,
     BottesComponent,
     CeintureComponent,
     CoiffeComponent,

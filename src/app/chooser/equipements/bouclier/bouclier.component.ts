@@ -34,11 +34,11 @@ export class BouclierComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.bouclier = new StuffViewModel(
+    this.stuffService.updateBouclier(new StuffViewModel(
       equipement.imgUrl,
       equipement.stats,
       equipement.id
-    )
+    ))
     super.setItem(equipement)
   }
 }

@@ -20,7 +20,7 @@
   <div class="columns has-text-centered">
     <div class="column margin-top-32">
       <img *ngIf="anneau1 !== undefined" src="{{anneau1.imgUrl}}" alt=""/>
-      <a *ngIf="anneau1 === undefined" routerLink="anneau">Anneau</a>
+      <a *ngIf="anneau1 === undefined" routerLink="anneau1">Anneau</a>
     </div>
     <div *ngIf="anneau1 !== undefined" class="column">
       <a (click)="removeAnneau1(anneau1)" class="button is-danger is-outlined">
@@ -32,7 +32,7 @@
 
     <div class="column margin-top-32">
       <img *ngIf="anneau2 !== undefined" src="{{anneau2.imgUrl}}" alt=""/>
-      <a *ngIf="anneau2 === undefined" routerLink="anneau">Anneau</a>
+      <a *ngIf="anneau2 === undefined" routerLink="anneau2">Anneau</a>
     </div>
     <div *ngIf="anneau2 !== undefined" class="column">
       <a (click)="removeAnneau2(anneau2)" class="button is-danger is-outlined">

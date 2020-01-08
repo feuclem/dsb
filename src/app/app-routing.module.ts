@@ -3,7 +3,8 @@ import {RouterModule, Routes} from '@angular/router'
 import {ArmesComponent} from './chooser/equipements/armes/armes.component'
 import {BuilderComponent} from './builder/builder.component'
 import {AmuletteComponent} from './chooser/equipements/amulette/amulette.component'
-import {AnneauComponent} from './chooser/equipements/anneau/anneau.component'
+import {Anneau1Component} from './chooser/equipements/anneau1/anneau1.component'
+import {Anneau2Component} from './chooser/equipements/anneau2/anneau2.component'
 import {BottesComponent} from './chooser/equipements/bottes/bottes.component'
 import {CeintureComponent} from './chooser/equipements/ceinture/ceinture.component'
 import {CoiffeComponent} from './chooser/equipements/coiffe/coiffe.component'
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'coiffe', component: CoiffeComponent},
   {path: 'ceinture', component: CeintureComponent},
   {path: 'bottes', component: BottesComponent},
-  {path: 'anneau', component: AnneauComponent},
+  {path: 'anneau1', component: Anneau1Component},
+  {path: 'anneau2', component: Anneau2Component},
   {path: 'amulette', component: AmuletteComponent},
   {path: 'armes', component: ArmesComponent},
   {path: 'iop', component: IopComponent},

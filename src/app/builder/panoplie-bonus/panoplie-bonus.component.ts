@@ -22,15 +22,16 @@ export class PanoplieBonusComponent implements OnInit {
 
   ngOnInit() {
     this.getBonusStatsToAdd = []
-    const listIdEquipement = this.stuffService.listStuffEquipmentId.map(value => value.id)
-    if (listIdEquipement.length > 0) {
-      this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(listIdEquipement)
-      if (this.getBonusStatsToAdd.length !== 0) {
-        this.getBonusStatsToAdd.map(stat => {
-          this.statistiquesService.setStatInStuff(stat)
-        })
+    this.stuffService.getListStuffEquipmentId().subscribe(listStuffEquipementId => {
+      if (listStuffEquipementId.length > 0) {
+        this.getBonusStatsToAdd = this.panoplieService.getPanoplieBonus(listStuffEquipementId.map(equipementId => equipementId.id))
+        if (this.getBonusStatsToAdd.length !== 0) {
+          this.getBonusStatsToAdd.map(stat => {
+            this.statistiquesService.setStatInStuff(stat)
+          })
+        }
       }
-    }
+    })
   }
 
 }
