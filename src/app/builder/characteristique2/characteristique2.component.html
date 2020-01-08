@@ -1,41 +1,75 @@
-<div class="statistique green-left">
-  Dommages Fix:
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Dom :</span> {{dommages + panoplieDommages}}
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Dommages fixes :</strong>
+      </p>
     </div>
-    <div class="column is-2">
-      <span>Neu :</span> {{dommagesNeutre + panoplieDommagesNeutre}}
-    </div>
-    <div class="column is-2">
-      <span>Ter :</span> {{dommagesTerre + panoplieDommagesTerre}}
-    </div>
-    <div class="column is-2">
-      <span>Feu :</span> {{dommagesFeu + panoplieDommagesFeu}}
-    </div>
-    <div class="column is-2">
-      <span>Eau :</span> {{dommagesEau + panoplieDommagesEau}}
-    </div>
-    <div class="column is-2">
-      <span>Air :</span> {{dommagesAir + panoplieDommagesAir}}
-    </div>
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+              <th>Basique</th>
+              <th>Neutre</th>
+              <th>Terre</th>
+              <th>Feu</th>
+              <th>Eau</th>
+              <th>Air</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{dommages + panoplieDommages}}</td>
+              <td>{{dommagesNeutre + panoplieDommagesNeutre}}</td>
+              <td>{{dommagesTerre + panoplieDommagesTerre}}</td>
+              <td>{{dommagesFeu + panoplieDommagesFeu}}</td>
+              <td>{{dommagesEau + panoplieDommagesEau}}</td>
+              <td>{{dommagesAir + panoplieDommagesAir}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </div>
-  Dommages Autres :
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Mél :</span> {{dommagesMelee + panoplieDommagesMelee}}
+</article>
+
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Dommages autres :</strong>
+      </p>
     </div>
-    <div class="column is-2">
-      <span>Dis :</span> {{dommagesDistance + panoplieDommagesDistance}}
-    </div>
-    <div class="column is-2">
-      <span>Sor :</span> {{dommagesAuxSorts + panoplieDommagesAuxSorts}}
-    </div>
-    <div class="column is-2">
-      <span>Cri :</span> {{dommagesCritiques + panoplieDommagesCritiques}}
-    </div>
-    <div class="column is-2">
-      <span>Pou :</span> {{dommagesPoussee + panoplieDommagesPoussee}}
-    </div>
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+              <th>Mêlée</th>
+              <th>Distance</th>
+              <th>Sort</th>
+              <th>Critique</th>
+              <th>Poussée</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{dommagesMelee + panoplieDommagesMelee}}</td>
+              <td>{{dommagesDistance + panoplieDommagesDistance}}</td>
+              <td>{{dommagesAuxSorts + panoplieDommagesAuxSorts}}</td>
+              <td>{{dommagesCritiques + panoplieDommagesCritiques}}</td>
+              <td>{{dommagesPoussee + panoplieDommagesPoussee}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </div>
-</div>
+</article>

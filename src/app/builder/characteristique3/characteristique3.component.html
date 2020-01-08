@@ -1,25 +1,28 @@
-<div class="statistique green-left">
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Tacle :</span> {{tacle + panoplieTacle}}
-    </div>
-    <div class="column is-2">
-      <span>EsqPA :</span> {{esquivePa + panoplieEsquivePa}}
-    </div>
-    <div class="column is-2">
-      <span>EsqPM :</span> {{esquivePm + panoplieEsquivePm}}
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+        <tr>
+          <th>Tacle</th>
+          <th>Esquive PA</th>
+          <th>Esquive PM</th>
+          <th>Fuite</th>
+          <th>Retrait PA</th>
+          <th>Retrait PM</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{tacle + panoplieTacle}}</td>
+          <td>{{esquivePa + panoplieEsquivePa}}</td>
+          <td>{{esquivePm + panoplieEsquivePm}}</td>
+          <td>{{fuite + panoplieFuite}}</td>
+          <td>{{retraitPa + panoplieRetraitPa}}</td>
+          <td>{{retraitPm + panoplieRetraitPm}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Fuite :</span> {{fuite + panoplieFuite}}
-    </div>
-    <div class="column is-2">
-      <span>RetPA :</span> {{retraitPa + panoplieRetraitPa}}
-    </div>
-    <div class="column is-2">
-      <span>RetPM :</span> {{retraitPm + panoplieRetraitPm}}
-    </div>
-  </div>
-</div>
+</article>

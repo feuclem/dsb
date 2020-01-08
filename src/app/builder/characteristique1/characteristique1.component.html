@@ -1,66 +1,88 @@
-<div class="statistique green-left">
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>PA :</span> {{pa + panopliePa}}
-    </div>
-    <div class="column is-2">
-      <span>PM :</span> {{pm + panopliePm}}
-    </div>
-    <div class="column is-2">
-      <span>PO :</span> {{po + panopliePo}}
-    </div>
-    <div class="column is-2">
-      <span>Invoc :</span> {{invocation + panoplieInvocation}}
-    </div>
-  </div>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+  <tr>
+    <th>PA</th>
+    <th>PM</th>
+    <th>PO</th>
+    <th>Invoc</th>
+    <th>Crit</th>
+    <th>Ini</th>
+    <th>Soins</th>
+    <th>Prosp</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{pa + panopliePa}}</td>
+    <td>{{pm + panopliePm}}</td>
+    <td>{{po + panopliePo}}</td>
+    <td>{{invocation + panoplieInvocation}}</td>
+    <td>{{initiative + panoplieInitiative}}</td>
+    <td>{{soin + panoplieSoin}}</td>
+    <td>{{prospection + panoplieProspection}}</td>
+    <td>{{critique + panoplieCritique}}</td>
+  </tr>
+  </tbody>
+</table>
 
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Ini :</span> {{initiative + panoplieInitiative}}
-    </div>
-    <div class="column is-2">
-      <span>Soins :</span> {{soin + panoplieSoin}}
-    </div>
-    <div class="column is-2">
-      <span>Prosp :</span> {{prospection + panoplieProspection}}
-    </div>
-    <div class="column is-2">
-      <span>Crit :</span> {{critique + panoplieCritique}}
-    </div>
-  </div>
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+  <tr>
+    <td></td>
+    <td>Vitalité</td>
+    <td>Force</td>
+    <td>Intelligence</td>
+    <td>Chance</td>
+    <td>Agilité</td>
+    <td>Puissance</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>&nbsp;</td>
+    <td>{{(vitalite + parchoVitalite + panoplieVitalite)}}</td>
+    <td>{{(force + parchoForce + panoplieForce)}}</td>
+    <td>{{(intelligence + parchoIntelligence + panoplieIntelligence)}}</td>
+    <td>{{(chance + parchoChance + panoplieChance)}}</td>
+    <td>{{(agilite + parchoAgilite + panoplieAgilite)}}</td>
+    <td>{{puissance + panopliePuissance}}</td>
+  </tr>
+  <tr>
+    <td>Parcho</td>
+    <td>
+      <input [(ngModel)]="inputVitalite" (focusout)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita"
+             type="number" min="0" [max]="remainingPointsToUsed">
+    </td>
+    <td>
+      <input [(ngModel)]="inputForce" (focusout)="modifyStat(+$event.target.value, 'Force')" class="input is-force"
+             type="number" min="0" [max]="remainingPointsToUsed">
+    </td>
+    <td>
+      <input [(ngModel)]="inputIntelligence" (focusout)="modifyStat(+$event.target.value, 'Intelligence')"
+             class="input is-danger" type="number" min="0" [max]="remainingPointsToUsed">
+    </td>
+    <td>
+      <input [(ngModel)]="inputChance" (focusout)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary"
+             type="number" min="0" [max]="remainingPointsToUsed">
+    </td>
+    <td>
+      <input [(ngModel)]="inputAgilite" (focusout)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success"
+             type="number" min="0" [max]="remainingPointsToUsed">
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  </tbody>
+</table>
 
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Vit :</span> {{(vitalite + parchoVitalite + panoplieVitalite)}}
-      <input [(ngModel)]="inputVitalite" (focusout)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number" min="0" [max]="remainingPointsToUsed">
-    </div>
-    <div class="column is-2">
-      <span>For :</span> {{(force + parchoForce + panoplieForce)}}
-      <input [(ngModel)]="inputForce" (focusout)="modifyStat(+$event.target.value, 'Force')" class="input is-force" type="number" min="0" [max]="remainingPointsToUsed">
-    </div>
-    <div class="column is-2">
-      <span>Int :</span> {{(intelligence + parchoIntelligence + panoplieIntelligence)}}
-      <input [(ngModel)]="inputIntelligence" (focusout)="modifyStat(+$event.target.value, 'Intelligence')" class="input is-danger" type="number" min="0" [max]="remainingPointsToUsed">
-    </div>
-    <div class="column is-2">
-      <span>Cha :</span> {{(chance + parchoChance + panoplieChance)}}
-      <input [(ngModel)]="inputChance" (focusout)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary" type="number" min="0" [max]="remainingPointsToUsed">
-    </div>
-    <div class="column is-2">
-      <span>Agi :</span> {{(agilite + parchoAgilite + panoplieAgilite)}}
-      <input [(ngModel)]="inputAgilite" (focusout)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success" type="number" min="0" [max]="remainingPointsToUsed">
-    </div>
-    <div class="column is-2">
-      <span>Pui :</span> {{puissance}}
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <button class="button" (click)="resetStats()">Comme dirait Otomai : "Change ta constitution"</button>
     </div>
   </div>
-
-  <div class="columns has-text-centered">
-    <div class="column is-7">
-      <button class="button is-primary" (click)="resetStats()">Comme dirait Otomai : "Change ta constitution"</button>
-    </div>
-    <div class="column">
-      Total : {{remainingPointsToUsed}}
+  <div class="level-item has-text-centered">
+    <div>
+      Points restants : {{remainingPointsToUsed}}
     </div>
   </div>
-</div>
+</nav>

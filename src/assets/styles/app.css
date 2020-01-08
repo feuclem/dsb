@@ -1,7 +1,3 @@
-html {
-  background-color: #b0af9a !important;
-}
-
 a {
   cursor: pointer;
 }
@@ -10,32 +6,7 @@ a {
   outline: none;
 }
 
-nav {
-  background-color: #6a695d !important;
-  font-family: Anton, sans-serif;
-}
-
-.navbar {
-  color: white !important;
-}
-
-.statistique {
-  border-radius: 10px;
-  background-color: #577f4a;
-  margin: 20px;
-  padding: 5px;
-  font-family: Anton, sans-serif;
-}
-
-.green-left {
-  background-color: #757404;
-}
-
-.green-right {
-  background-color: #393802;
-}
-
-@font-face {
-  font-family: Anton;
-  src: url("../styles/Anton-Regular.ttf");
-}
+/*@font-face {*/
+/*  font-family: Anton;*/
+/*  src: url("../styles/Anton-Regular.ttf");*/
+/*}*/

@@ -1,53 +1,108 @@
-<div class="statistique green-left">
-  Résistances :
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Neu : </span>{{resistanceNeutre + panoplieResistanceNeutre}}
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Résistances :</strong>
+      </p>
     </div>
-    <div class="column is-2">
-      <span>Ter : </span>{{resistanceTerre + panoplieResistanceTerre}}
-    </div>
-    <div class="column is-2">
-      <span>Feu : </span>{{resistanceFeu + panoplieResistanceFeu}}
-    </div>
-    <div class="column is-2">
-      <span>Eau : </span>{{resistanceEau + panoplieResistanceEau}}
-    </div>
-    <div class="column is-2">
-      <span>Air : </span>{{resistanceAir + panoplieResistanceAir}}
-    </div>
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+              <th>Neutre</th>
+              <th>Terre</th>
+              <th>Feu</th>
+              <th>Eau</th>
+              <th>Air</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{resistanceNeutre + panoplieResistanceNeutre}}</td>
+              <td>{{resistanceTerre + panoplieResistanceTerre}}</td>
+              <td>{{resistanceFeu + panoplieResistanceFeu}}</td>
+              <td>{{resistanceEau + panoplieResistanceEau}}</td>
+              <td>{{resistanceAir + panoplieResistanceAir}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </div>
-  Résistances Fixes :
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Neu</span>: {{resistanceFixeNeutre + panoplieResistanceFixeNeutre}}
+</article>
+
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Résistances Fixes :</strong>
+      </p>
     </div>
-    <div class="column is-2">
-      <span>Ter</span>: {{resistanceFixeTerre + panoplieResistanceFixeTerre}}
-    </div>
-    <div class="column is-2">
-      <span>Feu</span>: {{resistanceFixeFeu + panoplieResistanceFixeFeu}}
-    </div>
-    <div class="column is-2">
-      <span>Eau</span>: {{resistanceFixeEau + panoplieResistanceFixeEau}}
-    </div>
-    <div class="column is-2">
-      <span>Air</span>: {{resistanceFixeAir + panoplieResistanceFixeAir}}
-    </div>
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+              <th>Mêlée</th>
+              <th>Distance</th>
+              <th>Critique</th>
+              <th>Poussée</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{resistanceFixeNeutre + panoplieResistanceFixeNeutre}}</td>
+              <td>{{resistanceFixeTerre + panoplieResistanceFixeTerre}}</td>
+              <td>{{resistanceFixeFeu + panoplieResistanceFixeFeu}}</td>
+              <td>{{resistanceFixeEau + panoplieResistanceFixeEau}}</td>
+              <td>{{resistanceFixeAir + panoplieResistanceFixeAir}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </div>
-  Autres résistances :
-  <div class="columns has-text-centered">
-    <div class="column is-3">
-      <span>Cri</span>: {{resistanceCritiques + panoplieResistanceCritiques}}
+</article>
+
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Résistances autres :</strong>
+      </p>
     </div>
-    <div class="column is-3">
-      <span>Pou</span>: {{resistancePoussees + panoplieResistancePoussees}}
-    </div>
-    <div class="column is-3">
-      <span>Dis</span>: {{resistanceDistance + panoplieResistanceDistance}}
-    </div>
-    <div class="column is-3">
-      <span>Mêl</span>: {{resistanceMelee + panoplieResistanceMelee}}
-    </div>
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+              <th>Neutre</th>
+              <th>Terre</th>
+              <th>Feu</th>
+              <th>Eau</th>
+              <th>Air</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{resistanceCritiques + panoplieResistanceCritiques}}</td>
+              <td>{{resistancePoussees + panoplieResistancePoussees}}</td>
+              <td>{{resistanceDistance + panoplieResistanceDistance}}</td>
+              <td>{{resistanceMelee + panoplieResistanceMelee}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </div>
-</div>
+</article>
