@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {CharacteristiqueService} from '../../shared/service/characteristique.service'
+import {PanoplieCharacteristiqueService} from '../../shared/service/panoplieCharacteristique.service'
 
 @Component({
   selector: 'dsb-characteristique2',
@@ -15,60 +16,53 @@ export class Characteristique2Component implements OnInit {
   dommagesEau: number
   dommagesAir: number
 
+  panoplieDommages: number
+  panoplieDommagesNeutre: number
+  panoplieDommagesTerre: number
+  panoplieDommagesFeu: number
+  panoplieDommagesEau: number
+  panoplieDommagesAir: number
+
   dommagesMelee: number
   dommagesDistance: number
   dommagesAuxSorts: number
   dommagesCritiques: number
   dommagesPoussee: number
 
-  constructor(private characteritiqueService: CharacteristiqueService) { }
+  panoplieDommagesMelee: number
+  panoplieDommagesDistance: number
+  panoplieDommagesAuxSorts: number
+  panoplieDommagesCritiques: number
+  panoplieDommagesPoussee: number
+
+  constructor(
+    private characteritiqueService: CharacteristiqueService,
+    private panoplieCharacteristiqueService: PanoplieCharacteristiqueService
+  ) { }
 
   ngOnInit() {
-    this.getDommages()
-    this.getDommagesNeutre()
-    this.getDommagesTerre()
-    this.getDommagesFeu()
-    this.getDommagesEau()
-    this.getDommagesAir()
-    this.getDommagesMelee()
-    this.getDommagesDistance()
-    this.getDommagesAuxSorts()
-    this.getDommagesCritiques()
-    this.getDommagesPoussee()
-  }
-
-  getDommages() {
     this.characteritiqueService._dommages.subscribe(value => this.dommages = value)
-  }
-  getDommagesNeutre() {
+    this.panoplieCharacteristiqueService._dommages.subscribe(value => this.panoplieDommages = value)
     this.characteritiqueService._dommagesNeutre.subscribe(value => this.dommagesNeutre = value)
-  }
-  getDommagesTerre() {
+    this.panoplieCharacteristiqueService._dommagesNeutre.subscribe(value => this.panoplieDommagesNeutre = value)
     this.characteritiqueService._dommagesTerre.subscribe(value => this.dommagesTerre = value)
-  }
-  getDommagesFeu() {
+    this.panoplieCharacteristiqueService._dommagesTerre.subscribe(value => this.panoplieDommagesTerre = value)
     this.characteritiqueService._dommagesFeu.subscribe(value => this.dommagesFeu = value)
-  }
-  getDommagesEau() {
+    this.panoplieCharacteristiqueService._dommagesFeu.subscribe(value => this.panoplieDommagesFeu = value)
     this.characteritiqueService._dommagesEau.subscribe(value => this.dommagesEau = value)
-  }
-  getDommagesAir() {
+    this.panoplieCharacteristiqueService._dommagesEau.subscribe(value => this.panoplieDommagesEau = value)
     this.characteritiqueService._dommagesAir.subscribe(value => this.dommagesAir = value)
-  }
-  getDommagesMelee() {
+    this.panoplieCharacteristiqueService._dommagesAir.subscribe(value => this.panoplieDommagesAir = value)
     this.characteritiqueService._dommagesMelee.subscribe(value => this.dommagesMelee = value)
-  }
-  getDommagesDistance() {
+    this.panoplieCharacteristiqueService._dommagesMelee.subscribe(value => this.panoplieDommagesMelee = value)
     this.characteritiqueService._dommagesDistance.subscribe(value => this.dommagesDistance = value)
-  }
-  getDommagesAuxSorts() {
+    this.panoplieCharacteristiqueService._dommagesDistance.subscribe(value => this.panoplieDommagesDistance = value)
     this.characteritiqueService._dommagesAuxSorts.subscribe(value => this.dommagesAuxSorts = value)
-  }
-  getDommagesCritiques() {
+    this.panoplieCharacteristiqueService._dommagesAuxSorts.subscribe(value => this.panoplieDommagesAuxSorts = value)
     this.characteritiqueService._dommagesCritiques.subscribe(value => this.dommagesCritiques = value)
-  }
-  getDommagesPoussee() {
+    this.panoplieCharacteristiqueService._dommagesCritiques.subscribe(value => this.panoplieDommagesCritiques = value)
     this.characteritiqueService._dommagesPoussee.subscribe(value => this.dommagesPoussee = value)
+    this.panoplieCharacteristiqueService._dommagesPoussee.subscribe(value => this.panoplieDommagesPoussee = value)
   }
 }
 

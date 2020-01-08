@@ -94,29 +94,20 @@ export class PanoplieService {
           )
         )
       } else if (equipement.type === 'Anneau') {
-        let hasAnneau1Empty = true
-        this.stuffService.getAnneau1().subscribe(value => {
-          if (value === undefined) {
-            this.stuffService.updateAnneau1(new StuffViewModel(
-              equipement.imgUrl,
-              equipement.stats,
-              equipement.id
-              )
+        if(this.stuffService._anneau1.value === undefined) {
+          this.stuffService.updateAnneau1(new StuffViewModel(
+            equipement.imgUrl,
+            equipement.stats,
+            equipement.id
             )
-            hasAnneau1Empty = false
-          }
-        })
-        if(hasAnneau1Empty) {
-          this.stuffService.getAnneau2().subscribe(value => {
-            if (value === undefined) {
-              this.stuffService.updateAnneau2(new StuffViewModel(
-                equipement.imgUrl,
-                equipement.stats,
-                equipement.id
-                )
-              )
-            }
-          })
+          )
+        } else {
+          this.stuffService.updateAnneau2(new StuffViewModel(
+            equipement.imgUrl,
+            equipement.stats,
+            equipement.id
+            )
+          )
         }
       }
       this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))

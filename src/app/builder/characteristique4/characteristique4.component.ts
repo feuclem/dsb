@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {CharacteristiqueService} from '../../shared/service/characteristique.service'
+import {PanoplieCharacteristiqueService} from '../../shared/service/panoplieCharacteristique.service'
 
 @Component({
   selector: 'dsb-characteristique4',
@@ -19,71 +20,60 @@ export class Characteristique4Component implements OnInit {
   resistanceFixeEau: number
   resistanceFixeAir: number
 
+  panoplieResistanceNeutre: number
+  panoplieResistanceTerre: number
+  panoplieResistanceFeu: number
+  panoplieResistanceEau: number
+  panoplieResistanceAir: number
+  panoplieResistanceFixeNeutre: number
+  panoplieResistanceFixeTerre: number
+  panoplieResistanceFixeFeu: number
+  panoplieResistanceFixeEau: number
+  panoplieResistanceFixeAir: number
+
   resistanceCritiques: number
   resistancePoussees: number
   resistanceDistance: number
   resistanceMelee: number
 
-  constructor(private characteritiqueService: CharacteristiqueService) { }
+  panoplieResistanceCritiques: number
+  panoplieResistancePoussees: number
+  panoplieResistanceDistance: number
+  panoplieResistanceMelee: number
+
+  constructor(
+    private characteritiqueService: CharacteristiqueService,
+    private panoplieCharacteristiqueService: PanoplieCharacteristiqueService
+  ) {}
 
   ngOnInit() {
-    this.getResistanceNeutre()
-    this.getResistanceTerre()
-    this.getResistanceFeu()
-    this.getResistanceEau()
-    this.getResistanceAir()
-    this.getResistanceFixeNeutre()
-    this.getResistanceFixeTerre()
-    this.getResistanceFixeFeu()
-    this.getResistanceFixeEau()
-    this.getResistanceFixeAir()
-    this.getResistanceCritiques()
-    this.getResistancePoussees()
-    this.getResistanceDistance()
-    this.getResistanceMelee()
-  }
-
-  getResistanceNeutre() {
     this.characteritiqueService._resistanceNeutre.subscribe(value => this.resistanceNeutre = value)
-  }
-  getResistanceTerre() {
+    this.panoplieCharacteristiqueService._resistanceNeutre.subscribe(value => this.panoplieResistanceNeutre = value)
     this.characteritiqueService._resistanceTerre.subscribe(value => this.resistanceTerre = value)
-  }
-  getResistanceFeu() {
+    this.panoplieCharacteristiqueService._resistanceTerre.subscribe(value => this.panoplieResistanceTerre = value)
     this.characteritiqueService._resistanceFeu.subscribe(value => this.resistanceFeu = value)
-  }
-  getResistanceEau() {
+    this.panoplieCharacteristiqueService._resistanceFeu.subscribe(value => this.panoplieResistanceFeu = value)
     this.characteritiqueService._resistanceEau.subscribe(value => this.resistanceEau = value)
-  }
-  getResistanceAir() {
+    this.panoplieCharacteristiqueService._resistanceEau.subscribe(value => this.panoplieResistanceEau = value)
     this.characteritiqueService._resistanceAir.subscribe(value => this.resistanceAir = value)
-  }
-  getResistanceFixeNeutre() {
+    this.panoplieCharacteristiqueService._resistanceAir.subscribe(value => this.panoplieResistanceAir = value)
     this.characteritiqueService._resistanceFixeNeutre.subscribe(value => this.resistanceFixeNeutre = value)
-  }
-  getResistanceFixeTerre() {
+    this.panoplieCharacteristiqueService._resistanceFixeNeutre.subscribe(value => this.panoplieResistanceFixeNeutre = value)
     this.characteritiqueService._resistanceFixeTerre.subscribe(value => this.resistanceFixeTerre = value)
-  }
-  getResistanceFixeFeu() {
+    this.panoplieCharacteristiqueService._resistanceFixeTerre.subscribe(value => this.panoplieResistanceFixeTerre = value)
     this.characteritiqueService._resistanceFixeFeu.subscribe(value => this.resistanceFixeFeu = value)
-  }
-  getResistanceFixeEau() {
+    this.panoplieCharacteristiqueService._resistanceFixeFeu.subscribe(value => this.panoplieResistanceFixeFeu = value)
     this.characteritiqueService._resistanceFixeEau.subscribe(value => this.resistanceFixeEau = value)
-  }
-  getResistanceFixeAir() {
+    this.panoplieCharacteristiqueService._resistanceFixeEau.subscribe(value => this.panoplieResistanceFixeEau = value)
     this.characteritiqueService._resistanceFixeAir.subscribe(value => this.resistanceFixeAir = value)
-  }
-  getResistanceCritiques() {
+    this.panoplieCharacteristiqueService._resistanceFixeAir.subscribe(value => this.panoplieResistanceFixeAir = value)
     this.characteritiqueService._resistanceCritiques.subscribe(value => this.resistanceCritiques = value)
-  }
-  getResistancePoussees() {
+    this.panoplieCharacteristiqueService._resistanceCritiques.subscribe(value => this.panoplieResistanceCritiques = value)
     this.characteritiqueService._resistancePoussees.subscribe(value => this.resistancePoussees = value)
-  }
-  getResistanceDistance() {
+    this.panoplieCharacteristiqueService._resistancePoussees.subscribe(value => this.panoplieResistancePoussees = value)
     this.characteritiqueService._resistanceDistance.subscribe(value => this.resistanceDistance = value)
-  }
-  getResistanceMelee() {
+    this.panoplieCharacteristiqueService._resistanceDistance.subscribe(value => this.panoplieResistanceDistance = value)
     this.characteritiqueService._resistanceMelee.subscribe(value => this.resistanceMelee = value)
+    this.panoplieCharacteristiqueService._resistanceMelee.subscribe(value => this.panoplieResistanceMelee = value)
   }
-
 }

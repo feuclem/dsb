@@ -3,11 +3,15 @@ import {ArmeDeChasse, Statistique} from '../entities/Statistique'
 import {CharacteristiqueService} from './characteristique.service'
 import {mapperForStat} from './mapperForStats'
 import {mapperForStatInStuff} from './mapperForStatsInStuff'
+import {PanoplieCharacteristiqueService} from './panoplieCharacteristique.service'
+import {mapperPanoplieForStatInStuff} from './mapperForPanoplieStatsInStuff'
 
 @Injectable()
 export class StatistiquesService {
 
-  constructor(private characteritiqueService: CharacteristiqueService) {
+  constructor(
+    private characteritiqueService: CharacteristiqueService,
+    private panoplieCharacteristiqueService: PanoplieCharacteristiqueService) {
   }
 
   extractor(stat) {
@@ -31,6 +35,13 @@ export class StatistiquesService {
     const occurrence = mapperForStatInStuff.filter(item => item.label === stat.label)
     if (occurrence.length > 0) {
       occurrence[0].type(this.characteritiqueService, stat.to)
+    }
+  }
+
+  setPanoplieStatInStuff(stat: Statistique) {
+    const occurrence = mapperPanoplieForStatInStuff.filter(item => item.label === stat.label)
+    if (occurrence.length > 0) {
+      occurrence[0].type(this.panoplieCharacteristiqueService, stat.to)
     }
   }
 

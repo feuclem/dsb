@@ -43,6 +43,7 @@ import {PointsdecaracService} from './shared/service/pointsdecarac.service'
 import {Characteristique4Component} from './builder/characteristique4/characteristique4.component'
 import {NavComponent} from './nav/nav.component'
 import {EquipementsComponent} from './chooser/equipements/equipements/equipements.component'
+import {PanoplieCharacteristiqueService} from './shared/service/panoplieCharacteristique.service'
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import {EquipementsComponent} from './chooser/equipements/equipements/equipement
   providers: [
     StuffService,
     CharacteristiqueService,
+    PanoplieCharacteristiqueService,
     StatistiquesService,
     PanoplieHttpService,
     PanoplieService,

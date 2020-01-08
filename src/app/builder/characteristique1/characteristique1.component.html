@@ -1,53 +1,53 @@
 <div class="statistique green-left">
   <div class="columns has-text-centered">
     <div class="column is-2">
-      <span>PA :</span> {{pa}}
+      <span>PA :</span> {{pa + panopliePa}}
     </div>
     <div class="column is-2">
-      <span>PM :</span> {{pm}}
+      <span>PM :</span> {{pm + panopliePm}}
     </div>
     <div class="column is-2">
-      <span>PO :</span> {{po}}
+      <span>PO :</span> {{po + panopliePo}}
     </div>
     <div class="column is-2">
-      <span>Invoc :</span> {{invocation}}
-    </div>
-  </div>
-
-  <div class="columns has-text-centered">
-    <div class="column is-2">
-      <span>Ini :</span> {{initiative}}
-    </div>
-    <div class="column is-2">
-      <span>Soins :</span> {{soin}}
-    </div>
-    <div class="column is-2">
-      <span>Prosp :</span> {{prospection}}
-    </div>
-    <div class="column is-2">
-      <span>Crit :</span> {{critique}}
+      <span>Invoc :</span> {{invocation + panoplieInvocation}}
     </div>
   </div>
 
   <div class="columns has-text-centered">
     <div class="column is-2">
-      <span>Vit :</span> {{(vitalite + parchoVitalite)}}
+      <span>Ini :</span> {{initiative + panoplieInitiative}}
+    </div>
+    <div class="column is-2">
+      <span>Soins :</span> {{soin + panoplieSoin}}
+    </div>
+    <div class="column is-2">
+      <span>Prosp :</span> {{prospection + panoplieProspection}}
+    </div>
+    <div class="column is-2">
+      <span>Crit :</span> {{critique + panoplieCritique}}
+    </div>
+  </div>
+
+  <div class="columns has-text-centered">
+    <div class="column is-2">
+      <span>Vit :</span> {{(vitalite + parchoVitalite + panoplieVitalite)}}
       <input [(ngModel)]="inputVitalite" (focusout)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
-      <span>For :</span> {{(force + parchoForce)}}
+      <span>For :</span> {{(force + parchoForce + panoplieForce)}}
       <input [(ngModel)]="inputForce" (focusout)="modifyStat(+$event.target.value, 'Force')" class="input is-force" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
-      <span>Int :</span> {{(intelligence + parchoIntelligence)}}
+      <span>Int :</span> {{(intelligence + parchoIntelligence + panoplieIntelligence)}}
       <input [(ngModel)]="inputIntelligence" (focusout)="modifyStat(+$event.target.value, 'Intelligence')" class="input is-danger" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
-      <span>Cha :</span> {{(chance + parchoChance)}}
+      <span>Cha :</span> {{(chance + parchoChance + panoplieChance)}}
       <input [(ngModel)]="inputChance" (focusout)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
-      <span>Agi :</span> {{(agilite + parchoAgilite)}}
+      <span>Agi :</span> {{(agilite + parchoAgilite + panoplieAgilite)}}
       <input [(ngModel)]="inputAgilite" (focusout)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success" type="number" min="0" [max]="remainingPointsToUsed">
     </div>
     <div class="column is-2">
