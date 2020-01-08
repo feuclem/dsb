@@ -1,14 +1,5 @@
-<div class="statistique green-right">
-  <div class="columns">
-    <div class="column is-4">
-      <span>Bonus de panoplie :</span>
-    </div>
-    <div class="column is-8">
-      <div *ngIf="getBonusStatsToAdd && getBonusStatsToAdd.length !== 0" class="bonus">
-        <div *ngFor="let bonus of getBonusStatsToAdd">
-          <span>{{bonus.label}} : {{bonus.from}}</span>
-        </div>
-      </div>
-    </div>
+<div *ngIf="getBonusStatsToAdd && getBonusStatsToAdd.length !== 0" class="bonus">
+  <div *ngFor="let bonus of getBonusStatsToAdd">
+    <span>{{bonus.label}} : {{bonus.from}}</span>
   </div>
 </div>

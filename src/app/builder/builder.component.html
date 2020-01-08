@@ -8,31 +8,29 @@
         <div class="tile">
           <div class="tile is-parent is-vertical">
             <article class="tile is-child notification is-primary">
+              <p class="title">Charactéristiques principales :</p>
               <dsb-characteristique1></dsb-characteristique1>
             </article>
             <article class="tile is-child notification is-warning">
+              <p class="title">Dommages :</p>
               <dsb-characteristique2></dsb-characteristique2>
             </article>
             <article class="tile is-child notification is-primary">
+              <p class="title">Autres charactéristiques :</p>
               <dsb-characteristique3></dsb-characteristique3>
             </article>
             <article class="tile is-child notification is-warning">
+              <p class="title">Résistances :</p>
               <dsb-characteristique4></dsb-characteristique4>
             </article>
           </div>
 
           <div class="tile is-parent">
             <article class="tile is-child notification is-info">
-              <p class="title">Classe</p>
-              <figure *ngIf="classe === undefined || classe === ''" class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </figure>
-              <figure *ngIf="classe === 'Iop'" class="image is-4by3">
-                <img src="../../assets/iop.png">
-              </figure>
-              <figure *ngIf="classe === 'Sacrieur'" class="image is-4by3">
-                <img src="../../assets/sacrieur.webp">
-              </figure>
+              <div class="content">
+                <p class="title">Inventaire :</p>
+                <dsb-stuff1></dsb-stuff1>
+              </div>
             </article>
           </div>
         </div>
@@ -48,19 +46,11 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-success">
           <div class="content">
-            <p class="title">Inventaire</p>
-            <dsb-stuff1></dsb-stuff1>
+            <p class="title">Bonus(s) panoplie(s) :</p>
+            <dsb-panoplie-bonus></dsb-panoplie-bonus>
           </div>
         </article>
       </div>
-    </div>
-
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
-        <div class="content">
-          <dsb-panoplie-bonus></dsb-panoplie-bonus>
-        </div>
-      </article>
     </div>
   </main>
 </div>
