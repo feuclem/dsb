@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../../shared/service/stuff.service'
 import {StuffViewModel} from '../StuffViewModel'
-import {validate} from 'codelyzer/walkerFactory/walkerFn'
-import {v} from '@angular/core/src/render3'
+import {StatistiquesService} from '../../shared/service/statistiques.service'
 
 @Component({
   selector: 'dsb-stuff1',
@@ -24,7 +23,8 @@ export class Stuff1Component implements OnInit {
   bouclier: StuffViewModel
 
   constructor(
-    private stuffService: StuffService
+    private stuffService: StuffService,
+    private statistiquesService: StatistiquesService
   ) {
   }
 
@@ -42,58 +42,67 @@ export class Stuff1Component implements OnInit {
     this.bouclier = this.stuffService.bouclier
   }
 
-  removeAmulette(equipementId: number) {
-      this.stuffService.updateAmulette(undefined)
-      this.stuffService.removeStuffFromListEquipmentId = equipementId
+  removeAmulette(stuffViewModel: StuffViewModel) {
+    this.stuffService.updateAmulette(undefined)
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeAnneau1(equipementId: number) {
+  removeAnneau1(stuffViewModel: StuffViewModel) {
     this.stuffService.updateAnneau1(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeAnneau2(equipementId: number) {
+  removeAnneau2(stuffViewModel: StuffViewModel) {
     this.stuffService.updateAnneau2(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeCeinture(equipementId: number) {
+  removeCeinture(stuffViewModel: StuffViewModel) {
     this.stuffService.updateCeinture(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeBottes(equipementId: number) {
+  removeBottes(stuffViewModel: StuffViewModel) {
     this.stuffService.updateBottes(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeCoiffe(equipementId: number) {
+  removeCoiffe(stuffViewModel: StuffViewModel) {
     this.stuffService.updateCoiffe(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeCape(equipementId: number) {
+  removeCape(stuffViewModel: StuffViewModel) {
     this.stuffService.updateCape(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeArme(equipementId: number) {
+  removeArme(stuffViewModel: StuffViewModel) {
     this.stuffService.updateArme(undefined)
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removeBouclier(equipementId: number) {
+  removeBouclier(stuffViewModel: StuffViewModel) {
     this.stuffService.bouclier = undefined
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
-  removePets(equipementId: number, type: String) {
-    if(type === 'Monture') {
+  removePets(stuffViewModel: StuffViewModel, type: String) {
+    if (type === 'Monture') {
       this.stuffService.updateMonture(undefined)
+      stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
     } else {
       this.stuffService.familier = undefined
     }
-    this.stuffService.removeStuffFromListEquipmentId = equipementId
+    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
   }
 
 }

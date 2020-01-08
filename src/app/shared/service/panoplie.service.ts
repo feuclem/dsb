@@ -4,7 +4,6 @@ import {Statistique} from '../entities/Statistique'
 import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
 import {StatistiquesService} from './statistiques.service'
-import {StuffEquipementId} from '../entities/StuffEquipementId'
 import {StuffViewModel} from '../../builder/StuffViewModel'
 
 @Injectable()
@@ -94,25 +93,32 @@ export class PanoplieService {
           )
         )
       } else if (equipement.type === 'Anneau') {
-        this.stuffService.getAnneau1().subscribe(value1 => {
-          if (value1 === undefined) {
+        let hasAnneau1Empty = true
+        this.stuffService.getAnneau1().subscribe(value => {
+          if (value === undefined) {
             this.stuffService.updateAnneau1(new StuffViewModel(
               equipement.imgUrl,
               equipement.stats,
               equipement.id
               )
             )
-          } else {
-            this.stuffService.updateAnneau2(new StuffViewModel(
-              equipement.imgUrl,
-              equipement.stats,
-              equipement.id
-              )
-            )
+            hasAnneau1Empty = false
           }
         })
+        if(hasAnneau1Empty) {
+          this.stuffService.getAnneau2().subscribe(value => {
+            if (value === undefined) {
+              this.stuffService.updateAnneau1(new StuffViewModel(
+                equipement.imgUrl,
+                equipement.stats,
+                equipement.id
+                )
+              )
+            }
+          })
+        }
       }
-      this.stuffService.listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
+      this.stuffService.addStuffFromListEquipmentId(equipement)
       equipement.stats.forEach(stat => {
         this.statistiquesService.setStatInStuff(stat)
       })

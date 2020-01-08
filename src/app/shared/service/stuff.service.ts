@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core'
 import {StuffViewModel} from '../../builder/StuffViewModel'
 import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 import {Observable} from 'rxjs/Observable'
+import {StuffEquipementId} from '../entities/StuffEquipementId'
+import {Equipement} from '../entities/Equipement'
 
 @Injectable()
 export class StuffService {
@@ -181,7 +183,11 @@ export class StuffService {
     }
   }
 
-  set removeStuffFromListEquipmentId(idEquipement: number) {
+  addStuffFromListEquipmentId(equipement: Equipement) {
+    this._listStuffEquipmentId = [new StuffEquipementId(equipement.id, equipement.type)]
+  }
+
+  removeStuffFromListEquipmentId(idEquipement: number) {
     const toto = this.listStuffEquipmentId.findIndex(value1 => value1.id === idEquipement)
     this._listStuffEquipmentId.splice(toto, 1)
   }

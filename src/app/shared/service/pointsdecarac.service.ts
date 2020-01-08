@@ -62,6 +62,7 @@ export class PointsdecaracService {
     this.characteristiqueService.resetIntelligence()
     this.characteristiqueService.resetChance()
     this.characteristiqueService.resetAgilite()
+    this.remainingPoints = 995
     this.updateRemainingPointsToUsed(995)
   }
 

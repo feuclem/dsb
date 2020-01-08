@@ -33,4 +33,11 @@ export class StatistiquesService {
       occurrence[0].type(this.characteritiqueService, stat.to)
     }
   }
+
+  unsetStatInStuff(stat: Statistique) {
+    const occurrence = mapperForStatInStuff.filter(item => item.label === stat.label)
+    if (occurrence.length > 0) {
+      occurrence[0].type(this.characteritiqueService, - stat.to)
+    }
+  }
 }
