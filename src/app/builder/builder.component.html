@@ -1,6 +1,6 @@
 <dsb-nav></dsb-nav>
 
-<main>
+<main class="customizedMarginTop">
   <div class="tile is-ancestor">
     <div class="tile is-vertical is-8">
       <div class="tile">
@@ -41,13 +41,45 @@
         </article>
       </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-success">
-        <div class="content">
-          <p class="title">Bonus(s) panoplie(s) :</p>
-          <dsb-panoplie-bonus></dsb-panoplie-bonus>
+
+    <div class="card1" (click)="toggleCard()">
+      <div [ngClass]="isPanoplieBonusVisible ? 'faces' : 'faces flipped'">
+        <div class="face front">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <div class="content">
+                <div class="columns">
+                  <div class="column">
+                    <p class="title">Bonus panoplie(s) :</p>
+                  </div>
+                  <div class="column is-1">
+                    <i class="fas fa-arrow-right is-large"></i>
+                  </div>
+                </div>
+                <dsb-panoplie-bonus></dsb-panoplie-bonus>
+              </div>
+            </article>
+          </div>
         </div>
-      </article>
+
+        <div class="face back">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <div class="content">
+                <div class="columns">
+                  <div class="column">
+                    <p class="title">Stuff sélectionné :</p>
+                  </div>
+                  <div class="column is-1">
+                    <i class="fas fa-arrow-left is-large"></i>
+                  </div>
+                </div>
+                <dsb-stuff-viewer></dsb-stuff-viewer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </main>

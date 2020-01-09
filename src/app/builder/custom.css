@@ -1,0 +1,26 @@
+.card1 {
+  width: 50%;
+  float:left;
+}
+.card1 .faces.flipped {
+  -webkit-transform: rotateY(-180deg);
+}
+.card1 .faces {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+}
+.card1 .faces .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+.card1 .faces .front {
+  cursor: pointer;
+}
+.card1 .faces .back {
+  cursor: pointer;
+  -webkit-transform: rotateY(-180deg);
+}

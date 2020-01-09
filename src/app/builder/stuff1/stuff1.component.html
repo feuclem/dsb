@@ -1,5 +1,5 @@
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(amulette)">
     <div [className]="amulette !== undefined ? 'customizedContent': ''">
       <a *ngIf="amulette === undefined" routerLink="amulette">Amulette</a>
 
@@ -10,7 +10,7 @@
 </div>
 
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(anneau1)">
     <div [className]="anneau1 !== undefined ? 'customizedContent': ''">
       <a *ngIf="anneau1 === undefined" routerLink="anneau1">Anneau</a>
 
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(anneau2)">
     <div [className]="anneau2 !== undefined ? 'customizedContent': ''">
       <a *ngIf="anneau2 === undefined" routerLink="anneau2">Anneau</a>
 
@@ -30,7 +30,7 @@
 </div>
 
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(ceinture)">
     <div [className]="ceinture !== undefined ? 'customizedContent': ''">
       <a *ngIf="ceinture === undefined" routerLink="ceinture">Ceinture</a>
 
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(bottes)">
     <div [className]="bottes !== undefined ? 'customizedContent': ''">
       <a *ngIf="bottes === undefined" routerLink="bottes">Bottes</a>
 
@@ -50,7 +50,7 @@
 </div>
 
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(coiffe)">
     <div [className]="coiffe !== undefined ? 'customizedContent': ''">
       <a *ngIf="coiffe === undefined" routerLink="coiffe">Coiffe</a>
 
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(cape)">
     <div [className]="cape !== undefined ? 'customizedContent': ''">
       <a *ngIf="cape === undefined" routerLink="cape">Cape</a>
 
@@ -70,7 +70,7 @@
 </div>
 
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(arme)">
     <div [className]="arme !== undefined ? 'customizedContent': ''">
       <a *ngIf="arme === undefined" routerLink="armes">Arme</a>
 
@@ -79,7 +79,7 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(bouclier)">
     <div [className]="bouclier !== undefined ? 'customizedContent': ''">
       <a *ngIf="bouclier === undefined" routerLink="bouclier">Bouclier</a>
 
@@ -91,7 +91,7 @@
 </div>
 
 <div class="columns has-text-centered">
-  <div class="column">
+  <div class="column" (click)="updateStuffViewer(familier)">
     <div [className]="familier !== undefined || monture !== undefined ? 'customizedContent': ''">
       <div *ngIf="monture === undefined">
         <a *ngIf="familier === undefined" routerLink="familier">Choisir Familier</a>

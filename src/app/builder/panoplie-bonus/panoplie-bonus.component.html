@@ -3,3 +3,7 @@
     <span>{{bonus.label}} : {{bonus.from}}</span>
   </div>
 </div>
+
+<div *ngIf="getBonusStatsToAdd === undefined || getBonusStatsToAdd.length === 0">
+  Aucun bonus de panoplie n'est actif.
+</div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../../shared/service/stuff.service'
 import {StuffViewModel} from '../StuffViewModel'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {StuffWatcherService} from '../stuff.watcher.service'
 
 @Component({
   selector: 'dsb-stuff1',
@@ -24,7 +25,8 @@ export class Stuff1Component implements OnInit {
 
   constructor(
     private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
+    private statistiquesService: StatistiquesService,
+    private stuffWatcherService: StuffWatcherService
   ) {}
 
   ngOnInit() {
@@ -102,6 +104,10 @@ export class Stuff1Component implements OnInit {
       this.stuffService.updateFamilier(undefined)
     }
     this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+  }
+
+  updateStuffViewer(value: StuffViewModel) {
+    this.stuffWatcherService.updateSelectedStuffToWatch(value)
   }
 
 }

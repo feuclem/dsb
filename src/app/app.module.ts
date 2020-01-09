@@ -48,6 +48,8 @@ import {DevlogComponent} from './devlog/devlog.component'
 import {FooterComponent} from './footer/footer.component'
 import {EquipementsHttpService} from './shared/httpService/equipements.http.service'
 import {SpellComponent} from './spell/spell.component'
+import {StuffViewerComponent} from './builder/stuff-viewer/stuff-viewer.component'
+import {StuffWatcherService} from './builder/stuff.watcher.service'
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import {SpellComponent} from './spell/spell.component'
     ProgressbarComponent,
     DevlogComponent,
     FooterComponent,
-    SpellComponent
+    SpellComponent,
+    StuffViewerComponent
   ],
   imports: [
     CommonModule,
@@ -101,7 +104,8 @@ import {SpellComponent} from './spell/spell.component'
     DamageCalculatorService,
     ClasseService,
     PointsdecaracService,
-    EquipementsHttpService
+    EquipementsHttpService,
+    StuffWatcherService
   ],
   bootstrap: [AppComponent]
 })
