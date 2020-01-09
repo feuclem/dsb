@@ -58,15 +58,20 @@ export class PanoplieService {
   }
 
   setPanoplieToStuff(setId: number) {
+    console.log("PASSE LA 1")
     const equipements = this.getFullPanoplie(setId)
+    console.log("PASSE LA 2")
     equipements.forEach(equipement => {
+      console.log("PASSE LA 3")
       if (equipement.type === 'Amulette') {
+        console.log("PASSE LA Amulette")
         this.stuffService.updateAmulette(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
           equipement.id
         ))
       } else if (equipement.type === 'Chapeau') {
+        console.log("PASSE LA Chapeau")
         this.stuffService.updateCoiffe(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
@@ -80,6 +85,7 @@ export class PanoplieService {
           )
         )
       } else if (equipement.type === 'Ceinture') {
+        console.log("PASSE LA Ceinture")
         this.stuffService.updateCeinture(new StuffViewModel(
           equipement.imgUrl,
           equipement.stats,
@@ -94,6 +100,7 @@ export class PanoplieService {
           )
         )
       } else if (equipement.type === 'Anneau') {
+        console.log("PASSE LA Anneau")
         if(this.stuffService._anneau1.value === undefined) {
           this.stuffService.updateAnneau1(new StuffViewModel(
             equipement.imgUrl,
