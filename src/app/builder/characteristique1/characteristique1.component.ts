@@ -20,6 +20,11 @@ export class Characteristique1Component implements OnInit {
   soin: number
   prospection: number
 
+  hasExoPa: boolean = false
+  hasExoPm: boolean = false
+  hasExoPo: boolean = false
+  hasExoInvo: boolean = false
+
   panopliePa: number
   panopliePm: number
   panopliePo: number
@@ -101,11 +106,16 @@ export class Characteristique1Component implements OnInit {
     this.characteritiqueService._vitalite.subscribe(value => this.vitalite = value)
     this.panoplieCharacteristiqueService._vitalite.subscribe(value => this.panoplieVitalite = value)
     this.getRemainingPointsToUsed()
+
+    this.hasExoPa = this.characteristiqueService.hasExoPa
+    this.hasExoPm = this.characteristiqueService.hasExoPm
+    this.hasExoPo = this.characteristiqueService.hasExoPo
+    this.hasExoInvo = this.characteristiqueService.hasExoInvo
   }
 
   // TODO CLEM sortir ca dans un service ou dans un component
   modifyStat(points: number, charac: String) {
-    if(this.pointsdecaracService.hasRemainingPointsAvailable(points)) {
+    if (this.pointsdecaracService.hasRemainingPointsAvailable(points)) {
       this.pointsdecaracService.addPointToCharacteristique(points, charac)
     } else {
       alert('Vous ne pouvez plus ajouter de points de caractéristiques.')
@@ -113,29 +123,37 @@ export class Characteristique1Component implements OnInit {
   }
 
   modifyExo(charac: String, event: any) {
-    if(charac === 'PA') {
-      if(event.target.checked) {
+    if (charac === 'PA') {
+      if (event.target.checked) {
         this.characteristiqueService.updatePa(1)
+        this.characteristiqueService.hasExoPa = true
       } else {
         this.characteristiqueService.updatePa(-1)
+        this.characteristiqueService.hasExoPa = false
       }
-    } else if(charac === 'PM'){
-      if(event.target.checked) {
+    } else if (charac === 'PM') {
+      if (event.target.checked) {
         this.characteristiqueService.updatePm(1)
+        this.characteristiqueService.hasExoPm = true
       } else {
         this.characteristiqueService.updatePm(-1)
+        this.characteristiqueService.hasExoPm = false
       }
-    } else if(charac === 'PO') {
-      if(event.target.checked) {
+    } else if (charac === 'PO') {
+      if (event.target.checked) {
         this.characteristiqueService.updatePo(1)
+        this.characteristiqueService.hasExoPo = true
       } else {
         this.characteristiqueService.updatePo(-1)
+        this.characteristiqueService.hasExoPo = false
       }
     } else {
-      if(event.target.checked) {
+      if (event.target.checked) {
         this.characteristiqueService.updateInvocation(1)
+        this.characteristiqueService.hasExoInvo = true
       } else {
         this.characteristiqueService.updateInvocation(-1)
+        this.characteristiqueService.hasExoInvo = false
       }
     }
   }

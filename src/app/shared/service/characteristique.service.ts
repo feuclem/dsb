@@ -73,6 +73,11 @@ export class CharacteristiqueService {
 
   _parchoAgilite = new BehaviorSubject<number>(100)
 
+  hasExoPa: boolean = false
+  hasExoPm: boolean = false
+  hasExoPo: boolean = false
+  hasExoInvo: boolean = false
+
   updateVitalite(value: number): void {
     this._vitalite.next(value += this._vitalite.getValue())
   }

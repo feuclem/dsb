@@ -1,120 +1,114 @@
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <div>
-        <img *ngIf="amulette !== undefined" src="{{amulette.imgUrl}}" alt=""/>
-        <a *ngIf="amulette === undefined" routerLink="amulette">Amulette</a>
-      </div>
-    </div>
-    <div *ngIf="amulette !== undefined" class="column">
-      <button (click)="removeAmulette(amulette)" class="delete is-danger">
-      </button>
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="amulette !== undefined ? 'customizedContent': ''">
+      <a *ngIf="amulette === undefined" routerLink="amulette">Amulette</a>
+
+      <img *ngIf="amulette !== undefined" src="{{amulette.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="amulette !== undefined" (click)="removeAmulette(amulette)" class="delete is-danger customizedButtonPosition"></button>
     </div>
   </div>
 </div>
 
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="anneau1 !== undefined" src="{{anneau1.imgUrl}}" alt=""/>
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="anneau1 !== undefined ? 'customizedContent': ''">
       <a *ngIf="anneau1 === undefined" routerLink="anneau1">Anneau</a>
-    </div>
-    <div *ngIf="anneau1 !== undefined" class="column">
-      <button (click)="removeAnneau1(anneau1)" class="delete is-danger">
-      </button>
-    </div>
 
-    <div class="column margin-top-32">
-      <img *ngIf="anneau2 !== undefined" src="{{anneau2.imgUrl}}" alt=""/>
+      <img *ngIf="anneau1 !== undefined" src="{{anneau1.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="anneau1 !== undefined" (click)="removeAnneau1(anneau1)" class="delete is-danger customizedButtonPosition"></button>
+    </div>
+  </div>
+
+  <div class="column">
+    <div [className]="anneau2 !== undefined ? 'customizedContent': ''">
       <a *ngIf="anneau2 === undefined" routerLink="anneau2">Anneau</a>
-    </div>
-    <div *ngIf="anneau2 !== undefined" class="column">
-      <button (click)="removeAnneau2(anneau2)" class="delete is-danger">
-      </button>
+
+      <img *ngIf="anneau2 !== undefined" src="{{anneau2.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="anneau2 !== undefined" (click)="removeAnneau2(anneau2)" class="delete is-danger customizedButtonPosition"></button>
     </div>
   </div>
 </div>
 
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="ceinture !== undefined" src="{{ceinture.imgUrl}}" alt=""/>
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="ceinture !== undefined ? 'customizedContent': ''">
       <a *ngIf="ceinture === undefined" routerLink="ceinture">Ceinture</a>
-    </div>
-    <div *ngIf="ceinture !== undefined" class="column">
-      <button (click)="removeCeinture(ceinture)" class="delete is-danger">
-      </button>
-    </div>
 
-    <div class="column margin-top-32">
-      <img *ngIf="bottes !== undefined" src="{{bottes.imgUrl}}" alt=""/>
+      <img *ngIf="ceinture !== undefined" src="{{ceinture.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="ceinture !== undefined" (click)="removeCeinture(ceinture)" class="delete is-danger customizedButtonPosition"></button>
+    </div>
+  </div>
+
+  <div class="column">
+    <div [className]="bottes !== undefined ? 'customizedContent': ''">
       <a *ngIf="bottes === undefined" routerLink="bottes">Bottes</a>
-    </div>
-    <div *ngIf="bottes !== undefined" class="column">
-      <button (click)="removeBottes(bottes)" class="delete is-danger">
-      </button>
+
+      <img *ngIf="bottes !== undefined" src="{{bottes.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="bottes !== undefined" (click)="removeBottes(bottes)" class="delete is-danger customizedButtonPosition"></button>
     </div>
   </div>
 </div>
 
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="coiffe !== undefined" src="{{coiffe.imgUrl}}" alt=""/>
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="coiffe !== undefined ? 'customizedContent': ''">
       <a *ngIf="coiffe === undefined" routerLink="coiffe">Coiffe</a>
-    </div>
-    <div *ngIf="coiffe !== undefined" class="column">
-      <button (click)="removeCoiffe(coiffe)" class="delete is-danger">
-      </button>
-    </div>
 
-    <div class="column margin-top-32">
-      <img *ngIf="cape !== undefined" src="{{cape.imgUrl}}" alt=""/>
+      <img *ngIf="coiffe !== undefined" src="{{coiffe.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="coiffe !== undefined" (click)="removeCoiffe(coiffe)" class="delete is-danger customizedButtonPosition"></button>
+    </div>
+  </div>
+
+  <div class="column">
+    <div [className]="cape !== undefined ? 'customizedContent': ''">
       <a *ngIf="cape === undefined" routerLink="cape">Cape</a>
-    </div>
-    <div *ngIf="cape !== undefined" class="column">
-      <button (click)="removeCape(cape)" class="delete is-danger">
-      </button>
+
+      <img *ngIf="cape !== undefined" src="{{cape.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="cape !== undefined" (click)="removeCape(cape)" class="delete is-danger customizedButtonPosition"></button>
     </div>
   </div>
 </div>
 
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
-      <img *ngIf="arme !== undefined" src="{{arme.imgUrl}}" alt=""/>
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="arme !== undefined ? 'customizedContent': ''">
       <a *ngIf="arme === undefined" routerLink="armes">Arme</a>
-    </div>
-    <div *ngIf="arme !== undefined" class="column">
-      <button (click)="removeArme(arme)" class="delete is-danger">
-      </button>
-    </div>
 
-    <div class="column margin-top-32">
-      <img *ngIf="bouclier !== undefined" src="{{bouclier.imgUrl}}" alt=""/>
-      <a *ngIf="bouclier === undefined" routerLink="bouclier">Bouclier</a>
-    </div>
-    <div *ngIf="bouclier !== undefined" class="column">
-      <button (click)="removeBouclier(bouclier)" class="delete is-danger">
-      </button>
+      <img *ngIf="arme !== undefined" src="{{arme.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="arme !== undefined" (click)="removeArme(arme)" class="delete is-danger customizedButtonPosition"></button>
     </div>
   </div>
+
+  <div class="column">
+    <div [className]="bouclier !== undefined ? 'customizedContent': ''">
+      <a *ngIf="bouclier === undefined" routerLink="bouclier">Bouclier</a>
+
+      <img *ngIf="bouclier !== undefined" src="{{bouclier.imgUrl}}" alt="" class="is-200x200" />
+      <button *ngIf="bouclier !== undefined" (click)="removeBouclier(bouclier)" class="delete is-danger customizedButtonPosition"></button>
+    </div>
+  </div>
+
 </div>
 
-<div class="statistique green-right">
-  <div class="columns has-text-centered">
-    <div class="column margin-top-32">
+<div class="columns has-text-centered">
+  <div class="column">
+    <div [className]="familier !== undefined || monture !== undefined ? 'customizedContent': ''">
       <div *ngIf="monture === undefined">
-        <img *ngIf="familier !== undefined" src="{{familier.imgUrl}}" alt=""/>
         <a *ngIf="familier === undefined" routerLink="familier">Choisir Familier</a>
+
+        <img *ngIf="familier !== undefined" src="{{familier.imgUrl}}" alt="" class="is-200x200" />
+        <button *ngIf="familier !== undefined"
+                (click)="removePets(monture ? monture : familier, monture ? 'Monture' : 'Familier')"
+                class="delete is-danger customizedButtonPosition"></button>
       </div>
       <div *ngIf="familier === undefined">
-        <img *ngIf="monture !== undefined" src="{{monture.imgUrl}}" alt=""/>
         <a *ngIf="monture === undefined" routerLink="monture">Choisir Monture</a>
+
+        <img *ngIf="monture !== undefined" src="{{monture.imgUrl}}" alt="" class="is-200x200" />
+        <button *ngIf="monture !== undefined"
+                (click)="removePets(monture ? monture : familier, monture ? 'Monture' : 'Familier')"
+                class="delete is-danger customizedButtonPosition"></button>
       </div>
-    </div>
-    <div *ngIf="familier !== undefined || monture !== undefined" class="column">
-      <button (click)="removePets(monture ? monture : familier, monture ? 'Monture' : 'Familier')" class="delete is-danger"></button>
     </div>
   </div>
 </div>

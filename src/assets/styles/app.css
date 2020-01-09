@@ -10,6 +10,11 @@ a {
   margin-top: 25px
 }
 
+/*// TODO CLEM je sais pas pourquoi le style de bulma est a 2.25 en padding right j'ai override la classe du coup*/
+.notification {
+  padding: 1.25em;
+}
+
 /*@font-face {*/
 /*  font-family: Anton;*/
 /*  src: url("../styles/Anton-Regular.ttf");*/
