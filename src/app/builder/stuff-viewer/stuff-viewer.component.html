@@ -1,0 +1,30 @@
+<div class="card" *ngIf="stats !== undefined && stats.length > 0">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image">
+          <img src="{{imgUrl}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title">{{name}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div *ngFor="let stat of stats">
+        <div class="columns">
+          <div class="column">
+            <u>{{stat.label}}</u>
+            : {{stat.from}}
+            à {{stat.to}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="stats === undefined || stats.length === 0">
+  Aucun stuff n'a été sélectionné.
+</div>
