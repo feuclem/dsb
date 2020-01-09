@@ -4,16 +4,13 @@ import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
-import {AnneauHttpService} from './anneau.http.service'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
+import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
 
 @Component({
   selector: 'dsb-anneau1',
-  templateUrl: '../equipements/equipements.component.html',
-  providers: [
-    AnneauHttpService
-  ]
+  templateUrl: '../equipements/equipements.component.html'
 })
 export class Anneau1Component extends EquipementsComponent implements OnInit {
 
@@ -22,15 +19,14 @@ export class Anneau1Component extends EquipementsComponent implements OnInit {
     stuffService: StuffService,
     statistiquesService: StatistiquesService,
     panoplieService: PanoplieService,
-    private anneauHttpService: AnneauHttpService,
+    equipementsHttpService: EquipementsHttpService
   ) {
-    super(router, stuffService, statistiquesService, panoplieService)
+    equipementsHttpService.type = 'anneaux'
+    super(router, stuffService, statistiquesService, panoplieService, equipementsHttpService)
   }
 
   ngOnInit() {
-    this.anneauHttpService.getAllEquipements().then(response => {
-      this.equipements = response
-    })
+    super.ngOnInit()
   }
 
   setItem(equipement: Equipement) {

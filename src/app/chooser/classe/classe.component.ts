@@ -14,8 +14,7 @@ export class ClasseComponent implements OnInit {
   ]
   currentClasse = ''
 
-  constructor(private classeService: ClasseService) {
-  }
+  constructor(private classeService: ClasseService) {}
 
   ngOnInit() {
     this.currentClasse = this.classeService._classe.getValue()

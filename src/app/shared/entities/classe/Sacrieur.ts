@@ -9,7 +9,7 @@ export class Sacrieur {
     'eau',
     [21, 25],
     [25, 30],
-    'Augmente les dégâts de base du sort Nervosité de 15 (2 tours)',
+    'Augmente les dégâts de base du spell Nervosité de 15 (2 tours)',
     15
   )
   dechainement = new SortsBoost(
@@ -18,7 +18,7 @@ export class Sacrieur {
     'eau',
     [32, 36],
     [38, 43],
-    'Augmente les dégâts de base du sort Déchaînement de 20 (2 tours)',
+    'Augmente les dégâts de base du spell Déchaînement de 20 (2 tours)',
     20
   )
   hemorragie = new Sorts(
@@ -55,7 +55,7 @@ export class Sacrieur {
     'feu',
     [21, 25],
     [25, 30],
-    'Augmente les dégâts de base du sort Douleur Cuisante de 15 (2 tours)',
+    'Augmente les dégâts de base du spell Douleur Cuisante de 15 (2 tours)',
     15
   )
   immolation = new SortsBoost(
@@ -64,7 +64,7 @@ export class Sacrieur {
     'feu',
     [33, 37],
     [40, 44],
-    'Augmente les dégâts de base du sort Immolation de 20 (2 tours)',
+    'Augmente les dégâts de base du spell Immolation de 20 (2 tours)',
     15
   )
   ravage = new Sorts(
@@ -143,7 +143,7 @@ export class Sacrieur {
     'terre',
     [24, 28],
     [29, 34],
-    'Augmente les dégâts de base du sort Décimation de 20 (2 tours)',
+    'Augmente les dégâts de base du spell Décimation de 20 (2 tours)',
     20
   )
   entaille = new SortsBoost(
@@ -152,7 +152,7 @@ export class Sacrieur {
     'terre',
     [35, 39],
     [42, 47],
-    'Augmente les dégâts de base du sort Entaille de 30 (2 tours)',
+    'Augmente les dégâts de base du spell Entaille de 30 (2 tours)',
     30
   )
   furie = new SortsBoost(
@@ -161,7 +161,7 @@ export class Sacrieur {
     'air',
     [24, 28],
     [29, 34],
-    'Augmente les dégâts de base du sort Furie de 20 (2 tours)',
+    'Augmente les dégâts de base du spell Furie de 20 (2 tours)',
     20
   )
   carnage = new SortsBoost(
@@ -170,7 +170,7 @@ export class Sacrieur {
     'air',
     [35, 39],
     [42, 47],
-    'Augmente les dégâts de base du sort Entaille de 30 (2 tours)',
+    'Augmente les dégâts de base du spell Entaille de 30 (2 tours)',
     30
   )
   stase = new Sorts(

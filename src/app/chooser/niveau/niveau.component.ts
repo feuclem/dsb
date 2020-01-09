@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core'
-import {NiveauService} from './niveau.service'
 
 @Component({
   selector: 'dsb-niveau',
@@ -8,23 +7,7 @@ import {NiveauService} from './niveau.service'
 })
 export class NiveauComponent implements OnInit {
 
-  niveaus: number[] = []
-  currentNiveau: number
+  constructor() {}
 
-  constructor(private niveauService: NiveauService) {
-  }
-
-  ngOnInit() {
-    for (let i = 200; i >= 1; i--) {
-      this.niveaus.push(i)
-    }
-
-    this.currentNiveau = 200
-  }
-
-  selectNiveau(niveau: number) {
-    this.currentNiveau = niveau
-    this.niveauService.updateNiveau(niveau)
-  }
-
+  ngOnInit() {}
 }

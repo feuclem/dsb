@@ -1,6 +1,7 @@
 <dsb-nav></dsb-nav>
 
-<div class="container">
+<dsb-progressbar *ngIf="isProgressBarVisible"></dsb-progressbar>
+<div class="container customizedMarginTop">
   <div class="tile is-ancestor" *ngFor="let equipement of equipements; let index = index">
     <div class="tile is-vertical is-8">
       <div class="tile">
@@ -54,6 +55,14 @@
       </article>
     </div>
   </div>
+
+  <nav class="pagination is-medium" role="navigation" *ngIf="!isProgressBarVisible">
+    <a class="pagination-previous">Précédemment</a>
+    <a class="pagination-next">Suivant</a>
+    <ul class="pagination-list">
+      <li *ngFor="let numberPage of numberPageList"><a class="pagination-link" (click)="goToPage(numberPage)">{{numberPage}}</a></li>
+    </ul>
+  </nav>
 </div>
 
 <dsb-footer></dsb-footer>

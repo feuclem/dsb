@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core'
-import {CoiffeHttpService} from './coiffe.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
@@ -7,13 +6,11 @@ import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
+import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
 
 @Component({
   selector: 'dsb-coiffe',
-  templateUrl: '../equipements/equipements.component.html',
-  providers: [
-    CoiffeHttpService
-  ]
+  templateUrl: '../equipements/equipements.component.html'
 })
 export class CoiffeComponent extends EquipementsComponent implements OnInit {
 
@@ -22,15 +19,14 @@ export class CoiffeComponent extends EquipementsComponent implements OnInit {
     stuffService: StuffService,
     statistiquesService: StatistiquesService,
     panoplieService: PanoplieService,
-    private dofusHttpService: CoiffeHttpService,
+    equipementsHttpService: EquipementsHttpService
   ) {
-    super(router, stuffService, statistiquesService, panoplieService)
+    equipementsHttpService.type = 'coiffes'
+    super(router, stuffService, statistiquesService, panoplieService, equipementsHttpService)
   }
 
   ngOnInit() {
-    this.dofusHttpService.getAllEquipements().then(response => {
-      this.equipements = response
-    })
+    super.ngOnInit()
   }
 
   setItem(equipement: Equipement) {

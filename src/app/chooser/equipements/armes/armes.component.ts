@@ -1,40 +1,42 @@
 import {Component, OnInit} from '@angular/core'
-import {ArmesHttpService} from './armes.http.service'
 import {Arme} from '../../../shared/entities/Arme'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
+import {EquipementsComponent} from '../equipements/equipements.component'
+import {PanoplieService} from '../../../shared/service/panoplie.service'
+import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {Equipement} from '../../../shared/entities/Equipement'
 
 @Component({
   selector: 'armes',
-  templateUrl: './armes.component.html',
-  providers: [ArmesHttpService]
+  templateUrl: '../equipements/equipements.component.html'
 })
-export class ArmesComponent implements OnInit {
+export class ArmesComponent extends EquipementsComponent implements OnInit {
 
   armes: Arme[]
 
   constructor(
-    private router: Router,
-    private armesService: ArmesHttpService,
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService) {
+    router: Router,
+    stuffService: StuffService,
+    statistiquesService: StatistiquesService,
+    panoplieService: PanoplieService,
+    equipementsHttpService: EquipementsHttpService) {
+    equipementsHttpService.type = 'armes'
+    super(router, stuffService, statistiquesService, panoplieService, equipementsHttpService)
   }
 
   ngOnInit() {
-    this.armesService.getAllArmes().then(response => {
-      this.armes = response
-    })
+    super.ngOnInit()
   }
 
-  setBuild(arme: Arme) {
+  setItem(equipement: Equipement) {
     this.stuffService.updateArme(new StuffViewModel(
-      arme.imgUrl,
-      arme.stats,
-      arme.id
+      equipement.imgUrl,
+      equipement.stats,
+      equipement.id
     ))
-    arme.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
-    this.router.navigate(['/'])
+    super.setItem(equipement)
   }
 }

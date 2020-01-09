@@ -6,6 +6,10 @@ a {
   outline: none;
 }
 
+.customizedMarginTop {
+  margin-top: 25px
+}
+
 /*@font-face {*/
 /*  font-family: Anton;*/
 /*  src: url("../styles/Anton-Regular.ttf");*/

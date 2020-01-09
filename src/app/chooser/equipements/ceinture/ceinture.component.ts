@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core'
-import {CeintureHttpService} from './ceinture.http.service'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
@@ -7,13 +6,11 @@ import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements/equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
 import {StuffViewModel} from '../../../builder/StuffViewModel'
+import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
 
 @Component({
   selector: 'dsb-ceinture',
-  templateUrl: '../equipements/equipements.component.html',
-  providers: [
-    CeintureHttpService
-  ]
+  templateUrl: '../equipements/equipements.component.html'
 })
 export class CeintureComponent extends EquipementsComponent implements OnInit {
 
@@ -22,15 +19,14 @@ export class CeintureComponent extends EquipementsComponent implements OnInit {
     stuffService: StuffService,
     statistiquesService: StatistiquesService,
     panoplieService: PanoplieService,
-    private ceintureHttpService: CeintureHttpService,
+    equipementsHttpService: EquipementsHttpService
   ) {
-    super(router, stuffService, statistiquesService, panoplieService)
+    equipementsHttpService.type = 'ceintures'
+    super(router, stuffService, statistiquesService, panoplieService, equipementsHttpService)
   }
 
   ngOnInit() {
-    this.ceintureHttpService.getAllEquipements().then(response => {
-      this.equipements = response
-    })
+    super.ngOnInit()
   }
 
   setItem(equipement: Equipement) {

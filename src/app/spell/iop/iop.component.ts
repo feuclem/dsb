@@ -5,7 +5,7 @@ import {Iop} from '../../shared/entities/classe/Iop'
 @Component({
   selector: 'dsb-iop',
   templateUrl: './iop.component.html',
-  styles: ['.classe { margin-top: 25px }']
+  styles: ['.customizedMarginTop { margin-top: 25px }']
 })
 export class IopComponent implements OnInit {
 

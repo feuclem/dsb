@@ -14,8 +14,8 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
-import {IopComponent} from './sort/iop/iop.component'
-import {SacrieurComponent} from './sort/sacrieur/sacrieur.component'
+import {IopComponent} from './spell/iop/iop.component'
+import {SacrieurComponent} from './spell/sacrieur/sacrieur.component'
 import {DevlogComponent} from './devlog/devlog.component'
 
 const routes: Routes = [

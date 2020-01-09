@@ -18,7 +18,7 @@ export class Iop {
     '../assets/iop/accumulation.webp', 'terre',
     [22, 26],
     [26, 31],
-    'Augmente les dégâts de base du sort Accumulation de 20 (3 tours)',
+    'Augmente les dégâts de base du spell Accumulation de 20 (3 tours)',
     20)
   couperet = new Sorts('Couperet', '../assets/iop/couperet.webp', 'feu', [18, 22], [22, 26])
   fracture = new Sorts('Fracture', '../assets/iop/fracture.webp', 'air', [34, 38], [41, 46])
@@ -31,7 +31,7 @@ export class Iop {
     'feu',
     [19, 21],
     [23, 25],
-    'Augmente les dégâts de base du sort Tumulte de 20',
+    'Augmente les dégâts de base du spell Tumulte de 20',
     20,
     5)
   epeeceleste = new Sorts('Épée Céleste', '../assets/iop/epeeceleste.webp', 'air', [28, 31], [34, 37])
@@ -45,7 +45,7 @@ export class Iop {
     'terre',
     [9, 11],
     [11, 13],
-    'Augmente les dégâts de base du sort Pugilat de 15',
+    'Augmente les dégâts de base du spell Pugilat de 15',
     15)
   epeedudestin = new SortsBoost(
     'Épée du destin',
@@ -53,7 +53,7 @@ export class Iop {
     'feu',
     [38, 42],
     [46, 50],
-    'Augmente les dégâts de base du sort Épée du destin de 30 (2 tours)',
+    'Augmente les dégâts de base du spell Épée du destin de 30 (2 tours)',
     30)
   sentence = new Sorts('Sentence', '../assets/iop/sentence.webp', 'feu', [13, 16], [16, 19])
   coleredeiop = new SortsBoost(
@@ -62,7 +62,7 @@ export class Iop {
     'terre',
     [81, 100],
     [97, 120],
-    'Augmente les dégâts de base du sort Colère de Iop de 90 (3 tours)',
+    'Augmente les dégâts de base du spell Colère de Iop de 90 (3 tours)',
     90)
   fureur = new SortsBoost(
     'Fureur',
@@ -70,7 +70,7 @@ export class Iop {
     'terre',
     [28, 32],
     [34, 38],
-    'Augmente les dégâts de base du sort Fureur de 30 (1 tour)',
+    'Augmente les dégâts de base du spell Fureur de 30 (1 tour)',
     30)
 
   listSort() {
