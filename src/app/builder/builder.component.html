@@ -44,7 +44,7 @@
 
     <div class="card1" (click)="toggleCard()">
       <div [ngClass]="isPanoplieBonusVisible ? 'faces' : 'faces flipped'">
-        <div class="face front">
+        <div class="face front" *ngIf="isPanoplieBonusVisible">
           <div class="tile is-parent">
             <article class="tile is-child notification is-success">
               <div class="content">
@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div class="face back">
+        <div class="face back" *ngIf="!isPanoplieBonusVisible">
           <div class="tile is-parent">
             <article class="tile is-child notification is-success">
               <div class="content">
