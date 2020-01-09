@@ -62,6 +62,7 @@ export class Characteristique1Component implements OnInit {
     private characteritiqueService: CharacteristiqueService,
     private panoplieCharacteristiqueService: PanoplieCharacteristiqueService,
     private pointsdecaracService: PointsdecaracService,
+    private characteristiqueService: CharacteristiqueService
   ) {
   }
 
@@ -108,6 +109,34 @@ export class Characteristique1Component implements OnInit {
       this.pointsdecaracService.addPointToCharacteristique(points, charac)
     } else {
       alert('Vous ne pouvez plus ajouter de points de caractéristiques.')
+    }
+  }
+
+  modifyExo(charac: String, event: any) {
+    if(charac === 'PA') {
+      if(event.target.checked) {
+        this.characteristiqueService.updatePa(1)
+      } else {
+        this.characteristiqueService.updatePa(-1)
+      }
+    } else if(charac === 'PM'){
+      if(event.target.checked) {
+        this.characteristiqueService.updatePm(1)
+      } else {
+        this.characteristiqueService.updatePm(-1)
+      }
+    } else if(charac === 'PO') {
+      if(event.target.checked) {
+        this.characteristiqueService.updatePo(1)
+      } else {
+        this.characteristiqueService.updatePo(-1)
+      }
+    } else {
+      if(event.target.checked) {
+        this.characteristiqueService.updateInvocation(1)
+      } else {
+        this.characteristiqueService.updateInvocation(-1)
+      }
     }
   }
 
