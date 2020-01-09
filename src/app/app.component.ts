@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 import {PanoplieHttpService} from './shared/httpService/panoplie.http.service'
 import {PanoplieService} from './shared/service/panoplie.service'
 

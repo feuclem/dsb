@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {DamageCalculatorService} from '../damage-calculator.service'
+import {DamageCalculatorService} from '../../builder/damage-calculator.service'
 import {Sacrieur} from '../../shared/entities/classe/Sacrieur'
 
 @Component({

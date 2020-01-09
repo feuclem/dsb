@@ -1,17 +1,17 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing'
+import {ComponentFixture, TestBed} from '@angular/core/testing'
 
-import {IopComponent} from './iop.component'
-import {DamageCalculatorService} from '../damage-calculator.service'
-import {DamageCalculatorServiceMock} from '../damage-calculator.service.mock'
+import {SacrieurComponent} from './sacrieur.component'
+import {DamageCalculatorService} from '../../builder/damage-calculator.service'
+import {DamageCalculatorServiceMock} from '../../builder/damage-calculator.service.mock'
 
-describe('IopComponent', () => {
-  let component: IopComponent
-  let fixture: ComponentFixture<IopComponent>
+describe('SacrieurComponent', () => {
+  let component: SacrieurComponent
+  let fixture: ComponentFixture<SacrieurComponent>
   let damageCalculatorService = null
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [IopComponent],
+      declarations: [SacrieurComponent],
       providers: [{provide: DamageCalculatorService, useClass: DamageCalculatorServiceMock}]
     })
 
@@ -19,7 +19,7 @@ describe('IopComponent', () => {
   })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IopComponent)
+    fixture = TestBed.createComponent(SacrieurComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

@@ -14,10 +14,12 @@ import {FamilierComponent} from './chooser/equipements/familier/familier.compone
 import {BouclierComponent} from './chooser/equipements/bouclier/bouclier.component'
 import {DofusComponent} from './chooser/equipements/dofus/dofus.component'
 import {TropheeComponent} from './chooser/equipements/trophee/trophee.component'
-import {IopComponent} from './builder/iop/iop.component'
-import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
+import {IopComponent} from './sort/iop/iop.component'
+import {SacrieurComponent} from './sort/sacrieur/sacrieur.component'
+import {DevlogComponent} from './devlog/devlog.component'
 
 const routes: Routes = [
+  {path: 'devlog', component: DevlogComponent},
   {path: 'trophee', component: TropheeComponent},
   {path: 'dofus', component: DofusComponent},
   {path: 'bouclier', component: BouclierComponent},
@@ -37,7 +39,9 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

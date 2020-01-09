@@ -7,11 +7,8 @@
       </div>
     </div>
     <div *ngIf="amulette !== undefined" class="column">
-      <a (click)="removeAmulette(amulette)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeAmulette(amulette)" class="delete is-danger">
+      </button>
     </div>
   </div>
 </div>
@@ -23,11 +20,8 @@
       <a *ngIf="anneau1 === undefined" routerLink="anneau1">Anneau</a>
     </div>
     <div *ngIf="anneau1 !== undefined" class="column">
-      <a (click)="removeAnneau1(anneau1)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeAnneau1(anneau1)" class="delete is-danger">
+      </button>
     </div>
 
     <div class="column margin-top-32">
@@ -35,11 +29,8 @@
       <a *ngIf="anneau2 === undefined" routerLink="anneau2">Anneau</a>
     </div>
     <div *ngIf="anneau2 !== undefined" class="column">
-      <a (click)="removeAnneau2(anneau2)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeAnneau2(anneau2)" class="delete is-danger">
+      </button>
     </div>
   </div>
 </div>
@@ -51,11 +42,8 @@
       <a *ngIf="ceinture === undefined" routerLink="ceinture">Ceinture</a>
     </div>
     <div *ngIf="ceinture !== undefined" class="column">
-      <a (click)="removeCeinture(ceinture)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeCeinture(ceinture)" class="delete is-danger">
+      </button>
     </div>
 
     <div class="column margin-top-32">
@@ -63,11 +51,8 @@
       <a *ngIf="bottes === undefined" routerLink="bottes">Bottes</a>
     </div>
     <div *ngIf="bottes !== undefined" class="column">
-      <a (click)="removeBottes(bottes)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeBottes(bottes)" class="delete is-danger">
+      </button>
     </div>
   </div>
 </div>
@@ -79,11 +64,8 @@
       <a *ngIf="coiffe === undefined" routerLink="coiffe">Coiffe</a>
     </div>
     <div *ngIf="coiffe !== undefined" class="column">
-      <a (click)="removeCoiffe(coiffe)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeCoiffe(coiffe)" class="delete is-danger">
+      </button>
     </div>
 
     <div class="column margin-top-32">
@@ -91,11 +73,8 @@
       <a *ngIf="cape === undefined" routerLink="cape">Cape</a>
     </div>
     <div *ngIf="cape !== undefined" class="column">
-      <a (click)="removeCape(cape)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeCape(cape)" class="delete is-danger">
+      </button>
     </div>
   </div>
 </div>
@@ -107,11 +86,8 @@
       <a *ngIf="arme === undefined" routerLink="armes">Arme</a>
     </div>
     <div *ngIf="arme !== undefined" class="column">
-      <a (click)="removeArme(arme)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeArme(arme)" class="delete is-danger">
+      </button>
     </div>
 
     <div class="column margin-top-32">
@@ -119,11 +95,8 @@
       <a *ngIf="bouclier === undefined" routerLink="bouclier">Bouclier</a>
     </div>
     <div *ngIf="bouclier !== undefined" class="column">
-      <a (click)="removeBouclier(bouclier)" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removeBouclier(bouclier)" class="delete is-danger">
+      </button>
     </div>
   </div>
 </div>
@@ -141,11 +114,7 @@
       </div>
     </div>
     <div *ngIf="familier !== undefined || monture !== undefined" class="column">
-      <a (click)="removePets(monture ? monture : familier, monture ? 'Monture' : 'Familier')" class="button is-danger is-outlined">
-        <span class="icon is-small">
-          <i class="fas fa-times"></i>
-        </span>
-      </a>
+      <button (click)="removePets(monture ? monture : familier, monture ? 'Monture' : 'Familier')" class="delete is-danger"></button>
     </div>
   </div>
 </div>

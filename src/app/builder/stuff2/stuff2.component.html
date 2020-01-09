@@ -1,41 +1,51 @@
 <div class="statistique green-right">
   <div class="columns has-text-centered">
     <div class="column">
+      <button *ngIf="slot1 !== undefined"(click)="removeSlot1(slot1)" class="delete is-danger"></button>
       <img *ngIf="slot1 !== undefined" src="{{slot1.imgUrl}}" alt=""/>
       <a *ngIf="slot1 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot1 === undefined" routerLink="trophee">Trophée</a>
     </div>
+
     <div class="column">
+      <button *ngIf="slot2 !== undefined"(click)="removeSlot2(slot2)" class="delete is-danger"></button>
       <img *ngIf="slot2 !== undefined" src="{{slot2.imgUrl}}" alt=""/>
       <a *ngIf="slot2 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot2 === undefined" routerLink="trophee">Trophée</a>
     </div>
+
     <div class="column">
+      <button *ngIf="slot3 !== undefined"(click)="removeSlot3(slot3)" class="delete is-danger"></button>
       <img *ngIf="slot3 !== undefined" src="{{slot3.imgUrl}}" alt=""/>
       <a *ngIf="slot3 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot3 === undefined" routerLink="trophee">Trophée</a>
     </div>
+
     <div class="column">
+      <button *ngIf="slot4 !== undefined"(click)="removeSlot4(slot4)" class="delete is-danger"></button>
       <img *ngIf="slot4 !== undefined" src="{{slot4.imgUrl}}" alt=""/>
       <a *ngIf="slot4 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot4 === undefined" routerLink="trophee">Trophée</a>
     </div>
+
     <div class="column">
+      <button *ngIf="slot5 !== undefined"(click)="removeSlot5(slot5)" class="delete is-danger"></button>
       <img *ngIf="slot5 !== undefined" src="{{slot5.imgUrl}}" alt=""/>
       <a *ngIf="slot5 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot5 === undefined" routerLink="trophee">Trophée</a>
     </div>
+
     <div class="column">
+      <button *ngIf="slot6 !== undefined"(click)="removeSlot6(slot6)" class="delete is-danger"></button>
       <img *ngIf="slot6 !== undefined" src="{{slot6.imgUrl}}" alt=""/>
       <a *ngIf="slot6 === undefined" routerLink="dofus">Dofus</a>
       <br />
       <a *ngIf="slot6 === undefined" routerLink="trophee">Trophée</a>
     </div>
   </div>
-
 </div>

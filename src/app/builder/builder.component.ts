@@ -4,7 +4,7 @@ import {ClasseService} from '../chooser/classe/classe.service'
 @Component({
   selector: 'builder',
   templateUrl: './builder.component.html',
-  styles: []
+  styles: ['main {margin-top: 25px}']
 })
 export class BuilderComponent implements OnInit {
   classe: string

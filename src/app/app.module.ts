@@ -30,12 +30,12 @@ import {Stuff1Component} from './builder/stuff1/stuff1.component'
 import {Stuff2Component} from './builder/stuff2/stuff2.component'
 import {Characteristique1Component} from './builder/characteristique1/characteristique1.component'
 import {Characteristique2Component} from './builder/characteristique2/characteristique2.component'
-import {IopComponent} from './builder/iop/iop.component'
+import {IopComponent} from './sort/iop/iop.component'
 import {DamageCalculatorService} from './builder/damage-calculator.service'
 import {PanoplieBonusComponent} from './builder/panoplie-bonus/panoplie-bonus.component'
 import {NiveauComponent} from './chooser/niveau/niveau.component'
 import {ClasseComponent} from './chooser/classe/classe.component'
-import {SacrieurComponent} from './builder/sacrieur/sacrieur.component'
+import {SacrieurComponent} from './sort/sacrieur/sacrieur.component'
 import {NiveauService} from './chooser/niveau/niveau.service'
 import {ClasseService} from './chooser/classe/classe.service'
 import {Characteristique3Component} from './builder/characteristique3/characteristique3.component'
@@ -44,6 +44,9 @@ import {Characteristique4Component} from './builder/characteristique4/characteri
 import {NavComponent} from './nav/nav.component'
 import {EquipementsComponent} from './chooser/equipements/equipements/equipements.component'
 import {PanoplieCharacteristiqueService} from './shared/service/panoplieCharacteristique.service'
+import {ProgressbarComponent} from './progressbar/progressbar.component'
+import {DevlogComponent} from './devlog/devlog.component'
+import {FooterComponent} from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -74,7 +77,10 @@ import {PanoplieCharacteristiqueService} from './shared/service/panoplieCharacte
     Characteristique3Component,
     Characteristique4Component,
     NavComponent,
-    EquipementsComponent
+    EquipementsComponent,
+    ProgressbarComponent,
+    DevlogComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

@@ -6,7 +6,7 @@ import {StatistiquesService} from '../../shared/service/statistiques.service'
 @Component({
   selector: 'dsb-stuff1',
   templateUrl: './stuff1.component.html',
-  styles: ['a { color: white } margin-top-32 {margin-top: 32px !important;}']
+  styles: []
 })
 export class Stuff1Component implements OnInit {
 

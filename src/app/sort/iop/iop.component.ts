@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core'
-import {DamageCalculatorService} from '../damage-calculator.service'
+import {DamageCalculatorService} from '../../builder/damage-calculator.service'
 import {Iop} from '../../shared/entities/classe/Iop'
 
 @Component({
   selector: 'dsb-iop',
   templateUrl: './iop.component.html',
-  styles: []
+  styles: ['.classe { margin-top: 25px }']
 })
 export class IopComponent implements OnInit {
 

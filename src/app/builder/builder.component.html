@@ -1,56 +1,55 @@
-<div class="builder">
+<dsb-nav></dsb-nav>
 
-  <dsb-nav></dsb-nav>
-
-  <main>
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-primary">
-              <p class="title">Charactéristiques principales :</p>
-              <dsb-characteristique1></dsb-characteristique1>
-            </article>
-            <article class="tile is-child notification is-warning">
-              <p class="title">Dommages :</p>
-              <dsb-characteristique2></dsb-characteristique2>
-            </article>
-            <article class="tile is-child notification is-primary">
-              <p class="title">Autres charactéristiques :</p>
-              <dsb-characteristique3></dsb-characteristique3>
-            </article>
-            <article class="tile is-child notification is-warning">
-              <p class="title">Résistances :</p>
-              <dsb-characteristique4></dsb-characteristique4>
-            </article>
-          </div>
-
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-info">
-              <div class="content">
-                <p class="title">Inventaire :</p>
-                <dsb-stuff1></dsb-stuff1>
-              </div>
-            </article>
-          </div>
+<main>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">Charactéristiques principales :</p>
+            <dsb-characteristique1></dsb-characteristique1>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title">Dommages :</p>
+            <dsb-characteristique2></dsb-characteristique2>
+          </article>
+          <article class="tile is-child notification is-primary">
+            <p class="title">Autres charactéristiques :</p>
+            <dsb-characteristique3></dsb-characteristique3>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title">Résistances :</p>
+            <dsb-characteristique4></dsb-characteristique4>
+          </article>
         </div>
 
         <div class="tile is-parent">
-          <article class="tile is-child notification is-danger">
+          <article class="tile is-child notification is-info">
             <div class="content">
-              <dsb-stuff2></dsb-stuff2>
+              <p class="title">Inventaire :</p>
+              <dsb-stuff1></dsb-stuff1>
             </div>
           </article>
         </div>
       </div>
+
       <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
+        <article class="tile is-child notification is-danger">
           <div class="content">
-            <p class="title">Bonus(s) panoplie(s) :</p>
-            <dsb-panoplie-bonus></dsb-panoplie-bonus>
+            <dsb-stuff2></dsb-stuff2>
           </div>
         </article>
       </div>
     </div>
-  </main>
-</div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title">Bonus(s) panoplie(s) :</p>
+          <dsb-panoplie-bonus></dsb-panoplie-bonus>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<dsb-footer></dsb-footer>

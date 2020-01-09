@@ -7,7 +7,7 @@ import {PanoplieCharacteristiqueService} from '../../shared/service/panoplieChar
 @Component({
   selector: 'dsb-characteristique1',
   templateUrl: './characteristique1.component.html',
-  styles: ['span {color: white} .is-force{border-color: #582900} .is-vita{border-color: #ff43a2}']
+  styles: []
 })
 export class Characteristique1Component implements OnInit {
 
