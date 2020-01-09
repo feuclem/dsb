@@ -29,11 +29,11 @@
   <thead>
   <tr>
     <td></td>
-    <td>Vitalité</td>
-    <td>Force</td>
-    <td>Intelligence</td>
-    <td>Chance</td>
-    <td>Agilité</td>
+    <td>Vita&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <!-- TODO CLEM faire ca en CSS -->
+    <td>Force&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Intel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Chance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Agi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
     <td>Puissance</td>
   </tr>
   </thead>
@@ -48,7 +48,7 @@
     <td>{{puissance + panopliePuissance}}</td>
   </tr>
   <tr>
-    <td>Parcho</td>
+    <td>Charac</td>
     <td>
       <input [(ngModel)]="inputVitalite" (focusout)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita"
              type="number" min="0" [max]="remainingPointsToUsed">
