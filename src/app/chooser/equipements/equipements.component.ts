@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
-import {StuffService} from '../../../shared/service/stuff.service'
-import {StatistiquesService} from '../../../shared/service/statistiques.service'
-import {PanoplieService} from '../../../shared/service/panoplie.service'
-import {Equipement} from '../../../shared/entities/Equipement'
-import {StuffEquipementId} from '../../../shared/entities/StuffEquipementId'
-import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {StuffService} from '../../shared/service/stuff.service'
+import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {PanoplieService} from '../../shared/service/panoplie.service'
+import {Equipement} from '../../shared/entities/Equipement'
+import {StuffEquipementId} from '../../shared/entities/StuffEquipementId'
+import {EquipementsHttpService} from '../../shared/httpService/equipements.http.service'
 
 @Component({
   selector: 'dsb-equipements',

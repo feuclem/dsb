@@ -1,0 +1,49 @@
+<dsb-nav></dsb-nav>
+
+<div class="container">
+  <div class="customizedMarginTop tile is-ancestor" *ngFor="let sort of classe.listSort()">
+    <div class="tile is-vertical is-4">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">{{sort.label}} <img src="{{sort.image}}" alt=""></p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-warning">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+              <tr>
+                <th>Dommages</th>
+                <th>Niveau 1</th>
+                <th>Niveau 2</th>
+                <th>Niveau 3</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Base</td>
+                <td>x</td>
+                <td>x</td>
+                <td>{{calculDegatBase(sort.normal[0], sort.type)}} - {{calculDegatBase(sort.normal[1], sort.type)}}</td>
+              </tr>
+              <tr>
+                <td>Critique</td>
+                <td>x</td>
+                <td>x</td>
+                <td>{{calculDegatCritique(sort.critique[0], sort.type)}} - {{calculDegatCritique(sort.critique[1], sort.type)}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<dsb-footer></dsb-footer>

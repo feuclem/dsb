@@ -1,8 +1,9 @@
 import {Sorts} from '../Sorts'
 import {SortsBoost} from '../SortsBoost'
 import {SortsBoostZone} from '../SortsBoostZone'
+import {Classe} from './Classe'
 
-export class Iop {
+export class Iop extends Classe {
   pression = new Sorts('Pression', '../assets/iop/pression.webp', 'terre', [24, 28], [29, 34])
   tannee = new Sorts('Tannée', '../assets/iop/tannee.webp', 'air', [30, 34], [36, 41])
   intimidation = new Sorts('Intimidation', '../assets/iop/intimidation.webp', 'neutre', [11, 13], [13, 16])

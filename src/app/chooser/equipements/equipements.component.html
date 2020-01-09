@@ -57,8 +57,6 @@
   </div>
 
   <nav class="pagination is-medium" role="navigation" *ngIf="!isProgressBarVisible">
-    <a class="pagination-previous">Précédemment</a>
-    <a class="pagination-next">Suivant</a>
     <ul class="pagination-list">
       <li *ngFor="let numberPage of numberPageList"><a class="pagination-link" (click)="goToPage(numberPage)">{{numberPage}}</a></li>
     </ul>

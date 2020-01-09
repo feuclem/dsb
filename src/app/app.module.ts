@@ -41,12 +41,13 @@ import {Characteristique3Component} from './builder/characteristique3/characteri
 import {PointsdecaracService} from './shared/service/pointsdecarac.service'
 import {Characteristique4Component} from './builder/characteristique4/characteristique4.component'
 import {NavComponent} from './nav/nav.component'
-import {EquipementsComponent} from './chooser/equipements/equipements/equipements.component'
+import {EquipementsComponent} from './chooser/equipements/equipements.component'
 import {PanoplieCharacteristiqueService} from './shared/service/panoplieCharacteristique.service'
 import {ProgressbarComponent} from './progressbar/progressbar.component'
 import {DevlogComponent} from './devlog/devlog.component'
 import {FooterComponent} from './footer/footer.component'
 import {EquipementsHttpService} from './shared/httpService/equipements.http.service'
+import {SpellComponent} from './spell/spell.component'
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import {EquipementsHttpService} from './shared/httpService/equipements.http.serv
     EquipementsComponent,
     ProgressbarComponent,
     DevlogComponent,
-    FooterComponent
+    FooterComponent,
+    SpellComponent
   ],
   imports: [
     CommonModule,

@@ -1,28 +1,22 @@
 import {Component, OnInit} from '@angular/core'
 import {DamageCalculatorService} from '../../builder/damage-calculator.service'
 import {Iop} from '../../shared/entities/classe/Iop'
+import {SpellComponent} from '../spell.component'
 
 @Component({
   selector: 'dsb-iop',
-  templateUrl: './iop.component.html',
-  styles: ['.customizedMarginTop { margin-top: 25px }']
+  templateUrl: '../spell.component.html',
+  styles: ['.customizedMarginTop { margin-top: 25px }'] // TODO CLEM pourquoi ?
 })
-export class IopComponent implements OnInit {
+export class IopComponent extends SpellComponent implements OnInit {
 
-  iop = new Iop()
-
-  constructor(private damagecalculatorService: DamageCalculatorService) {
+  constructor(damageCalculatorService: DamageCalculatorService) {
+    super(damageCalculatorService)
   }
 
   ngOnInit() {
-  }
-
-  calculDegatBase(degat: number, type: string): number {
-    return this.damagecalculatorService.calculDegatBase(degat, type)
-  }
-
-  calculDegatCritique(degat: number, type: string): number {
-    return this.damagecalculatorService.calculDegatCritique(degat, type)
+    this.classe = new Iop()
+    super.ngOnInit()
   }
 
 }

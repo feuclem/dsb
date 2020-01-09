@@ -49,10 +49,11 @@
           <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
             <tr>
-              <th>Mêlée</th>
-              <th>Distance</th>
-              <th>Critique</th>
-              <th>Poussée</th>
+              <th>Neutre</th>
+              <th>Terre</th>
+              <th>Feu</th>
+              <th>Eau</th>
+              <th>Air</th>
             </tr>
             </thead>
             <tbody>
@@ -85,19 +86,18 @@
           <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
             <tr>
-              <th>Neutre</th>
-              <th>Terre</th>
-              <th>Feu</th>
-              <th>Eau</th>
-              <th>Air</th>
+              <th>Mêlée</th>
+              <th>Distance</th>
+              <th>Critique</th>
+              <th>Poussée</th>
             </tr>
             </thead>
             <tbody>
             <tr>
+              <td>{{resistanceMelee + panoplieResistanceMelee}}</td>
+              <td>{{resistanceDistance + panoplieResistanceDistance}}</td>
               <td>{{resistanceCritiques + panoplieResistanceCritiques}}</td>
               <td>{{resistancePoussees + panoplieResistancePoussees}}</td>
-              <td>{{resistanceDistance + panoplieResistanceDistance}}</td>
-              <td>{{resistanceMelee + panoplieResistanceMelee}}</td>
             </tr>
             </tbody>
           </table>
