@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core'
 import * as firebase from 'firebase'
+import Firestore = firebase.firestore.Firestore
 
 @Injectable()
 export class FirebaseHttpService {
 
   firebaseApp: firebase.app.App
+  firestore: Firestore
 
   constructor() {
   }
@@ -20,6 +22,8 @@ export class FirebaseHttpService {
       appId: '1:432776816247:web:226fe14629544cacb90872',
       measurementId: 'G-YL484V80BZ'
     })
+
+    this.firestore = this.firebaseApp.firestore()
   }
 
 }

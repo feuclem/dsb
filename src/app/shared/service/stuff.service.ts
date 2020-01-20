@@ -6,17 +6,17 @@ import {StuffEquipementId} from '../entities/StuffEquipementId'
 
 @Injectable()
 export class StuffService {
-  private _arme = new BehaviorSubject<StuffViewModel>(undefined)
-  private _amulette = new BehaviorSubject<StuffViewModel>(undefined)
+  _arme = new BehaviorSubject<StuffViewModel>(undefined)
+  _amulette = new BehaviorSubject<StuffViewModel>(undefined)
   _anneau1 = new BehaviorSubject<StuffViewModel>(undefined)
   _anneau2 = new BehaviorSubject<StuffViewModel>(undefined)
-  private _bottes = new BehaviorSubject<StuffViewModel>(undefined)
-  private _ceinture = new BehaviorSubject<StuffViewModel>(undefined)
-  private _coiffe = new BehaviorSubject<StuffViewModel>(undefined)
-  private _cape = new BehaviorSubject<StuffViewModel>(undefined)
-  private _monture = new BehaviorSubject<StuffViewModel>(undefined)
-  private _familier = new BehaviorSubject<StuffViewModel>(undefined)
-  private _bouclier = new BehaviorSubject<StuffViewModel>(undefined)
+  _bottes = new BehaviorSubject<StuffViewModel>(undefined)
+  _ceinture = new BehaviorSubject<StuffViewModel>(undefined)
+  _coiffe = new BehaviorSubject<StuffViewModel>(undefined)
+  _cape = new BehaviorSubject<StuffViewModel>(undefined)
+  _monture = new BehaviorSubject<StuffViewModel>(undefined)
+  _familier = new BehaviorSubject<StuffViewModel>(undefined)
+  _bouclier = new BehaviorSubject<StuffViewModel>(undefined)
   _slot1 = new BehaviorSubject<StuffViewModel>(undefined)
   _slot2 = new BehaviorSubject<StuffViewModel>(undefined)
   _slot3 = new BehaviorSubject<StuffViewModel>(undefined)
@@ -160,7 +160,7 @@ export class StuffService {
     return this._slot6.asObservable()
   }
 
-  private _listStuffEquipmentId = new BehaviorSubject<StuffEquipementId[]>([])
+  _listStuffEquipmentId = new BehaviorSubject<StuffEquipementId[]>([])
 
   getListStuffEquipmentId(): Observable<StuffEquipementId[]> {
     return this._listStuffEquipmentId.asObservable()

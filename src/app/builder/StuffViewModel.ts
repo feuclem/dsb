@@ -23,6 +23,16 @@ export class StuffViewModel {
     return this._statistiques
   }
 
+  get sanitazedStatistiques(): any[] {
+    return this._statistiques.map(value => {
+      return {
+        'label': value.label,
+        'from': value.from,
+        'to': value.to
+      }
+    })
+  }
+
   set statistiques(value: Statistique[]) {
     this._statistiques = value
   }
