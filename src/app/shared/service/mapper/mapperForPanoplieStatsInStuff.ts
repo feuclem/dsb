@@ -50,8 +50,8 @@ import {
   Sagesse,
   Soins,
   Tacle
-} from '../entities/Statistique'
-import {PanoplieCharacteristiqueService} from './panoplieCharacteristique.service'
+} from '../../entities/Statistique'
+import {PanoplieCharacteristiqueService} from '../panoplieCharacteristique.service'
 
 export const mapperPanoplieForStatInStuff = [
   {

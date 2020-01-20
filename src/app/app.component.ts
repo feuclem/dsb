@@ -9,7 +9,9 @@ import {PanoplieService} from './shared/service/panoplie.service'
 })
 export class AppComponent implements OnInit {
 
-  constructor(private panoplieHttpService: PanoplieHttpService, private panoplieService: PanoplieService) {
+  constructor(
+    private panoplieHttpService: PanoplieHttpService,
+    private panoplieService: PanoplieService) {
   }
 
   ngOnInit() {

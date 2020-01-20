@@ -50,8 +50,8 @@ import {
   Sagesse,
   Soins,
   Tacle
-} from '../entities/Statistique'
-import {CharacteristiqueService} from './characteristique.service'
+} from '../../entities/Statistique'
+import {CharacteristiqueService} from '../characteristique.service'
 
 export const mapperForStatInStuff = [
   {

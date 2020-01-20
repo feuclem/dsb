@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core'
 import {ArmeDeChasse, Statistique} from '../entities/Statistique'
 import {CharacteristiqueService} from './characteristique.service'
-import {mapperForStat} from './mapperForStats'
-import {mapperForStatInStuff} from './mapperForStatsInStuff'
+import {mapperForStat} from './mapper/mapperForStats'
+import {mapperForStatInStuff} from './mapper/mapperForStatsInStuff'
 import {PanoplieCharacteristiqueService} from './panoplieCharacteristique.service'
-import {mapperPanoplieForStatInStuff} from './mapperForPanoplieStatsInStuff'
+import {mapperPanoplieForStatInStuff} from './mapper/mapperForPanoplieStatsInStuff'
 
 @Injectable()
 export class StatistiquesService {

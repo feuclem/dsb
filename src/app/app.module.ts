@@ -50,6 +50,8 @@ import {EquipementsHttpService} from './shared/httpService/equipements.http.serv
 import {SpellComponent} from './spell/spell.component'
 import {StuffViewerComponent} from './builder/stuff-viewer/stuff-viewer.component'
 import {StuffWatcherService} from './builder/stuff.watcher.service'
+import {GoogleUserService} from './shared/service/googleuser/google.user.service'
+import {LocalStoreService} from './shared/service/localstorage/local-store.service'
 
 @NgModule({
   declarations: [
@@ -105,7 +107,9 @@ import {StuffWatcherService} from './builder/stuff.watcher.service'
     ClasseService,
     PointsdecaracService,
     EquipementsHttpService,
-    StuffWatcherService
+    StuffWatcherService,
+    GoogleUserService,
+    LocalStoreService
   ],
   bootstrap: [AppComponent]
 })

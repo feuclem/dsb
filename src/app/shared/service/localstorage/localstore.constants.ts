@@ -1,0 +1,6 @@
+export const IS_USER_SIGNED_IN = 'isUserSignedIn?'
+export const USER_ID = 'user.id='
+export const USER_NAME = 'user.name='
+export const USER_EMAIL = 'user.email='
+export const USER_TOKEN = 'user.token='
+export const USER_IMAGE_URL = 'user.imgUrl='

@@ -53,7 +53,7 @@ import {
   Soins,
   Tacle,
   Vitalite
-} from '../entities/Statistique'
+} from '../../entities/Statistique'
 
 export const mapperForStat = [
   {
