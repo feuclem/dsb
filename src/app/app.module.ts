@@ -52,6 +52,7 @@ import {StuffViewerComponent} from './builder/stuff-viewer/stuff-viewer.componen
 import {StuffWatcherService} from './builder/stuff.watcher.service'
 import {GoogleUserService} from './shared/service/googleuser/google.user.service'
 import {LocalStoreService} from './shared/service/localstorage/local-store.service'
+import {FirebaseHttpService} from './shared/httpService/firebase.http.service'
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import {LocalStoreService} from './shared/service/localstorage/local-store.servi
     EquipementsHttpService,
     StuffWatcherService,
     GoogleUserService,
-    LocalStoreService
+    LocalStoreService,
+    FirebaseHttpService
   ],
   bootstrap: [AppComponent]
 })
