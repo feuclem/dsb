@@ -30,7 +30,6 @@ export class AmuletteComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    localStorage.setItem(AMULETTE, JSON.stringify(equipement))
     this.stuffService.updateAmulette(equipement)
     super.setItem(equipement)
   }

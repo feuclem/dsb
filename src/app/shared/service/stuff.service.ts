@@ -18,7 +18,6 @@ import {
   SLOT6
 } from './localstorage/localstore.constants'
 import {Statistique} from '../entities/Statistique'
-import {EquipementsHttpService} from '../httpService/equipements.http.service'
 import {StatistiquesService} from './statistiques.service'
 
 @Injectable()
@@ -87,6 +86,11 @@ export class StuffService {
     equipement.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
   }
 
+  unsetItemStat(equipement: Equipement) {
+    this.removeStuffFromListEquipmentId(equipement.id)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+  }
+
   updateArme(value: Equipement): void {
     this._arme.next(value)
   }
@@ -96,6 +100,7 @@ export class StuffService {
   }
 
   updateAmulette(value: Equipement): void {
+    localStorage.setItem(AMULETTE, JSON.stringify(value))
     this._amulette.next(value)
   }
 

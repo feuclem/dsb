@@ -18,8 +18,7 @@ export class Stuff2Component implements OnInit {
   slot6: Equipement
 
   constructor(
-    private stuffService: StuffService,
-    private statistiquesService: StatistiquesService
+    private stuffService: StuffService
   ) {}
 
   ngOnInit() {
@@ -33,38 +32,32 @@ export class Stuff2Component implements OnInit {
 
   removeSlot1(equipement: Equipement) {
     this.stuffService.updateSlot1(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
   removeSlot2(equipement: Equipement) {
     this.stuffService.updateSlot2(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
   removeSlot3(equipement: Equipement) {
     this.stuffService.updateSlot3(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
   removeSlot4(equipement: Equipement) {
     this.stuffService.updateSlot4(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
   removeSlot5(equipement: Equipement) {
     this.stuffService.updateSlot5(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
   removeSlot6(equipement: Equipement) {
     this.stuffService.updateSlot6(undefined)
-    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
+    this.stuffService.unsetItemStat(equipement)
   }
 
 }
