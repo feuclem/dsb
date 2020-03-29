@@ -113,10 +113,19 @@ export class Characteristique1Component implements OnInit {
     this.hasExoInvo = this.characteristiqueService.hasExoInvo
   }
 
-  // TODO CLEM sortir ca dans un service ou dans un component
-  modifyStat(points: number, charac: String) {
-    if (this.pointsdecaracService.hasRemainingPointsAvailable(points)) {
-      this.pointsdecaracService.addPointToCharacteristique(points, charac)
+  modifyStat() {
+    if (
+      this.pointsdecaracService.hasRemainingPointsAvailable(this.inputVitalite) &&
+      this.pointsdecaracService.hasRemainingPointsAvailable(this.inputForce) &&
+      this.pointsdecaracService.hasRemainingPointsAvailable(this.inputIntelligence) &&
+      this.pointsdecaracService.hasRemainingPointsAvailable(this.inputChance) &&
+      this.pointsdecaracService.hasRemainingPointsAvailable(this.inputAgilite)
+    ) {
+      this.pointsdecaracService.addPointToCharacteristique(this.inputVitalite, 'Vitalite')
+      this.pointsdecaracService.addPointToCharacteristique(this.inputForce, 'Force')
+      this.pointsdecaracService.addPointToCharacteristique(this.inputIntelligence, 'Intelligence')
+      this.pointsdecaracService.addPointToCharacteristique(this.inputChance, 'Chance')
+      this.pointsdecaracService.addPointToCharacteristique(this.inputAgilite, 'Agilite')
     } else {
       alert('Vous ne pouvez plus ajouter de points de caractéristiques.')
     }

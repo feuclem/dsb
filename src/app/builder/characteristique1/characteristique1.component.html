@@ -79,26 +79,28 @@
   <tr>
     <td>Charac</td>
     <td>
-      <input [(ngModel)]="inputVitalite" (focusout)="modifyStat(+$event.target.value, 'Vitalite')" class="input is-vita"
+      <input [(ngModel)]="inputVitalite" class="input is-vita"
              type="number" min="0" [max]="remainingPointsToUsed">
     </td>
     <td>
-      <input [(ngModel)]="inputForce" (focusout)="modifyStat(+$event.target.value, 'Force')" class="input is-force"
+      <input [(ngModel)]="inputForce" class="input is-force"
              type="number" min="0" [max]="remainingPointsToUsed">
     </td>
     <td>
-      <input [(ngModel)]="inputIntelligence" (focusout)="modifyStat(+$event.target.value, 'Intelligence')"
+      <input [(ngModel)]="inputIntelligence"
              class="input is-danger" type="number" min="0" [max]="remainingPointsToUsed">
     </td>
     <td>
-      <input [(ngModel)]="inputChance" (focusout)="modifyStat(+$event.target.value, 'Chance')" class="input is-primary"
+      <input [(ngModel)]="inputChance" class="input is-primary"
              type="number" min="0" [max]="remainingPointsToUsed">
     </td>
     <td>
-      <input [(ngModel)]="inputAgilite" (focusout)="modifyStat(+$event.target.value, 'Agilite')" class="input is-success"
+      <input [(ngModel)]="inputAgilite" class="input is-success"
              type="number" min="0" [max]="remainingPointsToUsed">
     </td>
-    <td>&nbsp;</td>
+    <td>
+      <button class="button" (click)="modifyStat()"><i class="fas fa-plus"></i></button>
+    </td>
   </tr>
   </tbody>
 </table>
