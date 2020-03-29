@@ -5,8 +5,8 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
-import {StuffViewModel} from '../../../builder/StuffViewModel'
 import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {ANNEAU2} from '../../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-anneau2',
@@ -30,11 +30,8 @@ export class Anneau2Component extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateAnneau2(new StuffViewModel(
-      equipement.imgUrl,
-      equipement.stats,
-      equipement.id
-    ))
+    localStorage.setItem(ANNEAU2, JSON.stringify(equipement))
+    this.stuffService.updateAnneau2(equipement)
     super.setItem(equipement)
   }
 }

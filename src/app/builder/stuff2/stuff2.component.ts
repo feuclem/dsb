@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {StuffService} from '../../shared/service/stuff.service'
-import {StuffViewModel} from '../StuffViewModel'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
+import {Equipement} from '../../shared/entities/Equipement'
 
 @Component({
   selector: 'dsb-stuff2',
@@ -10,12 +10,12 @@ import {StatistiquesService} from '../../shared/service/statistiques.service'
 })
 export class Stuff2Component implements OnInit {
 
-  slot1: StuffViewModel
-  slot2: StuffViewModel
-  slot3: StuffViewModel
-  slot4: StuffViewModel
-  slot5: StuffViewModel
-  slot6: StuffViewModel
+  slot1: Equipement
+  slot2: Equipement
+  slot3: Equipement
+  slot4: Equipement
+  slot5: Equipement
+  slot6: Equipement
 
   constructor(
     private stuffService: StuffService,
@@ -31,40 +31,40 @@ export class Stuff2Component implements OnInit {
     this.stuffService.getSlot6().subscribe(value => this.slot6 = value)
   }
 
-  removeSlot1(stuffViewModel: StuffViewModel) {
+  removeSlot1(equipement: Equipement) {
     this.stuffService.updateSlot1(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
-  removeSlot2(stuffViewModel: StuffViewModel) {
+  removeSlot2(equipement: Equipement) {
     this.stuffService.updateSlot2(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
-  removeSlot3(stuffViewModel: StuffViewModel) {
+  removeSlot3(equipement: Equipement) {
     this.stuffService.updateSlot3(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
-  removeSlot4(stuffViewModel: StuffViewModel) {
+  removeSlot4(equipement: Equipement) {
     this.stuffService.updateSlot4(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
-  removeSlot5(stuffViewModel: StuffViewModel) {
+  removeSlot5(equipement: Equipement) {
     this.stuffService.updateSlot5(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
-  removeSlot6(stuffViewModel: StuffViewModel) {
+  removeSlot6(equipement: Equipement) {
     this.stuffService.updateSlot6(undefined)
-    stuffViewModel.statistiques.map(stat => this.statistiquesService.unsetStatInStuff(stat))
-    this.stuffService.removeStuffFromListEquipmentId(stuffViewModel.idEquipement)
+    equipement.stats.map(stat => this.statistiquesService.unsetStatInStuff(stat))
+    this.stuffService.removeStuffFromListEquipmentId(equipement.id)
   }
 
 }

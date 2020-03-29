@@ -4,7 +4,6 @@ import {Statistique} from '../entities/Statistique'
 import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
 import {StatistiquesService} from './statistiques.service'
-import {StuffViewModel} from '../../builder/StuffViewModel'
 import {StuffEquipementId} from '../entities/StuffEquipementId'
 
 @Injectable()
@@ -61,53 +60,20 @@ export class PanoplieService {
     const equipements = this.getFullPanoplie(setId)
     equipements.forEach(equipement => {
       if (equipement.type === 'Amulette') {
-        this.stuffService.updateAmulette(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-        ))
+        this.stuffService.updateAmulette(equipement)
       } else if (equipement.type === 'Chapeau') {
-        this.stuffService.updateCoiffe(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-        ))
+        this.stuffService.updateCoiffe(equipement)
       } else if (equipement.type === 'Cape') {
-        this.stuffService.updateCape(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-          )
-        )
+        this.stuffService.updateCape(equipement        )
       } else if (equipement.type === 'Ceinture') {
-        this.stuffService.updateCeinture(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-          )
-        )
+        this.stuffService.updateCeinture(equipement        )
       } else if (equipement.type === 'Bottes') {
-        this.stuffService.updateBottes(new StuffViewModel(
-          equipement.imgUrl,
-          equipement.stats,
-          equipement.id
-          )
-        )
+        this.stuffService.updateBottes(equipement        )
       } else if (equipement.type === 'Anneau') {
         if(this.stuffService._anneau1.value === undefined) {
-          this.stuffService.updateAnneau1(new StuffViewModel(
-            equipement.imgUrl,
-            equipement.stats,
-            equipement.id
-            )
-          )
+          this.stuffService.updateAnneau1(equipement          )
         } else {
-          this.stuffService.updateAnneau2(new StuffViewModel(
-            equipement.imgUrl,
-            equipement.stats,
-            equipement.id
-            )
-          )
+          this.stuffService.updateAnneau2(equipement          )
         }
       }
       this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))

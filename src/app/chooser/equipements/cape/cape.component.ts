@@ -5,8 +5,8 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
-import {StuffViewModel} from '../../../builder/StuffViewModel'
 import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {CAPE} from '../../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-capes',
@@ -30,12 +30,7 @@ export class CapeComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateCape(new StuffViewModel(
-      equipement.imgUrl,
-      equipement.stats,
-      equipement.id
-      )
-    )
+    this.stuffService.updateCape(equipement)
     super.setItem(equipement)
   }
 }

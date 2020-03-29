@@ -5,8 +5,8 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
-import {StuffViewModel} from '../../../builder/StuffViewModel'
 import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {SLOT1, SLOT2, SLOT3, SLOT4, SLOT5, SLOT6} from '../../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-trophee',
@@ -31,49 +31,7 @@ export class TropheeComponent extends EquipementsComponent implements OnInit {
 
   // TODO CLEM faire un component parent avec DofusComponent
   setItem(equipement: Equipement) {
-    if(this.stuffService._slot1.value === undefined) {
-      this.stuffService.updateSlot1(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    } else if(this.stuffService._slot2.value === undefined) {
-      this.stuffService.updateSlot2(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    } else if(this.stuffService._slot3.value === undefined) {
-      this.stuffService.updateSlot3(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    } else if(this.stuffService._slot4.value === undefined) {
-      this.stuffService.updateSlot4(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    } else if(this.stuffService._slot5.value === undefined) {
-      this.stuffService.updateSlot5(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    } else {
-      this.stuffService.updateSlot6(new StuffViewModel(
-        equipement.imgUrl,
-        equipement.stats,
-        equipement.id
-        )
-      )
-    }
+    this.stuffService.updateSlots(equipement)
     super.setItem(equipement)
   }
 }

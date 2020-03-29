@@ -8,7 +8,6 @@ import {Equipement} from '../entities/Equipement'
 import {StuffService} from './stuff.service'
 import {StatistiquesService} from './statistiques.service'
 import {StatistiquesServiceMock} from './statistiques.service.mock'
-import {StuffViewModel} from '../../builder/StuffViewModel'
 
 describe('PanoplieService', () => {
   let panoplieService = null
@@ -427,7 +426,18 @@ describe('PanoplieService', () => {
         panoplieService.setPanoplieToStuff(274)
 
         // Then
-        expect(spy).toHaveBeenCalledWith(new StuffViewModel('AmuletteduStrigide.png', [new Force(1, 1)], 1))
+        expect(spy).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Amulette du Strigide',
+          1,
+          'Amulette',
+          'AmuletteduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+          )
+        )
       })
     })
 
@@ -484,7 +494,18 @@ describe('PanoplieService', () => {
 
         // Then
         expect(spy).toHaveBeenCalledTimes(1)
-        expect(spy).toHaveBeenCalledWith(new StuffViewModel('AnneauduStrigide.png', [new Force(1, 1)], 1))
+        expect(spy).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Anneau du Strigide',
+          1,
+          'Anneau',
+          'AnneauduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+          )
+        )
       })
     })
 
@@ -581,13 +602,54 @@ describe('PanoplieService', () => {
 
         // Then
         expect(spyAmulette).toHaveBeenCalledTimes(1)
-        expect(spyAmulette).toHaveBeenCalledWith(new StuffViewModel('AmuletteduStrigide.png', [new Force(1, 1)], 1))
+        expect(spyAmulette).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Amulette du Strigide',
+          1,
+          'Amulette',
+          'AmuletteduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+        ))
         expect(spyAnneau1).toHaveBeenCalledTimes(1)
-        expect(spyAnneau1).toHaveBeenCalledWith(new StuffViewModel('AnneauduStrigide.png', [new Force(1, 1)], 1))
+        expect(spyAnneau1).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Anneau du Strigide',
+          1,
+          'Anneau',
+          'AnneauduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+        ))
         expect(spyCeinture).toHaveBeenCalledTimes(1)
-        expect(spyCeinture).toHaveBeenCalledWith(new StuffViewModel('CeintureduStrigide.png', [new Force(1, 1)], 1))
+        expect(spyCeinture).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Ceinture du Strigide',
+          1,
+          'Ceinture',
+          'CeintureduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+        ))
         expect(spyCoiffe).toHaveBeenCalledTimes(1)
-        expect(spyCoiffe).toHaveBeenCalledWith(new StuffViewModel('CoiffeduStrigide.png', [new Force(1, 1)], 1))
+        expect(spyCoiffe).toHaveBeenCalledWith(new Equipement(
+          1,
+          'Coiffe du Strigide',
+          1,
+          'Chapeau',
+          'CoiffeduStrigide.png',
+          [
+            new Force(1, 1)
+          ],
+          1
+          )
+        )
         expect(spyAnneau2).toHaveBeenCalledTimes(0)
         expect(spyAnneau2).not.toHaveBeenCalled()
       })

@@ -5,8 +5,8 @@ import {StatistiquesService} from '../../../shared/service/statistiques.service'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsComponent} from '../equipements.component'
 import {Equipement} from '../../../shared/entities/Equipement'
-import {StuffViewModel} from '../../../builder/StuffViewModel'
 import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
+import {AMULETTE} from '../../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-amulettes',
@@ -30,11 +30,8 @@ export class AmuletteComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateAmulette(new StuffViewModel(
-      equipement.imgUrl,
-      equipement.stats,
-      equipement.id
-    ))
+    localStorage.setItem(AMULETTE, JSON.stringify(equipement))
+    this.stuffService.updateAmulette(equipement)
     super.setItem(equipement)
   }
 }

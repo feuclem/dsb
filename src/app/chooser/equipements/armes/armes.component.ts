@@ -3,7 +3,6 @@ import {Arme} from '../../../shared/entities/Arme'
 import {StuffService} from '../../../shared/service/stuff.service'
 import {Router} from '@angular/router'
 import {StatistiquesService} from '../../../shared/service/statistiques.service'
-import {StuffViewModel} from '../../../builder/StuffViewModel'
 import {EquipementsComponent} from '../equipements.component'
 import {PanoplieService} from '../../../shared/service/panoplie.service'
 import {EquipementsHttpService} from '../../../shared/httpService/equipements.http.service'
@@ -32,11 +31,7 @@ export class ArmesComponent extends EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateArme(new StuffViewModel(
-      equipement.imgUrl,
-      equipement.stats,
-      equipement.id
-    ))
+    this.stuffService.updateArme(equipement)
     super.setItem(equipement)
   }
 }

@@ -6,6 +6,7 @@ import {PanoplieService} from '../../shared/service/panoplie.service'
 import {Equipement} from '../../shared/entities/Equipement'
 import {StuffEquipementId} from '../../shared/entities/StuffEquipementId'
 import {EquipementsHttpService} from '../../shared/httpService/equipements.http.service'
+import {ANNEAU1, ANNEAU2} from '../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-equipements',
@@ -52,8 +53,7 @@ export class EquipementsComponent implements OnInit {
   }
 
   setItem(equipement: Equipement) {
-    this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))
-    equipement.stats.map(stat => this.statistiquesService.setStatInStuff(stat))
+    this.stuffService.setItemStat(equipement)
     this.router.navigate(['/'])
   }
 

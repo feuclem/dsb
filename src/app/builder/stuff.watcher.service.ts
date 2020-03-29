@@ -1,16 +1,12 @@
 import {Injectable} from '@angular/core'
 import {BehaviorSubject} from 'rxjs/BehaviorSubject'
-import {StuffViewModel} from './StuffViewModel'
+import {Equipement} from '../shared/entities/Equipement'
 
 @Injectable()
 export class StuffWatcherService {
-  _selectedStuffToWatch = new BehaviorSubject<StuffViewModel>(undefined)
+  _selectedStuffToWatch = new BehaviorSubject<Equipement>(undefined)
 
-  updateSelectedStuffToWatch(value: StuffViewModel): void {
+  updateSelectedStuffToWatch(value: Equipement): void {
     this._selectedStuffToWatch.next(value)
-  }
-
-  resetSelectedStuffToWatchVitalite(): void {
-    this._selectedStuffToWatch.next(undefined)
   }
 }
