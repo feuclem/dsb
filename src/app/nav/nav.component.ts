@@ -15,7 +15,7 @@ declare const gapi: any
 export class NavComponent implements OnInit, AfterViewInit {
 
   classe: string
-  isUserSignedIn: boolean = false
+  isUserSignedIn: Boolean = false
 
   auth2: any
 
@@ -32,7 +32,7 @@ export class NavComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.googleInit()
+    // this.googleInit()
   }
 
   goToSpellPage() {
@@ -44,67 +44,67 @@ export class NavComponent implements OnInit, AfterViewInit {
     }
   }
 
-  googleInit() {
-    gapi.load('auth2', () => {
-      this.auth2 = gapi.auth2.init({
-        client_id: '888019065376-uar4jgs74bfvjk33krlqtuuuu972fc2f.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin',
-        scope: 'profile email'
-      })
-      if (localStorage.getItem(IS_USER_SIGNED_IN) === 'yes') {
-        NavComponent.setGoogleSignOutButtonVisible()
-        this.googleUserService.updateUserSignedIn(true)
-      }
-      this.attachSignIn(document.getElementById('googleSignIn'))
-    })
-  }
-
-  attachSignIn(element) {
-    this.auth2.attachClickHandler(element, {},
-      (googleUser) => {
-        console.log('User signed IN.')
-
-        this.localStoreService.setUserSignedId()
-        let profile = googleUser.getBasicProfile()
-        this.localStoreService.setAllUserData(
-          profile.getId(),
-          profile.getName(),
-          profile.getEmail(),
-          googleUser.getAuthResponse().id_token,
-          profile.getImageUrl
-        )
-
-        NavComponent.setGoogleSignOutButtonVisible()
-
-        this.googleUserService.updateUserSignedIn(true)
-      },
-      (error) => {
-        alert(JSON.stringify(error))
-      })
-  }
-
-  signOut() {
-    const auth2 = gapi.auth2.getAuthInstance()
-    auth2.signOut().then(() => {
-      console.log('User signed OUT.')
-
-      NavComponent.setGoogleSignInButtonVisible()
-
-      this.localStoreService.setUserSignedOut()
-      this.localStoreService.resetAllUserData()
-    })
-  }
-
-  goToMyProfile() {}
-
-  private static setGoogleSignInButtonVisible() {
-    document.getElementById('googleSignIn').style.display = 'initial'
-    document.getElementById('googleSignOut').style.display = 'none'
-  }
-
-  private static setGoogleSignOutButtonVisible() {
-    document.getElementById('googleSignIn').style.display = 'none'
-    document.getElementById('googleSignOut').style.display = 'initial'
-  }
+  // googleInit() {
+  //   gapi.load('auth2', () => {
+  //     this.auth2 = gapi.auth2.init({
+  //       client_id: '888019065376-uar4jgs74bfvjk33krlqtuuuu972fc2f.apps.googleusercontent.com',
+  //       cookiepolicy: 'single_host_origin',
+  //       scope: 'profile email'
+  //     })
+  //     if (localStorage.getItem(IS_USER_SIGNED_IN) === 'yes') {
+  //       NavComponent.setGoogleSignOutButtonVisible()
+  //       this.googleUserService.updateUserSignedIn(true)
+  //     }
+  //     this.attachSignIn(document.getElementById('googleSignIn'))
+  //   })
+  // }
+  //
+  // attachSignIn(element) {
+  //   this.auth2.attachClickHandler(element, {},
+  //     (googleUser) => {
+  //       console.log('User signed IN.')
+  //
+  //       this.localStoreService.setUserSignedId()
+  //       let profile = googleUser.getBasicProfile()
+  //       this.localStoreService.setAllUserData(
+  //         profile.getId(),
+  //         profile.getName(),
+  //         profile.getEmail(),
+  //         googleUser.getAuthResponse().id_token,
+  //         profile.getImageUrl
+  //       )
+  //
+  //       NavComponent.setGoogleSignOutButtonVisible()
+  //
+  //       this.googleUserService.updateUserSignedIn(true)
+  //     },
+  //     (error) => {
+  //       alert(JSON.stringify(error))
+  //     })
+  // }
+  //
+  // signOut() {
+  //   const auth2 = gapi.auth2.getAuthInstance()
+  //   auth2.signOut().then(() => {
+  //     console.log('User signed OUT.')
+  //
+  //     NavComponent.setGoogleSignInButtonVisible()
+  //
+  //     this.localStoreService.setUserSignedOut()
+  //     this.localStoreService.resetAllUserData()
+  //   })
+  // }
+  //
+  // goToMyProfile() {}
+  //
+  // private static setGoogleSignInButtonVisible() {
+  //   document.getElementById('googleSignIn').style.display = 'initial'
+  //   document.getElementById('googleSignOut').style.display = 'none'
+  // }
+  //
+  // private static setGoogleSignOutButtonVisible() {
+  //   document.getElementById('googleSignIn').style.display = 'none'
+  //   document.getElementById('googleSignOut').style.display = 'initial'
+  // }
 
 }
