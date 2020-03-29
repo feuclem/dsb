@@ -13,7 +13,7 @@ import {EquipementsHttpService} from '../../shared/httpService/equipements.http.
   styles: [],
 })
 export class EquipementsComponent implements OnInit {
-  isProgressBarVisible: boolean = true
+  isProgressBarVisible: Boolean = true
   numberPage: number
   numberPageList: number[]
   NUMBER_ITEM_PER_PAGE: number = 50 // TODO CLEM c'est le back qui doit gérer ça
@@ -69,6 +69,14 @@ export class EquipementsComponent implements OnInit {
   goToPage(page: number) {
     this.isProgressBarVisible = true
     this.equipementsHttpService.getTypeEquipements(page).then(response => {
+      this.equipements = response
+      this.isProgressBarVisible = false
+    })
+  }
+
+  getStuffByName(event: any) {
+    this.isProgressBarVisible = true
+    this.equipementsHttpService.getStuffByName(event.target.value.toString()).then(response => {
       this.equipements = response
       this.isProgressBarVisible = false
     })
