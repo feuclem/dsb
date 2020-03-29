@@ -13,7 +13,7 @@ import {FirebaseHttpService} from '../shared/httpService/firebase.http.service'
 export class BuilderComponent implements OnInit {
 
   classe: string
-  isPanoplieBonusVisible: boolean = true
+  isPanoplieBonusVisible: Boolean = true
 
   constructor(
     private classeService: ClasseService,
