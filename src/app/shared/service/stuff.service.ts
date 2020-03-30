@@ -19,14 +19,12 @@ import {
 } from './localstorage/localstore.constants'
 import {Statistique} from '../entities/Statistique'
 import {StatistiquesService} from './statistiques.service'
+import {mapperForInitStuff} from './mapper/mapperForInitStuff'
 
 @Injectable()
 export class StuffService {
 
-  constructor(
-    private statistiquesService: StatistiquesService
-  ) {
-  }
+  constructor(private statistiquesService: StatistiquesService) {}
 
   _arme = new BehaviorSubject<Equipement>(undefined)
   _amulette = new BehaviorSubject<Equipement>(undefined)
@@ -46,39 +44,39 @@ export class StuffService {
   _slot5 = new BehaviorSubject<Equipement>(undefined)
   _slot6 = new BehaviorSubject<Equipement>(undefined)
 
-  initStuff1() {
-    if (
-      localStorage.getItem(AMULETTE) !== 'undefined' &&
-      localStorage.getItem(AMULETTE) !== undefined &&
-      localStorage.getItem(AMULETTE) !== null
-    ) {
-      const storedValue = JSON.parse(localStorage.getItem(AMULETTE))
-      console.log(JSON.parse(localStorage.getItem(AMULETTE)))
-      console.log(storedValue['stats'])
-      const stats: Statistique[] = []
-      for (let i = 0; i <= storedValue['stats'].length; i++) {
-        if (storedValue['stats'][i] !== undefined) {
-          stats.push(
-            new Statistique(
-              storedValue['stats'][i]['from'],
-              storedValue['stats'][i]['to'],
-              storedValue['stats'][i]['label']
+  initStuff() {
+    mapperForInitStuff.forEach(value => {
+      if (
+        localStorage.getItem(value.label) !== 'undefined' &&
+        localStorage.getItem(value.label) !== undefined &&
+        localStorage.getItem(value.label) !== null
+      ) {
+        const storedValue = JSON.parse(localStorage.getItem(value.label))
+        const stats: Statistique[] = []
+        for (let i = 0; i <= storedValue['stats'].length; i++) {
+          if (storedValue['stats'][i] !== undefined) {
+            stats.push(
+              new Statistique(
+                storedValue['stats'][i]['from'],
+                storedValue['stats'][i]['to'],
+                storedValue['stats'][i]['label']
+              )
             )
-          )
+          }
         }
+        const equipement = new Equipement(
+          storedValue['id'],
+          storedValue['name'],
+          storedValue['lvl'],
+          storedValue['type'],
+          storedValue['imgUrl'],
+          stats,
+          storedValue['setId']
+        )
+        value.type(this, equipement)
+        this.setItemStat(equipement)
       }
-      const equipement = new Equipement(
-        storedValue['id'],
-        storedValue['name'],
-        storedValue['lvl'],
-        storedValue['type'],
-        storedValue['imgUrl'],
-        stats,
-        storedValue['setId']
-      )
-      this.updateAmulette(equipement)
-      this.setItemStat(equipement)
-    }
+    })
   }
 
   setItemStat(equipement: Equipement) {
@@ -273,5 +271,41 @@ export class StuffService {
     const equipementId = this._listStuffEquipmentId.getValue().findIndex(stuffEquipementId => stuffEquipementId.id === idEquipement)
     this._listStuffEquipmentId.getValue().splice(equipementId, 1)
     this._listStuffEquipmentId.next(this._listStuffEquipmentId.getValue())
+  }
+
+  removeAllStuff() {
+    this._listStuffEquipmentId.next([])
+    this._arme.next(undefined)
+    this._amulette.next(undefined)
+    this._anneau1.next(undefined)
+    this._anneau2.next(undefined)
+    this._bottes.next(undefined)
+    this._ceinture.next(undefined)
+    this._coiffe.next(undefined)
+    this._cape.next(undefined)
+    this._monture.next(undefined)
+    this._familier.next(undefined)
+    this._bouclier.next(undefined)
+    this._slot1.next(undefined)
+    this._slot2.next(undefined)
+    this._slot3.next(undefined)
+    this._slot4.next(undefined)
+    this._slot5.next(undefined)
+    this._slot6.next(undefined)
+    localStorage.setItem(AMULETTE, null)
+    localStorage.setItem(ANNEAU1, null)
+    localStorage.setItem(BOTTES, null)
+    localStorage.setItem(CEINTURE, null)
+    localStorage.setItem(COIFFE, null)
+    localStorage.setItem(CAPE, null)
+    localStorage.setItem(MONTURE, null)
+    localStorage.setItem(FAMILIER, null)
+    localStorage.setItem(BOUCLIER, null)
+    localStorage.setItem(SLOT1, null)
+    localStorage.setItem(SLOT2, null)
+    localStorage.setItem(SLOT3, null)
+    localStorage.setItem(SLOT4, null)
+    localStorage.setItem(SLOT5, null)
+    localStorage.setItem(SLOT6, null)
   }
 }

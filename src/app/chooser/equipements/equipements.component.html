@@ -5,6 +5,46 @@
   <div class="field">
     <div class="control">
       <input class="input" type="text" (change)="getStuffByName($event)" placeholder="Rechercher par nom">
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Vitalite')" (change)="getStuffByStat('Vitalite')">
+        Vitalité
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Force')" (change)="getStuffByStat('Force')">
+        Force
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Intelligence')" (change)="getStuffByStat('Intelligence')">
+        Intelligence
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Chance')" (change)="getStuffByStat('Chance')">
+        Chance
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Agilite')" (change)="getStuffByStat('Agilite')">
+        Agilité
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('PA')" (change)="getStuffByStat('PA')">
+        PA
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('PM')" (change)="getStuffByStat('PM')">
+        PM
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('PO')" (change)="getStuffByStat('PO')">
+        PO
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Critique')" (change)="getStuffByStat('Critique')">
+        Critique
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" [checked]="getCheckedValueInList('Puissance')" (change)="getStuffByStat('Puissance')">
+        Puissance
+      </label>
     </div>
   </div>
   <div class="tile is-ancestor" *ngFor="let equipement of equipements;">

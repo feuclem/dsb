@@ -19,10 +19,10 @@ export class StuffViewerComponent implements OnInit {
 
   ngOnInit() {
     this.stuffWatcherService._selectedStuffToWatch.subscribe(value => {
-      if(value !== undefined) {
+      if (value !== undefined) {
         this.name = 'TODO'
         this.imgUrl = value.imgUrl
-        this.stats = value.statistiques
+        this.stats = value.stats
       }
     })
   }

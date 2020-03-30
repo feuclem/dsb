@@ -4,9 +4,7 @@ import {StuffService} from '../../shared/service/stuff.service'
 import {StatistiquesService} from '../../shared/service/statistiques.service'
 import {PanoplieService} from '../../shared/service/panoplie.service'
 import {Equipement} from '../../shared/entities/Equipement'
-import {StuffEquipementId} from '../../shared/entities/StuffEquipementId'
 import {EquipementsHttpService} from '../../shared/httpService/equipements.http.service'
-import {ANNEAU1, ANNEAU2} from '../../shared/service/localstorage/localstore.constants'
 
 @Component({
   selector: 'dsb-equipements',
@@ -25,6 +23,8 @@ export class EquipementsComponent implements OnInit {
   statistiquesService: StatistiquesService
   panoplieService: PanoplieService
   equipementsHttpService: EquipementsHttpService
+
+  checkedFilterStatList: String[] = []
 
   constructor(
     router: Router,
@@ -82,4 +82,23 @@ export class EquipementsComponent implements OnInit {
     })
   }
 
+  getStuffByStat(stat: String) {
+    if (this.getCheckedValueInList(stat)) {
+      const index = this.checkedFilterStatList.indexOf(stat)
+      if (index > -1) {
+        this.checkedFilterStatList.splice(index, 1)
+      }
+    } else {
+      this.checkedFilterStatList.push(stat)
+    }
+    this.isProgressBarVisible = true
+    this.equipementsHttpService.getStuffByStat(this.checkedFilterStatList).then(response => {
+      this.equipements = response
+      this.isProgressBarVisible = false
+    })
+  }
+
+  getCheckedValueInList(stat: String): Boolean {
+    return this.checkedFilterStatList.includes(stat)
+  }
 }

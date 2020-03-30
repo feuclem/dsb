@@ -3,6 +3,7 @@ import {ClasseService} from '../chooser/classe/classe.service'
 import {StuffWatcherService} from './stuff.watcher.service'
 import {StuffService} from '../shared/service/stuff.service'
 import {FirebaseHttpService} from '../shared/httpService/firebase.http.service'
+import {CharacteristiqueService} from '../shared/service/characteristique.service'
 
 @Component({
   selector: 'builder',
@@ -19,6 +20,7 @@ export class BuilderComponent implements OnInit {
     private classeService: ClasseService,
     private stuffWatcherService: StuffWatcherService,
     private stuffService: StuffService,
+    private characteristiqueService: CharacteristiqueService,
     private firebaseHttpService: FirebaseHttpService
   ) {
   }
@@ -34,6 +36,11 @@ export class BuilderComponent implements OnInit {
 
   toggleCard() {
     this.isPanoplieBonusVisible = !this.isPanoplieBonusVisible
+  }
+
+  resetStuff() {
+    this.stuffService.removeAllStuff()
+    this.characteristiqueService.resetAllCharacristique()
   }
 
   // saveStuff() {
