@@ -53,7 +53,7 @@ export class CharacteristiqueService {
   _resistanceMelee = new BehaviorSubject<number>(0)
   _critique = new BehaviorSubject<number>(0)
 
-  _vitalite = new BehaviorSubject<number>(0)
+  _vitalite = new BehaviorSubject<number>(1050)
 
   _force = new BehaviorSubject<number>(0)
 
@@ -73,17 +73,17 @@ export class CharacteristiqueService {
 
   _parchoAgilite = new BehaviorSubject<number>(100)
 
-  hasExoPa: boolean = false
-  hasExoPm: boolean = false
-  hasExoPo: boolean = false
-  hasExoInvo: boolean = false
+  hasExoPa: Boolean = false
+  hasExoPm: Boolean = false
+  hasExoPo: Boolean = false
+  hasExoInvo: Boolean = false
 
   updateVitalite(value: number): void {
     this._vitalite.next(value += this._vitalite.getValue())
   }
 
   resetVitalite(): void {
-    this._vitalite.next(0)
+    this._vitalite.next(1050)
   }
 
   updateForce(value: number): void {
@@ -364,7 +364,7 @@ export class CharacteristiqueService {
     this._resistanceDistance.next(0)
     this._resistanceMelee.next(0)
     this._critique.next(0)
-    this._vitalite.next(0)
+    this._vitalite.next(1050)
     this._force.next(0)
     this._intelligence.next(0)
     this._chance.next(0)

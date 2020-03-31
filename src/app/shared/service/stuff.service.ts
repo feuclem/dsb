@@ -5,7 +5,11 @@ import {StuffEquipementId} from '../entities/StuffEquipementId'
 import {Equipement} from '../entities/Equipement'
 import {
   AMULETTE,
-  ANNEAU1, BOTTES, BOUCLIER, CAPE,
+  ANNEAU1,
+  ANNEAU2,
+  BOTTES,
+  BOUCLIER,
+  CAPE,
   CEINTURE,
   COIFFE,
   FAMILIER,
@@ -24,7 +28,8 @@ import {mapperForInitStuff} from './mapper/mapperForInitStuff'
 @Injectable()
 export class StuffService {
 
-  constructor(private statistiquesService: StatistiquesService) {}
+  constructor(private statistiquesService: StatistiquesService) {
+  }
 
   _arme = new BehaviorSubject<Equipement>(undefined)
   _amulette = new BehaviorSubject<Equipement>(undefined)
@@ -43,6 +48,8 @@ export class StuffService {
   _slot4 = new BehaviorSubject<Equipement>(undefined)
   _slot5 = new BehaviorSubject<Equipement>(undefined)
   _slot6 = new BehaviorSubject<Equipement>(undefined)
+
+  _listStuffEquipmentId = new BehaviorSubject<StuffEquipementId[]>([])
 
   initStuff() {
     mapperForInitStuff.forEach(value => {
@@ -116,6 +123,7 @@ export class StuffService {
   }
 
   updateAnneau2(value: Equipement): void {
+    localStorage.setItem(ANNEAU2, JSON.stringify(value))
     this._anneau2.next(value)
   }
 
@@ -256,14 +264,13 @@ export class StuffService {
     return this._slot6.asObservable()
   }
 
-  _listStuffEquipmentId = new BehaviorSubject<StuffEquipementId[]>([])
-
   getListStuffEquipmentId(): Observable<StuffEquipementId[]> {
     return this._listStuffEquipmentId.asObservable()
   }
 
   updateListStuffEquipmentId(value: StuffEquipementId): void {
     this._listStuffEquipmentId.getValue().push(value)
+    console.log(this._listStuffEquipmentId.getValue())
     this._listStuffEquipmentId.next(this._listStuffEquipmentId.getValue())
   }
 
@@ -294,6 +301,7 @@ export class StuffService {
     this._slot6.next(undefined)
     localStorage.setItem(AMULETTE, null)
     localStorage.setItem(ANNEAU1, null)
+    localStorage.setItem(ANNEAU2, null)
     localStorage.setItem(BOTTES, null)
     localStorage.setItem(CEINTURE, null)
     localStorage.setItem(COIFFE, null)

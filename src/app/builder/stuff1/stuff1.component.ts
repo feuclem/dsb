@@ -39,8 +39,6 @@ export class Stuff1Component implements OnInit {
     this.stuffService.getFamilier().subscribe(value => this.familier = value)
     this.stuffService.getMonture().subscribe(value => this.monture = value)
     this.stuffService.getBouclier().subscribe(value => this.bouclier = value)
-
-    this.stuffService.initStuff()
   }
 
   removeAmulette(equipement: Equipement) {

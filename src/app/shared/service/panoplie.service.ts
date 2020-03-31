@@ -64,16 +64,16 @@ export class PanoplieService {
       } else if (equipement.type === 'Chapeau') {
         this.stuffService.updateCoiffe(equipement)
       } else if (equipement.type === 'Cape') {
-        this.stuffService.updateCape(equipement        )
+        this.stuffService.updateCape(equipement)
       } else if (equipement.type === 'Ceinture') {
-        this.stuffService.updateCeinture(equipement        )
+        this.stuffService.updateCeinture(equipement)
       } else if (equipement.type === 'Bottes') {
-        this.stuffService.updateBottes(equipement        )
+        this.stuffService.updateBottes(equipement)
       } else if (equipement.type === 'Anneau') {
-        if(this.stuffService._anneau1.value === undefined) {
-          this.stuffService.updateAnneau1(equipement          )
+        if (this.stuffService._anneau1.value === undefined) {
+          this.stuffService.updateAnneau1(equipement)
         } else {
-          this.stuffService.updateAnneau2(equipement          )
+          this.stuffService.updateAnneau2(equipement)
         }
       }
       this.stuffService.updateListStuffEquipmentId(new StuffEquipementId(equipement.id, equipement.type))
