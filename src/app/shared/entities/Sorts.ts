@@ -16,7 +16,7 @@ export class Sorts {
   static calcul(
     degatDeBase: number,
     puissance: number,
-    caracteristiques,
+    caracteristiques: number,
     dommages: number,
     dommagesElemFixe: number,
     dommagesCritiques: number = 0,
@@ -29,5 +29,17 @@ export class Sorts {
       baseDommage = baseDommage + baseDommage * (accPourcentDommagesEnPlus / 100)
     }
     return Math.round(baseDommage)
+  }
+
+  static calcul2(
+    degatDuSort: number,
+    caracteristiquesElem: number,
+    puissance: number,
+    dommages: number,
+    dommagesElem: number,
+    dommagesCritiques: number
+  ) {
+    const damageDeal = ((caracteristiquesElem + puissance + 100) / 100) * degatDuSort + (degatDuSort + dommagesElem + dommagesCritiques)
+    return Math.round(damageDeal)
   }
 }

@@ -20,10 +20,10 @@ export class Characteristique1Component implements OnInit {
   soin: number
   prospection: number
 
-  hasExoPa: boolean = false
-  hasExoPm: boolean = false
-  hasExoPo: boolean = false
-  hasExoInvo: boolean = false
+  hasExoPa: Boolean = false
+  hasExoPm: Boolean = false
+  hasExoPo: Boolean = false
+  hasExoInvo: Boolean = false
 
   panopliePa: number
   panopliePm: number

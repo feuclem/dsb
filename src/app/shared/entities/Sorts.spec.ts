@@ -28,5 +28,14 @@ describe('calcul', () => {
       expect(result).toEqual(53)
     })
   })
+  describe('when degatDeBase is 12 and puissance is 100 and caracteristiques is 777', () => {
+    it('should return 53', () => {
+      // When
+      const result = Sorts.calcul(12, 10, 777, 9, 78, 41, 0, 0)
+
+      // Then
+      expect(result).toEqual(245)
+    })
+  })
 })
 

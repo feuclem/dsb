@@ -6,7 +6,7 @@ import {Equipement} from '../entities/Equipement'
 import {
   AMULETTE,
   ANNEAU1,
-  ANNEAU2,
+  ANNEAU2, ARME,
   BOTTES,
   BOUCLIER,
   CAPE,
@@ -56,6 +56,7 @@ export class StuffService {
       if (
         localStorage.getItem(value.label) !== 'undefined' &&
         localStorage.getItem(value.label) !== undefined &&
+        localStorage.getItem(value.label) !== 'null' &&
         localStorage.getItem(value.label) !== null
       ) {
         const storedValue = JSON.parse(localStorage.getItem(value.label))
@@ -97,6 +98,7 @@ export class StuffService {
   }
 
   updateArme(value: Equipement): void {
+    localStorage.setItem(ARME, JSON.stringify(value))
     this._arme.next(value)
   }
 
@@ -270,7 +272,6 @@ export class StuffService {
 
   updateListStuffEquipmentId(value: StuffEquipementId): void {
     this._listStuffEquipmentId.getValue().push(value)
-    console.log(this._listStuffEquipmentId.getValue())
     this._listStuffEquipmentId.next(this._listStuffEquipmentId.getValue())
   }
 
@@ -299,6 +300,7 @@ export class StuffService {
     this._slot4.next(undefined)
     this._slot5.next(undefined)
     this._slot6.next(undefined)
+    localStorage.setItem(ARME, null)
     localStorage.setItem(AMULETTE, null)
     localStorage.setItem(ANNEAU1, null)
     localStorage.setItem(ANNEAU2, null)

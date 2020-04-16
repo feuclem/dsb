@@ -1,7 +1,7 @@
 import {
   AMULETTE,
   ANNEAU1,
-  ANNEAU2,
+  ANNEAU2, ARME,
   BOTTES,
   BOUCLIER,
   CAPE,
@@ -78,5 +78,9 @@ export const mapperForInitStuff = [
   {
     label: SLOT6,
     type: (service: StuffService, value: Equipement) => service.updateSlot6(value)
+  },
+  {
+    label: ARME,
+    type: (service: StuffService, value: Equipement) => service.updateArme(value)
   }
 ]
